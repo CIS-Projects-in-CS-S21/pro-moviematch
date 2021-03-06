@@ -10,7 +10,7 @@ David Lee
 
 Amanda Benzkofer
 
-X'Zavier Wolfinbarger
+X'Zaiver Wolfinbarger
 
 Brandon Lokey
 
