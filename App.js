@@ -8,6 +8,7 @@ export default function App() {
       <Text>IDE setup Test!</Text>
       <Text>Add a line of text to confirm your IDE setup</Text>
       <Text>David Lee: Hello!</Text>
+      <Text>Amanda Benzkofer: I have successfully set up my IDE with our project!</Text>
       <StatusBar style="auto" />
     </View>
   );
