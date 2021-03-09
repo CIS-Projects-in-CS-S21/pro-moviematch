@@ -11,6 +11,7 @@ export default function App() {
       <Text>Amanda Benzkofer: I have successfully set up my IDE with our project!</Text>
       <Text>Brandon Lokey: I got it working!</Text>
       <Text>Jake Cannon: Got it working, thanks for the fix Brandon!</Text>
+      <Text>X'Zaiver: Test</Text>
       <StatusBar style="auto" />
     </View>
   );
