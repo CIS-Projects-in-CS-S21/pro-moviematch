@@ -27,13 +27,13 @@ function LoginScreen() {
 
   return (
     <View style={styles.container}>
-      <Image style={styles.image} source={LogoTitle} />
+      <Image style={styles.image} source={require('./resources/MovieMatchLogo.png')} />
  
       <StatusBar style="auto" />
       <View style={styles.inputView}>
         <TextInput
           style={styles.TextInput}
-          placeholder="Email."
+          placeholder="Email"
           placeholderTextColor="#003f5c"
           onChangeText={(email) => setEmail(email)}
         />
@@ -42,7 +42,7 @@ function LoginScreen() {
       <View style={styles.inputView}>
         <TextInput
           style={styles.TextInput}
-          placeholder="Password."
+          placeholder="Password"
           placeholderTextColor="#003f5c"
           secureTextEntry={true}
           onChangeText={(password) => setPassword(password)}
