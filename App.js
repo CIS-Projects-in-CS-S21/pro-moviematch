@@ -1,8 +1,9 @@
 import { StatusBar } from 'expo-status-bar';
-import React from 'react';
-import { Text, View, Image } from 'react-native';
+import React, { useState } from 'react';
+import { Text, View, Image, TextInput, Button, TouchableOpacity, StyleSheet} from 'react-native';
 import { NavigationContainer } from '@react-navigation/native';
 import { createStackNavigator } from '@react-navigation/stack';
+import LoginScreen from './forms/login.js';
 
 function HomeScreen() {
   return (
@@ -27,6 +28,10 @@ function App() {
   return (
     <NavigationContainer>
       <Stack.Navigator>
+      <Stack.Screen
+        name="Login"
+        component={LoginScreen}
+      ></Stack.Screen>
       <Stack.Screen
           name="Home"
           component={HomeScreen}
