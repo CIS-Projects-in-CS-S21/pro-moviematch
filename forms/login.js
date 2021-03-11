@@ -39,6 +39,10 @@ export default function LoginScreen({ navigation }) {
         <TouchableOpacity style={styles.loginBtn} onPress={() => navigation.navigate('Home')}>
           <Text style={styles.loginText}>LOGIN</Text>
         </TouchableOpacity>
+
+        <TouchableOpacity style={styles.register_button}>
+          <Text style={styles.loginText}>REGISTER</Text>
+        </TouchableOpacity>
       </View>
     );
 }
@@ -58,7 +62,7 @@ const styles = StyleSheet.create({
     inputView: {
       backgroundColor: "#FFC0CB",
       borderRadius: 30,
-      width: "70%",
+      width: "80%",
       height: 45,
       marginBottom: 20,
    
@@ -74,7 +78,17 @@ const styles = StyleSheet.create({
    
     forgot_button: {
       height: 30,
-      marginBottom: 30,
+      marginBottom: 10,
+    },
+
+    register_button: {
+      width: "80%",
+      borderRadius: 25,
+      height: 50,
+      alignItems: "center",
+      justifyContent: "center",
+      marginTop: 20,
+      backgroundColor: "#99ccff",
     },
    
     loginBtn: {
@@ -83,7 +97,7 @@ const styles = StyleSheet.create({
       height: 50,
       alignItems: "center",
       justifyContent: "center",
-      marginTop: 40,
+      marginTop: 20,
       backgroundColor: "#FF1493",
     },
   });
