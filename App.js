@@ -69,7 +69,6 @@ function App() {
       <Stack.Screen
         name="Login"
         component={LoginScreen}
-        options={{ headerTitle: props => <LogoTitle {...props} /> }}
       ></Stack.Screen>
       <Stack.Screen
           name="Home"
