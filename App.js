@@ -4,6 +4,7 @@ import { Text, View, Image, TextInput, Button, TouchableOpacity, StyleSheet} fro
 import { NavigationContainer } from '@react-navigation/native';
 import { createStackNavigator } from '@react-navigation/stack';
 import LoginScreen from './forms/login.js';
+import RegisterScreen from './forms/register.js';
 
 function HomeScreen() {
   return (
@@ -37,6 +38,10 @@ function App() {
           component={HomeScreen}
           options={{ headerTitle: props => <LogoTitle {...props} /> }}
       />
+      <Stack.Screen
+        name="Register"
+        component={RegisterScreen}
+      ></Stack.Screen>
       </Stack.Navigator>
     </NavigationContainer>
   );

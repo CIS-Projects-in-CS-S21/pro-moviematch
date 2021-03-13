@@ -40,8 +40,8 @@ export default function LoginScreen({ navigation }) {
           <Text style={styles.loginText}>LOGIN</Text>
         </TouchableOpacity>
 
-        <TouchableOpacity style={styles.register_button}>
-          <Text style={styles.loginText}>REGISTER</Text>
+        <TouchableOpacity style={styles.register_button} onPress={() => navigation.navigate('Register')}>
+          <Text style={styles.loginText}>REGISTER </Text>
         </TouchableOpacity>
       </View>
     );
