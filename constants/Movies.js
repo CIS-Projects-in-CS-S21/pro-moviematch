@@ -11,4 +11,24 @@ export const HomeScreenPics = shuffleArray([
     title: 'Air Bud',
     description: 'A lonely boy befriends a stray dog who has a natural talent for basketball and together they experience the highs and lows of life as their friendship remains solid through a series of escapades.',
   },
+  {
+    pic: require('../assets/movieposters/airbudposter.jpg'),
+    title: 'Air Bud',
+    description: 'A lonely boy befriends a stray dog who has a natural talent for basketball and together they experience the highs and lows of life as their friendship remains solid through a series of escapades.',
+  },
+  {
+    pic: require('../assets/movieposters/airbudposter.jpg'),
+    title: 'Air Bud',
+    description: 'A lonely boy befriends a stray dog who has a natural talent for basketball and together they experience the highs and lows of life as their friendship remains solid through a series of escapades.',
+  },
+  {
+    pic: require('../assets/movieposters/airbudposter.jpg'),
+    title: 'Air Bud',
+    description: 'A lonely boy befriends a stray dog who has a natural talent for basketball and together they experience the highs and lows of life as their friendship remains solid through a series of escapades.',
+  },
+  {
+    pic: require('../assets/movieposters/airbudposter.jpg'),
+    title: 'Air Bud',
+    description: 'A lonely boy befriends a stray dog who has a natural talent for basketball and together they experience the highs and lows of life as their friendship remains solid through a series of escapades.',
+  },
 ])
