@@ -1,6 +1,6 @@
 import shuffleArray from '../utils/shuffleArray'
 
-export const HomeScreenPics = shuffleArray([
+export const SwipeableMovies = shuffleArray([
   {
     pic: require('../assets/movieposters/boratposter.jpg'),
     title: 'Borat',
