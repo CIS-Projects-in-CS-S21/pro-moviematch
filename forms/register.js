@@ -54,16 +54,17 @@ export default function RegisterScreen({ navigation }) {
           </View>
 
           <TouchableOpacity style={styles.register_button} onPress={() =>
-             navigation.reset({
-                 index: 0,
-                 routes: [
-                     {
-                         name: 'Home',
-                         params: { someParam: 'Param1'},
-                     },
-                 ],
-            })}>
-          <Text style={styles.loginText}>REGISTER</Text>
+                navigation.reset({
+                    index: 0,
+                    routes: [
+                        {
+                            name: 'Home',
+                           params: { someParam: 'Param1'},
+                        },
+                    ],
+                })
+            }>
+            <Text style={styles.loginText}>REGISTER</Text>
           
           </TouchableOpacity>
        </View>
@@ -96,7 +97,6 @@ const styles = StyleSheet.create({
       height: 50,
       flex: 1,
       padding: 10,
-      marginLeft: 20,
     },
 
     register_button: {

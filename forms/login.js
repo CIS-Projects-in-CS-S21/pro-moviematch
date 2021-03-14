@@ -36,7 +36,17 @@ export default function LoginScreen({ navigation }) {
           <Text style={styles.forgot_button}>Forgot Password?</Text>
         </TouchableOpacity>
    
-        <TouchableOpacity style={styles.loginBtn} onPress={() => navigation.navigate('Home')}>
+        <TouchableOpacity style={styles.loginBtn} onPress={() =>
+            navigation.reset({
+              index: 0,
+              routes: [
+                {
+                    name: 'Home',
+                    params: { someParam: 'Param1'},
+                },
+              ],
+            })
+          }>
           <Text style={styles.loginText}>LOGIN</Text>
         </TouchableOpacity>
 
@@ -73,7 +83,6 @@ const styles = StyleSheet.create({
       height: 50,
       flex: 1,
       padding: 10,
-      marginLeft: 20,
     },
    
     forgot_button: {

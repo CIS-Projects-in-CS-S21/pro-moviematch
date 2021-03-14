@@ -6,11 +6,31 @@ import { createStackNavigator } from '@react-navigation/stack';
 import LoginScreen from './forms/login.js';
 import RegisterScreen from './forms/register.js';
 
-function HomeScreen() {
+function HomeScreen({ navigation }) {
   return (
+    /*
     <View style={{ flex: 1, alignItems: 'center', justifyContent: 'center' }}>
       <Text>Home Screen</Text>
     </View>
+    */
+    <View style={styles.container}>
+      <Text>
+        Home Screen
+      </Text>
+      <TouchableOpacity style={styles.logout_button} onPress={() =>
+        navigation.reset({
+          index: 0,
+          routes: [
+           {
+            name: 'Login',
+            params: { someParam: 'Param1'},
+           },
+          ],
+        })
+      }>
+        <Text style={styles.loginText}>Logout</Text>
+      </TouchableOpacity>
+    </View>        
   );
 }
 
@@ -22,6 +42,23 @@ function LogoTitle() {
     />
   );
 }
+
+const styles = StyleSheet.create({
+  container: {
+    flex: 1,
+    backgroundColor: '#fff',
+    justifyContent: 'center',
+    alignItems: "center",
+  },
+  logout_button: {
+    width: "80%",
+    borderRadius: 25,
+    alignItems: "center",
+    backgroundColor: "#99ccff",
+    marginTop: 100,
+    padding: 10,
+  },
+})
 
 const Stack = createStackNavigator();
 
