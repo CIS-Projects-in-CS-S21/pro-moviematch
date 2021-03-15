@@ -9,6 +9,81 @@ export default function RegisterScreen({ navigation }) {
     const [password, setPassword] = useState("");
     const [firstName, setFirstName] = useState("");
     const [lastName, setLastName] = useState("");
+
+    const checkEmailInput= () => {
+      if (email != '')
+        return true
+      return false
+    };
+
+    const checkPasswordInput= () => {
+      if (password != '')
+        return true
+      return false
+    };
+
+    const checkFirstNameInput= () => {
+      if (firstName != '')
+        return true
+      return false
+    };
+
+    const checkLastNameInput= () => {
+      if (lastName != '')
+        return true
+      return false
+    };
+
+    const checkInput = (fieldName) => {
+      if(fieldName.length == 0){
+        return false;
+      }
+      return true;
+
+    }
+
+    const buttonClickListener = (navigation) => {
+      if (checkEmailInput() == true && checkPasswordInput() == true && checkFirstNameInput()== true && checkLastNameInput()==true){
+        navigation.reset({
+          index: 0,
+          routes: [
+            {
+                name: 'Home',
+                params: { someParam: 'Param1'},
+            },
+          ],
+        })
+      }
+      
+      //Not the most convenient but it works for now
+      else if (checkEmailInput()==false && checkPasswordInput()==true && checkFirstNameInput()==true && checkLastNameInput()==true){
+        alert('Invalid Response: Please enter email field');
+      }
+      else if (checkEmailInput()==false && checkPasswordInput()==false && checkFirstNameInput()==true && checkLastNameInput()==true){
+        alert('Invalid Response: Please enter email and password field');
+      }
+      else if (checkEmailInput()==false && checkPasswordInput()==false && checkFirstNameInput()==false && checkLastNameInput()==true){
+        alert('Invalid Response: Please enter email, password, and first name field');
+      }
+      else if (checkEmailInput()==false && checkPasswordInput()==false && checkFirstNameInput()==true && checkLastNameInput()==false){
+        alert('Invalid Response: Please enter email, password, and last name field');
+      }
+      else if (checkEmailInput()==false && checkPasswordInput()==false && checkFirstNameInput()==false && checkLastNameInput()==false){
+        alert('Invalid Response: Please enter all fields');
+      }
+      else if (checkEmailInput()==true && checkPasswordInput()==false && checkFirstNameInput()==false && checkLastNameInput()==false){
+        alert('Invalid Response: Please enter password, first name, and last name fields'); 
+      }
+      else if (checkEmailInput()==true && checkPasswordInput()==true && checkFirstNameInput()==false && checkLastNameInput()==false){
+        alert('Invalid Response: Please enter first name and last name field');
+      }
+      else if (checkEmailInput()==true && checkPasswordInput()==true && checkFirstNameInput()==true && checkLastNameInput()==false){
+        alert('Invalid Response: Please enter last name field');
+      }
+      else {
+        alert('Invalid Response');
+      }
+    };
   
     return (
         <View style={styles.container}>
@@ -54,16 +129,7 @@ export default function RegisterScreen({ navigation }) {
           </View>
 
           <TouchableOpacity style={styles.register_button} onPress={() =>
-                navigation.reset({
-                    index: 0,
-                    routes: [
-                        {
-                            name: 'Home',
-                           params: { someParam: 'Param1'},
-                        },
-                    ],
-                })
-            }>
+                buttonClickListener(navigation)}>
             <Text style={styles.loginText}>REGISTER</Text>
           
           </TouchableOpacity>

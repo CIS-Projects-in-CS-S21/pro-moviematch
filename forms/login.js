@@ -3,10 +3,49 @@ import React, { useState } from 'react';
 import { Text, View, Image, TextInput, Button, TouchableOpacity, StyleSheet} from 'react-native';
 import { NavigationContainer } from '@react-navigation/native';
 import { createStackNavigator } from '@react-navigation/stack';
+import authTest from '../Auth/Auth.js'
+import { Value } from 'react-native-reanimated';
+
 
 export default function LoginScreen({ navigation }) {
     const [email, setEmail] = useState("");
     const [password, setPassword] = useState("");
+
+    const checkEmailInput= () => {
+      if (email != '')
+        return true
+      return false
+    };
+
+    const checkPasswordInput= () => {
+      if (password != '')
+        return true
+      return false
+    };
+
+    const buttonClickListener = (navigation) => {
+      //var authStatus = authTest.getAuth();
+    if(checkEmailInput() == true && checkPasswordInput() == true){
+        navigation.reset({ 
+          index: 0,
+          routes: [
+            {
+                name: 'Home',
+                params: { someParam: 'Param1'},
+            },
+          ],
+        })
+      }
+      else if (checkEmailInput() == true && checkPasswordInput() == false){
+        alert('Invalid Response: Please enter password field');
+      }
+      else if (checkEmailInput() == false && checkPasswordInput() == true){
+        alert('Invalid Response: Please enter in email field');
+      } else {
+        alert('Invalid Response: Please enter email and password fields');
+      }
+    };
+      
   
     return (
       <View style={styles.container}>
@@ -35,22 +74,14 @@ export default function LoginScreen({ navigation }) {
         <TouchableOpacity>
           <Text style={styles.forgot_button}>Forgot Password?</Text>
         </TouchableOpacity>
-   
         <TouchableOpacity style={styles.loginBtn} onPress={() =>
-            navigation.reset({
-              index: 0,
-              routes: [
-                {
-                    name: 'Home',
-                    params: { someParam: 'Param1'},
-                },
-              ],
-            })
+            buttonClickListener(navigation)
           }>
           <Text style={styles.loginText}>LOGIN</Text>
         </TouchableOpacity>
 
-        <TouchableOpacity style={styles.register_button} onPress={() => navigation.navigate('Register')}>
+        <TouchableOpacity style={styles.register_button} onPress={() =>
+          navigation.navigate('Register')}>
           <Text style={styles.loginText}>REGISTER </Text>
         </TouchableOpacity>
       </View>
