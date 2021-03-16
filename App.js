@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { Text, View, Image, TextInput, Button, TouchableOpacity, StyleSheet} from 'react-native';
+import { Text, View, SafeAreaView, Image, TextInput, Button, TouchableOpacity, StyleSheet} from 'react-native';
 import { NavigationContainer } from '@react-navigation/native';
 import { createStackNavigator } from '@react-navigation/stack';
 import LoginScreen from './forms/login.js';
@@ -10,11 +10,12 @@ import { SwipeableMovies } from './constants/Movies.js'
 
 function HomeScreen({ navigation }) {
   return (
-    <View style={styles.container}>
+    <SafeAreaView style={styles.container}>
       <Swiper
           cards={SwipeableMovies}
           renderCard={Card}
           infinite // keep looping cards infinitely
+          verticalSwipe={false}
           backgroundColor="white"
           cardHorizontalMargin={0}
           stackSize={2} // number of cards shown in background
@@ -33,7 +34,7 @@ function HomeScreen({ navigation }) {
       }>
         <Text style={styles.loginText}>Logout</Text>
       </TouchableOpacity> */}
-    </View>        
+    </SafeAreaView>        
   );
 }
 
