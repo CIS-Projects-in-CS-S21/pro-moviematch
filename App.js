@@ -20,20 +20,6 @@ function HomeScreen({ navigation }) {
           cardHorizontalMargin={0}
           stackSize={2} // number of cards shown in background
           />
-          {/*
-      <TouchableOpacity style={styles.logout_button} onPress={() =>
-        navigation.reset({
-          index: 0,
-          routes: [
-           {
-            name: 'Login',
-            params: { someParam: 'Param1'},
-           },
-          ],
-        })
-      }>
-        <Text style={styles.loginText}>Logout</Text>
-      </TouchableOpacity> */}
     </SafeAreaView>        
   );
 }
