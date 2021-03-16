@@ -33,3 +33,6 @@ Jacob Cannon
   - Select sign in to your account 
   - Sign in credentials: username: moviematch   password: moviematch
   - Select MovieMatch under Published Projects list
+
+### To Login to MovieMatch App
+  - On Login page, type in email: demo1test@gmail.com & password: moviematch
