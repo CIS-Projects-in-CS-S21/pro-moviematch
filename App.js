@@ -1,36 +1,26 @@
-import { StatusBar } from 'expo-status-bar';
 import React, { useState } from 'react';
-import { Text, View, Image, TextInput, Button, TouchableOpacity, StyleSheet} from 'react-native';
+import { Text, View, SafeAreaView, Image, TextInput, Button, TouchableOpacity, StyleSheet} from 'react-native';
 import { NavigationContainer } from '@react-navigation/native';
 import { createStackNavigator } from '@react-navigation/stack';
 import LoginScreen from './forms/login.js';
 import RegisterScreen from './forms/register.js';
+import Swiper from 'react-native-deck-swiper'
+import { Card } from './components/Cards.js'
+import { SwipeableMovies } from './constants/Movies.js'
 
 function HomeScreen({ navigation }) {
   return (
-    /*
-    <View style={{ flex: 1, alignItems: 'center', justifyContent: 'center' }}>
-      <Text>Home Screen</Text>
-    </View>
-    */
-    <View style={styles.container}>
-      <Text>
-        Home Screen
-      </Text>
-      <TouchableOpacity style={styles.logout_button} onPress={() =>
-        navigation.reset({
-          index: 0,
-          routes: [
-           {
-            name: 'Login',
-            params: { someParam: 'Param1'},
-           },
-          ],
-        })
-      }>
-        <Text style={styles.loginText}>Logout</Text>
-      </TouchableOpacity>
-    </View>        
+    <SafeAreaView style={styles.container}>
+      <Swiper
+          cards={SwipeableMovies}
+          renderCard={Card}
+          infinite // keep looping cards infinitely
+          verticalSwipe={false}
+          backgroundColor="white"
+          cardHorizontalMargin={0}
+          stackSize={2} // number of cards shown in background
+          />
+    </SafeAreaView>        
   );
 }
 
