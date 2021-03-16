@@ -22,14 +22,19 @@ Jacob Cannon
 ### iOS Installation
 
   - Download Expo Go in the App Store
-  - Open Expo Go and select Profile tab
+  - Open Expo Go
+  - Scan the QR code shared during the demo
+  - OR
+  - Select Profile tab
   - Select sign in to your account 
   - Sign in credentials: username: moviematch   password: moviematch
   - Select MovieMatch under Published Projects list
   
 ### Android Installation
   - Download Expo Go in the Google Play Store
-  - Open Expo Go and select Profile tab
+  - Open Expo Go
+  - OR
+  - Select Profile tab
   - Select sign in to your account 
   - Sign in credentials: username: moviematch   password: moviematch
   - Select MovieMatch under Published Projects list
