@@ -41,3 +41,7 @@ Jacob Cannon
 
 ### To Login to MovieMatch App
   - On Login page, type in email: demo1test@gmail.com & password: moviematch
+
+
+### QR CODE
+  - ![Code](Moviematchqr.png)
