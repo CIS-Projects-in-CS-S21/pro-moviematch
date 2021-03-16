@@ -25,7 +25,7 @@ export default function LoginScreen({ navigation }) {
 
     //Mock User credentials for demo 1
     const checkEmailValid= () => {
-      if (email === 'demo1test@gmail.com')
+      if (email === 'demo1test@gmail.com' || 'Demo1test@gmail.com')
         return true
       return false
     }
