@@ -1,9 +1,25 @@
-var express = require('express')
+const express = require('express')
 
-var router = express.Router()
+const Group = require('../models/Group')
 
-router.get('/', (req,res) => {
-    res.send('Group Page!')
+const router = express.Router()
+
+router.post('/', (req, res) => {
+
+    const group = new Group({
+        group_id: req.body.group_id,
+        title: req.body.title,
+        description: req.body.description
+    })
+
+    group.save()
+        .then(result => {
+            res.send({
+                message: 'Group data has been created succesfully.',
+                data: result
+            })
+        })
+        .catch(err => console.log(err))
 })
 
 module.exports = router
