@@ -25,8 +25,9 @@ app.use('/api/movie_likes', movielikes)
 require('dotenv').config()
 
 const port = process.env.PORT || 3000
+const connect = process.env.CONNECT
 
-mongoose.connect('mongodb+srv://moviematch:moviematch123@cluster0.ewgqp.mongodb.net/movie_match?retryWrites=true&w=majority')
+mongoose.connect(connect)
     .then(result => {
 
         app.listen(port, () => console.log(`Server is running on port ${port}`))
