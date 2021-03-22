@@ -10,6 +10,8 @@ import { Card } from './components/Cards.js'
 import { SwipeableMovies } from './constants/Movies.js'
 import Ionicons from 'react-native-vector-icons/Ionicons';
 import ChangePasswordScreen from './forms/passwordChange.js';
+import {ButtonGroup} from 'react-native-elements';
+import {CheckBox} from 'react-native-elements';
 
 function HomeScreen({ navigation }) {
   return (
@@ -104,7 +106,80 @@ function AccountsScreen({navigation}) {
 
 function SettingsScreen({navigation}) {
   return (
-    <View style={{ flex: 1, justifyContent: 'center', alignItems: 'center' }}>
+    //Checkbox currently not working.  Need change
+    <View style={{flex: 1, justifyContent: 'center', alignItems: 'center'}}>
+      <View>
+        <Text style={{fontWeight: 'bold', fontSize: 20}}>Streaming services</Text>
+      </View>
+      <View style={{backgroundColor: '#d3d3d3', borderRadius:10, borderWith:1, padding:10, marginLeft:10, marginRight:10}}>
+        <View style={{alignItems: 'left'}}>
+          <Text>Streaming Services goes here</Text>
+          <CheckBox
+            checkedColor="#0F0"
+            containerStyle={{}}
+            onIconPress={() => console.log("onIconPress()")}
+            onLongIconPress={() =>
+              console.log("onLongIconPress()")
+            }
+            onLongPress={() => console.log("onLongPress()")}
+            onPress={() => console.log("onPress()")}
+            size={30}
+            textStyle={{}}
+            title="Netflix"
+            titleProps={{}}
+            uncheckedColor="#F00"
+           
+          />
+          <CheckBox
+            checkedColor="#0F0"
+            containerStyle={{}}
+            onIconPress={() => console.log("onIconPress()")}
+            onLongIconPress={() =>
+              console.log("onLongIconPress()")
+            }
+            onLongPress={() => console.log("onLongPress()")}
+            onPress={() => console.log("onPress()")}
+            size={30}
+            textStyle={{}}
+            title="Amazon Prime"
+            titleProps={{}}
+            uncheckedColor="#F00"
+           
+          />
+          <CheckBox
+            checkedColor="#0F0"
+            containerStyle={{}}
+            onIconPress={() => console.log("onIconPress()")}
+            onLongIconPress={() =>
+              console.log("onLongIconPress()")
+            }
+            onLongPress={() => console.log("onLongPress()")}
+            onPress={() => console.log("onPress()")}
+            size={30}
+            textStyle={{}}
+            title="Disney+"
+            titleProps={{}}
+            uncheckedColor="#F00"
+           
+          />
+          <CheckBox
+            checkedColor="#0F0"
+            containerStyle={{}}
+            onIconPress={() => console.log("onIconPress()")}
+            onLongIconPress={() =>
+              console.log("onLongIconPress()")
+            }
+            onLongPress={() => console.log("onLongPress()")}
+            onPress={() => console.log("onPress()")}
+            size={30}
+            textStyle={{}}
+            title="HBO Max"
+            titleProps={{}}
+            uncheckedColor="#F00"
+           
+          />
+        </View>
+      </View>
       <TouchableOpacity style={styles.logout_button} onPress={() =>
         navigation.reset({
           index: 0,
