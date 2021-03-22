@@ -4,6 +4,16 @@ const Movie = require('../models/Movie')
 
 const router = express.Router()
 
+router.get('/:id', async (req, res) => {
+
+    const movie = await Movie.findOne({movie_id:req.body.movie_id});
+
+    if (movie) {
+         res.send({data: movie})
+    } else {
+        res.status(404).send("404 Not found!")
+    }
+})
 
 router.post('/', async (req, res) => {
 
