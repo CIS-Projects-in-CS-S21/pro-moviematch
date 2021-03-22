@@ -122,7 +122,8 @@ function SettingsScreen({navigation}) {
               console.log("onLongIconPress()")
             }
             onLongPress={() => console.log("onLongPress()")}
-            onPress={() => console.log("onPress()")}
+            //checked={this.state.checked}
+            onPress={() => console.log(this.state)}
             size={30}
             textStyle={{}}
             title="Netflix"
