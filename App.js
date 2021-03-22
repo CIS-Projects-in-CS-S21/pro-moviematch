@@ -9,6 +9,7 @@ import Swiper from 'react-native-deck-swiper'
 import { Card } from './components/Cards.js'
 import { SwipeableMovies } from './constants/Movies.js'
 import Ionicons from 'react-native-vector-icons/Ionicons';
+import ChangePasswordScreen from './forms/passwordChange.js';
 
 function HomeScreen({ navigation }) {
   return (
@@ -39,6 +40,8 @@ function HomeTabs() {
               : 'ios-home-outline';
           } else if (route.name === 'Settings') {
             iconName = focused ? 'settings' : 'ios-settings-outline';
+          } else if (route.name === 'Accounts') {
+            iconName = focused ? 'ios-person' : 'ios-person-outline';
           }
           return <Ionicons name={iconName} size={size} color={color} />;
         },
@@ -49,8 +52,52 @@ function HomeTabs() {
     }}
     >
       <Tab.Screen name="Home" component={HomeScreen} />
+      <Tab.Screen name="Accounts" component={AccountsScreen} />
       <Tab.Screen name="Settings" component={SettingsScreen} />
     </Tab.Navigator>
+  );
+}
+
+function AccountsScreen({navigation}) {
+  //Mock data for now
+  var userEmail = "demo1test@gmail.com";
+  var userFirstName = "John";
+  var userLastName = "Doe";
+  return (
+
+    <View style={{ flex: 1, justifyContent: 'center', alignItems: 'center' }}>
+      <View style={{flexDirection:"row"}}>
+        <View style={{flex:1, alignItems: 'center'}}>
+          <Text>User Email :</Text>
+          <Text>First Name :</Text>
+          <Text>Last Name :</Text>
+        </View>
+        <View style={{flex:1}}>
+          <Text>{userEmail}</Text>
+          <Text>{userFirstName}</Text>
+          <Text>{userLastName}</Text>
+        </View>
+      </View>
+      
+      <TouchableOpacity style={styles.logout_button} onPress={() =>
+        navigation.navigate('Change Password')}>
+        <Text style={styles.loginText}>Change Password</Text>
+      </TouchableOpacity>
+
+      <TouchableOpacity style={styles.logout_button} onPress={() =>
+        navigation.reset({
+          index: 0,
+          routes: [
+           {
+            name: 'Login',
+            params: { someParam: 'Param1'},
+           },
+          ],
+        })
+      }>
+        <Text style={styles.loginText}>Logout</Text>
+      </TouchableOpacity>
+    </View>
   );
 }
 
@@ -120,6 +167,11 @@ function App() {
         <Stack.Screen
           name="Register"
           component={RegisterScreen}
+        ></Stack.Screen>
+
+        <Stack.Screen
+          name="Change Password"
+          component={ChangePasswordScreen}
         ></Stack.Screen>
       </Stack.Navigator>
   </NavigationContainer>
