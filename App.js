@@ -7,12 +7,13 @@ import RegisterScreen from './forms/register.js';
 import Swiper from 'react-native-deck-swiper'
 import { Card } from './components/Cards.js'
 import { SwipeableMovies } from './constants/Movies.js'
+import exportArray from './queries/query_tester/test'
 
 function HomeScreen({ navigation }) {
   return (
     <SafeAreaView style={styles.container}>
       <Swiper
-          cards={SwipeableMovies}
+          cards={exportArray}
           renderCard={Card}
           infinite // keep looping cards infinitely
           verticalSwipe={false}
