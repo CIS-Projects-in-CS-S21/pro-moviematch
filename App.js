@@ -105,6 +105,10 @@ function AccountsScreen({navigation}) {
 
 
 function SettingsScreen({navigation}) {
+  const [checked, toggleChecked] = useState(false);
+  const [checked2, toggleChecked2] = useState(false);
+  const [checked3, toggleChecked3] = useState(false);
+  const [checked4, toggleChecked4] = useState(false);
   return (
     //Checkbox currently not working.  Need change
     <View style={{flex: 1, justifyContent: 'center', alignItems: 'center'}}>
@@ -117,13 +121,8 @@ function SettingsScreen({navigation}) {
           <CheckBox
             checkedColor="#0F0"
             containerStyle={{}}
-            onIconPress={() => console.log("onIconPress()")}
-            onLongIconPress={() =>
-              console.log("onLongIconPress()")
-            }
-            onLongPress={() => console.log("onLongPress()")}
-            //checked={this.state.checked}
-            onPress={() => console.log(this.state)}
+            checked={checked}
+            onPress={() => toggleChecked(!checked)}
             size={30}
             textStyle={{}}
             title="Netflix"
@@ -134,12 +133,8 @@ function SettingsScreen({navigation}) {
           <CheckBox
             checkedColor="#0F0"
             containerStyle={{}}
-            onIconPress={() => console.log("onIconPress()")}
-            onLongIconPress={() =>
-              console.log("onLongIconPress()")
-            }
-            onLongPress={() => console.log("onLongPress()")}
-            onPress={() => console.log("onPress()")}
+            checked={checked2}
+            onPress={() => toggleChecked2(!checked2)}
             size={30}
             textStyle={{}}
             title="Amazon Prime"
@@ -150,12 +145,8 @@ function SettingsScreen({navigation}) {
           <CheckBox
             checkedColor="#0F0"
             containerStyle={{}}
-            onIconPress={() => console.log("onIconPress()")}
-            onLongIconPress={() =>
-              console.log("onLongIconPress()")
-            }
-            onLongPress={() => console.log("onLongPress()")}
-            onPress={() => console.log("onPress()")}
+            checked={checked3}
+            onPress={() => toggleChecked3(!checked3)}
             size={30}
             textStyle={{}}
             title="Disney+"
@@ -166,12 +157,8 @@ function SettingsScreen({navigation}) {
           <CheckBox
             checkedColor="#0F0"
             containerStyle={{}}
-            onIconPress={() => console.log("onIconPress()")}
-            onLongIconPress={() =>
-              console.log("onLongIconPress()")
-            }
-            onLongPress={() => console.log("onLongPress()")}
-            onPress={() => console.log("onPress()")}
+            checked={checked4}
+            onPress={() => toggleChecked4(!checked4)}
             size={30}
             textStyle={{}}
             title="HBO Max"
