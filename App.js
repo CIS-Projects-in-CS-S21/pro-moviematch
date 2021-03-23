@@ -117,7 +117,6 @@ function SettingsScreen({navigation}) {
       </View>
       <View style={{backgroundColor: '#d3d3d3', borderRadius:10, borderWith:1, padding:10, marginLeft:10, marginRight:10}}>
         <View style={{alignItems: 'left'}}>
-          <Text>Streaming Services goes here</Text>
           <CheckBox
             checkedColor="#0F0"
             containerStyle={{}}
