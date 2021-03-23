@@ -68,7 +68,10 @@ function AccountsScreen({navigation}) {
   return (
 
     <View style={{ flex: 1, justifyContent: 'center', alignItems: 'center' }}>
-      <View style={{flexDirection:"row"}}>
+      <View>
+        <Text style={{fontWeight: 'bold', fontSize: 20}}>User Info</Text>
+      </View>
+      <View style={{flexDirection:"row", backgroundColor: '#d3d3d3', borderRadius:10, borderWith:1, padding:10, marginLeft:10, marginRight:10}}>
         <View style={{flex:1, alignItems: 'center'}}>
           <Text>User Email :</Text>
           <Text>First Name :</Text>
@@ -81,7 +84,7 @@ function AccountsScreen({navigation}) {
         </View>
       </View>
       
-      <TouchableOpacity style={styles.logout_button} onPress={() =>
+      <TouchableOpacity style={styles.change_password_button} onPress={() =>
         navigation.navigate('Change Password')}>
         <Text style={styles.loginText}>Change Password</Text>
       </TouchableOpacity>
@@ -201,6 +204,14 @@ const styles = StyleSheet.create({
     alignItems: "center",
   },
   logout_button: {
+    width: "80%",
+    borderRadius: 25,
+    alignItems: "center",
+    backgroundColor: "#99ccff",
+    marginTop: 10,
+    padding: 10,
+  },
+  change_password_button: {
     width: "80%",
     borderRadius: 25,
     alignItems: "center",
