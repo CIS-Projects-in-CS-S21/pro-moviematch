@@ -1,5 +1,6 @@
 const express = require('express')
 const mongoose = require('mongoose')
+const passport = require("passport");
 
 
 const users = require('./routes/users')
@@ -22,6 +23,9 @@ app.use('/api/streaming_services', streamservices)
 app.use('/api/user_group', usergroups)
 app.use('/api/movie_likes', movielikes)
 
+app.use(passport.initialize());
+
+require("./config/passport") (passport);
 require('dotenv').config()
 
 const port = process.env.PORT || 3000
