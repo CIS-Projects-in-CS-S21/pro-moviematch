@@ -25,14 +25,16 @@ export default function LoginScreen({ navigation }) {
 
     //Mock User credentials for demo 1
     const checkEmailValid= () => {
-      if (email === 'demo1test@gmail.com' || 'Demo1test@gmail.com')
+      if (email.toLowerCase() === 'demo1test@gmail.com')
         return true
-      return false
+      //changed for easier testing for now  
+      return true
     }
     const checkPasswordValid= () => {
       if (password === 'moviematch')
         return true
-      return false
+      //changed for easier testing for now 
+      return true
     }
 
     const buttonClickListener = (navigation) => {
