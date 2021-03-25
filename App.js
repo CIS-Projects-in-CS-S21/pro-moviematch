@@ -1,29 +1,56 @@
-import React, { useState } from 'react';
-import { Text, View, SafeAreaView, Image, TextInput, Button, TouchableOpacity, StyleSheet} from 'react-native';
+import React, { useState , useEffect } from 'react';
+import { Text, View, SafeAreaView, Image, TextInput, Button, TouchableOpacity, StyleSheet, ActivityIndicator} from 'react-native';
 import { NavigationContainer } from '@react-navigation/native';
 import { createStackNavigator } from '@react-navigation/stack';
 import LoginScreen from './forms/login.js';
 import RegisterScreen from './forms/register.js';
-import Swiper from 'react-native-deck-swiper'
-import { Card } from './components/Cards.js'
-import { SwipeableMovies } from './constants/Movies.js'
-import exportArray from './queries/query_tester/test'
+import Swiper from 'react-native-deck-swiper';
+import { Card } from './components/Cards.js';
 
 function HomeScreen({ navigation }) {
+  const [isLoading, setLoading] = useState(true);
+  const [data, setData] = useState([]);
+
+  useEffect(() => {
+    fetch('https://api.themoviedb.org/3/movie/popular?api_key=156f6cfa04dae615351cd9878f39b732&language=en-US&page=1')
+      .then((response) => response.json())
+      .then((json) => setData(parseMovies(json.results)))
+      .catch((error) => console.error(error))
+      .finally(() => setLoading(false));
+  }, []);
+  console.log(data);
   return (
     <SafeAreaView style={styles.container}>
-      <Swiper
-          cards={exportArray}
-          renderCard={Card}
-          infinite // keep looping cards infinitely
-          verticalSwipe={false}
-          backgroundColor="white"
-          cardHorizontalMargin={0}
-          stackSize={2} // number of cards shown in background
-          />
-    </SafeAreaView>        
+      {isLoading ? <ActivityIndicator/> : (
+        <Swiper
+            cards={data}
+            renderCard={Card}
+            infinite // keep looping cards infinitely
+            verticalSwipe={false}
+            backgroundColor="white"
+            cardHorizontalMargin={0}
+            stackSize={2} // number of cards shown in background
+            />
+      )}
+    </SafeAreaView>    
   );
 }
+
+function parseMovies(movieArray) {
+  var parsedMovies = [];
+  var i;
+  var imgurl= "https://image.tmdb.org/t/p/original";
+  for (i = 0; i < movieArray.length; i++) {
+    parsedMovies[i] =
+    {
+        pic: {uri: imgurl.concat(movieArray[i].poster_path)},
+        title: movieArray[i].title,
+        caption: movieArray[i].overview,
+    }
+  }
+  return parsedMovies
+}
+
 
 function LogoTitle() {
   return (
