@@ -6,7 +6,7 @@ const router = express.Router()
 
 router.get('/:id', async (req, res) => {
 
-    const movie = await Movie.findOne({movie_id:req.body.movie_id});
+    const movie = await Movie.findOne({movie_id:req.params.id});
 
     if (movie) {
          res.send({data: movie})
