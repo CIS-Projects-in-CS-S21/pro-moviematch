@@ -13,7 +13,7 @@ import ChangePasswordScreen from './forms/passwordChange.js';
 import {ButtonGroup} from 'react-native-elements';
 import {CheckBox} from 'react-native-elements';
 
-function HomeScreen({ navigation }) {
+function QueueScreen({ navigation }) {
   return (
     <SafeAreaView style={styles.container}>
       <Swiper
@@ -36,10 +36,10 @@ function HomeTabs() {
         tabBarIcon: ({ focused, color, size }) => {
           let iconName;
 
-          if (route.name === 'Home') {
+          if (route.name === 'Queue') {
             iconName = focused
-              ? 'ios-home'
-              : 'ios-home-outline';
+              ? 'albums'
+              : 'albums-outline';
           } else if (route.name === 'Settings') {
             iconName = focused ? 'settings' : 'ios-settings-outline';
           } else if (route.name === 'Group') {
@@ -55,7 +55,7 @@ function HomeTabs() {
         inactiveTintColor: 'gray',
     }}
     >
-      <Tab.Screen name="Home" component={HomeScreen} />
+      <Tab.Screen name="Queue" component={QueueScreen} />
       <Tab.Screen name="View Content" component={ViewContentScreen} />
       <Tab.Screen name="Group" component={GroupScreen} />
       <Tab.Screen name="Settings" component={SettingsScreen} />
