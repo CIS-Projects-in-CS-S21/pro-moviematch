@@ -30,7 +30,7 @@ export default function LoginScreen({ navigation }) {
           index: 0,
           routes: [
             {
-                name: 'Home',
+                name: 'HomeTabs',
                 params: { someParam: 'Param1'},
             },
           ],
