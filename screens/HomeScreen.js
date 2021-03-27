@@ -45,7 +45,7 @@ export default function HomeScreen({ navigation }) {
       {
           pic: {uri: imgurl.concat(movieArray[i].poster_path)},
           title: movieArray[i].title,
-          caption: movieArray[i].overview,
+          caption: "Rating: " + movieArray[i].vote_average,
       }
     }
     return parsedMovies
