@@ -23,9 +23,25 @@ export default function LoginScreen({ navigation }) {
       return false
     };
 
+    //Mock User credentials for demo 1
+    const checkEmailValid= () => {
+      if (email.toLowerCase() === 'demo1test@gmail.com')
+        return true
+      //changed for easier testing for now  
+      return true
+    }
+    const checkPasswordValid= () => {
+      if (password === 'moviematch')
+        return true
+      //changed for easier testing for now 
+      return true
+    }
+
     const buttonClickListener = (navigation) => {
       //var authStatus = authTest.getAuth();
     if(checkEmailInput() == true && checkPasswordInput() == true){
+      //mock test for user credentials
+      if(checkEmailValid() == true && checkPasswordValid() == true){
         navigation.reset({ 
           index: 0,
           routes: [
@@ -35,7 +51,10 @@ export default function LoginScreen({ navigation }) {
             },
           ],
         })
+      }else{
+        alert('Email or password incorrect');
       }
+    }
       else if (checkEmailInput() == true && checkPasswordInput() == false){
         alert('Invalid Response: Please enter password field');
       }

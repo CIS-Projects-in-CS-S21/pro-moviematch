@@ -15,3 +15,33 @@ X'Zaiver Wolfinbarger
 Brandon Lokey
 
 Jacob Cannon
+
+## Installation Instructions
+
+
+### iOS Installation
+
+  - Download Expo Go in the App Store
+  - Open Expo Go
+  - Scan the QR code shared during the demo
+  - OR
+  - Select Profile tab
+  - Select sign in to your account 
+  - Sign in credentials: username: moviematch   password: moviematch
+  - Select MovieMatch under Published Projects list
+  
+### Android Installation
+  - Download Expo Go in the Google Play Store
+  - Open Expo Go
+  - OR
+  - Select Profile tab
+  - Select sign in to your account 
+  - Sign in credentials: username: moviematch   password: moviematch
+  - Select MovieMatch under Published Projects list
+
+### To Login to MovieMatch App
+  - On Login page, type in email: demo1test@gmail.com & password: moviematch
+
+
+### QR CODE
+  - ![Code](Moviematchqr.png)
