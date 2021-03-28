@@ -12,7 +12,6 @@ import ChangePasswordScreen from './forms/passwordChange.js';
 import {ButtonGroup} from 'react-native-elements';
 import {CheckBox} from 'react-native-elements';
 
-
 function HomeTabs() {
   return (
     <Tab.Navigator
@@ -20,14 +19,16 @@ function HomeTabs() {
         tabBarIcon: ({ focused, color, size }) => {
           let iconName;
 
-          if (route.name === 'Home') {
+          if (route.name === 'Queue') {
             iconName = focused
-              ? 'ios-home'
-              : 'ios-home-outline';
+              ? 'albums'
+              : 'albums-outline';
           } else if (route.name === 'Settings') {
             iconName = focused ? 'settings' : 'ios-settings-outline';
-          } else if (route.name === 'Accounts') {
-            iconName = focused ? 'ios-person' : 'ios-person-outline';
+          } else if (route.name === 'Group') {
+            iconName = focused ? 'people' : 'people-outline';
+          } else if (route.name === 'View Content') {
+            iconName = focused ? 'film' : 'film-outline';
           }
           return <Ionicons name={iconName} size={size} color={color} />;
         },
@@ -37,21 +38,48 @@ function HomeTabs() {
         inactiveTintColor: 'gray',
     }}
     >
-      <Tab.Screen name="Home" component={HomeScreen} />
-      <Tab.Screen name="Accounts" component={AccountsScreen} />
+      <Tab.Screen name="Queue" component={HomeScreen} />
+      <Tab.Screen name="View Content" component={ViewContentScreen} />
+      <Tab.Screen name="Group" component={GroupScreen} />
       <Tab.Screen name="Settings" component={SettingsScreen} />
     </Tab.Navigator>
   );
 }
 
-function AccountsScreen({navigation}) {
-  //Mock data for now
+function ViewContentScreen({navigation}) {
+  return (
+
+    <View style={{ flex: 1, justifyContent: 'center', alignItems: 'center' }}>
+      <View>
+        <Text>View Content Here</Text>
+      </View>
+    </View>
+  );
+}
+
+function GroupScreen({navigation}) {
+  return (
+
+    <View style={{ flex: 1, justifyContent: 'center', alignItems: 'center' }}>
+      <View>
+        <Text>Group Content will go here</Text>
+      </View>
+    </View>
+  );
+}
+
+
+function SettingsScreen({navigation}) {
+  const [checked, toggleChecked] = useState(false);
+  const [checked2, toggleChecked2] = useState(false);
+  const [checked3, toggleChecked3] = useState(false);
+  const [checked4, toggleChecked4] = useState(false);
   var userEmail = "demo1test@gmail.com";
   var userFirstName = "John";
   var userLastName = "Doe";
   return (
-
-    <View style={{ flex: 1, justifyContent: 'center', alignItems: 'center' }}>
+    //Checkbox currently not working.  Need change
+    <View style={{flex: 1, justifyContent: 'center', alignItems: 'center'}}>
       <View>
         <Text style={{fontWeight: 'bold', fontSize: 20}}>User Info</Text>
       </View>
@@ -67,38 +95,6 @@ function AccountsScreen({navigation}) {
           <Text>{userLastName}</Text>
         </View>
       </View>
-      
-      <TouchableOpacity style={styles.change_password_button} onPress={() =>
-        navigation.navigate('Change Password')}>
-        <Text style={styles.loginText}>Change Password</Text>
-      </TouchableOpacity>
-
-      <TouchableOpacity style={styles.logout_button} onPress={() =>
-        navigation.reset({
-          index: 0,
-          routes: [
-           {
-            name: 'Login',
-            params: { someParam: 'Param1'},
-           },
-          ],
-        })
-      }>
-        <Text style={styles.loginText}>Logout</Text>
-      </TouchableOpacity>
-    </View>
-  );
-}
-
-
-function SettingsScreen({navigation}) {
-  const [checked, toggleChecked] = useState(false);
-  const [checked2, toggleChecked2] = useState(false);
-  const [checked3, toggleChecked3] = useState(false);
-  const [checked4, toggleChecked4] = useState(false);
-  return (
-    //Checkbox currently not working.  Need change
-    <View style={{flex: 1, justifyContent: 'center', alignItems: 'center'}}>
       <View>
         <Text style={{fontWeight: 'bold', fontSize: 20}}>Streaming services</Text>
       </View>
@@ -154,6 +150,10 @@ function SettingsScreen({navigation}) {
           />
         </View>
       </View>
+      <TouchableOpacity style={styles.change_password_button} onPress={() =>
+        navigation.navigate('Change Password')}>
+        <Text style={styles.loginText}>Change Password</Text>
+      </TouchableOpacity>
       <TouchableOpacity style={styles.logout_button} onPress={() =>
         navigation.reset({
           index: 0,
@@ -183,42 +183,6 @@ function LogoTitle() {
 const Stack = createStackNavigator();
 const Tab = createBottomTabNavigator();
 
-function HomeTabs() {
-  return (
-    <Tab.Navigator
-      screenOptions={({ route }) => ({
-        tabBarIcon: ({ focused, color, size }) => {
-          let iconName;
-
-          if (route.name === 'Queue') {
-            iconName = focused
-              ? 'albums'
-              : 'albums-outline';
-          } else if (route.name === 'Settings') {
-            iconName = focused ? 'settings' : 'ios-settings-outline';
-          } else if (route.name === 'Group') {
-            iconName = focused ? 'people' : 'people-outline';
-          } else if (route.name === 'View Content') {
-            iconName = focused ? 'film' : 'film-outline';
-          }
-          return <Ionicons name={iconName} size={size} color={color} />;
-        },
-      })}
-      tabBarOptions={{
-        activeTintColor: '#FF1493',
-        inactiveTintColor: 'gray',
-    }}
-    >
-      {/* COMMENTED OUT UNTIL I MERGE DAVID'S BRANCH IN!!  */}
-      {/* SEPERATE GROUP SETTINGS AND QUEUE INTO SEPERATE FILES */}
-      {/*  */}
-      {/* <Tab.Screen name="Queue" component={QueueScreen} /> */}
-      <Tab.Screen name="View Content" component={HomeScreen} />
-      {/* <Tab.Screen name="Group" component={GroupScreen} />
-      <Tab.Screen name="Settings" component={SettingsScreen} /> */}
-    </Tab.Navigator>
-  );
-}
 const styles = StyleSheet.create({
   container: {
     flex: 1,
