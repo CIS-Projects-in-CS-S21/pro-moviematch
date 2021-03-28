@@ -46,8 +46,8 @@ export default function LoginScreen({ navigation }) {
           index: 0,
           routes: [
             {
-              name: 'Home',
-              params: { someParam: 'Param1'},
+                name: 'HomeTabs',
+                params: { someParam: 'Param1'},
             },
           ],
         })
