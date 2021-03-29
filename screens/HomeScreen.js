@@ -7,10 +7,11 @@ import Swiper from 'react-native-deck-swiper';
 import { Card } from '../components/Cards.js';
 
 
-export default function HomeScreen({ navigation }) {
+export default function HomeScreen({ navigation }, page) {
     const [isLoading, setLoading] = useState(true);
     const [data, setData] = useState([]);
-  
+    //var page = 1;
+
     useEffect(() => {
       fetch('https://api.themoviedb.org/3/movie/popular?api_key=156f6cfa04dae615351cd9878f39b732&language=en-US&page=1')
         .then((response) => response.json())
@@ -19,22 +20,41 @@ export default function HomeScreen({ navigation }) {
         .finally(() => setLoading(false));
     }, []);
     console.log(data);
+
     return (
       <SafeAreaView style={styles.container}>
         {isLoading ? <ActivityIndicator/> : (
           <Swiper
               cards={data}
               renderCard={Card}
-              infinite // keep looping cards infinitely
+              // infinite // keep looping cards infinitely
               verticalSwipe={false}
               backgroundColor="white"
               cardHorizontalMargin={0}
               stackSize={2} // number of cards shown in background
+              /*onSwipedAll = {
+                setData(getData(page + 1))
+                }*/ // Can't use hooks, trying to find alternative way to fill data variable
               />
         )}
       </SafeAreaView>    
     );
 }
+
+  // Pass page num and fetch data on page
+  function getData(page) {
+    const [data, setData] = useState([]);
+
+    fetch('https://api.themoviedb.org/3/movie/popular?api_key=156f6cfa04dae615351cd9878f39b732&language=en-US&page=' + page)
+      .then((response) => response.json())
+      .then((json) => setData(parseMovies(json.results)))
+      .catch((error) => console.error(error))
+      .finally(() => setLoading(false));
+    
+    console.log(data);
+    
+    return data;
+  }
   
   function parseMovies(movieArray) {
     var parsedMovies = [];
