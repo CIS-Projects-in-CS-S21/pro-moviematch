@@ -1,34 +1,17 @@
-import React, { useState } from 'react';
-import { Text, View, SafeAreaView, Image, TextInput, Button, TouchableOpacity, StyleSheet} from 'react-native';
+import React, { useState , useEffect } from 'react';
+import { Text, View, SafeAreaView, Image, TextInput, Button, TouchableOpacity, StyleSheet, ActivityIndicator} from 'react-native';
 import { NavigationContainer } from '@react-navigation/native';
 import { createStackNavigator } from '@react-navigation/stack';
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 import LoginScreen from './forms/login.js';
 import RegisterScreen from './forms/register.js';
-import Swiper from 'react-native-deck-swiper'
-import { Card } from './components/Cards.js'
-import { SwipeableMovies } from './constants/Movies.js'
+
+import HomeScreen from './screens/HomeScreen.js';
 import Ionicons from 'react-native-vector-icons/Ionicons';
 import ChangePasswordScreen from './forms/passwordChange.js';
 import {ButtonGroup} from 'react-native-elements';
 import {CheckBox} from 'react-native-elements';
 import {LikedList} from './components/LikedList.js'
-
-function QueueScreen({ navigation }) {
-  return (
-    <SafeAreaView style={styles.container}>
-      <Swiper
-          cards={SwipeableMovies}
-          renderCard={Card}
-          infinite // keep looping cards infinitely
-          verticalSwipe={false} //disables vertical swipe
-          backgroundColor="white"
-          cardHorizontalMargin={0}
-          stackSize={2} // number of cards shown in background
-          />
-    </SafeAreaView>        
-  );
-}
 
 function HomeTabs() {
   return (
@@ -56,7 +39,7 @@ function HomeTabs() {
         inactiveTintColor: 'gray',
     }}
     >
-      <Tab.Screen name="Queue" component={QueueScreen} />
+      <Tab.Screen name="Queue" component={HomeScreen} />
       <Tab.Screen name="View Content" component={ViewContentScreen} />
       <Tab.Screen name="Group" component={GroupScreen} />
       <Tab.Screen name="Settings" component={SettingsScreen} />
@@ -198,6 +181,9 @@ function LogoTitle() {
   );
 }
 
+const Stack = createStackNavigator();
+const Tab = createBottomTabNavigator();
+
 const styles = StyleSheet.create({
   container: {
     flex: 1,
@@ -223,9 +209,6 @@ const styles = StyleSheet.create({
   },
 })
 
-const Stack = createStackNavigator();
-const Tab = createBottomTabNavigator();
-
 function App() {
   return (
     <NavigationContainer>
@@ -235,7 +218,7 @@ function App() {
           component={LoginScreen}
         ></Stack.Screen>
         <Stack.Screen
-            name="Home"
+            name="HomeTabs"
             component={HomeTabs}
             options={{ headerTitle: props => <LogoTitle {...props} /> }}
         />
@@ -243,7 +226,6 @@ function App() {
           name="Register"
           component={RegisterScreen}
         ></Stack.Screen>
-
         <Stack.Screen
           name="Change Password"
           component={ChangePasswordScreen}
