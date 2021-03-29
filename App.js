@@ -12,6 +12,7 @@ import Ionicons from 'react-native-vector-icons/Ionicons';
 import ChangePasswordScreen from './forms/passwordChange.js';
 import {ButtonGroup} from 'react-native-elements';
 import {CheckBox} from 'react-native-elements';
+import {LikedList} from './components/LikedList.js'
 
 function QueueScreen({ navigation }) {
   return (
@@ -66,9 +67,9 @@ function HomeTabs() {
 function ViewContentScreen({navigation}) {
   return (
 
-    <View style={{ flex: 1, justifyContent: 'center', alignItems: 'center' }}>
+    <View style={{ }}>
       <View>
-        <Text>View Content Here</Text>
+        <LikedList/>
       </View>
     </View>
   );
