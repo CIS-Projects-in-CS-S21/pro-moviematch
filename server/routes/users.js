@@ -44,12 +44,6 @@ router.post('/', (req, res) => {
 
 })
 
-router.post('/:userID/movielikes', (req, res) => {
-
-    const newLike = new MovieLike(req.body)
-    console.log('newLike', newLike)
-})
-
 
 
 module.exports = router
