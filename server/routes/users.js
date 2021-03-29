@@ -1,8 +1,25 @@
 const express = require('express')
 
 const User = require('../models/User')
+const MovieLike = require('../models/MovieLike')
 
 const router = express.Router()
+
+router.get('/:userId', async (req, res) => {
+
+    try {
+        const user = await User.findOne({userID:req.params.id});
+        res.send({data: user})
+    } catch (err) {
+        res.json({message: err})
+    }
+
+    // if (user) {
+    //      res.send({data: user})
+    // } else {
+    //     res.status(404).send("404 Not found!")
+    // }
+})
 
 router.post('/', (req, res) => {
     const user = new User({
@@ -25,6 +42,12 @@ router.post('/', (req, res) => {
     })
     .catch(err => console.log(err))
 
+})
+
+router.post('/:userID/movielikes', (req, res) => {
+
+    const newLike = new MovieLike(req.body)
+    console.log('newLike', newLike)
 })
 
 
