@@ -40,8 +40,8 @@ Jacob Cannon
   - Select MovieMatch under Published Projects list
 
 ### To Login to MovieMatch App
-  - On Login page, type in email: demo1test@gmail.com & password: moviematch
+  - On Login page, type in email: demo2test@gmail.com & password: moviematch
 
 
 ### QR CODE
-  - ![Code](Moviematchqr.png)
+  - ![Code](Demo2QRcode.png)
