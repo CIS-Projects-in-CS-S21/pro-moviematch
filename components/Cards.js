@@ -27,7 +27,7 @@ const styles = StyleSheet.create({
   },
   imageContainer: {
     width: Layout.window.width - 30,
-    height: Layout.window.height - BOTTOM_BAR_HEIGHT * 6,
+    height: Layout.window.height - BOTTOM_BAR_HEIGHT * 6 - 30,
     borderRadius: 20,
     overflow: 'hidden', // this does magic
   },
@@ -35,7 +35,7 @@ const styles = StyleSheet.create({
     justifyContent: 'flex-start',
     position: 'absolute',
     left: 10,
-    bottom: 50,
+    bottom: 60,
     backgroundColor: 'rgba(52, 52, 52, 0.8)',
     padding: '3%',
     borderRadius: 9,
@@ -45,7 +45,7 @@ const styles = StyleSheet.create({
     justifyContent: 'flex-end',
     position: 'absolute',
     left: 10,
-    bottom: 10,
+    bottom: 20,
     fontSize: 12,
     backgroundColor: 'rgba(52, 52, 52, 0.8)',
     padding: '3%',
