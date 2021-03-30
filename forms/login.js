@@ -26,7 +26,7 @@ export default function LoginScreen({ navigation }) {
     };
 
     function getvalues(){
-      return fetch("http://192.168.1.156:3000/api/users/login", {
+      return fetch("http://[PLACE_IP_HERE]:3000/api/users/login", {
         method: 'POST',
         headers: {
           'Accept': 'application/json',
