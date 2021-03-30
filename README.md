@@ -23,7 +23,7 @@ Jacob Cannon
 
   - Download Expo Go in the App Store
   - Open Expo Go
-  - Scan the QR code shared during the demo
+  - Scan the QR code shared during the demo (it is also included at the bottom of this page)
   - OR
   - Select Profile tab
   - Select sign in to your account 
@@ -33,6 +33,7 @@ Jacob Cannon
 ### Android Installation
   - Download Expo Go in the Google Play Store
   - Open Expo Go
+  - Scan the QR code shared during the demo (it is also included at the bottom of this page)
   - OR
   - Select Profile tab
   - Select sign in to your account 
