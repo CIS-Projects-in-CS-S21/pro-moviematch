@@ -4,14 +4,12 @@ const Movie = require('../models/Movie')
 
 const router = express.Router()
 
-router.get('/:id', async (req, res) => {
-
-    const movie = await Movie.findOne({movie_id:req.params.id});
-
-    if (movie) {
-         res.send({data: movie})
-    } else {
-        res.status(404).send("404 Not found!")
+router.get('/:movieId', async (req, res) => {
+    try {
+        const movie = await Movie.findById(req.params.movieId);
+        res.send({data: movie})
+    } catch (err) {
+        res.json({message: "Could not find movie!"})
     }
 })
 
