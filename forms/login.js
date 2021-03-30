@@ -25,7 +25,7 @@ export default function LoginScreen({ navigation }) {
 
     //Mock User credentials for demo 1
     const checkEmailValid= () => {
-      if (email.toLowerCase() === 'demo1test@gmail.com')
+      if (email.toLowerCase() === 'demo2test@gmail.com')
         return true
       //changed for easier testing for now  
       return false
