@@ -6,11 +6,36 @@ import { createStackNavigator } from '@react-navigation/stack';
 import Swiper from 'react-native-deck-swiper';
 import { Card } from '../components/Cards.js';
 
+/*
+  TMDB Movie Genre IDs:
+    Action          28
+    Adventure       12
+    Animation       16
+    Comedy          35
+    Crime           80
+    Documentary     99
+    Drama           18
+    Family          10751
+    Fantasy         14
+    History         36
+    Horror          27
+    Music           10402
+    Mystery         9648
+    Romance         10749
+    Science Fiction 878
+    TV Movie        10770
+    Thriller        53
+    War             10752
+    Western         37
+*/
 
 export default function HomeScreen({ navigation }, page) {
     const [isLoading, setLoading] = useState(true);
     const [data, setData] = useState([]);
     const [offset, setOffset] = useState(1);
+
+    var genreArr = [27, 16];
+    var genreStr = encodeURIComponent(genreArr.join('|'));
     
     useEffect(() => getData(), []);
 
@@ -18,8 +43,8 @@ export default function HomeScreen({ navigation }, page) {
       console.log('getData');
       setLoading(true);
       //Service to get the data from the server to render
-      fetch('https://api.themoviedb.org/3/movie/popular?api_key=156f6cfa04dae615351cd9878f39b732&language=en-US&page='
-            + offset)
+      fetch("https://api.themoviedb.org/3/discover/movie?api_key=156f6cfa04dae615351cd9878f39b732&language=en-US&sort_by=popularity.desc&include_adult=false&include_video=false"
+        + "&page=" + offset + "&with_genres=" + genreStr)
         //Sending the currect offset with get request
         .then((response) => response.json())
         .then((responseJson) => {
