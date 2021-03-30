@@ -75,7 +75,7 @@ function SettingsScreen({navigation}) {
   const [checked2, toggleChecked2] = useState(false);
   const [checked3, toggleChecked3] = useState(false);
   const [checked4, toggleChecked4] = useState(false);
-  var userEmail = "demo1test@gmail.com";
+  var userEmail = "demo2test@gmail.com";
   var userFirstName = "John";
   var userLastName = "Doe";
   return (
