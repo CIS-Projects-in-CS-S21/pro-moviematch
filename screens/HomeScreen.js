@@ -7,25 +7,42 @@ import Swiper from 'react-native-deck-swiper';
 import { Card } from '../components/Cards.js';
 
 
-export default function HomeScreen({ navigation }) {
+export default function HomeScreen({ navigation }, page) {
     const [isLoading, setLoading] = useState(true);
     const [data, setData] = useState([]);
-  
-    useEffect(() => {
-      fetch('https://api.themoviedb.org/3/movie/popular?api_key=156f6cfa04dae615351cd9878f39b732&language=en-US&page=1')
+    const [offset, setOffset] = useState(1);
+    
+    useEffect(() => getData(), []);
+
+    const getData = () => {
+      console.log('getData');
+      setLoading(true);
+      //Service to get the data from the server to render
+      fetch('https://api.themoviedb.org/3/movie/popular?api_key=156f6cfa04dae615351cd9878f39b732&language=en-US&page='
+            + offset)
+        //Sending the currect offset with get request
         .then((response) => response.json())
-        .then((json) => setData(parseMovies(json.results)))
-        .catch((error) => console.error(error))
-        .finally(() => setLoading(false));
-    }, []);
-    console.log(data);
+        .then((responseJson) => {
+          //Successful response
+          setOffset(offset + 1);
+          console.log(offset);
+          //Increasing the offset for the next API call
+          setData([...parseMovies(responseJson.results)]);
+          setLoading(false);
+        })
+        .catch((error) => {
+          console.error(error);
+        });
+    };
+
     return (
       <SafeAreaView style={styles.container}>
         {isLoading ? <ActivityIndicator/> : (
           <Swiper
               cards={data}
               renderCard={Card}
-              infinite // keep looping cards infinitely
+              // infinite // keep looping cards infinitely
+              onSwipedAll={getData}
               verticalSwipe={false}
               backgroundColor="white"
               cardHorizontalMargin={0}
@@ -34,8 +51,7 @@ export default function HomeScreen({ navigation }) {
         )}
       </SafeAreaView>    
     );
-}
-  
+} 
   function parseMovies(movieArray) {
     var parsedMovies = [];
     var i;
