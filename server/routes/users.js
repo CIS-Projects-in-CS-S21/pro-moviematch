@@ -6,19 +6,13 @@ const MovieLike = require('../models/MovieLike')
 const router = express.Router()
 
 router.get('/:userId', async (req, res) => {
-
     try {
-        const user = await User.findOne({userID:req.params.id});
+        const user = await User.findById(req.params.userId);
         res.send({data: user})
     } catch (err) {
-        res.json({message: err})
+        res.json({message: "Could not find user!"})
     }
 
-    // if (user) {
-    //      res.send({data: user})
-    // } else {
-    //     res.status(404).send("404 Not found!")
-    // }
 })
 
 router.post('/', (req, res) => {
