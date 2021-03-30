@@ -1,8 +1,19 @@
 const express = require('express')
 
 const User = require('../models/User')
+const MovieLike = require('../models/MovieLike')
 
 const router = express.Router()
+
+router.get('/:userId', async (req, res) => {
+    try {
+        const user = await User.findById(req.params.userId);
+        res.send({data: user})
+    } catch (err) {
+        res.json({message: "Could not find user!"})
+    }
+
+})
 
 router.post('/', (req, res) => {
     const user = new User({
