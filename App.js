@@ -11,6 +11,7 @@ import Ionicons from 'react-native-vector-icons/Ionicons';
 import ChangePasswordScreen from './forms/passwordChange.js';
 import {ButtonGroup} from 'react-native-elements';
 import {CheckBox} from 'react-native-elements';
+import {LikedList} from './components/LikedList.js'
 
 function HomeTabs() {
   return (
@@ -49,9 +50,9 @@ function HomeTabs() {
 function ViewContentScreen({navigation}) {
   return (
 
-    <View style={{ flex: 1, justifyContent: 'center', alignItems: 'center' }}>
+    <View style={{ }}>
       <View>
-        <Text>View Content Here</Text>
+        <LikedList/>
       </View>
     </View>
   );
@@ -74,7 +75,7 @@ function SettingsScreen({navigation}) {
   const [checked2, toggleChecked2] = useState(false);
   const [checked3, toggleChecked3] = useState(false);
   const [checked4, toggleChecked4] = useState(false);
-  var userEmail = "demo1test@gmail.com";
+  var userEmail = "demo2test@gmail.com";
   var userFirstName = "John";
   var userLastName = "Doe";
   return (
