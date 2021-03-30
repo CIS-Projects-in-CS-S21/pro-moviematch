@@ -28,13 +28,13 @@ export default function LoginScreen({ navigation }) {
       if (email.toLowerCase() === 'demo1test@gmail.com')
         return true
       //changed for easier testing for now  
-      return true
+      return false
     }
     const checkPasswordValid= () => {
       if (password === 'moviematch')
         return true
       //changed for easier testing for now 
-      return true
+      return false
     }
 
     const buttonClickListener = (navigation) => {
