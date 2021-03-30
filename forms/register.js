@@ -3,12 +3,14 @@ import React, { useState } from 'react';
 import { Text, View, Image, TextInput, Button, TouchableOpacity, StyleSheet} from 'react-native';
 import { NavigationContainer } from '@react-navigation/native';
 import { createStackNavigator } from '@react-navigation/stack';
+//import {NetworkInfo} from 'react-native-network-info';
 
 export default function RegisterScreen({ navigation }) {
     const [email, setEmail] = useState("");
     const [password, setPassword] = useState("");
     const [firstName, setFirstName] = useState("");
     const [lastName, setLastName] = useState("");
+
 
     const checkEmailInput= () => {
       if (email != '')
@@ -42,8 +44,9 @@ export default function RegisterScreen({ navigation }) {
 
     }
 
-    const buttonClickListener = (navigation) => {
-      if (checkEmailInput() == true && checkPasswordInput() == true && checkFirstNameInput()== true && checkLastNameInput()==true){
+    const navigateAccreditedUser = (response) => {
+      //alert(response);
+      if(response.hasOwnProperty('code')){
         navigation.reset({
           index: 0,
           routes: [
@@ -54,7 +57,40 @@ export default function RegisterScreen({ navigation }) {
           ],
         })
       }
+      else{
+        alert('Error registering account with given credentials');
+      } 
+    }
+   
+    function getvals(){
+      return fetch("http://[PLACE_IP_HERE]3000/api/users/register", {
+        method: 'POST',
+        headers: {
+          'Accept': 'application/json',
+          'Content-Type': 'application/json'
+        }, 
+        body: JSON.stringify({
+          id: Math.floor(Math.random() * 10000000) + 1 ,
+          email: email,
+          password: password,
+          first_name: firstName,
+          last_name: lastName
+        })
+      })
+      .then((response) => response.json())
+      .then((responseData) => {
+        alert(JSON.stringify(responseData));
+        return responseData;
+      })
+      .catch(error => alert('Error'));
+    }
+  
+    const buttonClickListener = (navigation) => {
+      if (checkEmailInput() == true && checkPasswordInput() == true && checkFirstNameInput()== true && checkLastNameInput()==true){
+
+      getvals().then(response => navigateAccreditedUser(response));
       
+      }
       //Not the most convenient but it works for now
       else if (checkEmailInput()==false && checkPasswordInput()==true && checkFirstNameInput()==true && checkLastNameInput()==true){
         alert('Invalid Response: Please enter email field');
