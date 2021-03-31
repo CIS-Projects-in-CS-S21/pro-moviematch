@@ -1,6 +1,7 @@
 const express = require('express')
 
 const User = require('../models/User')
+const Movie = require('../models/Movie')
 const MovieLike = require('../models/MovieLike')
 
 const router = express.Router()
@@ -38,6 +39,26 @@ router.post('/', (req, res) => {
 
 })
 
+// get all the content liked for a user
+router.get('/:userId/like', async (req, res) => {
+    const { userId } = req.params
+
+    // get user user
+    var user;
+    try {
+        user = await User.findById(req.params.userId).populate('likes');
+    } catch (err) {
+        res.json({message: "Could not find user!"})
+    }
+
+    // get movies
+    var content_ids = user.likes.map(content => content.movie_id)
+    const content = await Movie.find({ '_id': { $in: content_ids }});
+
+    res.status(200).json(content)
+})
+
+// POST a new like
 router.post('/:userId/like', async (req, res) => {
     const {userId} = req.params;
 
@@ -47,7 +68,7 @@ router.post('/:userId/like', async (req, res) => {
     // create new liked_content object
     const likedContent = new MovieLike(req.body)
 
-    // get user user
+    // get user
     var user;
     try {
         user = await User.findById(req.params.userId);
@@ -62,7 +83,6 @@ router.post('/:userId/like', async (req, res) => {
     await likedContent.save()
 
     // // add liked_content to the users liked array
-    // console.log(likedContent._id)
     user.likes.push(likedContent)
 
     // //save the user
