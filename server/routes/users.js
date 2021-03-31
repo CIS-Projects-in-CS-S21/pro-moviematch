@@ -38,6 +38,38 @@ router.post('/', (req, res) => {
 
 })
 
+router.post('/:userId/like', async (req, res) => {
+    const {userId} = req.params;
+
+    // TODO
+    // check that movie has not already been seen
+
+    // create new liked_content object
+    const likedContent = new MovieLike(req.body)
+
+    // get user user
+    var user;
+    try {
+        user = await User.findById(req.params.userId);
+    } catch (err) {
+        res.json({message: "Could not find user!"})
+    }
+
+    // asign the liked_content to the current user
+    likedContent.user = user
+
+    // save the liked_content
+    await likedContent.save()
+
+    // // add liked_content to the users liked array
+    // console.log(likedContent._id)
+    user.likes.push(likedContent)
+
+    // //save the user
+    await user.save()
+    res.status(201).json(likedContent)
+})
+
 
 
 module.exports = router
