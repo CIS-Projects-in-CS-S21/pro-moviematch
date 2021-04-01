@@ -1,9 +1,16 @@
 const request = require('request');
 
+
+
+var sourceID = 'tt4508902'
+var country = 'us'
+ 
+
+
 const options = {
   method: 'GET',
   url: 'https://utelly-tv-shows-and-movies-availability-v1.p.rapidapi.com/idlookup',
-  qs: {source_id: 'tt3398228', source: 'imdb', country: 'us'},
+  qs: {source_id: sourceID, source: 'imdb', country: country},
   headers: {
     'x-rapidapi-key': '939203f5d9msh8669d0a65c92f36p1977dfjsn088d46e4370a',
     'x-rapidapi-host': 'utelly-tv-shows-and-movies-availability-v1.p.rapidapi.com',
@@ -13,6 +20,5 @@ const options = {
 
 request(options, function (error, response, body) {
 	if (error) throw new Error(error);
-
 	console.log(body);
 });
