@@ -278,7 +278,7 @@ export default function SettingsScreen({ navigation }, page) {
             checkedColor="#0F0"
             containerStyle={{}}
             checked={checked15}
-            onPress={() => toggleChecked1(!checked15)}
+            onPress={() => toggleChecked15(!checked15)}
             size={30}
             textStyle={{}}
             title="Sci Fi"
