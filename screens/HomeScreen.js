@@ -34,7 +34,7 @@ export default function HomeScreen({ navigation }, page) {
     const [data, setData] = useState([]);
     const [offset, setOffset] = useState(1);
 
-    var genreArr = [27, 16];
+    var genreArr = [28, 12, 16, 35, 99, 18, 10751, 14, 36, 27, 9648, 878, 53];
     var genreStr = encodeURIComponent(genreArr.join('|'));
     
     useEffect(() => getData(), []);
