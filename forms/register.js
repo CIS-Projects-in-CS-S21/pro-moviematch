@@ -3,7 +3,6 @@ import React, { useState } from 'react';
 import { Text, View, Image, TextInput, Button, TouchableOpacity, StyleSheet} from 'react-native';
 import { NavigationContainer } from '@react-navigation/native';
 import { createStackNavigator } from '@react-navigation/stack';
-//import {NetworkInfo} from 'react-native-network-info';
 
 export default function RegisterScreen({ navigation }) {
     const [email, setEmail] = useState("");
@@ -11,6 +10,7 @@ export default function RegisterScreen({ navigation }) {
     const [firstName, setFirstName] = useState("");
     const [lastName, setLastName] = useState("");
 
+    const tunnelURL = "https://ugly-monkey-90.loca.lt"
 
     const checkEmailInput= () => {
       if (email != '')
@@ -46,7 +46,7 @@ export default function RegisterScreen({ navigation }) {
 
     const navigateAccreditedUser = (response) => {
       //alert(response);
-      if(response.hasOwnProperty('code')){
+      if(response.hasOwnProperty('success')){
         navigation.reset({
           index: 0,
           routes: [
@@ -63,7 +63,7 @@ export default function RegisterScreen({ navigation }) {
     }
    
     function getvals(){
-      return fetch("http://[PLACE_IP_HERE]3000/api/users/register", {
+      return fetch(tunnelURL + "/api/users/register", {
         method: 'POST',
         headers: {
           'Accept': 'application/json',
@@ -159,7 +159,6 @@ export default function RegisterScreen({ navigation }) {
               style={styles.TextInput}
               placeholder="Last Name"
               placeholderTextColor="#003f5c"
-              secureTextEntry={true}
               onChangeText={(lastName) => setLastName(lastName)}
             />
           </View>

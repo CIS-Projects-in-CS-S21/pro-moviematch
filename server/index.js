@@ -39,5 +39,3 @@ mongoose.connect(connect, {useNewUrlParser: true, useUnifiedTopology: true})
 
     })
     .catch(err => console.log(err))
-
-

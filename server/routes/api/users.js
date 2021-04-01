@@ -41,7 +41,7 @@ router.post('/register', (req, res) => {
                     .catch(err => console.log(err));
                 });
             });
-            return res.status(200).json({'code': 'Welcome to MovieMatch, ' + req.body.first_name});
+            return res.status(200).json({ "success": "Welcome to MovieMatch," + req.body.first_name});
         }
     });
 });
@@ -82,7 +82,7 @@ router.post("/login", (req, res) => {
                         });
                     }
                 );
-                return res.status(200).json({'success': 'Welcome back to MovieMatch, ' + user.first_name});
+                return res.status(200).json({ success: "Welcome back to MovieMatch," + user.first_name});
             } else {
                 return res
                 .status(400)

@@ -13,6 +13,8 @@ export default function LoginScreen({ navigation }) {
     const [email, setEmail] = useState("");
     const [password, setPassword] = useState("");
 
+    const tunnelURL = "https://ugly-monkey-90.loca.lt"
+
     const checkEmailInput= () => {
       if (email != '')
         return true
@@ -26,7 +28,7 @@ export default function LoginScreen({ navigation }) {
     };
 
     function getvalues(){
-      return fetch("http://192.168.1.156:3000/api/users/login", {
+      return fetch(tunnelURL + "/api/users/login", {
         method: 'POST',
         headers: {
           'Accept': 'application/json',
