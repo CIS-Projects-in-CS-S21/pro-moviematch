@@ -7,6 +7,7 @@ import LoginScreen from './forms/login.js';
 import RegisterScreen from './forms/register.js';
 
 import HomeScreen from './screens/HomeScreen.js';
+import SettingsScreen from './screens/SettingsScreen.js';
 import Ionicons from 'react-native-vector-icons/Ionicons';
 import ChangePasswordScreen from './forms/passwordChange.js';
 import {ButtonGroup} from 'react-native-elements';
@@ -69,109 +70,6 @@ function GroupScreen({navigation}) {
   );
 }
 
-
-function SettingsScreen({navigation}) {
-  const [checked, toggleChecked] = useState(false);
-  const [checked2, toggleChecked2] = useState(false);
-  const [checked3, toggleChecked3] = useState(false);
-  const [checked4, toggleChecked4] = useState(false);
-  var userEmail = "demo2test@gmail.com";
-  var userFirstName = "John";
-  var userLastName = "Doe";
-  return (
-    //Checkbox currently not working.  Need change
-    <View style={{flex: 1, justifyContent: 'center', alignItems: 'center'}}>
-      <View>
-        <Text style={{fontWeight: 'bold', fontSize: 20}}>User Info</Text>
-      </View>
-      <View style={{flexDirection:"row", backgroundColor: '#d3d3d3', borderRadius:10, borderWith:1, padding:10, marginLeft:10, marginRight:10}}>
-        <View style={{flex:1, alignItems: 'center'}}>
-          <Text>User Email :</Text>
-          <Text>First Name :</Text>
-          <Text>Last Name :</Text>
-        </View>
-        <View style={{flex:1}}>
-          <Text>{userEmail}</Text>
-          <Text>{userFirstName}</Text>
-          <Text>{userLastName}</Text>
-        </View>
-      </View>
-      <View>
-        <Text style={{fontWeight: 'bold', fontSize: 20}}>Streaming services</Text>
-      </View>
-      <View style={{backgroundColor: '#d3d3d3', borderRadius:10, borderWith:1, padding:10, marginLeft:10, marginRight:10}}>
-        <View style={{alignItems: 'left'}}>
-          <CheckBox
-            checkedColor="#0F0"
-            containerStyle={{}}
-            checked={checked}
-            onPress={() => toggleChecked(!checked)}
-            size={30}
-            textStyle={{}}
-            title="Netflix"
-            titleProps={{}}
-            uncheckedColor="#F00"
-           
-          />
-          <CheckBox
-            checkedColor="#0F0"
-            containerStyle={{}}
-            checked={checked2}
-            onPress={() => toggleChecked2(!checked2)}
-            size={30}
-            textStyle={{}}
-            title="Amazon Prime"
-            titleProps={{}}
-            uncheckedColor="#F00"
-           
-          />
-          <CheckBox
-            checkedColor="#0F0"
-            containerStyle={{}}
-            checked={checked3}
-            onPress={() => toggleChecked3(!checked3)}
-            size={30}
-            textStyle={{}}
-            title="Disney+"
-            titleProps={{}}
-            uncheckedColor="#F00"
-           
-          />
-          <CheckBox
-            checkedColor="#0F0"
-            containerStyle={{}}
-            checked={checked4}
-            onPress={() => toggleChecked4(!checked4)}
-            size={30}
-            textStyle={{}}
-            title="HBO Max"
-            titleProps={{}}
-            uncheckedColor="#F00"
-           
-          />
-        </View>
-      </View>
-      <TouchableOpacity style={styles.change_password_button} onPress={() =>
-        navigation.navigate('Change Password')}>
-        <Text style={styles.loginText}>Change Password</Text>
-      </TouchableOpacity>
-      <TouchableOpacity style={styles.logout_button} onPress={() =>
-        navigation.reset({
-          index: 0,
-          routes: [
-           {
-            name: 'Login',
-            params: { someParam: 'Param1'},
-           },
-          ],
-        })
-      }>
-        <Text style={styles.loginText}>Logout</Text>
-      </TouchableOpacity>
-    </View>
-  );
-}
-
 function LogoTitle() {
   return (
     <Image
@@ -197,14 +95,6 @@ const styles = StyleSheet.create({
     alignItems: "center",
     backgroundColor: "#99ccff",
     marginTop: 10,
-    padding: 10,
-  },
-  change_password_button: {
-    width: "80%",
-    borderRadius: 25,
-    alignItems: "center",
-    backgroundColor: "#99ccff",
-    marginTop: 100,
     padding: 10,
   },
 })
