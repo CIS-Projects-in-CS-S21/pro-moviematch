@@ -13,7 +13,7 @@ export default function LoginScreen({ navigation }) {
     const [email, setEmail] = useState("");
     const [password, setPassword] = useState("");
 
-    const tunnelURL = "https://ugly-monkey-90.loca.lt"
+    const tunnelURL = "https://nervous-hound-72.loca.lt"
 
     const checkEmailInput= () => {
       if (email != '')
@@ -55,7 +55,7 @@ export default function LoginScreen({ navigation }) {
           index: 0,
           routes: [
             {
-                name: 'HomeTabs', //MOV108 had 'Home'
+                name: 'Queue', //MOV108 had 'Home'
                 params: { someParam: 'Param1'},
             },
           ],

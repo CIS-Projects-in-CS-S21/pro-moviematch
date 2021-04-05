@@ -108,7 +108,7 @@ function App() {
           component={LoginScreen}
         ></Stack.Screen>
         <Stack.Screen
-            name="HomeTabs"
+            name="Queue"
             component={HomeTabs}
             options={{ headerTitle: props => <LogoTitle {...props} /> }}
         />

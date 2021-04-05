@@ -34,7 +34,7 @@ export default function ChangePasswordScreen({ navigation }) {
           index: 0,
           routes: [
             {
-                name: 'Home',
+                name: 'Queue',
                 params: { someParam: 'Param1'},
             },
           ],
