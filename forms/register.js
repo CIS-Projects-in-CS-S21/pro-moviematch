@@ -10,7 +10,7 @@ export default function RegisterScreen({ navigation }) {
     const [firstName, setFirstName] = useState("");
     const [lastName, setLastName] = useState("");
 
-    const tunnelURL = "https://ugly-monkey-90.loca.lt"
+    const tunnelURL = "https://nervous-hound-72.loca.lt"
 
     const checkEmailInput= () => {
       if (email != '')
@@ -51,7 +51,7 @@ export default function RegisterScreen({ navigation }) {
           index: 0,
           routes: [
             {
-                name: 'Home',
+                name: 'Queue',
                 params: { someParam: 'Param1'},
             },
           ],
