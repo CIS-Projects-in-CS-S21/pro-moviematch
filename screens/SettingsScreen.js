@@ -1,6 +1,6 @@
 import { StatusBar } from 'expo-status-bar';
 import React, { useState, useEffect } from 'react';
-import { Text, View, SafeAreaView, ScrollView, Dimensions, Image, TextInput, Button, TouchableOpacity, StyleSheet, ActivityIndicator} from 'react-native';
+import { Text, View, SafeAreaView, ScrollView, Dimensions, Switch, Image, TextInput, Button, TouchableOpacity, StyleSheet, ActivityIndicator} from 'react-native';
 import { NavigationContainer } from '@react-navigation/native';
 import { createStackNavigator } from '@react-navigation/stack';
 import {CheckBox} from 'react-native-elements';
@@ -33,6 +33,9 @@ export default function SettingsScreen({ navigation }, page) {
   const [checked17, toggleChecked17] = useState(false);
   const [checked18, toggleChecked18] = useState(false);
   const [checked19, toggleChecked19] = useState(false);
+  //For Content type switch
+  const [isEnabled, setIsEnabled] = useState(false);
+  const toggleSwtich = () => setIsEnabled(previousState => !previousState);
   
   var userEmail = "demo2test@gmail.com";
   var userFirstName = "John";
@@ -54,6 +57,25 @@ export default function SettingsScreen({ navigation }, page) {
           <Text>{userEmail}</Text>
           <Text>{userFirstName}</Text>
           <Text>{userLastName}</Text>
+        </View>
+      </View>
+
+      {/* Streaming services checkbox*/}
+      <View>
+        <Text style={{fontWeight: 'bold', fontSize: 20}}>Content Type</Text>
+      </View>
+      <View style={{flexDirection:"row", backgroundColor: '#d3d3d3', borderRadius:10, borderWith:1, padding:10, marginLeft:10, marginRight:10}}>
+        <View style={{flex:1, alignItems: 'center'}}>
+          <Text style={{fontSize: 15}}> Movies</Text>
+        </View>
+        <Switch
+          //trackColor={{ false: "#767577", true: "#81b0ff"}}
+          //thumbColor={isEnabled ? "#f5dd4b" : "#f4f3f4"}
+          onValueChange={toggleSwtich}
+          value={isEnabled}
+        />       
+        <View style={{flex:1}}>
+          <Text style={{fontSize: 15}}> TV Shows</Text>
         </View>
       </View>
 
@@ -332,6 +354,9 @@ export default function SettingsScreen({ navigation }, page) {
         </View>
       </View>
 
+      <TouchableOpacity style={styles.change_password_button}>
+        <Text style={styles.loginText}>Save Changes</Text>
+      </TouchableOpacity>
       <TouchableOpacity style={styles.change_password_button} onPress={() =>
         navigation.navigate('Change Password')}>
         <Text style={styles.loginText}>Change Password</Text>
@@ -357,19 +382,24 @@ export default function SettingsScreen({ navigation }, page) {
   const styles = StyleSheet.create({
     container: {
       flex: 1,
-      //backgroundColor: '#fff',
-      backgroundColor: '#000000',
-      justifyContent: 'center',
+      //backgroundColor for testing
+      //backgroundColor: '#000000',
+      backgroundColor: '#fff',
+      //justifyContent: 'center',
       alignItems: "center",
+      alignContent: "center",
     },
     scrollView: {
-      backgroundColor: '#e9967a',
+      //backgroundColor for testing
+      //backgroundColor: '#e9967a',
+      backgroundColor: '#fff',
       width: screenWidth-20,
     },
     logout_button: {
       width: "80%",
       borderRadius: 25,
       alignItems: "center",
+      //alignContent: "center",
       backgroundColor: "#99ccff",
       marginTop: 10,
       padding: 10,
@@ -379,7 +409,7 @@ export default function SettingsScreen({ navigation }, page) {
       borderRadius: 25,
       alignItems: "center",
       backgroundColor: "#99ccff",
-      marginTop: 100,
+      marginTop: 10,
       padding: 10,
     },
   })
