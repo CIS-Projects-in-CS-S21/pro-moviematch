@@ -3,13 +3,17 @@ import React, { useState } from 'react';
 import { Text, View, Image, TextInput, Button, TouchableOpacity, StyleSheet} from 'react-native';
 import { NavigationContainer } from '@react-navigation/native';
 import { createStackNavigator } from '@react-navigation/stack';
-import authTest from '../Auth/Auth.js'
 import { Value } from 'react-native-reanimated';
+import { Alert } from 'react-native';
+import { AsyncStorage } from 'react-native';
+import axios from 'axios'
 
 
 export default function LoginScreen({ navigation }) {
     const [email, setEmail] = useState("");
     const [password, setPassword] = useState("");
+
+    const tunnelURL = "https://ugly-monkey-90.loca.lt"
 
     const checkEmailInput= () => {
       if (email != '')
@@ -23,37 +27,50 @@ export default function LoginScreen({ navigation }) {
       return false
     };
 
-    //Mock User credentials for demo 1
-    const checkEmailValid= () => {
-      if (email.toLowerCase() === 'demo2test@gmail.com')
-        return true
-      //changed for easier testing for now  
-      return false
-    }
-    const checkPasswordValid= () => {
-      if (password === 'moviematch')
-        return true
-      //changed for easier testing for now 
-      return false
+    function getvalues(){
+      return fetch(tunnelURL + "/api/users/login", {
+        method: 'POST',
+        headers: {
+          'Accept': 'application/json',
+          'Content-Type': 'application/json'
+        }, 
+        body: JSON.stringify({
+          email: email,
+          password: password,
+        })
+      })
+      .then((response) => response.json())
+
+      .then((responseData) => {
+        alert(JSON.stringify(responseData));
+        return responseData;
+      })
+      .catch(error => alert('Error'));
     }
 
-    const buttonClickListener = (navigation) => {
-      //var authStatus = authTest.getAuth();
-    if(checkEmailInput() == true && checkPasswordInput() == true){
-      //mock test for user credentials
-      if(checkEmailValid() == true && checkPasswordValid() == true){
-        navigation.reset({ 
+    const navigateLoggedInUser = (response) => {
+      //alert(response);
+      if(response.hasOwnProperty('success')){
+        navigation.reset({
           index: 0,
           routes: [
             {
-                name: 'HomeTabs',
+                name: 'HomeTabs', //MOV108 had 'Home'
                 params: { someParam: 'Param1'},
             },
           ],
         })
-      }else{
-        alert('Email or password incorrect');
       }
+      else{
+        alert('Error logging into account with given credentials');
+      } 
+    }
+
+    const buttonClickListener = (navigation) => {
+      
+    if(checkEmailInput() == true && checkPasswordInput() == true){
+      getvalues().then(response => navigateLoggedInUser(response));
+      
     }
       else if (checkEmailInput() == true && checkPasswordInput() == false){
         alert('Invalid Response: Please enter password field');
