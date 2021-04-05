@@ -9,10 +9,27 @@ import { Card } from '../components/Cards.js';
 export default function HomeScreen({ navigation }) {
     const [isLoading, setLoading] = useState(true);
     const [data, setData] = useState([]);
+
+    const filterContent = 0;
+    
+    var genreArrMovies = [28, 12, 16, 35, 99, 18, 10751, 14, 36, 27, 9648, 878, 53];
+    var genreArrayTV = [10759, 16, 35, 80, 99, 18, 10751, 10762, 9648, 10763, 10764, 10765, 10766, 10767, 10768, 37];
+
+    var genreStrMovies = encodeURIComponent(genreArrMovies.join('|'));
+    var genreStrTV = encodeURIComponent(genreArrayTV.join('|'));
+
     var switchContent = 1;
     var fetchThis;
-    if (switchContent == 0){ fetchThis = 'https://api.themoviedb.org/3/movie/popular?api_key=156f6cfa04dae615351cd9878f39b732&language=en-US&page=1' }
-    else fetchThis = 'https://api.themoviedb.org/3/tv/popular?api_key=156f6cfa04dae615351cd9878f39b732&language=en-US&page=1'
+    
+    if (switchContent == 0 && filterContent == 0) { fetchThis = 'https://api.themoviedb.org/3/movie/popular?api_key=156f6cfa04dae615351cd9878f39b732&language=en-US&page=1' }
+
+    if (switchContent == 1 && filterContent == 0) { fetchThis = 'https://api.themoviedb.org/3/tv/popular?api_key=156f6cfa04dae615351cd9878f39b732&language=en-US&page=1' }
+
+    if(switchContent == 0 && filterContent != 0) {fetchThis = "https://api.themoviedb.org/3/discover/movie?api_key=156f6cfa04dae615351cd9878f39b732&language=en-US&sort_by=popularity.desc&include_adult=false&include_video=false"  
+                                                  + "&page=" + offset + "&with_genres=" + genreStrMovies }
+
+    if(switchContent == 1 && filterContent != 0) {fetchThis = "https://api.themoviedb.org/3/discover/tv?api_key=156f6cfa04dae615351cd9878f39b732&language=en-US&sort_by=popularity.desc&include_adult=false&include_video=false"  
+                                                  + "&page=" + offset + "&with_genres=" + genreStrTV }
 
   
     useEffect(() => {
