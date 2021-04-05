@@ -4,10 +4,22 @@ const Movie = require('../models/Movie')
 
 const router = express.Router()
 
+router.get('/:movieId', async (req, res) => {
+    try {
+        const movie = await Movie.findById(req.params.movieId);
+        res.send({data: movie})
+    } catch (err) {
+        res.json({message: "Could not find movie!"})
+    }
+})
 
-router.post('/', (req, res) => {
+router.post('/', async (req, res) => {
 
-    const movie = new Movie({
+    // check that movies does not alreay exist
+    const movie = await Movie.findOne({movie_id:req.body.movie_id});
+    if (movie) return res.status(400).send("movie already exists.");
+
+    const new_movie = new Movie({
         movie_id: req.body.movie_id,
         title: req.body.title,
         description: req.body.description,
@@ -15,7 +27,7 @@ router.post('/', (req, res) => {
         genre: req.body.genre
     })
 
-    movie.save()
+    await new_movie.save()
         .then(result => {
             res.send({
                 message: 'Movie data created succesfully',

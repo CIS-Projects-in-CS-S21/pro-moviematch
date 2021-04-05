@@ -55,7 +55,7 @@ export default function LoginScreen({ navigation }) {
           index: 0,
           routes: [
             {
-                name: 'Home',
+                name: 'HomeTabs', //MOV108 had 'Home'
                 params: { someParam: 'Param1'},
             },
           ],
