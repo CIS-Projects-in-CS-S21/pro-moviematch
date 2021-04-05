@@ -6,13 +6,17 @@ import { createStackNavigator } from '@react-navigation/stack';
 import Swiper from 'react-native-deck-swiper';
 import { Card } from '../components/Cards.js';
 
-
 export default function HomeScreen({ navigation }) {
     const [isLoading, setLoading] = useState(true);
     const [data, setData] = useState([]);
+    var switchContent = 1;
+    var fetchThis;
+    if (switchContent == 0){ fetchThis = 'https://api.themoviedb.org/3/movie/popular?api_key=156f6cfa04dae615351cd9878f39b732&language=en-US&page=1' }
+    else fetchThis = 'https://api.themoviedb.org/3/tv/popular?api_key=156f6cfa04dae615351cd9878f39b732&language=en-US&page=1'
+
   
     useEffect(() => {
-      fetch('https://api.themoviedb.org/3/movie/popular?api_key=156f6cfa04dae615351cd9878f39b732&language=en-US&page=1')
+      fetch(fetchThis)
         .then((response) => response.json())
         .then((json) => setData(parseMovies(json.results)))
         .catch((error) => console.error(error))
@@ -67,3 +71,5 @@ export default function HomeScreen({ navigation }) {
       padding: 10,
     },
   })
+
+ 
