@@ -57,8 +57,11 @@ export const LikedList = () => {
   const renderItem = ({ item }) => (
     <ListItem bottomDivider>
       <Avatar 
-        size="large"
+        //size="large"
         source={item.pic} 
+        width={100}
+        height={150}
+        imageProps={{resizeMode: 'contain'}}
       />
       <ListItem.Content>
         <ListItem.Title>{item.title}</ListItem.Title>
