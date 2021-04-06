@@ -33,6 +33,8 @@ export default function HomeScreen({ navigation }, page) {
     const [isLoading, setLoading] = useState(true);
     const [data, setData] = useState([]);
     const [offset, setOffset] = useState(1);
+    const userId = '606b7f646e03d7605c1eaaec';
+    var i = 0;
 
     var genreArr = [28, 12, 16, 35, 99, 18, 10751, 14, 36, 27, 9648, 878, 53];
     var genreStr = encodeURIComponent(genreArr.join('|'));
@@ -41,6 +43,7 @@ export default function HomeScreen({ navigation }, page) {
 
     const getData = () => {
       console.log('getData');
+      i = 0;
       setLoading(true);
       //Service to get the data from the server to render
       fetch("https://api.themoviedb.org/3/discover/movie?api_key=156f6cfa04dae615351cd9878f39b732&language=en-US&sort_by=popularity.desc&include_adult=false&include_video=false"
@@ -58,7 +61,8 @@ export default function HomeScreen({ navigation }, page) {
         .catch((error) => {
           console.error(error);
         });
-    };
+    }; 
+
 
     return (
       <SafeAreaView style={styles.container}>
@@ -66,8 +70,9 @@ export default function HomeScreen({ navigation }, page) {
           <Swiper
               cards={data}
               renderCard={Card}
-              // infinite // keep looping cards infinitely
+              onSwiped={() => i++}
               onSwipedAll={getData}
+              onSwipedRight={() => console.log(data[i - 1])}  // (data[i - 1] is the movie card)
               verticalSwipe={false}
               backgroundColor="white"
               cardHorizontalMargin={0}
