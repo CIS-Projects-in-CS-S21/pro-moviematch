@@ -5,7 +5,7 @@ import { NavigationContainer } from '@react-navigation/native';
 import { createStackNavigator } from '@react-navigation/stack';
 import Swiper from 'react-native-deck-swiper';
 import { Card } from '../components/Cards.js';
-
+import {thisValue} from  './SettingsScreen.js';
 /*
   TMDB Movie Genre IDs:
     Action          28
@@ -42,6 +42,8 @@ export default function HomeScreen({ navigation }, page) {
     const getData = () => {
       console.log('getData');
       setLoading(true);
+
+      if (thisValue == 1) {console.log('1')}
       //Service to get the data from the server to render
       fetch("https://api.themoviedb.org/3/discover/movie?api_key=156f6cfa04dae615351cd9878f39b732&language=en-US&sort_by=popularity.desc&include_adult=false&include_video=false"
         + "&page=" + offset + "&with_genres=" + genreStr)

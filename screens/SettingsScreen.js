@@ -4,7 +4,9 @@ import { Text, View, SafeAreaView, ScrollView, Dimensions, Switch, Image, TextIn
 import { NavigationContainer } from '@react-navigation/native';
 import { createStackNavigator } from '@react-navigation/stack';
 import {CheckBox} from 'react-native-elements';
+import { Value } from 'react-native-reanimated';
 
+var thisValue;
 const screenWidth = Dimensions.get('window').width;
 
 export default function SettingsScreen({ navigation }, page) {
@@ -36,7 +38,7 @@ export default function SettingsScreen({ navigation }, page) {
   //For Content type switch
   const [isEnabled, setIsEnabled] = useState(false);
   const toggleSwtich = () => setIsEnabled(previousState => !previousState);
-  
+  var mode;
   var userEmail = "demo2test@gmail.com";
   var userFirstName = "John";
   var userLastName = "Doe";
@@ -72,6 +74,7 @@ export default function SettingsScreen({ navigation }, page) {
           //thumbColor={isEnabled ? "#f5dd4b" : "#f4f3f4"}
           onValueChange={toggleSwtich}
           value={isEnabled}
+          thisValue = {Value}
         />       
         <View style={{flex:1}}>
           <Text style={{fontSize: 15}}> TV Shows</Text>
@@ -412,3 +415,6 @@ export default function SettingsScreen({ navigation }, page) {
       padding: 10,
     },
   })
+
+  
+  export{thisValue};
