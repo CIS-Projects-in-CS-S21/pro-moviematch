@@ -28,12 +28,12 @@ import { Card } from '../components/Cards.js';
     War             10752
     Western         37
 */
+const tunnelURL = "https://neat-puma-70.loca.lt";
 
 export default function HomeScreen({ navigation }, page) {
     const [isLoading, setLoading] = useState(true);
     const [data, setData] = useState([]);
     const [offset, setOffset] = useState(1);
-    const userId = '606b7f646e03d7605c1eaaec';
     var i = 0;
 
     var genreArr = [28, 12, 16, 35, 99, 18, 10751, 14, 36, 27, 9648, 878, 53];
@@ -72,7 +72,7 @@ export default function HomeScreen({ navigation }, page) {
               renderCard={Card}
               onSwiped={() => i++}
               onSwipedAll={getData}
-              onSwipedRight={() => console.log(data[i - 1])}  // (data[i - 1] is the movie card)
+              onSwipedRight={() => getvalues(data[i - 1].id)}  // (data[i - 1] is the movie card)
               verticalSwipe={false}
               backgroundColor="white"
               cardHorizontalMargin={0}
@@ -89,6 +89,7 @@ export default function HomeScreen({ navigation }, page) {
     for (i = 0; i < movieArray.length; i++) {
       parsedMovies[i] =
       {
+          id: movieArray[i].id,
           pic: {uri: imgurl.concat(movieArray[i].poster_path)},
           title: movieArray[i].title,
           caption: "Rating: " + movieArray[i].vote_average,
@@ -96,7 +97,25 @@ export default function HomeScreen({ navigation }, page) {
     }
     return parsedMovies
 }
+function getvalues(id){
+  return fetch(tunnelURL + "/api/users/60502bf7f9ef9c6104fa0a96/like", {
+    method: 'POST',
+    headers: {
+      'Accept': 'application/json',
+      'Content-Type': 'application/json'
+    }, 
+    body: JSON.stringify({
+      movie_id: "6052b174f8da823a7ea3edd3",
+    })
+  })
+  .then((response) => response.json())
 
+  .then((responseData) => {
+    alert(JSON.stringify(responseData));
+    return responseData;
+  })
+  .catch(error => alert('Error'));
+}
   const styles = StyleSheet.create({
     container: {
       flex: 1,
