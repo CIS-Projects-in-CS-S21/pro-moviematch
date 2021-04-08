@@ -59,12 +59,14 @@ function ViewContentScreen({navigation}) {
   );
 }
 
-function GroupScreen({navigation}) {
+function GroupScreen({route, navigation}) {
+  const {contentType} = route.params;
   return (
 
     <View style={{ flex: 1, justifyContent: 'center', alignItems: 'center' }}>
       <View>
         <Text>Group Content will go here</Text>
+        <Text>contentType: {JSON.stringify(contentType)}</Text>
       </View>
     </View>
   );

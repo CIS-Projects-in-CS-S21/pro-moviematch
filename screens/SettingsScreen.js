@@ -354,7 +354,10 @@ export default function SettingsScreen({ navigation }, page) {
         </View>
       </View>
 
-      <TouchableOpacity style={styles.change_password_button}>
+      <TouchableOpacity style={styles.change_password_button} onPress={() =>
+        navigation.navigate('Group',{
+          contentType: isEnabled
+        })}>
         <Text style={styles.loginText}>Save Changes</Text>
       </TouchableOpacity>
       <TouchableOpacity style={styles.change_password_button} onPress={() =>
