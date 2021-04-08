@@ -44,7 +44,8 @@ export default function HomeScreen({ navigation }, page) {
               // infinite // keep looping cards infinitely
               onSwipedAll={getData}
               verticalSwipe={false}
-              backgroundColor="white"
+              backgroundColor="#white"
+              cardVerticalMargin={20}
               cardHorizontalMargin={0}
               stackSize={2} // number of cards shown in background
               />
