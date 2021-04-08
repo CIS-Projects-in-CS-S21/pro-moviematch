@@ -41,7 +41,6 @@ export default function SettingsScreen({ navigation }, page) {
   var userFirstName = "John";
   var userLastName = "Doe";
   return (
-    
     <SafeAreaView style={styles.container}>
       <ScrollView style={styles.scrollView}>
       <View>

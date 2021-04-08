@@ -36,7 +36,7 @@ export default function HomeScreen({ navigation }, page) {
 
     var genreArr = [28, 12, 16, 35, 99, 18, 10751, 14, 36, 27, 9648, 878, 53];
     var genreStr = encodeURIComponent(genreArr.join('|'));
-    
+    var modeStr = SettingsScreen.mode
     useEffect(() => getData(), []);
 
     const getData = () => {
