@@ -46,16 +46,15 @@ router.get('/:userId/like', async (req, res) => {
     // get user user
     var user;
     try {
-        user = await User.findById(req.params.userId).populate('likes');
+        user = await User.findById(req.params.userId);
     } catch (err) {
         res.json({message: "Could not find user!"})
     }
 
     // get content
-    var content_ids = user.likes.map(content => content.movie_id)
-    const content = await Movie.find({ '_id': { $in: content_ids }});
+    var content_ids = user.likes
 
-    res.status(200).json(content)
+    res.status(200).json(content_ids)
 })
 
 // POST a new like
