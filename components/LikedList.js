@@ -96,7 +96,7 @@ const styles = StyleSheet.create({
     fontSize: 32,
   },
   caption: {
-    fontsize: 20,
+    fontSize: 20,
   },
 
 })

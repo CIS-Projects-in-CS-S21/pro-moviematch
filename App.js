@@ -42,7 +42,11 @@ function HomeTabs() {
     >
       <Tab.Screen name="Queue" component={HomeScreen} />
       <Tab.Screen name="View Content" component={ViewContentScreen} />
-      <Tab.Screen name="Group" component={GroupScreen} />
+      <Tab.Screen name="Group" component={GroupScreen} initialParams={{
+        contentType: false,
+        contentGenre: [false, false, false, false, false, false, false, false, false, false, false, false,
+          false, false, false, false, false, false, false]
+      }} />
       <Tab.Screen name="Settings" component={SettingsScreen} />
     </Tab.Navigator>
   );
