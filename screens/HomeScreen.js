@@ -29,13 +29,17 @@ import { Card } from '../components/Cards.js';
     Western         37
 */
 
-export default function HomeScreen({ navigation }, page) {
+export default function HomeScreen({ route, navigation }, page) {
+    const {contentType, contentGenre} = route.params;
     const [isLoading, setLoading] = useState(true);
     const [data, setData] = useState([]);
     const [offset, setOffset] = useState(1);
+    const [genres, setGenres] = useState(encodeURIComponent(genreToArr(contentGenre).join('|')));
 
-    var genreArr = [28, 12, 16, 35, 99, 18, 10751, 14, 36, 27, 9648, 878, 53];
-    var genreStr = encodeURIComponent(genreArr.join('|'));
+    console.log(contentGenre);
+
+    /*var genreArr = genreToArr(contentGenre);
+    var genreStr = encodeURIComponent(genreArr.join('|'));*/
     
     useEffect(() => getData(), []);
 
@@ -44,13 +48,15 @@ export default function HomeScreen({ navigation }, page) {
       setLoading(true);
       //Service to get the data from the server to render
       fetch("https://api.themoviedb.org/3/discover/movie?api_key=156f6cfa04dae615351cd9878f39b732&language=en-US&sort_by=popularity.desc&include_adult=false&include_video=false"
-        + "&page=" + offset + "&with_genres=" + genreStr)
+        + "&page=" + offset + "&with_genres=" + genres)
         //Sending the currect offset with get request
         .then((response) => response.json())
         .then((responseJson) => {
           //Successful response
           setOffset(offset + 1);
           console.log(offset);
+
+          setGenres(encodeURIComponent(genreToArr(contentGenre).join('|')));
           //Increasing the offset for the next API call
           setData([...parseMovies(responseJson.results)]);
           setLoading(false);
@@ -76,7 +82,109 @@ export default function HomeScreen({ navigation }, page) {
         )}
       </SafeAreaView>    
     );
-} 
+}
+// Turns content genre array into an array of TMDB genre ids for queries
+  function genreToArr(contentGenre) {
+    var arr = [];
+    
+    // Action
+    if (contentGenre[0]) {
+      arr.push(28);
+    }
+
+    // Adventure
+    if (contentGenre[1]) {
+      arr.push(12);
+    }
+
+    // Animation
+    if (contentGenre[2]) {
+      arr.push(16);
+    }
+
+    // Comedy
+    if (contentGenre[3]) {
+      arr.push(35);
+    }
+
+    // Crime
+    if (contentGenre[4]) {
+      arr.push(80);
+    }
+
+    // Documentary
+    if (contentGenre[5]) {
+      arr.push(99);
+    }
+
+    // Drama
+    if(contentGenre[6]) {
+      arr.push(18);
+    }
+
+    // Family
+    if(contentGenre[7]) {
+      arr.push(10751);
+    }
+
+    // Fantasy
+    if(contentGenre[8]) {
+      arr.push(14);
+    }
+
+    // History
+    if(contentGenre[9]) {
+      arr.push(36);
+    }
+
+    // Horror
+    if(contentGenre[10]) {
+      arr.push(27);
+    }
+
+    // Music
+    if(contentGenre[11]) {
+      arr.push(10402);
+    }
+
+    // Mystery
+    if(contentGenre[12]) {
+      arr.push(9648);
+    }
+
+    // Romance
+    if(contentGenre[13]) {
+      arr.push(10749);
+    }
+
+    // Science Fiction
+    if(contentGenre[14]) {
+      arr.push(878);
+    }
+
+    // TV Movie
+    if(contentGenre[15]) {
+      arr.push(10770);
+    }
+
+    // Thriller
+    if(contentGenre[16]) {
+      arr.push(53);
+    }
+
+    // War
+    if(contentGenre[17]) {
+      arr.push(10752);
+    }
+
+    // Western
+    if(contentGenre[18]) {
+      arr.push(37);
+    }
+
+    return arr;
+  }
+
   function parseMovies(movieArray) {
     var parsedMovies = [];
     var i;

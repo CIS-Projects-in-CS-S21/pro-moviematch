@@ -40,7 +40,11 @@ function HomeTabs() {
         inactiveTintColor: 'gray',
     }}
     >
-      <Tab.Screen name="Queue" component={HomeScreen} />
+      <Tab.Screen name="Queue" component={HomeScreen} initialParams={{
+        contentType: false,
+        contentGenre: [false, false, true, false, false, false, false, false, false, false, false, false,
+          false, false, false, false, false, false, false]
+      }} />
       <Tab.Screen name="View Content" component={ViewContentScreen} />
       <Tab.Screen name="Group" component={GroupScreen} />
       <Tab.Screen name="Settings" component={SettingsScreen} />
