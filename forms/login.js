@@ -13,7 +13,7 @@ export default function LoginScreen({ navigation }) {
     const [email, setEmail] = useState("");
     const [password, setPassword] = useState("");
 
-    const tunnelURL = "https://262ab67a7efb.ngrok.io"
+    const tunnelURL = "https://friendly-wombat-45.loca.lt"
 
     const checkEmailInput= () => {
       if (email != '')
