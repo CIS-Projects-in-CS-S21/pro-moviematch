@@ -115,6 +115,7 @@ export default function HomeScreen({ navigation }, page) {
     for (i = 0; i < movieArray.length; i++) {
       parsedMovies[i] =
       {
+          id: movieArray[i].id,
           pic: {uri: imgurl.concat(movieArray[i].poster_path)},
           title: movieArray[i].title,
           caption: "Rating: " + movieArray[i].vote_average,
@@ -124,7 +125,7 @@ export default function HomeScreen({ navigation }, page) {
 }
 
 function getvalues(id){
-  const tunnelURL = "https://f6a6e882b040.ngrok.io";
+  const tunnelURL = "https://781fa291c736.ngrok.io";
   return fetch(tunnelURL + "/api/users/60502bf7f9ef9c6104fa0a96/like", {
     method: 'POST',
     headers: {
