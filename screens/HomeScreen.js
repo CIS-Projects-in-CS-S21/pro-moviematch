@@ -5,7 +5,7 @@ import { NavigationContainer } from '@react-navigation/native';
 import { createStackNavigator } from '@react-navigation/stack';
 import Swiper from 'react-native-deck-swiper';
 import { Card } from '../components/Cards.js';
-import {thisValue} from  './SettingsScreen.js';
+import './SettingsScreen.js'
 /*
   TMDB Movie Genre IDs:
     Action          28
@@ -34,51 +34,68 @@ export default function HomeScreen({ navigation }, page) {
     const [data, setData] = useState([]);
     const [offset, setOffset] = useState(1);
 
-    var genreArr = [28, 12, 16, 35, 99, 18, 10751, 14, 36, 27, 9648, 878, 53];
-    var genreStr = encodeURIComponent(genreArr.join('|'));
-    var modeStr = SettingsScreen.mode
-    useEffect(() => getData(), []);
+    var genreArrMovies = [28, 12, 16, 35, 99, 18, 10751, 14, 36, 27, 9648, 878, 53];
+    var genreArrayTV = [10759, 16, 35, 80, 99, 18, 10751, 10762, 9648, 10763, 10764, 10765, 10766, 10767, 10768, 37];
 
-    const getData = () => {
-      console.log('getData');
-      setLoading(true);
+    var genreStrMovies = encodeURIComponent(genreArrMovies.join('|'));
+    var genreStrTV = encodeURIComponent(genreArrayTV.join('|'));
 
-      if (thisValue == 1) {console.log('1')}
-      //Service to get the data from the server to render
-      fetch("https://api.themoviedb.org/3/discover/movie?api_key=156f6cfa04dae615351cd9878f39b732&language=en-US&sort_by=popularity.desc&include_adult=false&include_video=false"
-        + "&page=" + offset + "&with_genres=" + genreStr)
-        //Sending the currect offset with get request
-        .then((response) => response.json())
-        .then((responseJson) => {
-          //Successful response
-          setOffset(offset + 1);
-          console.log(offset);
-          //Increasing the offset for the next API call
-          setData([...parseMovies(responseJson.results)]);
-          setLoading(false);
-        })
-        .catch((error) => {
-          console.error(error);
-        });
-    };
+    const filterContent = 0;
+    const fetchThis = 'https://api.themoviedb.org/3/movie/popular?api_key=156f6cfa04dae615351cd9878f39b732&language=en-US&page=1';
 
-    return (
-      <SafeAreaView style={styles.container}>
-        {isLoading ? <ActivityIndicator/> : (
-          <Swiper
-              cards={data}
-              renderCard={Card}
-              // infinite // keep looping cards infinitely
-              onSwipedAll={getData}
-              verticalSwipe={false}
-              backgroundColor="white"
-              cardHorizontalMargin={0}
-              stackSize={2} // number of cards shown in background
-              />
-        )}
-      </SafeAreaView>    
-    );
-} 
+    //if (switchContent == 0 ) { fetchThis = "https://api.themoviedb.org/3/movie/popular?api_key=156f6cfa04dae615351cd9878f39b732&language=en-US&page=1" }
+
+    if (global.modeContent == 1 ) { fetchThis = "https://api.themoviedb.org/3/tv/popular?api_key=156f6cfa04dae615351cd9878f39b732&language=en-US&page=1", console.log(fetchThis) }
+    console.log(fetchThis)
+    //if(switchContent == 0 && filterContent != 0) {fetchThis = "https://api.themoviedb.org/3/discover/movie?api_key=156f6cfa04dae615351cd9878f39b732&language=en-US&sort_by=popularity.desc&include_adult=false&include_video=false"  
+                                                  //+ "&page=" + offset + "&with_genres=" + genreStrMovies }
+
+   // if(switchContent == 1 && filterContent != 0) {fetchThis = "https://api.themoviedb.org/3/discover/tv?api_key=156f6cfa04dae615351cd9878f39b732&language=en-US&sort_by=popularity.desc&include_adult=false&include_video=false"  
+                                                  //+ "&page=" + offset + "&with_genres=" + genreStrTV }
+
+    
+      useEffect(() => getData(), []);
+
+      const getData = () => {
+        console.log('getData');
+        setLoading(true);
+
+        
+        //Service to get the data from the server to render
+        fetch("https://api.themoviedb.org/3/movie/popular?api_key=156f6cfa04dae615351cd9878f39b732&language=en-US&page=1")
+          //Sending the currect offset with get request
+          .then((response) => response.json())
+          .then((responseJson) => {
+            //Successful response
+            setOffset(offset + 1);
+            console.log(offset);
+            //Increasing the offset for the next API call
+            setData([...parseMovies(responseJson.results)]);
+            setLoading(false);
+          })
+          .catch((error) => {
+            console.error(error);
+          });
+      };
+
+      return (
+        <SafeAreaView style={styles.container}>
+          {isLoading ? <ActivityIndicator/> : (
+            <Swiper
+                cards={data}
+                renderCard={Card}
+                // infinite // keep looping cards infinitely
+                onSwipedAll={getData}
+                verticalSwipe={false}
+                backgroundColor="white"
+                cardHorizontalMargin={0}
+                stackSize={2} // number of cards shown in background
+                />
+          )}
+        </SafeAreaView>    
+      );
+    } 
+  
   function parseMovies(movieArray) {
     var parsedMovies = [];
     var i;
