@@ -46,16 +46,15 @@ router.get('/:userId/like', async (req, res) => {
     // get user user
     var user;
     try {
-        user = await User.findById(req.params.userId).populate('likes');
+        user = await User.findById(req.params.userId);
     } catch (err) {
         res.json({message: "Could not find user!"})
     }
 
     // get content
-    var content_ids = user.likes.map(content => content.movie_id)
-    const content = await Movie.find({ '_id': { $in: content_ids }});
+    var content_ids = user.likes
 
-    res.status(200).json(content)
+    res.status(200).json(content_ids)
 })
 
 // POST a new like
@@ -66,34 +65,18 @@ router.post('/:userId/like', async (req, res) => {
     // get user
     var user;
     try {
-        user = await User.findById(req.params.userId).populate('likes');
+        user = await User.findById(req.params.userId);
     } catch (err) {
         res.json({message: "Could not find user!"})
     }
 
-    // get content_ids to verify user isn't creating a duplicate like
-    var content_ids = user.likes.map(content => content.movie_id)
-
-    if(content_ids.includes(req.body.movie_id)) {
-        
+    // check that a user is not trying to double like content, if not add it to their likes array
+    if(user.likes.includes(req.body.movie_id)) {
         res.status(404).json({message: "This content has already been liked. Cannot like again."})
-
     } else {
-        // create new liked_content object
-        const likedContent = new MovieLike(req.body)
-
-        // asign the liked_content to the current user
-        likedContent.user = user
-
-        // save the liked_content
-        await likedContent.save()
-
-        // // add liked_content to the users liked array
-        user.likes.push(likedContent)
-
-        // //save the user
+        user.likes.push(req.body.movie_id)
         await user.save()
-        res.status(201).json(likedContent)
+        res.status(201).json(user.likes)
     }
 })
 
