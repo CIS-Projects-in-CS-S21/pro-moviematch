@@ -99,7 +99,8 @@ export default function HomeScreen({ navigation }, page) {
               onSwipedAll={getData}
               onSwipedRight={() => getvalues(data[i - 1].id)}  // (data[i - 1] is the movie card)
               verticalSwipe={false}
-              backgroundColor="white"
+              backgroundColor="#white"
+              cardVerticalMargin={20}
               cardHorizontalMargin={0}
               stackSize={2} // number of cards shown in background
               />
