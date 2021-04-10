@@ -34,6 +34,7 @@ export default function HomeScreen({ navigation }, page) {
     const [data, setData] = useState([]);
     const [offset, setOffset] = useState(1);
     const userId = '606b7f646e03d7605c1eaaec';
+    
     var i = 0;
 
     var genreArr = [28, 12, 16, 35, 99, 18, 10751, 14, 36, 27, 9648, 878, 53];
@@ -96,7 +97,7 @@ export default function HomeScreen({ navigation }, page) {
               renderCard={Card}
               onSwiped={() => i++}
               onSwipedAll={getData}
-              onSwipedRight={() => console.log(data[i - 1])}  // (data[i - 1] is the movie card)
+              onSwipedRight={() => getvalues(data[i - 1].id)}  // (data[i - 1] is the movie card)
               verticalSwipe={false}
               backgroundColor="white"
               cardHorizontalMargin={0}
@@ -109,7 +110,7 @@ export default function HomeScreen({ navigation }, page) {
   function parseMovies(movieArray) {
     var parsedMovies = [];
     var i;
-    var imgurl= "https://image.tmdb.org/t/p/original";
+    var imgurl = "https://image.tmdb.org/t/p/original";
     for (i = 0; i < movieArray.length; i++) {
       parsedMovies[i] =
       {
@@ -119,6 +120,27 @@ export default function HomeScreen({ navigation }, page) {
       }
     }
     return parsedMovies
+}
+
+function getvalues(id){
+  const tunnelURL = "https://f6a6e882b040.ngrok.io";
+  return fetch(tunnelURL + "/api/users/60502bf7f9ef9c6104fa0a96/like", {
+    method: 'POST',
+    headers: {
+      'Accept': 'application/json',
+      'Content-Type': 'application/json'
+    }, 
+    body: JSON.stringify({
+      movie_id: id,
+    })
+  })
+  .then((response) => response.json())
+
+  .then((responseData) => {
+    alert(JSON.stringify(responseData));
+    return responseData;
+  })
+  .catch(error => alert('Error'));
 }
 
   const styles = StyleSheet.create({

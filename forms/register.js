@@ -10,7 +10,7 @@ export default function RegisterScreen({ navigation }) {
     const [firstName, setFirstName] = useState("");
     const [lastName, setLastName] = useState("");
 
-    const tunnelURL = "https://neat-puma-70.loca.lt"
+    const tunnelURL = "https://f6a6e882b040.ngrok.io"
 
     const checkEmailInput= () => {
       if (email != '')
