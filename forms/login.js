@@ -13,7 +13,11 @@ export default function LoginScreen({ navigation }) {
     const [email, setEmail] = useState("");
     const [password, setPassword] = useState("");
 
+<<<<<<< Updated upstream
     const tunnelURL = "https://262ab67a7efb.ngrok.io"
+=======
+    const tunnelURL = "https://mighty-turkey-84.loca.lt"
+>>>>>>> Stashed changes
 
     const checkEmailInput= () => {
       if (email != '')

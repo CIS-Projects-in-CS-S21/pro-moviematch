@@ -10,7 +10,11 @@ export default function RegisterScreen({ navigation }) {
     const [firstName, setFirstName] = useState("");
     const [lastName, setLastName] = useState("");
 
+<<<<<<< Updated upstream
     const tunnelURL = "https://262ab67a7efb.ngrok.io"
+=======
+    const tunnelURL = "https://mighty-turkey-84.loca.lt"
+>>>>>>> Stashed changes
 
     const checkEmailInput= () => {
       if (email != '')
