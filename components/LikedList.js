@@ -55,7 +55,10 @@ const Item = ({ title, caption}) => (
 
 export const LikedList = () => {
   const renderItem = ({ item }) => (
-    <ListItem bottomDivider>
+    <ListItem 
+      bottomDivider
+      button onLongPress={()=>alert('testing')}
+      >
       <Avatar 
         //size="large"
         source={item.pic} 
@@ -67,6 +70,7 @@ export const LikedList = () => {
         <ListItem.Title>{item.title}</ListItem.Title>
         <ListItem.Subtitle>{item.caption}</ListItem.Subtitle>
       </ListItem.Content>
+      
     </ListItem>
   );
 
