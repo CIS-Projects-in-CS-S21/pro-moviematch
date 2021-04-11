@@ -34,7 +34,7 @@ export default function HomeScreen({ route, navigation }, page) {
     const [isLoading, setLoading] = useState(true);
     const [data, setData] = useState([]);
     const [offset, setOffset] = useState(1);
-    const [genres, setGenres] = useState(encodeURIComponent(genreToArr(contentGenre).join('|')));
+    const [genres, setGenres] = useState(encodeURIComponent(genreToArr(contentGenre, contentType).join('|')));
 
     console.log(contentGenre);
 
@@ -86,6 +86,16 @@ export default function HomeScreen({ route, navigation }, page) {
     );
 }
 
+function testStringInput(stringInput) {
+  return stringInput;
+}
+
+/* Switches the queue to load in TV shows or movies. Carried out by a toggle in settings page.
+*  @param contentType boolean used to determine if content is tv on true or movies on false
+*  @param offset used to track page from which movie or tv queue is pulled from
+*  @param genres tracks the genres from which the user has selected in the settings page
+*  @return returns string to fetch() in order to pull appropriate content base on parameters
+*/
 function contentMovieOrTV(contentType, offset, genres){
   var fetchThis
   if(contentType == true){
@@ -96,105 +106,225 @@ function contentMovieOrTV(contentType, offset, genres){
 }
 
 // Turns content genre array into an array of TMDB genre ids for queries
-  function genreToArr(contentGenre) {
+  function genreToArr(contentGenre, contentType) {
     var arr = [];
     
-    // Action
-    if (contentGenre[0]) {
-      arr.push(28);
-    }
+    if (contentType == false) {
+      // Action
+      if (contentGenre[0]) {
+        arr.push(28);
+      }
 
-    // Adventure
-    if (contentGenre[1]) {
-      arr.push(12);
-    }
+      // Adventure
+      if (contentGenre[1]) {
+        arr.push(12);
+      }
 
-    // Animation
-    if (contentGenre[2]) {
-      arr.push(16);
-    }
+      // Animation
+      if (contentGenre[2]) {
+        arr.push(16);
+      }
 
-    // Comedy
-    if (contentGenre[3]) {
-      arr.push(35);
-    }
+      // Comedy
+      if (contentGenre[3]) {
+        arr.push(35);
+      }
 
-    // Crime
-    if (contentGenre[4]) {
-      arr.push(80);
-    }
+      // Crime
+      if (contentGenre[4]) {
+        arr.push(80);
+      }
 
-    // Documentary
-    if (contentGenre[5]) {
-      arr.push(99);
-    }
+      // Documentary
+      if (contentGenre[5]) {
+        arr.push(99);
+      }
 
-    // Drama
-    if(contentGenre[6]) {
-      arr.push(18);
-    }
+      // Drama
+      if(contentGenre[6]) {
+        arr.push(18);
+      }
 
-    // Family
-    if(contentGenre[7]) {
-      arr.push(10751);
-    }
+      // Family
+      if(contentGenre[7]) {
+        arr.push(10751);
+      }
 
-    // Fantasy
-    if(contentGenre[8]) {
-      arr.push(14);
-    }
+      // Fantasy
+      if(contentGenre[8]) {
+        arr.push(14);
+      }
 
-    // History
-    if(contentGenre[9]) {
-      arr.push(36);
-    }
+      // History
+      if(contentGenre[9]) {
+        arr.push(36);
+      }
 
-    // Horror
-    if(contentGenre[10]) {
-      arr.push(27);
-    }
+      // Horror
+      if(contentGenre[10]) {
+        arr.push(27);
+      }
 
-    // Music
-    if(contentGenre[11]) {
-      arr.push(10402);
-    }
+      // Music
+      if(contentGenre[11]) {
+        arr.push(10402);
+      }
 
-    // Mystery
-    if(contentGenre[12]) {
-      arr.push(9648);
-    }
+      // Mystery
+      if(contentGenre[12]) {
+        arr.push(9648);
+      }
 
-    // Romance
-    if(contentGenre[13]) {
-      arr.push(10749);
-    }
+      // Romance
+      if(contentGenre[13]) {
+        arr.push(10749);
+      }
 
-    // Science Fiction
-    if(contentGenre[14]) {
-      arr.push(878);
-    }
+      // Science Fiction
+      if(contentGenre[14]) {
+        arr.push(878);
+      }
 
-    // TV Movie
-    if(contentGenre[15]) {
-      arr.push(10770);
-    }
+      // TV Movie
+      if(contentGenre[15]) {
+        arr.push(10770);
+      }
 
-    // Thriller
-    if(contentGenre[16]) {
-      arr.push(53);
-    }
+      // Thriller
+      if(contentGenre[16]) {
+        arr.push(53);
+      }
 
-    // War
-    if(contentGenre[17]) {
-      arr.push(10752);
-    }
+      // War
+      if(contentGenre[17]) {
+        arr.push(10752);
+      }
 
-    // Western
-    if(contentGenre[18]) {
-      arr.push(37);
+      // Western
+      if(contentGenre[18]) {
+        arr.push(37);
+      }
+    
+    } else {
+
+      //TV Genres 
+      
+      // Action & Adventure
+      if (contentGenre[19]) {
+        
+        arr.push(10759);
+      
+      }
+
+      // Animation
+      if (contentGenre[20]) {
+        
+        arr.push(16);
+      
+      }
+      
+      // Comedy
+      if (contentGenre[21]) {
+        
+        arr.push(35);
+      
+      }
+
+      // Crime
+      if (contentGenre[22]) {
+        
+        arr.push(80);
+      
+      }
+
+      // Documentary
+      if (contentGenre[23]) {
+        
+        arr.push(99);
+      
+      }
+
+      // Drama
+      if (contentGenre[24]) {
+        
+        arr.push(18);
+      
+      }
+
+      // Family
+      if (contentGenre[25]) {
+        
+        arr.push(10751);
+      
+      }
+
+      // Kids
+      if (contentGenre[26]) {
+        
+        arr.push(10762);
+      
+      }
+
+      // Mystery
+      if (contentGenre[27]) {
+        
+        arr.push(9648);
+      
+      }
+
+      // News
+      if (contentGenre[28]) {
+        
+        arr.push(10763);
+      
+      }
+
+      // Reality
+      if (contentGenre[29]) {
+        
+        arr.push(10764);
+      
+      }
+
+      // Sci-Fi & Fantasy
+      if (contentGenre[30]) {
+        
+        arr.push(10765);
+      
+      }
+
+      // Soap
+      if (contentGenre[31]) {
+        
+        arr.push(10766);
+      
+      }
+
+      // Talk
+      if (contentGenre[32]) {
+        
+        arr.push(10767);
+      
+      }
+
+      // War & Politics
+      if (contentGenre[33]) {
+        
+        arr.push(10768);
+      
+      }
+
+      // Western
+      if (contentGenre[34]) {
+        
+        arr.push(37);
+      
+      }
+    
     }
 
     return arr;
+
   }
 
   function parseMovies(movieArray) {
@@ -228,3 +358,5 @@ function contentMovieOrTV(contentType, offset, genres){
       padding: 10,
     },
   })
+
+  module.exports = HomeScreen;
