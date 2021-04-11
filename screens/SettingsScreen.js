@@ -138,7 +138,7 @@ export default function SettingsScreen({ navigation }, page) {
       
       {/* Movie Content Genre checkbox*/}
       <View>
-        <Text style={{fontWeight: 'bold', fontSize: 20}}>Movie Genre</Text>
+        <Text style={{fontWeight: 'bold', fontSize: 20}}>Movie Genres</Text>
       </View>
       <View style={{backgroundColor: '#d3d3d3', borderRadius:10, borderWith:1, padding:10, marginLeft:10, marginRight:10}}>
         <View style={{alignItems: 'left'}}>
@@ -356,7 +356,7 @@ export default function SettingsScreen({ navigation }, page) {
 
         {/* TV Content Genre checkbox*/}
       <View>
-        <Text style={{fontWeight: 'bold', fontSize: 20}}>TV Genre</Text>
+        <Text style={{fontWeight: 'bold', fontSize: 20}}>TV Genres</Text>
       </View>
       <View style={{backgroundColor: '#d3d3d3', borderRadius:10, borderWith:1, padding:10, marginLeft:10, marginRight:10}}>
         <View style={{alignItems: 'left'}}>
