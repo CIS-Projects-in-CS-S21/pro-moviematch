@@ -1,5 +1,4 @@
-import testStringInput from './screens/HomeScreen'
-const contentMovieOrTv = require("./pro-moviematch/screens/homeScreen");
+//simple demo for setting up test
 
 
 function filterByTerm(inputArr, searchTerm) {
@@ -20,14 +19,4 @@ function filterByTerm(inputArr, searchTerm) {
   
       expect(filterByTerm(input, "link")).toEqual(output);
     });
-  });
-
-  describe("Switch Mode for Movie or TV", () => {
-      test("it should switch mode if boolean is true for TV else movies for false", () => {
-        const input = "Hi";
-
-        const output = "Hi";
-
-        expect(testStringInput(input).expect.stringMatching(output))
-      });
   });
