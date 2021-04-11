@@ -86,10 +86,6 @@ export default function HomeScreen({ route, navigation }, page) {
     );
 }
 
-function testStringInput(stringInput) {
-  return stringInput;
-}
-
 /* Switches the queue to load in TV shows or movies. Carried out by a toggle in settings page.
 *  @param contentType boolean used to determine if content is tv on true or movies on false
 *  @param offset used to track page from which movie or tv queue is pulled from
