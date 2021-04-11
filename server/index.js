@@ -4,6 +4,7 @@ const passport = require('passport')
 
 
 const users = require('./routes/api/users')
+const user = require('./routes/users')
 const groups = require('./routes/group')
 const movies = require('./routes/movie')
 const streamservices = require('./routes/streamingservice')
@@ -22,7 +23,7 @@ require('./config/passport') (passport);
 require('dotenv').config()
 
 app.use('/api/users', users)
-app.use('/api/users', users)
+app.use('/api/users', user)
 app.use('/api/groups', groups)
 app.use('/api/movies', movies)
 app.use('/api/streaming_services', streamservices)
