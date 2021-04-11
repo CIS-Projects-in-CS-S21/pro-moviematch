@@ -41,14 +41,16 @@ export default function HomeScreen({ route, navigation }, page) {
     /*var genreArr = genreToArr(contentGenre);
     var genreStr = encodeURIComponent(genreArr.join('|'));*/
     
+
+    //"https://api.themoviedb.org/3/discover/movie?api_key=156f6cfa04dae615351cd9878f39b732&language=en-US&sort_by=popularity.desc&include_adult=false&include_video=false"
+    //+ "&page=" + offset + "&with_genres=" + genres
     useEffect(() => getData(), []);
 
     const getData = () => {
       console.log('getData');
       setLoading(true);
       //Service to get the data from the server to render
-      fetch("https://api.themoviedb.org/3/discover/movie?api_key=156f6cfa04dae615351cd9878f39b732&language=en-US&sort_by=popularity.desc&include_adult=false&include_video=false"
-        + "&page=" + offset + "&with_genres=" + genres)
+      fetch(contentMovieOrTV(contentType, offset, genres))
         //Sending the currect offset with get request
         .then((response) => response.json())
         .then((responseJson) => {
@@ -83,6 +85,16 @@ export default function HomeScreen({ route, navigation }, page) {
       </SafeAreaView>    
     );
 }
+
+function contentMovieOrTV(contentType, offset, genres){
+  var fetchThis
+  if(contentType == true){
+    fetchThis = "https://api.themoviedb.org/3/discover/tv?api_key=156f6cfa04dae615351cd9878f39b732&language=en-US&sort_by=popularity.desc&include_adult=false&include_video=false" + "&page=" + offset + "&with_genres=" + genres
+  } else {
+    fetchThis = "https://api.themoviedb.org/3/discover/movie?api_key=156f6cfa04dae615351cd9878f39b732&language=en-US&sort_by=popularity.desc&include_adult=false&include_video=false" + "&page=" + offset + "&with_genres=" + genres
+  } return fetchThis
+}
+
 // Turns content genre array into an array of TMDB genre ids for queries
   function genreToArr(contentGenre) {
     var arr = [];
