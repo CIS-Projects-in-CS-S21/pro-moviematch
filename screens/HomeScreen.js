@@ -34,7 +34,7 @@ export default function HomeScreen({ route, navigation }, page) {
     const [isLoading, setLoading] = useState(true);
     const [data, setData] = useState([]);
     const [offset, setOffset] = useState(1);
-    const [genres, setGenres] = useState(encodeURIComponent(genreToArr(contentGenre, contentType).join('|')));
+    //const [genres, setGenres] = useState(encodeURIComponent(genreToArr(contentGenre, contentType).join('|')));
 
     console.log(contentGenre);
 
@@ -49,9 +49,8 @@ export default function HomeScreen({ route, navigation }, page) {
     const getData = () => {
       console.log('getData');
       setLoading(true);
-      setGenres(encodeURIComponent(genreToArr(contentGenre).join('|')));
       //Service to get the data from the server to render
-      fetch(contentMovieOrTV(contentType, offset, genres))
+      fetch(contentMovieOrTV(contentType, offset, encodeURIComponent(genreToArr(contentGenre, contentType).join('|'))))
         //Sending the currect offset with get request
         .then((response) => response.json())
         .then((responseJson) => {
