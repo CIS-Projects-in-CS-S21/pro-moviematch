@@ -11,6 +11,8 @@ const streamservices = require('./routes/streamingservice')
 const usergroups = require('./routes/usergroup')
 const movielikes = require('./routes/movielike')
 
+const users = require('./routes/api/users')
+
 
 
 const app = express()
@@ -29,6 +31,7 @@ app.use('/api/movies', movies)
 app.use('/api/streaming_services', streamservices)
 app.use('/api/user_group', usergroups)
 app.use('/api/movie_likes', movielikes)
+app.use('/api/users', user)
 
 const port = process.env.PORT || 3000
 const connect = process.env.CONNECT

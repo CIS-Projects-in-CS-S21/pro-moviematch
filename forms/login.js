@@ -19,6 +19,7 @@ export default function LoginScreen({ navigation }) {
 
     const tunnelURL = "https://fat-bird-58.loca.lt"
 
+
     const checkEmailInput= () => {
       if (email != '')
         return true
