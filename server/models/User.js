@@ -10,10 +10,7 @@ const userSchema = new mongoose.Schema({
     movie_id: Number,
     group_id: [Number],
     streaming_service: [Number],
-    likes: [{
-    	type: Schema.Types.ObjectId,
-    	ref: 'MovieLike'
-    }]
+    likes: [Number]
 
 })
 

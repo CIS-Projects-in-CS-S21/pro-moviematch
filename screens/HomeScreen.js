@@ -52,9 +52,7 @@ export default function HomeScreen({ route, navigation }, page) {
     const [isLoading, setLoading] = useState(true);
     const [data, setData] = useState([]);
     const [offset, setOffset] = useState(1);
-    //const [genres, setGenres] = useState(encodeURIComponent(genreToArr(contentGenre, contentType).join('|')));
 
-    console.log(contentGenre);
 
     /*var genreArr = genreToArr(contentGenre);
     var genreStr = encodeURIComponent(genreArr.join('|'));*/
@@ -66,6 +64,7 @@ export default function HomeScreen({ route, navigation }, page) {
 
     const getData = () => {
       console.log('getData');
+      i = 0;
       setLoading(true);
       //Service to get the data from the server to render
       fetch(contentMovieOrTV(contentType, offset, encodeURIComponent(genreToArr(contentGenre, contentType).join('|'))))
@@ -83,7 +82,8 @@ export default function HomeScreen({ route, navigation }, page) {
         .catch((error) => {
           console.error(error);
         });
-    };
+    }; 
+
 
     return (
       <SafeAreaView style={styles.container}>
@@ -91,10 +91,12 @@ export default function HomeScreen({ route, navigation }, page) {
           <Swiper
               cards={data}
               renderCard={Card}
-              // infinite // keep looping cards infinitely
+              onSwiped={() => i++}
               onSwipedAll={getData}
+              onSwipedRight={() => console.log(data[i - 1])}  // (data[i - 1] is the movie card)
               verticalSwipe={false}
-              backgroundColor="white"
+              backgroundColor="#white"
+              cardVerticalMargin={20}
               cardHorizontalMargin={0}
               stackSize={2} // number of cards shown in background
               />
