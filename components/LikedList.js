@@ -1,5 +1,6 @@
-import React from 'react'
-import { SafeAreaView, View, FlatList, StyleSheet, TouchableOpacity, Text, Image, Modal } from 'react-native'
+import React, {useState} from 'react'
+import { Alert } from 'react-native';
+import { SafeAreaView, View, FlatList, StyleSheet, TouchableOpacity, Text, TextInput, Image, Modal } from 'react-native'
 import { ListItem, Avatar } from 'react-native-elements'
 import Layout from '../constants/Layout'
 
@@ -54,6 +55,8 @@ const Item = ({ title, caption}) => (
 )
 
 export const LikedList = () => {
+  const [modalVisible, setModalVisible] = useState(false);
+  const [movieTitle, setMovieTitle] = useState("");
   const renderItem = ({ item }) => (
     <ListItem 
       bottomDivider
@@ -74,12 +77,35 @@ export const LikedList = () => {
 
   return (
     <SafeAreaView style={StyleSheet.container}>
+      <Modal
+        animationType="slide"
+        transparent={true}
+        visible={modalVisible}
+        onRequestClose={() => {
+          Alert.alert("Modal has benn closed.");
+          setModalVisible(!modalVisible);
+        }}
+      >
+        <View style = {styles.modalView}>
+          <TextInput
+            style={styles.TextInput}
+            placeholder="Title"
+            placeholderTextColor="#003f5c"
+            value={movieTitle}
+            onChangeText={(movieTitle) => setMovieTitle(movieTitle)}
+          />
+          <TouchableOpacity style={styles.search} onPress={() =>
+            alert("Searching " + movieTitle + "...")}>
+            <Text style={styles.loginText}>Search</Text>
+          </TouchableOpacity>
+        </View>
+      </Modal>
       <FlatList
         data={DATA}
         renderItem={renderItem}
         ListFooterComponent={
           <TouchableOpacity style={styles.add_content} onPress={() =>
-            alert("Add content goes here")}>
+            setModalVisible(true)}>
             <Text style={styles.loginText}>Add content</Text>
           </TouchableOpacity>
         }
@@ -113,6 +139,33 @@ const styles = StyleSheet.create({
     alignItems: "center",
     backgroundColor: "#99ccff",
     marginTop: 10,
+    padding: 10,
+  },
+  search: {
+    width: "80%",
+    borderRadius: 25,
+    alignItems: "center",
+    backgroundColor: "#99ccff",
+    marginTop: 30,
+    padding: 10,
+  },
+  modalView: {
+    marginTop: 100,
+    margin: 20,
+    backgroundColor: "#a9a9a9",
+    borderRadius: 20,
+    justifyContent: "center",
+    alignItems: "center",
+    shadowColor: "#000",
+    shadowOffset: {
+      width: 0,
+      height: 2
+    },
+  },
+  TextInput: {
+    color: 'black',
+    height: 50,
+    flex: 1,
     padding: 10,
   },
 
