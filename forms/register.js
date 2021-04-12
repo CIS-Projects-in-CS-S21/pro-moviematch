@@ -10,7 +10,7 @@ export default function RegisterScreen({ navigation }) {
     const [firstName, setFirstName] = useState("");
     const [lastName, setLastName] = useState("");
 
-    const tunnelURL = "https://tricky-bullfrog-90.loca.lt"
+    const tunnelURL = "https://fat-bird-58.loca.lt"
 
     const checkEmailInput= () => {
       if (email != '')
@@ -44,23 +44,7 @@ export default function RegisterScreen({ navigation }) {
 
     }
 
-    const navigateAccreditedUser = (response) => {
-      //alert(response);
-      if(response.hasOwnProperty('success')){
-        navigation.reset({
-          index: 0,
-          routes: [
-            {
-                name: 'Queue',
-                params: { someParam: 'Param1'},
-            },
-          ],
-        })
-      }
-      else{
-        alert('Error registering account with given credentials');
-      } 
-    }
+ 
    
     function getvals(){
       return fetch(tunnelURL + "/api/users/register", {
@@ -70,7 +54,6 @@ export default function RegisterScreen({ navigation }) {
           'Content-Type': 'application/json'
         }, 
         body: JSON.stringify({
-          id: Math.floor(Math.random() * 10000000) + 1 ,
           email: email,
           password: password,
           first_name: firstName,
@@ -79,10 +62,28 @@ export default function RegisterScreen({ navigation }) {
       })
       .then((response) => response.json())
       .then((responseData) => {
-        alert(JSON.stringify(responseData));
+        //alert(JSON.stringify(responseData));
         return responseData;
       })
       .catch(error => alert('Error'));
+    }
+
+    const navigateAccreditedUser = (response) => {
+      //alert(response);
+      if(response.hasOwnProperty('password')){
+        navigation.reset({
+          index: 0,
+          routes: [
+            {
+                name: 'Login',
+                params: { someParam: 'Param1'},
+            },
+          ],
+        })
+      }
+      else{
+        alert('Error registering account with given credentials');
+      } 
     }
   
     const buttonClickListener = (navigation) => {
