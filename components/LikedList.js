@@ -1,5 +1,5 @@
 import React from 'react'
-import { SafeAreaView, View, FlatList, StyleSheet, Text, Image } from 'react-native'
+import { SafeAreaView, View, FlatList, StyleSheet, TouchableOpacity, Text, Image, Modal } from 'react-native'
 import { ListItem, Avatar } from 'react-native-elements'
 import Layout from '../constants/Layout'
 
@@ -77,8 +77,15 @@ export const LikedList = () => {
       <FlatList
         data={DATA}
         renderItem={renderItem}
+        ListFooterComponent={
+          <TouchableOpacity style={styles.add_content} onPress={() =>
+            alert("Add content goes here")}>
+            <Text style={styles.loginText}>Add content</Text>
+          </TouchableOpacity>
+        }
         //keyExtractor={item}
       />
+      
     </SafeAreaView>
   );
 }
@@ -99,6 +106,14 @@ const styles = StyleSheet.create({
   },
   caption: {
     fontSize: 20,
+  },
+  add_content: {
+    width: "80%",
+    borderRadius: 25,
+    alignItems: "center",
+    backgroundColor: "#99ccff",
+    marginTop: 10,
+    padding: 10,
   },
 
 })
