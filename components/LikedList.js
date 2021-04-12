@@ -1,7 +1,11 @@
-import React from 'react'
-import { SafeAreaView, View, FlatList, StyleSheet, Text, Image } from 'react-native'
+import React, { useState, useEffect } from 'react';
+import { SafeAreaView, View, FlatList, StyleSheet, Text, Image, ActivityIndicator } from 'react-native'
 import { ListItem, Avatar } from 'react-native-elements'
 import Layout from '../constants/Layout'
+import axios from 'axios';
+
+const tunnelURL = "https://slimy-quail-48.loca.lt";
+const movieidarray = [550, 20, 30];
 
 const DATA = [
   {
@@ -53,7 +57,54 @@ const Item = ({ title, caption}) => (
   </View>
 )
 
-export const LikedList = () => {
+
+axios.get(tunnelURL + '/api/users/60502bf7f9ef9c6104fa0a96/like')
+  .then(function (response) {
+    // handle success
+    console.log(response.data);
+  })
+  .catch(function (error) {
+    // handle error
+    console.log(error);
+  })
+  .then(function () {
+    // always executed
+  });
+
+export default function LikedList({ navigation }) {
+  const [isLoading, setLoading] = useState(true);
+  const [data, setData] = useState([]);
+  const [offset, setOffset] = useState(0);
+  var newMovieArr = [];
+  const movieidarray = [550, 220];
+
+
+  useEffect(() => getData(), []);
+
+  /**
+   * This function is trying to iterate over the movieidarray and then store each into an array.
+   */
+  const getData = () => {
+    i = 0;
+    setLoading(true);
+    //Service to get the data from the server to render
+    for (i = 0; i < movieidarray.length; i++) {
+      fetch("https://api.themoviedb.org/3/movie/" + movieidarray[i] + "?api_key=156f6cfa04dae615351cd9878f39b732")
+        //Sending the currect offset with get request
+        .then((response) => response.json())
+        .then((responseJson) => {
+          //Successful response
+          //console.log(responseJson);
+          setData([responseJson]);
+          setLoading(false);
+        })
+        .catch((error) => {
+          console.error(error);
+        });
+    }
+  };
+
+
   const renderItem = ({ item }) => (
     <ListItem bottomDivider>
       <Avatar 
@@ -65,19 +116,21 @@ export const LikedList = () => {
       />
       <ListItem.Content>
         <ListItem.Title>{item.title}</ListItem.Title>
-        <ListItem.Subtitle>{item.caption}</ListItem.Subtitle>
+        <ListItem.Subtitle>{item.overview}</ListItem.Subtitle>
       </ListItem.Content>
     </ListItem>
   );
 
   return (
     <SafeAreaView style={StyleSheet.container}>
-      <FlatList
-        data={DATA}
-        renderItem={renderItem}
-        //keyExtractor={item}
-      />
-    </SafeAreaView>
+      {isLoading ? <ActivityIndicator/> : (
+        <FlatList
+          data={data}
+          renderItem={renderItem}
+          //keyExtractor={item}
+        />
+      )}
+    </SafeAreaView >
   );
 }
 

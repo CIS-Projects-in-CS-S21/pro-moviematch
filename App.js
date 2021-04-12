@@ -12,7 +12,7 @@ import Ionicons from 'react-native-vector-icons/Ionicons';
 import ChangePasswordScreen from './forms/passwordChange.js';
 import {ButtonGroup} from 'react-native-elements';
 import {CheckBox} from 'react-native-elements';
-import {LikedList} from './components/LikedList.js'
+import LikedList from './components/LikedList.js'
 
 function HomeTabs() {
   return (

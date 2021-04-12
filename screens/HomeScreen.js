@@ -43,7 +43,6 @@ export default function HomeScreen({ navigation }, page) {
     useEffect(() => getData(), []);
 
     const getData = () => {
-      console.log('getData');
       i = 0;
       setLoading(true);
       //Service to get the data from the server to render
@@ -54,7 +53,6 @@ export default function HomeScreen({ navigation }, page) {
         .then((responseJson) => {
           //Successful response
           setOffset(offset + 1);
-          console.log(offset);
           //Increasing the offset for the next API call
           setData([...parseMovies(responseJson.results)]);
           setLoading(false);
@@ -62,32 +60,7 @@ export default function HomeScreen({ navigation }, page) {
         .catch((error) => {
           console.error(error);
         });
-    }; 
-
-    // function movieParse(movieidarray)
-    // {
-    //   var fullarray = [];
-    //   var i = 0;
-    //   for (i = 0; i < movieidarray.length; i++) {
-    //     fetch("https://api.themoviedb.org/3/movie/" + movieidarray[i] + "?api_key=156f6cfa04dae615351cd9878f39b732")
-    //     .then((response) => response.json())
-    //     .then((responseJson) => {
-    //       //Successful response
-    //       console.log(responseJson);
-    //       setData([...parseMovies(responseJson)]);
-    //       setLoading(false);
-    //     })
-    //     .catch((error) => {
-    //       console.error(error);
-    //     });
-    //     // parsedMovies[i] =
-    //     // {
-    //     //     id: mov[i].id,
-    //     //     title: movieArray[i].title,
-    //     //     caption: "Rating: " + movieArray[i].vote_average,
-    //     // }
-    //   }
-    // }
+    };
 
     return (
       <SafeAreaView style={styles.container}>
@@ -125,7 +98,7 @@ export default function HomeScreen({ navigation }, page) {
 }
 
 function getvalues(id){
-  const tunnelURL = "https://781fa291c736.ngrok.io";
+  const tunnelURL = "https://slimy-quail-48.loca.lt";
   return fetch(tunnelURL + "/api/users/60502bf7f9ef9c6104fa0a96/like", {
     method: 'POST',
     headers: {
