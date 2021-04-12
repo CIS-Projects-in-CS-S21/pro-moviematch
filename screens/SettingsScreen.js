@@ -55,10 +55,8 @@ export default function SettingsScreen({ navigation }, page) {
   //For Content type switch
   const [isEnabled, setIsEnabled] = useState(false);
   const toggleSwtich = () => setIsEnabled(previousState => !previousState);
-  
-  var userEmail = "demo2test@gmail.com";
-  var userFirstName = "John";
-  var userLastName = "Doe";
+ 
+
   return (
     
     <SafeAreaView style={styles.container}>
@@ -73,9 +71,9 @@ export default function SettingsScreen({ navigation }, page) {
           <Text>Last Name :</Text>
         </View>
         <View style={{flex:1}}>
-          <Text>{userEmail}</Text>
-          <Text>{userFirstName}</Text>
-          <Text>{userLastName}</Text>
+          <Text>{global.globEmail}</Text>
+          <Text>{global.firstName}</Text>
+          <Text>{global.lastName}</Text>
         </View>
       </View>
 

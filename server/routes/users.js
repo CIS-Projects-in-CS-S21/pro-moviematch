@@ -3,12 +3,33 @@ const express = require('express')
 const User = require('../models/User')
 const Movie = require('../models/Movie')
 const MovieLike = require('../models/MovieLike')
+const { useReducer } = require('react')
 
 const router = express.Router()
 
+//Finds user by email and sends user first name stored in DB
+router.get('/:email/Name', async (req, res) => {
+    try {
+        const user = await User.findOne({"email": req.params.email});
+        res.send({firstName: user.first_name, lastName: user.last_name})
+    } catch (err) {
+        res.json({message: "Could not find user"})
+    }
+})
+
+//Finds user by email and sends user last name stored in DB
+router.get('/:email/lastName', async (req, res) => {
+    try {
+        const user = await User.findOne({"email": req.params.email});
+        res.send({lastName: user.last_name})
+    } catch (err) {
+        res.json({message: "Could not find user"})
+    }
+})
+
 router.get('/:userId', async (req, res) => {
     try {
-        const user = await User.findById(req.params.userId);
+        const user = await User.findById(req.params.UserId);
         res.send({data: user})
     } catch (err) {
         res.json({message: "Could not find user!"})
