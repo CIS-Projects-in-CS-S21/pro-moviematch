@@ -11,8 +11,6 @@ const streamservices = require('./routes/streamingservice')
 const usergroups = require('./routes/usergroup')
 const movielikes = require('./routes/movielike')
 
-const users = require('./routes/api/users')
-
 
 
 const app = express()
@@ -25,7 +23,6 @@ require('./config/passport') (passport);
 require('dotenv').config()
 
 app.use('/api/users', users)
-app.use('/api/users', user)
 app.use('/api/groups', groups)
 app.use('/api/movies', movies)
 app.use('/api/streaming_services', streamservices)
