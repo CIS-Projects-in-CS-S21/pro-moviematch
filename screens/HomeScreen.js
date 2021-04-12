@@ -49,6 +49,7 @@ export default function HomeScreen({ route, navigation }, page) {
     const getData = () => {
       console.log('getData');
       setLoading(true);
+      setGenres(encodeURIComponent(genreToArr(contentGenre).join('|')));
       //Service to get the data from the server to render
       fetch(contentMovieOrTV(contentType, offset, genres))
         //Sending the currect offset with get request
@@ -58,7 +59,6 @@ export default function HomeScreen({ route, navigation }, page) {
           setOffset(offset + 1);
           console.log(offset);
 
-          setGenres(encodeURIComponent(genreToArr(contentGenre).join('|')));
           //Increasing the offset for the next API call
           setData([...parseMovies(responseJson.results)]);
           setLoading(false);

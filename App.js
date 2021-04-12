@@ -42,8 +42,9 @@ function HomeTabs() {
     >
       <Tab.Screen name="Queue" component={HomeScreen} initialParams={{
         contentType: false,
-        contentGenre: [false, false, true, false, false, false, false, false, false, false, false, false,
-          false, false, false, false, false, false, false]
+        contentGenre: [false, false, false, false, false, false, false, false, false, false, false, false,
+          false, false, false, false, false, false, false, false, false, false, false, false, false, false, false,
+          false, false, false, false, false, false, false, false]
       }} />
       <Tab.Screen name="View Content" component={ViewContentScreen} />
       <Tab.Screen name="Group" component={GroupScreen} />
