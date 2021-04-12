@@ -99,6 +99,54 @@ export default function HomeScreen({ route, navigation }, page) {
               cardVerticalMargin={20}
               cardHorizontalMargin={0}
               stackSize={2} // number of cards shown in background
+              overlayLabelStyle=
+              {
+                {
+                  fontSize: 25,
+                  fontWeight: 'bold',
+                  borderRadius: 10,
+                  padding: 10,
+                  overflow: 'hidden'
+                }
+              }
+              overlayLabels={{
+                left: {
+                  title: 'Not Interested',
+                  style: {
+                    label: {
+                      backgroundColor: '#99ccff',
+                      borderColor: '#99ccff',
+                      color: 'white',
+                      borderWidth: 1
+                    },
+                    wrapper: {
+                      flexDirection: 'column',
+                      alignItems: 'flex-end',
+                      justifyContent: 'flex-start',
+                      marginTop: 30,
+                      marginLeft: -30
+                    }
+                  }
+                },
+                right: {
+                  title: 'Interested',
+                  style: {
+                    label: {
+                      backgroundColor: '#FF1493',
+                      borderColor: '#FF1493',
+                      color: 'white',
+                      borderWidth: 1
+                    },
+                    wrapper: {
+                      flexDirection: 'column',
+                      alignItems: 'flex-start',
+                      justifyContent: 'flex-start',
+                      marginTop: 30,
+                      marginLeft: 30
+                    }
+                  }
+                }
+              }}
               />
         )}
       </SafeAreaView>    
