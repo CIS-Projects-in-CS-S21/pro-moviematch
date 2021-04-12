@@ -55,7 +55,9 @@ const Item = ({ title, caption}) => (
 
 export const LikedList = () => {
   const renderItem = ({ item }) => (
-    <ListItem bottomDivider>
+    <ListItem 
+      bottomDivider
+      button onLongPress={() => alert('Delete function goes here')}>
       <Avatar 
         //size="large"
         source={item.pic} 
