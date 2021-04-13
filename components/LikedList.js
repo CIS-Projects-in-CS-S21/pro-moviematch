@@ -4,8 +4,8 @@ import { ListItem, Avatar } from 'react-native-elements'
 import Layout from '../constants/Layout'
 import axios from 'axios';
 
-const tunnelURL = "https://curly-rattlesnake-63.loca.lt";
-const movieidarray = [550, 20, 30];
+const tunnelURL = "https://tender-grasshopper-27.loca.lt";
+var movieidarray = [];
 
 const DATA = [
   {
@@ -61,6 +61,9 @@ async function axiosTest() {
   try {
     const {data:response} = await axios.get(tunnelURL + '/api/users/60502bf7f9ef9c6104fa0a96/like') //use data destructuring to get data from the promise object
     console.log(response);
+    for (i = 0; i < response.length; i++) {
+      movieidarray.push(response[i]);
+    }
     return response
   }
 
@@ -74,11 +77,12 @@ axiosTest();
 export default function LikedList({ navigation }) {
   const [isLoading, setLoading] = useState(true);
   const [datas, setData] = useState([]);
-  var movieidarray = [550, 100];
+  console.log("Movie Id Array: " + movieidarray);
   var newArr = [];
   //fetch("https://api.themoviedb.org/3/movie/" + movieidarray[0] + "?api_key=156f6cfa04dae615351cd9878f39b732")
 
   useEffect(() => getData(), []);
+  
 
   const getData = () => {
     for (i = 0; i < movieidarray.length; i++) {
@@ -88,7 +92,7 @@ export default function LikedList({ navigation }) {
         .then((responseJson) => {
           //Successful response
           //Increasing the offset for the next API call
-          setData([responseJson]);
+          setData(datas => [...datas, responseJson]);
           setLoading(false);
         })
         .catch((error) => {
