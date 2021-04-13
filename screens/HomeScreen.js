@@ -5,47 +5,8 @@ import { NavigationContainer } from '@react-navigation/native';
 import { createStackNavigator } from '@react-navigation/stack';
 import Swiper from 'react-native-deck-swiper';
 import { Card } from '../components/Cards.js';
+import { contentMovieOrTV, genreToArr } from '../components/Filters'
 
-/*
-  TMDB Movie Genre IDs:
-    Action          28
-    Adventure       12
-    Animation       16
-    Comedy          35
-    Crime           80
-    Documentary     99
-    Drama           18
-    Family          10751
-    Fantasy         14
-    History         36
-    Horror          27
-    Music           10402
-    Mystery         9648
-    Romance         10749
-    Science Fiction 878
-    TV Movie        10770
-    Thriller        53
-    War             10752
-    Western         37
-
-  TMDB TV Genre IDs:
-    Action & Adventure  10759
-    Animation           16
-    Comedy              35
-    Crime               80
-    Documentary         99
-    Drama               18
-    Family              10751
-    Kids                10762
-    Mystery             9648
-    News                10763
-    Reality             10764
-    Sci-Fi & Fantasy    10765
-    Soap                10766
-    Talk                10767
-    War & Politics      10768
-    Western             37
-*/
 
 export default function HomeScreen({ route, navigation }, page) {
     const {contentType, contentGenre} = route.params;
@@ -111,17 +72,17 @@ export default function HomeScreen({ route, navigation }, page) {
 *  @param genres tracks the genres from which the user has selected in the settings page
 *  @return returns string to fetch() in order to pull appropriate content base on parameters
 */
-function contentMovieOrTV(contentType, offset, genres){
+/*function contentMovieOrTV(contentType, offset, genres){
   var fetchThis
   if(contentType == true){
     fetchThis = "https://api.themoviedb.org/3/discover/tv?api_key=156f6cfa04dae615351cd9878f39b732&language=en-US&sort_by=popularity.desc&include_adult=false&include_video=false" + "&page=" + offset + "&with_genres=" + genres
   } else {
     fetchThis = "https://api.themoviedb.org/3/discover/movie?api_key=156f6cfa04dae615351cd9878f39b732&language=en-US&sort_by=popularity.desc&include_adult=false&include_video=false" + "&page=" + offset + "&with_genres=" + genres
   } return fetchThis
-}
+}*/
 
 // Turns content genre array into an array of TMDB genre ids for queries
-  function genreToArr(contentGenre, contentType) {
+/*  function genreToArr(contentGenre, contentType) {
     var arr = [];
     
     if (contentType == false) {
@@ -340,7 +301,7 @@ function contentMovieOrTV(contentType, offset, genres){
 
     return arr;
 
-  }
+  }*/
 
   function parseMovies(movieArray) {
     var parsedMovies = [];
