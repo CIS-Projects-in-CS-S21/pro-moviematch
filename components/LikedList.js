@@ -4,7 +4,7 @@ import { ListItem, Avatar } from 'react-native-elements'
 import Layout from '../constants/Layout'
 import axios from 'axios';
 
-const tunnelURL = "https://slimy-quail-48.loca.lt";
+const tunnelURL = "https://curly-rattlesnake-63.loca.lt";
 const movieidarray = [550, 20, 30];
 
 const DATA = [
@@ -57,53 +57,46 @@ const Item = ({ title, caption}) => (
   </View>
 )
 
+async function axiosTest() {
+  try {
+    const {data:response} = await axios.get(tunnelURL + '/api/users/60502bf7f9ef9c6104fa0a96/like') //use data destructuring to get data from the promise object
+    console.log(response);
+    return response
+  }
 
-axios.get(tunnelURL + '/api/users/60502bf7f9ef9c6104fa0a96/like')
-  .then(function (response) {
-    // handle success
-    console.log(response.data);
-  })
-  .catch(function (error) {
-    // handle error
+  catch (error) {
     console.log(error);
-  })
-  .then(function () {
-    // always executed
-  });
+  }
+}
+
+axiosTest();
 
 export default function LikedList({ navigation }) {
   const [isLoading, setLoading] = useState(true);
-  const [data, setData] = useState([]);
-  const [offset, setOffset] = useState(0);
-  var newMovieArr = [];
-  const movieidarray = [550, 220];
-
+  const [datas, setData] = useState([]);
+  var movieidarray = [550, 100];
+  var newArr = [];
+  //fetch("https://api.themoviedb.org/3/movie/" + movieidarray[0] + "?api_key=156f6cfa04dae615351cd9878f39b732")
 
   useEffect(() => getData(), []);
 
-  /**
-   * This function is trying to iterate over the movieidarray and then store each into an array.
-   */
   const getData = () => {
-    i = 0;
-    setLoading(true);
-    //Service to get the data from the server to render
     for (i = 0; i < movieidarray.length; i++) {
-      fetch("https://api.themoviedb.org/3/movie/" + movieidarray[i] + "?api_key=156f6cfa04dae615351cd9878f39b732")
-        //Sending the currect offset with get request
+        setLoading(true);
+        fetch("https://api.themoviedb.org/3/movie/" + movieidarray[i] + "?api_key=156f6cfa04dae615351cd9878f39b732")
         .then((response) => response.json())
         .then((responseJson) => {
           //Successful response
-          //console.log(responseJson);
+          //Increasing the offset for the next API call
           setData([responseJson]);
           setLoading(false);
         })
         .catch((error) => {
           console.error(error);
         });
-    }
-  };
-
+      };
+  }
+  
 
   const renderItem = ({ item }) => (
     <ListItem bottomDivider>
@@ -125,7 +118,7 @@ export default function LikedList({ navigation }) {
     <SafeAreaView style={StyleSheet.container}>
       {isLoading ? <ActivityIndicator/> : (
         <FlatList
-          data={data}
+          data={datas}
           renderItem={renderItem}
           //keyExtractor={item}
         />
