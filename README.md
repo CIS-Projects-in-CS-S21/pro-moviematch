@@ -32,7 +32,9 @@ Jacob Cannon
   - Scan the QR code shared during the demo (it is also included at the bottom of this page)
  
 ### To Login to MovieMatch App
-  - On Login page, type in email: demo2test@gmail.com & password: moviematch
+  - Navigate to the register page and create your account! 
+  - Then after registering successfully, it will take you to the login page.
+  - Login with your created account and you will be directed to the queue
 
 
 ### QR CODE
