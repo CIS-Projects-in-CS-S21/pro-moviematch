@@ -30,7 +30,7 @@ export default function HomeScreen({ route, navigation }, page) {
           console.log(offset);
 
           
-          setData([...parseMovies(responseJson.results)]);
+          setData([...parseMovies(responseJson.results, contentType)]);
           setLoading(false);
         })
         .catch((error) => {
@@ -107,16 +107,28 @@ export default function HomeScreen({ route, navigation }, page) {
     );
 }
 
-  function parseMovies(movieArray) {
+  function parseMovies(movieArray, contentType) {
     var parsedMovies = [];
     var i;
     var imgurl= "https://image.tmdb.org/t/p/original";
-    for (i = 0; i < movieArray.length; i++) {
-      parsedMovies[i] =
-      {
+    if(contentType == false) {
+      for (i = 0; i < movieArray.length; i++) {
+        parsedMovies[i] =
+        {
           pic: {uri: imgurl.concat(movieArray[i].poster_path)},
           title: movieArray[i].title,
           caption: "Rating: " + movieArray[i].vote_average,
+        }
+      }
+    }
+    else {
+      for (i = 0; i < movieArray.length; i++) {
+        parsedMovies[i] =
+        {
+          pic: {uri: imgurl.concat(movieArray[i].poster_path)},
+          title: movieArray[i].name,
+          caption: "Rating: " + movieArray[i].vote_average,
+        }
       }
     }
     return parsedMovies
