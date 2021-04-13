@@ -14,7 +14,7 @@ export default function LoginScreen({ navigation }) {
     const [password, setPassword] = useState("");
     global.globEmail = email;
 
-    const tunnelURL = "https://moody-zebra-9.loca.lt";
+    const tunnelURL = "https://nervous-lion-41.loca.lt";
 
     const checkEmailInput= () => {
       if (email != '')
@@ -49,23 +49,19 @@ export default function LoginScreen({ navigation }) {
       .catch(error => alert('Error'));
     }
 
-    function getUserID(){
-      const tunnelURL = "https://cuddly-termite-15.loca.lt";
-      return fetch(tunnelURL + "/:email/userId", {
-        method: 'GET',
-        headers: {
-          'Accept': 'application/json',
-          'Content-Type': 'application/json'
-        }, 
-      })
-      .then((response) => response.json())
-    
-      .then((responseData) => {
-        alert(JSON.stringify(responseData));
-        return responseData;
-      })
-      .catch(error => alert('Error'));
-    }
+    const getUserID = async () =>{
+      try{
+        let response = await fetch(tunnelURL + "/api/users/" + global.globEmail + "/userId");
+        let jsonResponse = await response.json();
+        let userID = jsonResponse.userId;
+        global.userID = userID;
+      }
+      catch(error){
+        alert(error);
+      }
+    };
+
+    getUserID();
 
     const navigateLoggedInUser = (response) => {
       //alert(response);

@@ -4,7 +4,7 @@ import { ListItem, Avatar } from 'react-native-elements'
 import Layout from '../constants/Layout'
 import axios from 'axios';
 
-const tunnelURL = "https://moody-zebra-9.loca.lt";
+const tunnelURL = "https://nervous-lion-41.loca.lt";
 
 var movieidarray = [];
 
@@ -66,7 +66,7 @@ export default function LikedList({ navigation }) {
   var newArr = [];
   //fetch("https://api.themoviedb.org/3/movie/" + movieidarray[0] + "?api_key=156f6cfa04dae615351cd9878f39b732")
 
-  console.log(getUserID());
+  console.log(global.userID);
   useEffect(() => getData(), []);
 
   const getData = () => {
