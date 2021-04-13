@@ -14,7 +14,7 @@ export default function LoginScreen({ navigation }) {
     const [password, setPassword] = useState("");
     global.globEmail = email;
 
-    const tunnelURL = "https://nervous-lion-41.loca.lt";
+    const tunnelURL = "https://plastic-wolverine-6.loca.lt";
 
     const checkEmailInput= () => {
       if (email != '')
@@ -66,6 +66,8 @@ export default function LoginScreen({ navigation }) {
     const navigateLoggedInUser = (response) => {
       //alert(response);
       if(response.hasOwnProperty('success')){
+        let hasLoggedIn = 1;
+        global.hasLoggedIn = hasLoggedIn;
         navigation.reset({
           index: 0,
           routes: [

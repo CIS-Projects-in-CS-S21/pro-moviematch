@@ -28,12 +28,11 @@ import { Card } from '../components/Cards.js';
     War             10752
     Western         37
 */
-const tunnelURL = "https://moody-zebra-9.loca.lt";
+const tunnelURL = "https://plastic-wolverine-6.loca.lt";
 export default function HomeScreen({ navigation }, page) {
     const [isLoading, setLoading] = useState(true);
     const [data, setData] = useState([]);
     const [offset, setOffset] = useState(1);
-    const userId = '606b7f646e03d7605c1eaaec';
     
     var i = 0;
 
@@ -98,7 +97,7 @@ export default function HomeScreen({ navigation }, page) {
 }
 
 function getvalues(id){
-  return fetch(tunnelURL + "/api/users/60502bf7f9ef9c6104fa0a96/like", {
+  return fetch(tunnelURL + "/api/users/" + global.userID + "/like", {
     method: 'POST',
     headers: {
       'Accept': 'application/json',

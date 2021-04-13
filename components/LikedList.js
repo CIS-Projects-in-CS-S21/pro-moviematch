@@ -3,8 +3,10 @@ import { SafeAreaView, View, FlatList, StyleSheet, Text, Image, ActivityIndicato
 import { ListItem, Avatar } from 'react-native-elements'
 import Layout from '../constants/Layout'
 import axios from 'axios';
+import {hasLoggedIn} from login;
+import login from '../server/validation/login';
 
-const tunnelURL = "https://nervous-lion-41.loca.lt";
+const tunnelURL = "https://plastic-wolverine-6.loca.lt";
 
 var movieidarray = [];
 
@@ -30,7 +32,7 @@ const getUserID = async () =>{
 
 async function axiosTest() {
   try {
-    const {data:response} = await axios.get(tunnelURL + '/api/users/60502bf7f9ef9c6104fa0a96/like') //use data destructuring to get data from the promise object
+    const {data:response} = await axios.get(tunnelURL + '/api/users/'+ global.userID +'/like') //use data destructuring to get data from the promise object
     console.log(response);
     for (i = 0; i < response.length; i++) {
       movieidarray.push(response[i]);
@@ -58,8 +60,10 @@ function parseMovies(movieArray) {
   }
   return parsedMovies
 }
-
-axiosTest();
+if(hasLoggedIn = 1)
+{
+  axiosTest();
+}
 export default function LikedList({ navigation }) {
   const [isLoading, setLoading] = useState(true);
   const [datas, setData] = useState([]);
