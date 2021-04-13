@@ -69,12 +69,12 @@ async function axiosTest() {
   }
 }
 
-axiosTest();
 
 export default function LikedList({ navigation }) {
   const [isLoading, setLoading] = useState(true);
   const [datas, setData] = useState([]);
-  var movieidarray = [550, 100];
+  var movieidarray = [399566,791373,412656,527774,587807, 793723,587996,];
+
   var newArr = [];
   //fetch("https://api.themoviedb.org/3/movie/" + movieidarray[0] + "?api_key=156f6cfa04dae615351cd9878f39b732")
 
@@ -87,8 +87,7 @@ export default function LikedList({ navigation }) {
         .then((response) => response.json())
         .then((responseJson) => {
           //Successful response
-          //Increasing the offset for the next API call
-          setData([responseJson]);
+          setData(datas => [...datas, responseJson]);
           setLoading(false);
         })
         .catch((error) => {
