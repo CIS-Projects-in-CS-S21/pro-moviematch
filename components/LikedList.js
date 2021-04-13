@@ -72,7 +72,6 @@ async function axiosTest() {
   }
 }
 
-axiosTest();
 
 export default function LikedList({ navigation }) {
   const [isLoading, setLoading] = useState(true);
