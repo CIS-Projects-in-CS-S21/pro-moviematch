@@ -28,7 +28,7 @@ import { Card } from '../components/Cards.js';
     War             10752
     Western         37
 */
-
+const tunnelURL = "https://moody-zebra-9.loca.lt";
 export default function HomeScreen({ navigation }, page) {
     const [isLoading, setLoading] = useState(true);
     const [data, setData] = useState([]);
@@ -98,7 +98,6 @@ export default function HomeScreen({ navigation }, page) {
 }
 
 function getvalues(id){
-  const tunnelURL = "https://slimy-quail-48.loca.lt";
   return fetch(tunnelURL + "/api/users/60502bf7f9ef9c6104fa0a96/like", {
     method: 'POST',
     headers: {
@@ -117,6 +116,19 @@ function getvalues(id){
   })
   .catch(error => alert('Error'));
 }
+
+const getUserID = async () =>{
+  try{
+    let response = await fetch(tunnelURL + "/api/users/" + global.globEmail + "/Name");
+    let jsonResponse = await response.json();
+    let userID = jsonResponse._id;
+    global.userID = userID;
+  }
+  catch(error){
+    alert(error);
+  }
+};
+
 
   const styles = StyleSheet.create({
     container: {

@@ -4,51 +4,9 @@ import { ListItem, Avatar } from 'react-native-elements'
 import Layout from '../constants/Layout'
 import axios from 'axios';
 
-const tunnelURL = "https://tender-grasshopper-27.loca.lt";
-var movieidarray = [];
+const tunnelURL = "https://moody-zebra-9.loca.lt";
 
-const DATA = [
-  {
-    pic: require('../assets/movieposters/ironman.jpg'),
-    title: 'Iron Man',
-    caption: 'After being held captive in an Afghan cave, billionaire engineer Tony Stark creates a unique weaponized suit of armor to fight evil.',
-  },
-  {
-    pic: require('../assets/movieposters/avatar.jpg'),
-    title: 'Avatar',
-    caption: 'In the 22nd century, a paraplegic Marine is dispatched to the moon Pandora on a unique mission, but becomes torn between following orders and protecting an alien civilization.',
-  },
-  {
-    pic: require('../assets/movieposters/joker.jpg'),
-    title: 'Joker',
-    caption: 'During the 1980s, a failed stand-up comedian is driven insane and turns to a life of crime and chaos in Gotham City while becoming an infamous psychopathic crime figure.',
-  },
-  {
-    pic: require('../assets/movieposters/matrix.jpg'),
-    title: 'The Matrix',
-    caption: 'Set in the 22nd century, The Matrix tells the story of a computer hacker who joins a group of underground insurgents fighting the vast and powerful computers who now rule the earth.',
-  },
-  {
-    pic: require('../assets/movieposters/diehard.jpg'),
-    title: 'Die Hard',
-    caption: 'YPD cop John McClanes plan to reconcile with his estranged wife is thrown for a serious loop when, minutes after he arrives at her office, the entire building is overtaken by a group of terrorists. Wisecracking McClane sets out to single-handedly rescue the hostages and bring the bad guys down.',
-  },
-  {
-    pic: require('../assets/movieposters/toystory.jpg'),
-    title: 'Toy Story',
-    caption: 'Led by Woody, Andy`s toys live happily in his room until Andy`s birthday brings Buzz Lightyear onto the scene. Afraid of losing his place in Andy`s heart, Woody plots against Buzz. But when circumstances separate Buzz and Woody from their owner, the duo eventually learns to put aside their differences.',
-  },
-  {
-    pic: require('../assets/movieposters/moneyball.jpg'),
-    title: 'Moneyball',
-    caption: 'The story of Oakland Athletics general manager Billy Beane`s successful attempt to put together a baseball team on a budget, by employing computer-generated analysis to draft his players.',
-  },
-  {
-    pic: require('../assets/movieposters/superbad.jpg'),
-    title: 'Superbad',
-    caption: 'Two co-dependent high school seniors are forced to deal with separation anxiety after their plan to stage a booze-soaked party goes awry.',
-  },
-];
+var movieidarray = [];
 
 const Item = ({ title, caption}) => (
   <View style={StyleSheet.item}>
@@ -57,6 +15,19 @@ const Item = ({ title, caption}) => (
   </View>
 )
 
+const getUserID = async () =>{
+  try{
+    let response = await fetch(tunnelURL + "/api/users/" + global.globEmail + "/userId");
+    let jsonResponse = await response.json();
+    let userID = jsonResponse.userId;
+    global.userID = userID;
+  }
+  catch(error){
+    alert(error);
+  }
+};
+
+
 async function axiosTest() {
   try {
     const {data:response} = await axios.get(tunnelURL + '/api/users/60502bf7f9ef9c6104fa0a96/like') //use data destructuring to get data from the promise object
@@ -64,7 +35,7 @@ async function axiosTest() {
     for (i = 0; i < response.length; i++) {
       movieidarray.push(response[i]);
     }
-    return response
+    return parseMovies(response)
   }
 
   catch (error) {
@@ -72,16 +43,31 @@ async function axiosTest() {
   }
 }
 
+function parseMovies(movieArray) {
+  var parsedMovies = [];
+  var i;
+  var imgurl = "https://image.tmdb.org/t/p/original";
+  for (i = 0; i < movieArray.length; i++) {
+    parsedMovies[i] =
+    {
+        id: movieArray[i].id,
+        pic: {uri: imgurl.concat(movieArray[i].poster_path)},
+        title: movieArray[i].title,
+        caption: "Rating: " + movieArray[i].vote_average,
+    }
+  }
+  return parsedMovies
+}
 
+axiosTest();
 export default function LikedList({ navigation }) {
   const [isLoading, setLoading] = useState(true);
   const [datas, setData] = useState([]);
-  console.log("Movie Id Array: " + movieidarray);
   var newArr = [];
   //fetch("https://api.themoviedb.org/3/movie/" + movieidarray[0] + "?api_key=156f6cfa04dae615351cd9878f39b732")
 
+  console.log(getUserID());
   useEffect(() => getData(), []);
-  
 
   const getData = () => {
     for (i = 0; i < movieidarray.length; i++) {

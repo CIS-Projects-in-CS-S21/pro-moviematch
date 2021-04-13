@@ -80,6 +80,15 @@ router.post('/:userId/like', async (req, res) => {
     }
 })
 
+router.get('/:email/userId', async (req, res) => {
+    try {
+        const user = await User.findOne({"email": req.params.email});
+        res.send({userId: user._id})
+    } catch (err) {
+        res.json({message: "Could not find user"})
+    }
+})
+
 
 
 module.exports = router
