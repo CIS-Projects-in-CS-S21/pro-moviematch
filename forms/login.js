@@ -17,7 +17,8 @@ export default function LoginScreen({ navigation }) {
     const [firstName, setFirstName] = useState("");
     const [lastName, setLastName] = useState("");
 
-    const tunnelURL = "https://fat-bird-58.loca.lt"
+
+    const tunnelURL = "https://purple-fly-11.loca.lt"
 
 
     const checkEmailInput= () => {
