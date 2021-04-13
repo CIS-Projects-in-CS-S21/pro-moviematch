@@ -559,6 +559,7 @@ export default function SettingsScreen({ navigation }, page) {
 
       <TouchableOpacity style={styles.change_password_button} onPress={() =>
         navigation.navigate('Queue',{
+          streamingServices: [checkedNetflix, checkedAmazon, checkedDisney, checkedHBO],
           contentType: isEnabled,
           contentGenre: [checked1, checked2, checked3, checked4, checked5, checked6, checked7,
                           checked8, checked9, checked10, checked11, checked12, checked13, checked14,

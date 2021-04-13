@@ -48,7 +48,7 @@ import { Card } from '../components/Cards.js';
 */
 
 export default function HomeScreen({ route, navigation }, page) {
-    const {contentType, contentGenre} = route.params;
+    const {streamingServices, contentType, contentGenre} = route.params;
     const [isLoading, setLoading] = useState(true);
     const [data, setData] = useState([]);
     const [offset, setOffset] = useState(1);
@@ -64,6 +64,7 @@ export default function HomeScreen({ route, navigation }, page) {
 
     const getData = () => {
       console.log('getData');
+      console.log("Streaming service array: " + streamingServices);
       i = 0;
       setLoading(true);
       //Service to get the data from the server to render

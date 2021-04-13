@@ -41,6 +41,7 @@ function HomeTabs() {
     }}
     >
       <Tab.Screen name="Queue" component={HomeScreen} initialParams={{
+        streamingServices: [false, false, false, false],
         contentType: false,
         contentGenre: [false, false, false, false, false, false, false, false, false, false, false, false,
           false, false, false, false, false, false, false, false, false, false, false, false, false, false, false,
