@@ -36,4 +36,4 @@ Jacob Cannon
 
 
 ### QR CODE
-  - ![Code](Demo2QRcode.png)
+  - ![Code](Demo3QRCode.png)
