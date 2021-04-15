@@ -1,6 +1,7 @@
 {
   "jest": {
-    "verbose": true
+    "verbose": true,
+    "testRegex": "./_test_/.*.js$"
   },
   "main": "node_modules/expo/AppEntry.js",
   "scripts": {

@@ -10,11 +10,6 @@
             "branches": 95,
             "functions": 100,
             "lines": 100
-        },
-        "./_tests/home-screen-tests/filterByTerm.test.js": {
-            "branches": 95,
-            "functions": 100,
-            "lines": 100
         }
     }
 }
