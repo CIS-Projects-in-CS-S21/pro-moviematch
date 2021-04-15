@@ -41,9 +41,9 @@
 
 /* Switches the queue to load in TV shows or movies. Carried out by a toggle in settings page.
 *  @param contentType boolean used to determine if content is tv on true or movies on false
-*  @param offset used to track page from which movie or tv queue is pulled from
-*  @param genres tracks the genres from which the user has selected in the settings page
-*  @return returns string to fetch() in order to pull appropriate content base on parameters
+*  @param offset      used to track page from which movie or tv queue is pulled from
+*  @param genres      tracks the genres from which the user has selected in the settings page
+*  @return            string to fetch() in order to pull appropriate content base on parameters
 */
 export function contentMovieOrTV(contentType, offset, genres) {
 
@@ -61,8 +61,8 @@ export function contentMovieOrTV(contentType, offset, genres) {
 /* Filters the queue base on movie genres. This is taken from settings and selection of genres
 *  under the Movie Genres.
 *  @param contentGenre passes an array of booleans that indicate if genre was selected
-*         by user
-*  @return returns an array of the genres selected
+*                      by user
+*  @return             an array of the genres selected
 */
 function movieGenresFilter(contentGenre) {
     
@@ -169,8 +169,8 @@ function movieGenresFilter(contentGenre) {
 /* Filters the queue base on TV genres. This is taken from settings and selection of genres
 *  under the TV Genres.
 *  @param contentGenre passes an array of booleans that indicate if genre was selected
-*         by user
-*  @return returns an array of the genres selected
+*                      by user
+*  @return             an array of the genres selected
 */
 function tvGenresFilter(contentGenre) {
     
@@ -293,10 +293,16 @@ function tvGenresFilter(contentGenre) {
     return arr;
 }
 
-// Turns content genre array into an array of TMDB genre ids for queries
-export function genreToArr(contentGenre, contentType) {
+/* Turns content genre array into an array of TMDB genre ids for queries
+    @param contentGenre passes a list of content user whats to queue through
+    @param contentType  tells if user wish to go thorugh movie or tv shows
+    @return             returns the appropiate url for fetch()
+*/
+export function genreToArr(contentGenre, contentType) 
+{
     
-    if (contentType == true) {
+    if (contentType == true) 
+    {
       return tvGenresFilter(contentGenre)
     
     }
