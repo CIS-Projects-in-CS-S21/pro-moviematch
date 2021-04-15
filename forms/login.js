@@ -7,6 +7,10 @@ import { Value } from 'react-native-reanimated';
 import { Alert } from 'react-native';
 import { AsyncStorage } from 'react-native';
 import axios from 'axios'
+<<<<<<< Updated upstream
+=======
+import tunnelURL from './../common/global.js'
+>>>>>>> Stashed changes
 
 
 export default function LoginScreen({ navigation }) {
@@ -18,7 +22,11 @@ export default function LoginScreen({ navigation }) {
     const [lastName, setLastName] = useState("");
 
 
+<<<<<<< Updated upstream
     const tunnelURL = "https://purple-fly-11.loca.lt"
+=======
+    const tunnelURL = "https://tame-puma-25.loca.lt"
+>>>>>>> Stashed changes
 
 
     const checkEmailInput= () => {

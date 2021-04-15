@@ -3,6 +3,10 @@ import React, { useState } from 'react';
 import { Text, View, Image, TextInput, Button, TouchableOpacity, StyleSheet} from 'react-native';
 import { NavigationContainer } from '@react-navigation/native';
 import { createStackNavigator } from '@react-navigation/stack';
+<<<<<<< Updated upstream
+=======
+import {tunnelURL} from './../common/global.js'
+>>>>>>> Stashed changes
 
 export default function RegisterScreen({ navigation }) {
     const [email, setEmail] = useState("");
@@ -11,7 +15,11 @@ export default function RegisterScreen({ navigation }) {
     const [lastName, setLastName] = useState("");
 
 
+<<<<<<< Updated upstream
     const tunnelURL = "https://purple-fly-11.loca.lt"
+=======
+    //const tunnelURL = "https://tame-puma-25.loca.lt"
+>>>>>>> Stashed changes
 
 
     const checkEmailInput= () => {
