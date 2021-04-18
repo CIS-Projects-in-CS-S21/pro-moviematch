@@ -16,7 +16,12 @@ Iterate to next index
 
 */
 
+//get group memebers
+//assign member list to array
+//solutions 2D array or hashmap
 
+//external needs fetch group
+//fetch members list
 function createGroupList(groupMembers)
 {
     
