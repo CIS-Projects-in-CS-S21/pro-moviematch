@@ -1,3 +1,4 @@
+import {getGroupLikeList} from '../common/calls'
 
 /*
 Comparing groups like list
@@ -24,10 +25,14 @@ Iterate to next index
 //fetch members list
 function createGroupList(groupMembers)
 {
-    
+    let members = getGroupLikeList(234234);
+
+    let membersList = new Map();
 
 
+  console.log(Members)
 }
+
 
 /*
 * Takes two group members list and compares them to each other.

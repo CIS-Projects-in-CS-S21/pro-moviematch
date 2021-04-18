@@ -1,7 +1,7 @@
 import tunnelURL from './../common/global.js'
 
-function getGroupList(groupID){
-    return fetch(tunnelURL + "/api/grouplikelist/:id/members", {
+function getGroupLikeList(groupID){
+    return fetch("http://localhost:3000/api/grouplikelist/6052aa27f8da823a7ea3edce/members", {
       method: 'GET',
       headers: {
         'Accept': 'application/json',

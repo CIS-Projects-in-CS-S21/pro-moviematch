@@ -1,4 +1,4 @@
-import {compareLists} from '../../components/Group List'
+import {compareLists} from '../../components/Group_List'
 
 
 describe("Test Array Comparison", () => 
