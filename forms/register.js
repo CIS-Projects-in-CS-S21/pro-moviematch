@@ -11,7 +11,7 @@ export default function RegisterScreen({ navigation }) {
     const [lastName, setLastName] = useState("");
 
 
-    const tunnelURL = "https://purple-fly-11.loca.lt"
+    const tunnelURL = "https://evil-eagle-72.loca.lt"
 
 
     const checkEmailInput= () => {

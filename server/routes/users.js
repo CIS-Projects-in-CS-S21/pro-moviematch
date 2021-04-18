@@ -4,6 +4,7 @@ const User = require('../models/User')
 const Movie = require('../models/Movie')
 const MovieLike = require('../models/MovieLike')
 const { useReducer } = require('react')
+const bcrypt = require('bcryptjs');
 
 const router = express.Router()
 
@@ -100,6 +101,52 @@ router.post('/:userId/like', async (req, res) => {
         res.status(201).json(user.likes)
     }
 })
+
+router.post('/:email/changePasswords', async (req, res) => {
+    const currPassword = req.body.password;
+    const newPassword = req.body.newPassword;
+     
+    try {
+        const user = await User.findOne({"email": req.params.email});
+    } catch (err) {
+        res.json({message: "Could not find user"})
+    }
+    //const user = await User.findOne({"email": req.params.email}).then(user => {
+        //user.password = newPassword; 
+        //user.save();
+    })
+        
+router.post('/:email/changePassword', async (req, res) => {
+    const currPassword = req.body.password; 
+    const newPassword = req.body.newPassword;
+    var user; 
+    try {
+        user = await User.findOne({"email": req.params.email});
+
+    } catch (err) {
+         res.json({message: "Could not find user"})
+    }
+    if (user.password == req.body.password){
+        user.password = req.body.newPassword;
+        bcrypt.genSalt(10, (err, salt) => {
+            bcrypt.hash(user.password, salt, (err, hash) => {
+                if (err) throw err;
+                user.password = hash;
+                user
+                .save()
+                .then(user => res.json(user))
+                .catch(err => console.log(err));
+            });
+        })
+        res.status(201).json({message: "User password successfully changed!"})
+    } else {
+        res.status(404).json({message: "Incorrect current password"})
+    }
+    
+    })   
+    
+    
+
 
 
 
