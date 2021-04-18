@@ -4,6 +4,8 @@ import { Text, View, Image, TextInput, Button, TouchableOpacity, StyleSheet} fro
 import { NavigationContainer } from '@react-navigation/native';
 import { createStackNavigator } from '@react-navigation/stack';
 
+const tunnelURL = 'https://pretty-husky-64.loca.lt';
+
 export default function ChangePasswordScreen({ navigation }) {
     const [currentPassword, setCurrentPassword] = useState("");
     const [newPassword, setNewPassword] = useState("");
@@ -28,18 +30,40 @@ export default function ChangePasswordScreen({ navigation }) {
 
     }
 
+    function changePassword(){
+      return fetch(tunnelURL + "/api/users/" + global.globEmail+ "/changePassword", {
+        method: 'POST',
+        headers: {
+          'Accept': 'application/json',
+          'Content-Type': 'application/json'
+        }, 
+        body: JSON.stringify({
+          password: currentPassword,
+          newPassword: newPassword,
+        })
+      })
+      .then((response) => response.json())
+
+      .then((responseData) => {
+        alert(JSON.stringify(responseData));
+        return responseData;
+      })
+      .catch(error => alert('Error'));
+    }
+
     const buttonClickListener = (navigation) => {
       if (checkCurrentPasswordInput() == true && checkNewPasswordInput()){
-        navigation.reset({
-          index: 0,
-          routes: [
-            {
-                name: 'Queue',
-                params: { someParam: 'Param1'},
-            },
-          ],
-        })
-        alert('Password Changed');
+        changePassword();
+          navigation.reset({
+            index: 0,
+            routes: [
+              {
+                  name: 'Queue',
+                  params: { someParam: 'Param1'},
+              },
+            ],
+          })
+          alert('Password Changed');
       }
       
       //Not the most convenient but it works for now

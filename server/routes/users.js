@@ -113,8 +113,6 @@ router.post('/:email/changePassword', async (req, res) => {
     } catch (err) {
          res.json({message: "Could not find user"})
     }
-    console.log(currPassword)
-    console.log(user.password);
     bcrypt.compare(currPassword, user.password).then(isMatch => {
         if (isMatch){
             user.password = req.body.newPassword;

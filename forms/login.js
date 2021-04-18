@@ -18,7 +18,7 @@ export default function LoginScreen({ navigation }) {
     const [lastName, setLastName] = useState("");
 
 
-    const tunnelURL = "https://evil-eagle-72.loca.lt"
+    const tunnelURL = "https://pretty-husky-64.loca.lt"
 
 
     const checkEmailInput= () => {
