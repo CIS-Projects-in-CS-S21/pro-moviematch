@@ -102,19 +102,6 @@ router.post('/:userId/like', async (req, res) => {
     }
 })
 
-router.post('/:email/changePasswords', async (req, res) => {
-    const currPassword = req.body.password;
-    const newPassword = req.body.newPassword;
-     
-    try {
-        const user = await User.findOne({"email": req.params.email});
-    } catch (err) {
-        res.json({message: "Could not find user"})
-    }
-    //const user = await User.findOne({"email": req.params.email}).then(user => {
-        //user.password = newPassword; 
-        //user.save();
-    })
         
 router.post('/:email/changePassword', async (req, res) => {
     const currPassword = req.body.password; 
@@ -126,24 +113,31 @@ router.post('/:email/changePassword', async (req, res) => {
     } catch (err) {
          res.json({message: "Could not find user"})
     }
-    if (user.password == req.body.password){
-        user.password = req.body.newPassword;
-        bcrypt.genSalt(10, (err, salt) => {
-            bcrypt.hash(user.password, salt, (err, hash) => {
-                if (err) throw err;
-                user.password = hash;
-                user
-                .save()
-                .then(user => res.json(user))
-                .catch(err => console.log(err));
-            });
-        })
-        res.status(201).json({message: "User password successfully changed!"})
-    } else {
-        res.status(404).json({message: "Incorrect current password"})
-    }
+    console.log(currPassword)
+    console.log(user.password);
+    bcrypt.compare(currPassword, user.password).then(isMatch => {
+        if (isMatch){
+            user.password = req.body.newPassword;
+            bcrypt.genSalt(10, (err, salt) => {
+                bcrypt.hash(user.password, salt, (err, hash) => {
+                    if (err) throw err;
+                    user.password = hash;
+                    user
+                    .save()
+                    .then(user => res.json(user))
+                    .catch(err => console.log(err));
+                });
+            })
+            res.status(201).json({success: "User password successfully changed!"})
+        } else {
+            return res
+            .status(400)
+            .json({passwordincorrect: "Incorrect password"});
+        }
+    });
+
     
-    })   
+    })  
     
     
 
