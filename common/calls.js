@@ -1,22 +1,20 @@
-import tunnelURL from './../common/global.js'
 
-export function getGroupLikeList(groupID){
-    //place tunnelURL here 
-    return fetch("http://localhost:3000/api/grouplikelist/6052aa27f8da823a7ea3edce/members", {
-      method: 'GET',
-      headers: {
-        'Accept': 'application/json',
-        'Content-Type': 'application/json'
-      }, 
-      body: JSON.stringify({
-        members: members
-      })
-    })
+import tunnelURL from './global.js'
+
+const fetch = require("node-fetch")
+
+export function getGroupMembers(groupID){
+  var members  
+  //place tunnelURL here 
+    fetch("//localhost:3000/api/grouplikelist/6052aa27f8da823a7ea3edce/members")
+      
     .then((response) => response.json())
 
     .then((responseData) => {
       //alert(JSON.stringify(responseData));
-      return responseData;
+      return JSON.parse(responseData);
     })
-    .catch(error => alert('Error'));
+    .catch(error => console.log('Error'));
   }
+
+  
