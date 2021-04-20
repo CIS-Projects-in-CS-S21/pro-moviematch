@@ -3,10 +3,10 @@ import { SafeAreaView, View, FlatList, StyleSheet, Text, Image, ActivityIndicato
 import { ListItem, Avatar } from 'react-native-elements'
 import Layout from '../constants/Layout'
 import axios from 'axios';
-import {hasLoggedIn} from login;
+//import {hasLoggedIn} from login;
 import login from '../server/validation/login';
 
-const tunnelURL = "https://plastic-wolverine-6.loca.lt";
+const tunnelURL = "https://bright-squid-11.loca.lt";
 
 var movieidarray = [];
 
@@ -60,10 +60,7 @@ function parseMovies(movieArray) {
   }
   return parsedMovies
 }
-if(hasLoggedIn = 1)
-{
-  axiosTest();
-}
+
 export default function LikedList({ navigation }) {
   const [isLoading, setLoading] = useState(true);
   const [datas, setData] = useState([]);
@@ -74,20 +71,43 @@ export default function LikedList({ navigation }) {
   useEffect(() => getData(), []);
 
   const getData = () => {
-    for (i = 0; i < movieidarray.length; i++) {
+
+    try {
+      axios.get(tunnelURL + '/api/users/'+ global.userID +'/like') //use data destructuring to get data from the promise object
+      .then(function (response) {
+        console.log(response.data);
+    for (i = 0; i < response.data.length; i++) {
+      movieidarray.push(response.data[i]);
+    }
+      //return parseMovies(response)
+      console.log("arraylength: " + movieidarray.length);
+      console.log("movieidarray: " + movieidarray[0]);
+      for (i = 0; i < movieidarray.length; i++) {
+        console.log("where am I : 2");
         setLoading(true);
+        console.log(i);
         fetch("https://api.themoviedb.org/3/movie/" + movieidarray[i] + "?api_key=156f6cfa04dae615351cd9878f39b732")
-        .then((response) => response.json())
+        .then((response2) => response2.json())
         .then((responseJson) => {
           //Successful response
           //Increasing the offset for the next API call
           setData(datas => [...datas, responseJson]);
           setLoading(false);
+          console.log("responseJson: " + responseJson);
         })
         .catch((error) => {
           console.error(error);
         });
       };
+    });
+  }
+  
+    catch (error) {
+      console.log(error);
+    }
+    console.log("where am I : 1");
+    console.log("i = " + i);
+    
   }
   
 
