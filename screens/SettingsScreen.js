@@ -9,10 +9,10 @@ const screenWidth = Dimensions.get('window').width;
 
 export default function SettingsScreen({ navigation }, page) {
   //Chechbox for Streaming services
-  const [checkedNetflix, toggleCheckedNetflix] = useState(false);
-  const [checkedAmazon, toggleCheckedAmazon] = useState(false);
-  const [checkedDisney, toggleCheckedDisney] = useState(false);
-  const [checkedHBO, toggleCheckedHBO] = useState(false);
+  const [checkedNetflix, toggleCheckedNetflix] = useState(true);
+  const [checkedAmazon, toggleCheckedAmazon] = useState(true);
+  const [checkedDisney, toggleCheckedDisney] = useState(true);
+  const [checkedHBO, toggleCheckedHBO] = useState(true);
   
   // Movie Content checkboxes
   const [checked1, toggleChecked1] = useState(false);

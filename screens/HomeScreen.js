@@ -22,7 +22,7 @@ export default function HomeScreen({ route, navigation }, page) {
       i = 0;
       setLoading(true);
       
-      fetch(contentMovieOrTV(contentType, offset, encodeURIComponent(genreToArr(contentGenre, contentType).join('|'))))
+      fetch(contentMovieOrTV(contentType, offset, encodeURIComponent(genreToArr(contentGenre, contentType, streamingServices).join('|'))))
         
         .then((response) => response.json())
         .then((responseJson) => {
@@ -108,17 +108,19 @@ export default function HomeScreen({ route, navigation }, page) {
     );
 }
 
-  function parseMovies(movieArray, contentType) {
+  function parseMovies(movieArray, contentType, streamingServices) {
     var parsedMovies = [];
     var i;
     var imgurl= "https://image.tmdb.org/t/p/original";
     if(contentType == false) {
       for (i = 0; i < movieArray.length; i++) {
-        parsedMovies[i] =
-        {
-          pic: {uri: imgurl.concat(movieArray[i].poster_path)},
-          title: movieArray[i].title,
-          caption: "Rating: " + movieArray[i].vote_average,
+        if (streamCheck(movieArray.id, streamingServices)) {
+          parsedMovies.push(
+          {
+            pic: {uri: imgurl.concat(movieArray[i].poster_path)},
+            title: movieArray[i].title,
+            caption: "Rating: " + movieArray[i].vote_average,
+          });
         }
       }
     }
@@ -133,6 +135,61 @@ export default function HomeScreen({ route, navigation }, page) {
       }
     }
     return parsedMovies
+}
+
+// Returns what streaming services (if any) that a movie is streaming on that a user has
+function streamingServiceFilter(id, streamingServices) {
+  const [netflix, onNetflix] = useState(false);
+  const [amazon, onAmazon] = useState(false);
+  const [disney, onDisney] = useState(false);
+  const [HBO, onHBO] = useState(false);
+
+  fetch("https://utelly-tv-shows-and-movies-availability-v1.p.rapidapi.com/idlookup?source_id=movie/" + id + "&source=tmdb&country=us", {
+  "method": "GET",
+  "headers": {
+    "x-rapidapi-key": "SIGN-UP-FOR-KEY",
+    "x-rapidapi-host": "utelly-tv-shows-and-movies-availability-v1.p.rapidapi.com"
+  }
+})
+.then(response => {
+  for (var i = 0; i < response.collection.locations.length; i++) {
+    
+    if((streamingServices[0] == true) && (response.collection.locations[i].display_name == "Netflix")) {
+      onNetflix(true);
+    }
+
+    if((streamingServices[1] == true) && (response.collection.locations[i].display_name == "Amazon Prime Video")) {
+      onAmazon(true);
+    }
+
+    if((streamingServices[2] == true) && (response.collection.locations[i].display_name == "Disney+")) {
+      onDisney(true);
+    }
+
+    if((streamingServices[3] == true) && (response.collection.locations[i].display_name == "HBO Max")) {
+      onHBO(true);
+    }
+  }
+})
+.catch(err => {
+  console.error(err);
+});
+
+var streamArr = [netflix, amazon, disney, HBO];
+return streamArr;
+}
+
+// Returns whether a movie is on any of the streaming services the user selects
+function streamCheck(id, streamingServices) {
+  var streamArr = streamingServiceFilter(id, streamingServices);
+
+  for (var i = 0; i < streamArr.length; i++) {
+    if (streamArr[i] == true) {
+      return true;
+    }
+  }
+
+  return false;
 }
 
   const styles = StyleSheet.create({
