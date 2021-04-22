@@ -1,14 +1,15 @@
-import { StatusBar } from 'expo-status-bar';
 import React, { useState, useEffect } from 'react';
-import { Text, View, SafeAreaView, Image, TextInput, Button, TouchableOpacity, StyleSheet, ActivityIndicator} from 'react-native';
-import { NavigationContainer } from '@react-navigation/native';
-import { createStackNavigator } from '@react-navigation/stack';
+import { SafeAreaView, StyleSheet, ActivityIndicator} from 'react-native';
 import Swiper from 'react-native-deck-swiper';
 import { Card } from '../components/Cards.js';
 import { contentMovieOrTV, genreToArr } from '../components/Filters'
 
-
-export default function HomeScreen({ route, navigation }, page) {
+/**
+ * HomeScreen visual component that contains the content queue. This is where the user will swipe through content
+ * @param {boolean, Array[boolean]} route Contains filter information that will be used to modify the queue
+ * @returns Visual home screen component
+ */
+export default function HomeScreen({ route }) {
     const {contentType, contentGenre} = route.params;
     const [isLoading, setLoading] = useState(true);
     const [data, setData] = useState([]);
@@ -106,32 +107,37 @@ export default function HomeScreen({ route, navigation }, page) {
       </SafeAreaView>    
     );
 }
-
-  function parseMovies(movieArray, contentType) {
-    var parsedMovies = [];
-    var i;
-    var imgurl= "https://image.tmdb.org/t/p/original";
-    if(contentType == false) {
-      for (i = 0; i < movieArray.length; i++) {
-        parsedMovies[i] =
-        {
-          pic: {uri: imgurl.concat(movieArray[i].poster_path)},
-          title: movieArray[i].title,
-          caption: "Rating: " + movieArray[i].vote_average,
-        }
+/**
+ * Function to parse through the content and return the values we will be using in the cards
+ * @param {Array} movieArray An array of movie objects to be parsed
+ * @param {string} contentType Type of content that will be parsed (movie or tv show)
+ * @returns {Array} Parsed array of movies containing the fields we are utilizing in the cards
+ */
+function parseMovies(movieArray, contentType) {
+  var parsedMovies = [];
+  var i;
+  var imgurl= "https://image.tmdb.org/t/p/original";
+  if(contentType == false) {
+    for (i = 0; i < movieArray.length; i++) {
+      parsedMovies[i] =
+      {
+        pic: {uri: imgurl.concat(movieArray[i].poster_path)},
+        title: movieArray[i].title,
+        caption: "Rating: " + movieArray[i].vote_average,
       }
     }
-    else {
-      for (i = 0; i < movieArray.length; i++) {
-        parsedMovies[i] =
-        {
-          pic: {uri: imgurl.concat(movieArray[i].poster_path)},
-          title: movieArray[i].name,
-          caption: "Rating: " + movieArray[i].vote_average,
-        }
+  }
+  else {
+    for (i = 0; i < movieArray.length; i++) {
+      parsedMovies[i] =
+      {
+        pic: {uri: imgurl.concat(movieArray[i].poster_path)},
+        title: movieArray[i].name,
+        caption: "Rating: " + movieArray[i].vote_average,
       }
     }
-    return parsedMovies
+  }
+  return parsedMovies
 }
 
   const styles = StyleSheet.create({

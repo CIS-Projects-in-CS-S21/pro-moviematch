@@ -52,7 +52,10 @@ const Item = ({ title, caption}) => (
     <Text style={StyleSheet.caption}>{caption}</Text>
   </View>
 )
-
+/**
+ * Contains liked list that is populated via the movies in the user's liked list
+ * @returns Visual liked list in the style of flatlist 
+ */
 export const LikedList = () => {
   const renderItem = ({ item }) => (
     <ListItem bottomDivider>

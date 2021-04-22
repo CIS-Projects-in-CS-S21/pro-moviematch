@@ -1,13 +1,6 @@
 import { StatusBar } from 'expo-status-bar';
 import React, { useState } from 'react';
 import { Text, View, Image, TextInput, Button, TouchableOpacity, StyleSheet} from 'react-native';
-import { NavigationContainer } from '@react-navigation/native';
-import { createStackNavigator } from '@react-navigation/stack';
-import { Value } from 'react-native-reanimated';
-import { Alert } from 'react-native';
-import { AsyncStorage } from 'react-native';
-import axios from 'axios'
-
 
 export default function LoginScreen({ navigation }) {
     const [email, setEmail] = useState("");
@@ -18,7 +11,7 @@ export default function LoginScreen({ navigation }) {
     const [lastName, setLastName] = useState("");
 
 
-    const tunnelURL = "https://purple-fly-11.loca.lt"
+    const tunnelURL = "https://fast-grasshopper-100.loca.lt"
 
 
     const checkEmailInput= () => {

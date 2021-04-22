@@ -1,8 +1,6 @@
 import { StatusBar } from 'expo-status-bar';
 import React, { useState } from 'react';
-import { Text, View, Image, TextInput, Button, TouchableOpacity, StyleSheet} from 'react-native';
-import { NavigationContainer } from '@react-navigation/native';
-import { createStackNavigator } from '@react-navigation/stack';
+import { Text, View, Image, TextInput, TouchableOpacity, StyleSheet} from 'react-native';
 
 export default function RegisterScreen({ navigation }) {
     const [email, setEmail] = useState("");
@@ -11,7 +9,7 @@ export default function RegisterScreen({ navigation }) {
     const [lastName, setLastName] = useState("");
 
 
-    const tunnelURL = "https://purple-fly-11.loca.lt"
+    const tunnelURL = "https://fast-grasshopper-100.loca.lt"
 
 
     const checkEmailInput= () => {
