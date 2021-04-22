@@ -5,8 +5,9 @@ import Layout from '../constants/Layout'
 import axios from 'axios';
 //import {hasLoggedIn} from login;
 import login from '../server/validation/login';
+import {tunnelURL} from './../common/global'
 
-const tunnelURL = "https://red-cobra-19.loca.lt";
+
 
 var movieidarray = [];
 

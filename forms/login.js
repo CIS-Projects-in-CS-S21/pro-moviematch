@@ -1,6 +1,8 @@
 import { StatusBar } from 'expo-status-bar';
 import React, { useState } from 'react';
 import { Text, View, Image, TextInput, Button, TouchableOpacity, StyleSheet} from 'react-native';
+import {tunnelURL} from './../common/global'
+
 
 export default function LoginScreen({ navigation }) {
     const [email, setEmail] = useState("");
@@ -8,7 +10,7 @@ export default function LoginScreen({ navigation }) {
     global.globEmail = email;
     const [firstName, setFirstName] = useState("");
     const [lastName, setLastName] = useState("");
-    const tunnelURL = "https://fast-grasshopper-100.loca.lt"
+    
 
 
     const checkEmailInput= () => {
