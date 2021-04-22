@@ -78,7 +78,6 @@ export default function LikedList({ navigation }) {
     
   }
   
-
   const renderItem = ({ item }) => (
     <ListItem bottomDivider>
       <Avatar 

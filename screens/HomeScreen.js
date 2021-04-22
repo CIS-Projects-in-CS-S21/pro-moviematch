@@ -1,8 +1,5 @@
-import { StatusBar } from 'expo-status-bar';
 import React, { useState, useEffect } from 'react';
-import { Text, View, SafeAreaView, Image, TextInput, Button, TouchableOpacity, StyleSheet, ActivityIndicator} from 'react-native';
-import { NavigationContainer } from '@react-navigation/native';
-import { createStackNavigator } from '@react-navigation/stack';
+import { SafeAreaView, StyleSheet, ActivityIndicator} from 'react-native';
 import Swiper from 'react-native-deck-swiper';
 import { Card } from '../components/Cards.js';
 import { contentMovieOrTV, genreToArr } from '../components/Filters'
@@ -10,8 +7,12 @@ import { genreToString } from "../components/ContentGenreToString"
 
 const tunnelURL = "https://plastic-wolverine-6.loca.lt";
 
-
-export default function HomeScreen({ route, navigation }, page) {
+/**
+ * HomeScreen visual component that contains the content queue. This is where the user will swipe through content
+ * @param {boolean, Array[boolean]} route Contains filter information that will be used to modify the queue
+ * @returns Visual home screen component
+ */
+export default function HomeScreen({ route }) {
     const {contentType, contentGenre} = route.params;
     const [isLoading, setLoading] = useState(true);
     const [data, setData] = useState([]);
@@ -106,7 +107,6 @@ export default function HomeScreen({ route, navigation }, page) {
       </SafeAreaView>    
     );
 }
-
   function parseMovies(movieArray, contentType) {
     var parsedMovies = [];
     var i;
@@ -123,17 +123,18 @@ export default function HomeScreen({ route, navigation }, page) {
         //console.log(genreToString(movieArray[i].genre_ids));
       }
     }
-    else {
-      for (i = 0; i < movieArray.length; i++) {
-        parsedMovies[i] =
-        {
-          pic: {uri: imgurl.concat(movieArray[i].poster_path)},
-          title: movieArray[i].name,
-          caption: "Rating: " + movieArray[i].vote_average,
-        }
+  }
+  else {
+    for (i = 0; i < movieArray.length; i++) {
+      parsedMovies[i] =
+      {
+        pic: {uri: imgurl.concat(movieArray[i].poster_path)},
+        title: movieArray[i].name,
+        caption: "Rating: " + movieArray[i].vote_average,
       }
     }
-    return parsedMovies
+  }
+  return parsedMovies
 }
 
 function getvalues(id){
