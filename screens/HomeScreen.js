@@ -6,6 +6,7 @@ import { createStackNavigator } from '@react-navigation/stack';
 import Swiper from 'react-native-deck-swiper';
 import { Card } from '../components/Cards.js';
 import { contentMovieOrTV, genreToArr } from '../components/Filters'
+import { genreToString } from "../components/ContentGenreToString"
 
 
 export default function HomeScreen({ route, navigation }, page) {
@@ -119,6 +120,7 @@ export default function HomeScreen({ route, navigation }, page) {
           title: movieArray[i].title,
           caption: "Rating: " + movieArray[i].vote_average,
         }
+        //console.log(genreToString(movieArray[i].genre_ids));
       }
     }
     else {
