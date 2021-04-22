@@ -293,7 +293,12 @@ function tvGenresFilter(contentGenre) {
     return arr;
 }
 
-// Turns content genre array into an array of TMDB genre ids for queries
+
+/* Turns content genre array into an array of TMDB genre ids for queries
+    @param contentGenre passes a list of content user whats to queue through
+    @param contentType  tells if user wish to go thorugh movie or tv shows
+    @return             returns the appropiate url for fetch()
+*/
 export function genreToArr(contentGenre, contentType) {
     
     if (contentType == true) {
