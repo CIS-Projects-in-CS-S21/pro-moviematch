@@ -1,0 +1,15 @@
+{
+    "collectCoverage": true,
+    "coverageThreshold": {
+        "global": {
+            "branches": 95,
+            "functions": 100,
+            "lines": 100
+        },
+        "./screens/HomeScreen.js": {
+            "branches": 95,
+            "functions": 100,
+            "lines": 100
+        }
+    }
+}

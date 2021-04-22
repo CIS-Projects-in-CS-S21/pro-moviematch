@@ -13,8 +13,10 @@ export default function LoginScreen({ navigation }) {
     const [email, setEmail] = useState("");
     const [password, setPassword] = useState("");
     global.globEmail = email;
+    const [firstName, setFirstName] = useState("");
+    const [lastName, setLastName] = useState("");
+    const tunnelURL = "https://purple-fly-11.loca.lt"
 
-    const tunnelURL = "https://plastic-wolverine-6.loca.lt";
 
     const checkEmailInput= () => {
       if (email != '')
@@ -43,7 +45,7 @@ export default function LoginScreen({ navigation }) {
       .then((response) => response.json())
 
       .then((responseData) => {
-        alert(JSON.stringify(responseData));
+        //alert(JSON.stringify(responseData));
         return responseData;
       })
       .catch(error => alert('Error'));
@@ -65,6 +67,7 @@ export default function LoginScreen({ navigation }) {
 
     const navigateLoggedInUser = (response) => {
       //alert(response);
+     // response.hasOwnProperty('success')
       if(response.hasOwnProperty('success')){
         let hasLoggedIn = 1;
         global.hasLoggedIn = hasLoggedIn;
@@ -82,6 +85,21 @@ export default function LoginScreen({ navigation }) {
         alert('Error logging into account with given credentials');
       } 
     }
+
+    const getFirstName = async () =>{
+      try{
+        let response = await fetch(tunnelURL + "/api/users/" + global.globEmail + "/Name");
+        let jsonResponse = await response.json();
+        let firstName = jsonResponse.firstName;
+        let lastName = jsonResponse.lastName;
+        global.firstName = firstName;
+        global.lastName = lastName;
+      }
+      catch(error){
+        alert(error);
+      }
+    };
+    getFirstName();
 
     const buttonClickListener = (navigation) => {
       

@@ -3,14 +3,13 @@ const mongoose = require('mongoose')
 const passport = require('passport')
 
 
+const users = require('./routes/api/users')
 const user = require('./routes/users')
 const groups = require('./routes/group')
 const movies = require('./routes/movie')
 const streamservices = require('./routes/streamingservice')
 const usergroups = require('./routes/usergroup')
 const movielikes = require('./routes/movielike')
-
-const users = require('./routes/api/users')
 
 
 
@@ -23,7 +22,6 @@ app.use(passport.initialize());
 require('./config/passport') (passport);
 require('dotenv').config()
 
-app.use('/api/users', users)
 app.use('/api/users', users)
 app.use('/api/groups', groups)
 app.use('/api/movies', movies)

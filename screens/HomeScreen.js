@@ -5,55 +5,33 @@ import { NavigationContainer } from '@react-navigation/native';
 import { createStackNavigator } from '@react-navigation/stack';
 import Swiper from 'react-native-deck-swiper';
 import { Card } from '../components/Cards.js';
+import { contentMovieOrTV, genreToArr } from '../components/Filters'
+import { genreToString } from "../components/ContentGenreToString"
 
-/*
-  TMDB Movie Genre IDs:
-    Action          28
-    Adventure       12
-    Animation       16
-    Comedy          35
-    Crime           80
-    Documentary     99
-    Drama           18
-    Family          10751
-    Fantasy         14
-    History         36
-    Horror          27
-    Music           10402
-    Mystery         9648
-    Romance         10749
-    Science Fiction 878
-    TV Movie        10770
-    Thriller        53
-    War             10752
-    Western         37
-*/
 const tunnelURL = "https://plastic-wolverine-6.loca.lt";
-export default function HomeScreen({ navigation }, page) {
+
+
+export default function HomeScreen({ route, navigation }, page) {
+    const {contentType, contentGenre} = route.params;
     const [isLoading, setLoading] = useState(true);
     const [data, setData] = useState([]);
     const [offset, setOffset] = useState(1);
-    
     var i = 0;
 
-    var genreArr = [28, 12, 16, 35, 99, 18, 10751, 14, 36, 27, 9648, 878, 53];
-    var genreStr = encodeURIComponent(genreArr.join('|'));
-    
     useEffect(() => getData(), []);
 
     const getData = () => {
       i = 0;
       setLoading(true);
-      //Service to get the data from the server to render
-      fetch("https://api.themoviedb.org/3/discover/movie?api_key=156f6cfa04dae615351cd9878f39b732&language=en-US&sort_by=popularity.desc&include_adult=false&include_video=false"
-        + "&page=" + offset + "&with_genres=" + genreStr)
-        //Sending the currect offset with get request
+      
+      fetch(contentMovieOrTV(contentType, offset, encodeURIComponent(genreToArr(contentGenre, contentType).join('|'))))
+        
         .then((response) => response.json())
         .then((responseJson) => {
-          //Successful response
+          
           setOffset(offset + 1);
-          //Increasing the offset for the next API call
-          setData([...parseMovies(responseJson.results)]);
+          setData([...parseMovies(responseJson.results, contentType)]);
+
           setLoading(false);
         })
         .catch((error) => {
@@ -75,22 +53,84 @@ export default function HomeScreen({ navigation }, page) {
               cardVerticalMargin={20}
               cardHorizontalMargin={0}
               stackSize={2} // number of cards shown in background
+              overlayLabelStyle=
+              {
+                {
+                  fontSize: 25,
+                  fontWeight: 'bold',
+                  borderRadius: 10,
+                  padding: 10,
+                  overflow: 'hidden'
+                }
+              }
+              overlayLabels={{
+                left: {
+                  title: 'Not Interested',
+                  style: {
+                    label: {
+                      backgroundColor: '#99ccff',
+                      borderColor: '#99ccff',
+                      color: 'white',
+                      borderWidth: 1
+                    },
+                    wrapper: {
+                      flexDirection: 'column',
+                      alignItems: 'flex-end',
+                      justifyContent: 'flex-start',
+                      marginTop: 30,
+                      marginLeft: -30
+                    }
+                  }
+                },
+                right: {
+                  title: 'Interested',
+                  style: {
+                    label: {
+                      backgroundColor: '#FF1493',
+                      borderColor: '#FF1493',
+                      color: 'white',
+                      borderWidth: 1
+                    },
+                    wrapper: {
+                      flexDirection: 'column',
+                      alignItems: 'flex-start',
+                      justifyContent: 'flex-start',
+                      marginTop: 30,
+                      marginLeft: 30
+                    }
+                  }
+                }
+              }}
               />
         )}
       </SafeAreaView>    
     );
-} 
-  function parseMovies(movieArray) {
+}
+
+  function parseMovies(movieArray, contentType) {
     var parsedMovies = [];
     var i;
-    var imgurl = "https://image.tmdb.org/t/p/original";
-    for (i = 0; i < movieArray.length; i++) {
-      parsedMovies[i] =
-      {
+    var imgurl= "https://image.tmdb.org/t/p/original";
+    if(contentType == false) {
+      for (i = 0; i < movieArray.length; i++) {
+        parsedMovies[i] =
+        {
           id: movieArray[i].id,
           pic: {uri: imgurl.concat(movieArray[i].poster_path)},
           title: movieArray[i].title,
           caption: "Rating: " + movieArray[i].vote_average,
+        }
+        //console.log(genreToString(movieArray[i].genre_ids));
+      }
+    }
+    else {
+      for (i = 0; i < movieArray.length; i++) {
+        parsedMovies[i] =
+        {
+          pic: {uri: imgurl.concat(movieArray[i].poster_path)},
+          title: movieArray[i].name,
+          caption: "Rating: " + movieArray[i].vote_average,
+        }
       }
     }
     return parsedMovies
@@ -145,3 +185,5 @@ const getUserID = async () =>{
       padding: 10,
     },
   })
+
+  module.exports = HomeScreen;

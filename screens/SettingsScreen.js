@@ -13,7 +13,8 @@ export default function SettingsScreen({ navigation }, page) {
   const [checkedAmazon, toggleCheckedAmazon] = useState(false);
   const [checkedDisney, toggleCheckedDisney] = useState(false);
   const [checkedHBO, toggleCheckedHBO] = useState(false);
-  //Checkbox for content genre
+  
+  // Movie Content checkboxes
   const [checked1, toggleChecked1] = useState(false);
   const [checked2, toggleChecked2] = useState(false);
   const [checked3, toggleChecked3] = useState(false);
@@ -33,13 +34,29 @@ export default function SettingsScreen({ navigation }, page) {
   const [checked17, toggleChecked17] = useState(false);
   const [checked18, toggleChecked18] = useState(false);
   const [checked19, toggleChecked19] = useState(false);
+
+  // TV Content checkboxes
+  const [checked20, toggleChecked20] = useState(false);
+  const [checked21, toggleChecked21] = useState(false);
+  const [checked22, toggleChecked22] = useState(false);
+  const [checked23, toggleChecked23] = useState(false);
+  const [checked24, toggleChecked24] = useState(false);
+  const [checked25, toggleChecked25] = useState(false);
+  const [checked26, toggleChecked26] = useState(false);
+  const [checked27, toggleChecked27] = useState(false);
+  const [checked28, toggleChecked28] = useState(false);
+  const [checked29, toggleChecked29] = useState(false);
+  const [checked30, toggleChecked30] = useState(false);
+  const [checked31, toggleChecked31] = useState(false);
+  const [checked32, toggleChecked32] = useState(false);
+  const [checked33, toggleChecked33] = useState(false);
+  const [checked34, toggleChecked34] = useState(false);
+  const [checked35, toggleChecked35] = useState(false);
   //For Content type switch
   const [isEnabled, setIsEnabled] = useState(false);
   const toggleSwtich = () => setIsEnabled(previousState => !previousState);
-  
-  var userEmail = "demo2test@gmail.com";
-  var userFirstName = "John";
-  var userLastName = "Doe";
+ 
+
   return (
     
     <SafeAreaView style={styles.container}>
@@ -54,9 +71,9 @@ export default function SettingsScreen({ navigation }, page) {
           <Text>Last Name :</Text>
         </View>
         <View style={{flex:1}}>
-          <Text>{userEmail}</Text>
-          <Text>{userFirstName}</Text>
-          <Text>{userLastName}</Text>
+          <Text>{global.globEmail}</Text>
+          <Text>{global.firstName}</Text>
+          <Text>{global.lastName}</Text>
         </View>
       </View>
 
@@ -136,9 +153,9 @@ export default function SettingsScreen({ navigation }, page) {
         </View>
       </View>
       
-      {/* Content Genre checkbox*/}
+      {/* Movie Content Genre checkbox*/}
       <View>
-        <Text style={{fontWeight: 'bold', fontSize: 20}}>Content Genre</Text>
+        <Text style={{fontWeight: 'bold', fontSize: 20}}>Movie Genres</Text>
       </View>
       <View style={{backgroundColor: '#d3d3d3', borderRadius:10, borderWith:1, padding:10, marginLeft:10, marginRight:10}}>
         <View style={{alignItems: 'left'}}>
@@ -278,7 +295,7 @@ export default function SettingsScreen({ navigation }, page) {
             checkedColor="#0F0"
             containerStyle={{}}
             checked={checked13}
-            onPress={() => toggleChecked13(!checked13)}
+            onPress={() => toggleChecked13(!checked12)}
             size={30}
             textStyle={{}}
             title="Mystery"
@@ -354,7 +371,202 @@ export default function SettingsScreen({ navigation }, page) {
         </View>
       </View>
 
-      <TouchableOpacity style={styles.change_password_button}>
+        {/* TV Content Genre checkbox*/}
+      <View>
+        <Text style={{fontWeight: 'bold', fontSize: 20}}>TV Genres</Text>
+      </View>
+      <View style={{backgroundColor: '#d3d3d3', borderRadius:10, borderWith:1, padding:10, marginLeft:10, marginRight:10}}>
+        <View style={{alignItems: 'left'}}>
+          <CheckBox
+            checkedColor="#0F0"
+            containerStyle={{}}
+            checked={checked20}
+            onPress={() => toggleChecked20(!checked20)}
+            size={30}
+            textStyle={{}}
+            title="Action & Adventure"
+            titleProps={{}}
+            uncheckedColor="#F00"
+          />
+          <CheckBox
+            checkedColor="#0F0"
+            containerStyle={{}}
+            checked={checked21}
+            onPress={() => toggleChecked21(!checked21)}
+            size={30}
+            textStyle={{}}
+            title="Animation"
+            titleProps={{}}
+            uncheckedColor="#F00"
+          />
+          <CheckBox
+            checkedColor="#0F0"
+            containerStyle={{}}
+            checked={checked22}
+            onPress={() => toggleChecked22(!checked22)}
+            size={30}
+            textStyle={{}}
+            title="Comedy"
+            titleProps={{}}
+            uncheckedColor="#F00"
+          />
+          <CheckBox
+            checkedColor="#0F0"
+            containerStyle={{}}
+            checked={checked23}
+            onPress={() => toggleChecked23(!checked23)}
+            size={30}
+            textStyle={{}}
+            title="Crime"
+            titleProps={{}}
+            uncheckedColor="#F00"
+          />
+          <CheckBox
+            checkedColor="#0F0"
+            containerStyle={{}}
+            checked={checked24}
+            onPress={() => toggleChecked24(!checked24)}
+            size={30}
+            textStyle={{}}
+            title="Documentary"
+            titleProps={{}}
+            uncheckedColor="#F00"
+          />
+          <CheckBox
+            checkedColor="#0F0"
+            containerStyle={{}}
+            checked={checked25}
+            onPress={() => toggleChecked25(!checked25)}
+            size={30}
+            textStyle={{}}
+            title="Drama"
+            titleProps={{}}
+            uncheckedColor="#F00"
+          />
+          <CheckBox
+            checkedColor="#0F0"
+            containerStyle={{}}
+            checked={checked26}
+            onPress={() => toggleChecked26(!checked26)}
+            size={30}
+            textStyle={{}}
+            title="Family"
+            titleProps={{}}
+            uncheckedColor="#F00"
+          />
+          <CheckBox
+            checkedColor="#0F0"
+            containerStyle={{}}
+            checked={checked27}
+            onPress={() => toggleChecked27(!checked27)}
+            size={30}
+            textStyle={{}}
+            title="Kids"
+            titleProps={{}}
+            uncheckedColor="#F00"
+          />
+          <CheckBox
+            checkedColor="#0F0"
+            containerStyle={{}}
+            checked={checked28}
+            onPress={() => toggleChecked28(!checked28)}
+            size={30}
+            textStyle={{}}
+            title="Mystery"
+            titleProps={{}}
+            uncheckedColor="#F00"
+          />
+          <CheckBox
+            checkedColor="#0F0"
+            containerStyle={{}}
+            checked={checked29}
+            onPress={() => toggleChecked29(!checked29)}
+            size={30}
+            textStyle={{}}
+            title="News"
+            titleProps={{}}
+            uncheckedColor="#F00"
+          />
+          <CheckBox
+            checkedColor="#0F0"
+            containerStyle={{}}
+            checked={checked30}
+            onPress={() => toggleChecked30(!checked30)}
+            size={30}
+            textStyle={{}}
+            title="Reality"
+            titleProps={{}}
+            uncheckedColor="#F00"
+          />
+          <CheckBox
+            checkedColor="#0F0"
+            containerStyle={{}}
+            checked={checked31}
+            onPress={() => toggleChecked31(!checked31)}
+            size={30}
+            textStyle={{}}
+            title="Sci-Fi & Fantasy"
+            titleProps={{}}
+            uncheckedColor="#F00"
+          />
+          <CheckBox
+            checkedColor="#0F0"
+            containerStyle={{}}
+            checked={checked32}
+            onPress={() => toggleChecked32(!checked32)}
+            size={30}
+            textStyle={{}}
+            title="Soap"
+            titleProps={{}}
+            uncheckedColor="#F00"
+          />
+          <CheckBox
+            checkedColor="#0F0"
+            containerStyle={{}}
+            checked={checked33}
+            onPress={() => toggleChecked33(!checked33)}
+            size={30}
+            textStyle={{}}
+            title="Talk"
+            titleProps={{}}
+            uncheckedColor="#F00"
+          />
+          <CheckBox
+            checkedColor="#0F0"
+            containerStyle={{}}
+            checked={checked34}
+            onPress={() => toggleChecked34(!checked34)}
+            size={30}
+            textStyle={{}}
+            title="War & Politics"
+            titleProps={{}}
+            uncheckedColor="#F00"
+          />
+          <CheckBox
+            checkedColor="#0F0"
+            containerStyle={{}}
+            checked={checked35}
+            onPress={() => toggleChecked35(!checked35)}
+            size={30}
+            textStyle={{}}
+            title="Western"
+            titleProps={{}}
+            uncheckedColor="#F00"
+          />
+          
+        </View>
+      </View>
+
+      <TouchableOpacity style={styles.change_password_button} onPress={() =>
+        navigation.navigate('Queue',{
+          contentType: isEnabled,
+          contentGenre: [checked1, checked2, checked3, checked4, checked5, checked6, checked7,
+                          checked8, checked9, checked10, checked11, checked12, checked13, checked14,
+                          checked15, checked16, checked17, checked18, checked19, checked20, checked21, checked22
+                          , checked23, checked24, checked25, checked26, checked27, checked28, checked29, checked30
+                          , checked31, checked32, checked33, checked34, checked35]
+      })}>
+        
         <Text style={styles.loginText}>Save Changes</Text>
       </TouchableOpacity>
       <TouchableOpacity style={styles.change_password_button} onPress={() =>
