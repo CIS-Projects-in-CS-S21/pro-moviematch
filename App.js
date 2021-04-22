@@ -9,8 +9,9 @@ import HomeScreen from './screens/HomeScreen.js';
 import SettingsScreen from './screens/SettingsScreen.js';
 import Ionicons from 'react-native-vector-icons/Ionicons';
 import ChangePasswordScreen from './forms/passwordChange.js';
-import {LikedList} from './components/LikedList.js'
-
+import {ButtonGroup} from 'react-native-elements';
+import {CheckBox} from 'react-native-elements';
+import LikedList from './components/LikedList.js'
 
 /**
  * Function containing the navbar and it's attributes
