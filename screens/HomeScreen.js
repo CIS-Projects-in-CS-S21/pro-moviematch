@@ -8,17 +8,19 @@ import { Card } from '../components/Cards.js';
 import { contentMovieOrTV, genreToArr } from '../components/Filters'
 import { genreToString } from "../components/ContentGenreToString"
 
+const tunnelURL = "https://plastic-wolverine-6.loca.lt";
+
 
 export default function HomeScreen({ route, navigation }, page) {
     const {contentType, contentGenre} = route.params;
     const [isLoading, setLoading] = useState(true);
     const [data, setData] = useState([]);
     const [offset, setOffset] = useState(1);
+    var i = 0;
 
     useEffect(() => getData(), []);
 
     const getData = () => {
-      console.log('getData');
       i = 0;
       setLoading(true);
       
@@ -28,17 +30,14 @@ export default function HomeScreen({ route, navigation }, page) {
         .then((responseJson) => {
           
           setOffset(offset + 1);
-          console.log(offset);
-
-          
           setData([...parseMovies(responseJson.results, contentType)]);
+
           setLoading(false);
         })
         .catch((error) => {
           console.error(error);
         });
-    }; 
-
+    };
 
     return (
       <SafeAreaView style={styles.container}>
@@ -48,7 +47,7 @@ export default function HomeScreen({ route, navigation }, page) {
               renderCard={Card}
               onSwiped={() => i++}
               onSwipedAll={getData}
-              onSwipedRight={() => console.log(data[i - 1])}  // (data[i - 1] is the movie card)
+              onSwipedRight={() => getvalues(data[i - 1].id)}  // (data[i - 1] is the movie card)
               verticalSwipe={false}
               backgroundColor="#white"
               cardVerticalMargin={20}
@@ -116,6 +115,7 @@ export default function HomeScreen({ route, navigation }, page) {
       for (i = 0; i < movieArray.length; i++) {
         parsedMovies[i] =
         {
+          id: movieArray[i].id,
           pic: {uri: imgurl.concat(movieArray[i].poster_path)},
           title: movieArray[i].title,
           caption: "Rating: " + movieArray[i].vote_average,
@@ -135,6 +135,39 @@ export default function HomeScreen({ route, navigation }, page) {
     }
     return parsedMovies
 }
+
+function getvalues(id){
+  return fetch(tunnelURL + "/api/users/" + global.userID + "/like", {
+    method: 'POST',
+    headers: {
+      'Accept': 'application/json',
+      'Content-Type': 'application/json'
+    }, 
+    body: JSON.stringify({
+      movie_id: id,
+    })
+  })
+  .then((response) => response.json())
+
+  .then((responseData) => {
+    alert(JSON.stringify(responseData));
+    return responseData;
+  })
+  .catch(error => alert('Error'));
+}
+
+const getUserID = async () =>{
+  try{
+    let response = await fetch(tunnelURL + "/api/users/" + global.globEmail + "/Name");
+    let jsonResponse = await response.json();
+    let userID = jsonResponse._id;
+    global.userID = userID;
+  }
+  catch(error){
+    alert(error);
+  }
+};
+
 
   const styles = StyleSheet.create({
     container: {

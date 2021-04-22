@@ -13,11 +13,8 @@ export default function LoginScreen({ navigation }) {
     const [email, setEmail] = useState("");
     const [password, setPassword] = useState("");
     global.globEmail = email;
-
     const [firstName, setFirstName] = useState("");
     const [lastName, setLastName] = useState("");
-
-
     const tunnelURL = "https://purple-fly-11.loca.lt"
 
 
@@ -54,10 +51,26 @@ export default function LoginScreen({ navigation }) {
       .catch(error => alert('Error'));
     }
 
+    const getUserID = async () =>{
+      try{
+        let response = await fetch(tunnelURL + "/api/users/" + global.globEmail + "/userId");
+        let jsonResponse = await response.json();
+        let userID = jsonResponse.userId;
+        global.userID = userID;
+      }
+      catch(error){
+        alert(error);
+      }
+    };
+
+    getUserID();
+
     const navigateLoggedInUser = (response) => {
       //alert(response);
      // response.hasOwnProperty('success')
       if(response.hasOwnProperty('success')){
+        let hasLoggedIn = 1;
+        global.hasLoggedIn = hasLoggedIn;
         navigation.reset({
           index: 0,
           routes: [

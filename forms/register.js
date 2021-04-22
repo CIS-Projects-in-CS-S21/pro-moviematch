@@ -9,10 +9,7 @@ export default function RegisterScreen({ navigation }) {
     const [password, setPassword] = useState("");
     const [firstName, setFirstName] = useState("");
     const [lastName, setLastName] = useState("");
-
-
     const tunnelURL = "https://purple-fly-11.loca.lt"
-
 
     const checkEmailInput= () => {
       if (email != '')
