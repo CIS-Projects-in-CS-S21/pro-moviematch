@@ -64,7 +64,7 @@ export function contentMovieOrTV(contentType, offset, genres) {
 *          by user
 *   @return returns an array of the genres selected
 */
-function movieGenresFilter(contentGenre) {
+export function movieGenresFilter(contentGenre) {
     
     var arr = [];
 
@@ -172,7 +172,7 @@ function movieGenresFilter(contentGenre) {
 *          by user
 *   @return returns an array of the genres selected
 */
-function tvGenresFilter(contentGenre) {
+export function tvGenresFilter(contentGenre) {
     
     var arr = [];
 

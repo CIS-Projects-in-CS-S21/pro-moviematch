@@ -47,9 +47,9 @@ export function genreToString(genre_ids) {
             genre_strings.push("Horror");
         }
 
-        else if(genre_ids[i] == 10402) {
-            genre_strings.push("Music");
-        }
+        //else if(genre_ids[i] == 10402) {
+            //genre_strings.push("Music");
+        //}
 
         else if(genre_ids[i] == 9648) {
             genre_strings.push("Mystery");
