@@ -123,7 +123,6 @@ export default function HomeScreen({ route }) {
         //console.log(genreToString(movieArray[i].genre_ids));
       }
     }
-  }
   else {
     for (i = 0; i < movieArray.length; i++) {
       parsedMovies[i] =
