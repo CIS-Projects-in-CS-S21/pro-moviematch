@@ -107,11 +107,24 @@ import {tunnelURL} from './../common/global'
     </SafeAreaView>    
   );
 }
-function parseMovies(movieArray, contentType) {
-  var parsedMovies = [];
-  var i;
-  var imgurl= "https://image.tmdb.org/t/p/original";
-  if(contentType == false) {
+
+  function parseMovies(movieArray, contentType) {
+    var parsedMovies = [];
+    var i;
+    var imgurl= "https://image.tmdb.org/t/p/original";
+    if(contentType == false) {
+      for (i = 0; i < movieArray.length; i++) {
+        parsedMovies[i] =
+        {
+          id: movieArray[i].id,
+          pic: {uri: imgurl.concat(movieArray[i].poster_path)},
+          title: movieArray[i].title,
+          caption: "Rating: " + movieArray[i].vote_average,
+        }
+        //console.log(genreToString(movieArray[i].genre_ids));
+      }
+    }
+  else {
     for (i = 0; i < movieArray.length; i++) {
       parsedMovies[i] =
       {
