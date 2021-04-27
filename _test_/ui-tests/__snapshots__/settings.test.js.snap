@@ -1,0 +1,4955 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Renders snapshot as expected Login Screen Loads 1`] = `
+<RCTSafeAreaView
+  emulateUnlessSupported={true}
+  style={
+    Object {
+      "alignContent": "center",
+      "alignItems": "center",
+      "backgroundColor": "#fff",
+      "flex": 1,
+    }
+  }
+>
+  <RCTScrollView
+    style={
+      Object {
+        "backgroundColor": "#fff",
+        "width": 730,
+      }
+    }
+  >
+    <View>
+      <View>
+        <Text
+          style={
+            Object {
+              "fontSize": 20,
+              "fontWeight": "bold",
+            }
+          }
+        >
+          User Info
+        </Text>
+      </View>
+      <View
+        style={
+          Object {
+            "backgroundColor": "#d3d3d3",
+            "borderRadius": 10,
+            "borderWith": 1,
+            "flexDirection": "row",
+            "marginLeft": 10,
+            "marginRight": 10,
+            "padding": 10,
+          }
+        }
+      >
+        <View
+          style={
+            Object {
+              "alignItems": "center",
+              "flex": 1,
+            }
+          }
+        >
+          <Text>
+            User Email :
+          </Text>
+          <Text>
+            First Name :
+          </Text>
+          <Text>
+            Last Name :
+          </Text>
+        </View>
+        <View
+          style={
+            Object {
+              "flex": 1,
+            }
+          }
+        >
+          <Text />
+          <Text />
+          <Text />
+        </View>
+      </View>
+      <View>
+        <Text
+          style={
+            Object {
+              "fontSize": 20,
+              "fontWeight": "bold",
+            }
+          }
+        >
+          Content Type
+        </Text>
+      </View>
+      <View
+        style={
+          Object {
+            "backgroundColor": "#d3d3d3",
+            "borderRadius": 10,
+            "borderWith": 1,
+            "flexDirection": "row",
+            "marginLeft": 10,
+            "marginRight": 10,
+            "padding": 10,
+          }
+        }
+      >
+        <View
+          style={
+            Object {
+              "alignItems": "center",
+              "flex": 1,
+            }
+          }
+        >
+          <Text
+            style={
+              Object {
+                "fontSize": 15,
+              }
+            }
+          >
+             Movies
+          </Text>
+        </View>
+        <RCTSwitch
+          accessibilityRole="switch"
+          onChange={[Function]}
+          onResponderTerminationRequest={[Function]}
+          onStartShouldSetResponder={[Function]}
+          style={
+            Object {
+              "height": 31,
+              "width": 51,
+            }
+          }
+          value={false}
+        />
+        <View
+          style={
+            Object {
+              "flex": 1,
+            }
+          }
+        >
+          <Text
+            style={
+              Object {
+                "fontSize": 15,
+              }
+            }
+          >
+             TV Shows
+          </Text>
+        </View>
+      </View>
+      <View>
+        <Text
+          style={
+            Object {
+              "fontSize": 20,
+              "fontWeight": "bold",
+            }
+          }
+        >
+          Streaming services
+        </Text>
+      </View>
+      <View
+        style={
+          Object {
+            "backgroundColor": "#d3d3d3",
+            "borderRadius": 10,
+            "borderWith": 1,
+            "marginLeft": 10,
+            "marginRight": 10,
+            "padding": 10,
+          }
+        }
+      >
+        <View
+          style={
+            Object {
+              "alignItems": "left",
+            }
+          }
+        >
+          <View
+            accessibilityRole="checkbox"
+            accessibilityState={
+              Object {
+                "checked": false,
+              }
+            }
+            accessible={true}
+            focusable={true}
+            onClick={[Function]}
+            onResponderGrant={[Function]}
+            onResponderMove={[Function]}
+            onResponderRelease={[Function]}
+            onResponderTerminate={[Function]}
+            onResponderTerminationRequest={[Function]}
+            onStartShouldSetResponder={[Function]}
+            style={
+              Object {
+                "backgroundColor": "#fafafa",
+                "borderColor": "#ededed",
+                "borderRadius": 3,
+                "borderWidth": 1,
+                "margin": 5,
+                "marginLeft": 10,
+                "marginRight": 10,
+                "opacity": 1,
+                "padding": 10,
+              }
+            }
+            testID="checkbox"
+          >
+            <View
+              style={
+                Object {
+                  "alignItems": "center",
+                  "flexDirection": "row",
+                }
+              }
+            >
+              <Text />
+              <Text
+                style={
+                  Object {
+                    "color": "#43484d",
+                    "fontWeight": "bold",
+                    "marginLeft": 10,
+                    "marginRight": 10,
+                  }
+                }
+                testID="checkboxTitle"
+              >
+                Netflix
+              </Text>
+            </View>
+          </View>
+          <View
+            accessibilityRole="checkbox"
+            accessibilityState={
+              Object {
+                "checked": false,
+              }
+            }
+            accessible={true}
+            focusable={true}
+            onClick={[Function]}
+            onResponderGrant={[Function]}
+            onResponderMove={[Function]}
+            onResponderRelease={[Function]}
+            onResponderTerminate={[Function]}
+            onResponderTerminationRequest={[Function]}
+            onStartShouldSetResponder={[Function]}
+            style={
+              Object {
+                "backgroundColor": "#fafafa",
+                "borderColor": "#ededed",
+                "borderRadius": 3,
+                "borderWidth": 1,
+                "margin": 5,
+                "marginLeft": 10,
+                "marginRight": 10,
+                "opacity": 1,
+                "padding": 10,
+              }
+            }
+            testID="checkbox"
+          >
+            <View
+              style={
+                Object {
+                  "alignItems": "center",
+                  "flexDirection": "row",
+                }
+              }
+            >
+              <Text />
+              <Text
+                style={
+                  Object {
+                    "color": "#43484d",
+                    "fontWeight": "bold",
+                    "marginLeft": 10,
+                    "marginRight": 10,
+                  }
+                }
+                testID="checkboxTitle"
+              >
+                Amazon Prime
+              </Text>
+            </View>
+          </View>
+          <View
+            accessibilityRole="checkbox"
+            accessibilityState={
+              Object {
+                "checked": false,
+              }
+            }
+            accessible={true}
+            focusable={true}
+            onClick={[Function]}
+            onResponderGrant={[Function]}
+            onResponderMove={[Function]}
+            onResponderRelease={[Function]}
+            onResponderTerminate={[Function]}
+            onResponderTerminationRequest={[Function]}
+            onStartShouldSetResponder={[Function]}
+            style={
+              Object {
+                "backgroundColor": "#fafafa",
+                "borderColor": "#ededed",
+                "borderRadius": 3,
+                "borderWidth": 1,
+                "margin": 5,
+                "marginLeft": 10,
+                "marginRight": 10,
+                "opacity": 1,
+                "padding": 10,
+              }
+            }
+            testID="checkbox"
+          >
+            <View
+              style={
+                Object {
+                  "alignItems": "center",
+                  "flexDirection": "row",
+                }
+              }
+            >
+              <Text />
+              <Text
+                style={
+                  Object {
+                    "color": "#43484d",
+                    "fontWeight": "bold",
+                    "marginLeft": 10,
+                    "marginRight": 10,
+                  }
+                }
+                testID="checkboxTitle"
+              >
+                Disney+
+              </Text>
+            </View>
+          </View>
+          <View
+            accessibilityRole="checkbox"
+            accessibilityState={
+              Object {
+                "checked": false,
+              }
+            }
+            accessible={true}
+            focusable={true}
+            onClick={[Function]}
+            onResponderGrant={[Function]}
+            onResponderMove={[Function]}
+            onResponderRelease={[Function]}
+            onResponderTerminate={[Function]}
+            onResponderTerminationRequest={[Function]}
+            onStartShouldSetResponder={[Function]}
+            style={
+              Object {
+                "backgroundColor": "#fafafa",
+                "borderColor": "#ededed",
+                "borderRadius": 3,
+                "borderWidth": 1,
+                "margin": 5,
+                "marginLeft": 10,
+                "marginRight": 10,
+                "opacity": 1,
+                "padding": 10,
+              }
+            }
+            testID="checkbox"
+          >
+            <View
+              style={
+                Object {
+                  "alignItems": "center",
+                  "flexDirection": "row",
+                }
+              }
+            >
+              <Text />
+              <Text
+                style={
+                  Object {
+                    "color": "#43484d",
+                    "fontWeight": "bold",
+                    "marginLeft": 10,
+                    "marginRight": 10,
+                  }
+                }
+                testID="checkboxTitle"
+              >
+                HBO Max
+              </Text>
+            </View>
+          </View>
+        </View>
+      </View>
+      <View>
+        <Text
+          style={
+            Object {
+              "fontSize": 20,
+              "fontWeight": "bold",
+            }
+          }
+        >
+          Movie Genres
+        </Text>
+      </View>
+      <View
+        style={
+          Object {
+            "backgroundColor": "#d3d3d3",
+            "borderRadius": 10,
+            "borderWith": 1,
+            "marginLeft": 10,
+            "marginRight": 10,
+            "padding": 10,
+          }
+        }
+      >
+        <View
+          style={
+            Object {
+              "alignItems": "left",
+            }
+          }
+        >
+          <View
+            accessibilityRole="checkbox"
+            accessibilityState={
+              Object {
+                "checked": false,
+              }
+            }
+            accessible={true}
+            focusable={true}
+            onClick={[Function]}
+            onResponderGrant={[Function]}
+            onResponderMove={[Function]}
+            onResponderRelease={[Function]}
+            onResponderTerminate={[Function]}
+            onResponderTerminationRequest={[Function]}
+            onStartShouldSetResponder={[Function]}
+            style={
+              Object {
+                "backgroundColor": "#fafafa",
+                "borderColor": "#ededed",
+                "borderRadius": 3,
+                "borderWidth": 1,
+                "margin": 5,
+                "marginLeft": 10,
+                "marginRight": 10,
+                "opacity": 1,
+                "padding": 10,
+              }
+            }
+            testID="checkbox"
+          >
+            <View
+              style={
+                Object {
+                  "alignItems": "center",
+                  "flexDirection": "row",
+                }
+              }
+            >
+              <Text />
+              <Text
+                style={
+                  Object {
+                    "color": "#43484d",
+                    "fontWeight": "bold",
+                    "marginLeft": 10,
+                    "marginRight": 10,
+                  }
+                }
+                testID="checkboxTitle"
+              >
+                Action
+              </Text>
+            </View>
+          </View>
+          <View
+            accessibilityRole="checkbox"
+            accessibilityState={
+              Object {
+                "checked": false,
+              }
+            }
+            accessible={true}
+            focusable={true}
+            onClick={[Function]}
+            onResponderGrant={[Function]}
+            onResponderMove={[Function]}
+            onResponderRelease={[Function]}
+            onResponderTerminate={[Function]}
+            onResponderTerminationRequest={[Function]}
+            onStartShouldSetResponder={[Function]}
+            style={
+              Object {
+                "backgroundColor": "#fafafa",
+                "borderColor": "#ededed",
+                "borderRadius": 3,
+                "borderWidth": 1,
+                "margin": 5,
+                "marginLeft": 10,
+                "marginRight": 10,
+                "opacity": 1,
+                "padding": 10,
+              }
+            }
+            testID="checkbox"
+          >
+            <View
+              style={
+                Object {
+                  "alignItems": "center",
+                  "flexDirection": "row",
+                }
+              }
+            >
+              <Text />
+              <Text
+                style={
+                  Object {
+                    "color": "#43484d",
+                    "fontWeight": "bold",
+                    "marginLeft": 10,
+                    "marginRight": 10,
+                  }
+                }
+                testID="checkboxTitle"
+              >
+                Adventure
+              </Text>
+            </View>
+          </View>
+          <View
+            accessibilityRole="checkbox"
+            accessibilityState={
+              Object {
+                "checked": false,
+              }
+            }
+            accessible={true}
+            focusable={true}
+            onClick={[Function]}
+            onResponderGrant={[Function]}
+            onResponderMove={[Function]}
+            onResponderRelease={[Function]}
+            onResponderTerminate={[Function]}
+            onResponderTerminationRequest={[Function]}
+            onStartShouldSetResponder={[Function]}
+            style={
+              Object {
+                "backgroundColor": "#fafafa",
+                "borderColor": "#ededed",
+                "borderRadius": 3,
+                "borderWidth": 1,
+                "margin": 5,
+                "marginLeft": 10,
+                "marginRight": 10,
+                "opacity": 1,
+                "padding": 10,
+              }
+            }
+            testID="checkbox"
+          >
+            <View
+              style={
+                Object {
+                  "alignItems": "center",
+                  "flexDirection": "row",
+                }
+              }
+            >
+              <Text />
+              <Text
+                style={
+                  Object {
+                    "color": "#43484d",
+                    "fontWeight": "bold",
+                    "marginLeft": 10,
+                    "marginRight": 10,
+                  }
+                }
+                testID="checkboxTitle"
+              >
+                Animation
+              </Text>
+            </View>
+          </View>
+          <View
+            accessibilityRole="checkbox"
+            accessibilityState={
+              Object {
+                "checked": false,
+              }
+            }
+            accessible={true}
+            focusable={true}
+            onClick={[Function]}
+            onResponderGrant={[Function]}
+            onResponderMove={[Function]}
+            onResponderRelease={[Function]}
+            onResponderTerminate={[Function]}
+            onResponderTerminationRequest={[Function]}
+            onStartShouldSetResponder={[Function]}
+            style={
+              Object {
+                "backgroundColor": "#fafafa",
+                "borderColor": "#ededed",
+                "borderRadius": 3,
+                "borderWidth": 1,
+                "margin": 5,
+                "marginLeft": 10,
+                "marginRight": 10,
+                "opacity": 1,
+                "padding": 10,
+              }
+            }
+            testID="checkbox"
+          >
+            <View
+              style={
+                Object {
+                  "alignItems": "center",
+                  "flexDirection": "row",
+                }
+              }
+            >
+              <Text />
+              <Text
+                style={
+                  Object {
+                    "color": "#43484d",
+                    "fontWeight": "bold",
+                    "marginLeft": 10,
+                    "marginRight": 10,
+                  }
+                }
+                testID="checkboxTitle"
+              >
+                Comedy
+              </Text>
+            </View>
+          </View>
+          <View
+            accessibilityRole="checkbox"
+            accessibilityState={
+              Object {
+                "checked": false,
+              }
+            }
+            accessible={true}
+            focusable={true}
+            onClick={[Function]}
+            onResponderGrant={[Function]}
+            onResponderMove={[Function]}
+            onResponderRelease={[Function]}
+            onResponderTerminate={[Function]}
+            onResponderTerminationRequest={[Function]}
+            onStartShouldSetResponder={[Function]}
+            style={
+              Object {
+                "backgroundColor": "#fafafa",
+                "borderColor": "#ededed",
+                "borderRadius": 3,
+                "borderWidth": 1,
+                "margin": 5,
+                "marginLeft": 10,
+                "marginRight": 10,
+                "opacity": 1,
+                "padding": 10,
+              }
+            }
+            testID="checkbox"
+          >
+            <View
+              style={
+                Object {
+                  "alignItems": "center",
+                  "flexDirection": "row",
+                }
+              }
+            >
+              <Text />
+              <Text
+                style={
+                  Object {
+                    "color": "#43484d",
+                    "fontWeight": "bold",
+                    "marginLeft": 10,
+                    "marginRight": 10,
+                  }
+                }
+                testID="checkboxTitle"
+              >
+                Crime
+              </Text>
+            </View>
+          </View>
+          <View
+            accessibilityRole="checkbox"
+            accessibilityState={
+              Object {
+                "checked": false,
+              }
+            }
+            accessible={true}
+            focusable={true}
+            onClick={[Function]}
+            onResponderGrant={[Function]}
+            onResponderMove={[Function]}
+            onResponderRelease={[Function]}
+            onResponderTerminate={[Function]}
+            onResponderTerminationRequest={[Function]}
+            onStartShouldSetResponder={[Function]}
+            style={
+              Object {
+                "backgroundColor": "#fafafa",
+                "borderColor": "#ededed",
+                "borderRadius": 3,
+                "borderWidth": 1,
+                "margin": 5,
+                "marginLeft": 10,
+                "marginRight": 10,
+                "opacity": 1,
+                "padding": 10,
+              }
+            }
+            testID="checkbox"
+          >
+            <View
+              style={
+                Object {
+                  "alignItems": "center",
+                  "flexDirection": "row",
+                }
+              }
+            >
+              <Text />
+              <Text
+                style={
+                  Object {
+                    "color": "#43484d",
+                    "fontWeight": "bold",
+                    "marginLeft": 10,
+                    "marginRight": 10,
+                  }
+                }
+                testID="checkboxTitle"
+              >
+                Documentary
+              </Text>
+            </View>
+          </View>
+          <View
+            accessibilityRole="checkbox"
+            accessibilityState={
+              Object {
+                "checked": false,
+              }
+            }
+            accessible={true}
+            focusable={true}
+            onClick={[Function]}
+            onResponderGrant={[Function]}
+            onResponderMove={[Function]}
+            onResponderRelease={[Function]}
+            onResponderTerminate={[Function]}
+            onResponderTerminationRequest={[Function]}
+            onStartShouldSetResponder={[Function]}
+            style={
+              Object {
+                "backgroundColor": "#fafafa",
+                "borderColor": "#ededed",
+                "borderRadius": 3,
+                "borderWidth": 1,
+                "margin": 5,
+                "marginLeft": 10,
+                "marginRight": 10,
+                "opacity": 1,
+                "padding": 10,
+              }
+            }
+            testID="checkbox"
+          >
+            <View
+              style={
+                Object {
+                  "alignItems": "center",
+                  "flexDirection": "row",
+                }
+              }
+            >
+              <Text />
+              <Text
+                style={
+                  Object {
+                    "color": "#43484d",
+                    "fontWeight": "bold",
+                    "marginLeft": 10,
+                    "marginRight": 10,
+                  }
+                }
+                testID="checkboxTitle"
+              >
+                Drama
+              </Text>
+            </View>
+          </View>
+          <View
+            accessibilityRole="checkbox"
+            accessibilityState={
+              Object {
+                "checked": false,
+              }
+            }
+            accessible={true}
+            focusable={true}
+            onClick={[Function]}
+            onResponderGrant={[Function]}
+            onResponderMove={[Function]}
+            onResponderRelease={[Function]}
+            onResponderTerminate={[Function]}
+            onResponderTerminationRequest={[Function]}
+            onStartShouldSetResponder={[Function]}
+            style={
+              Object {
+                "backgroundColor": "#fafafa",
+                "borderColor": "#ededed",
+                "borderRadius": 3,
+                "borderWidth": 1,
+                "margin": 5,
+                "marginLeft": 10,
+                "marginRight": 10,
+                "opacity": 1,
+                "padding": 10,
+              }
+            }
+            testID="checkbox"
+          >
+            <View
+              style={
+                Object {
+                  "alignItems": "center",
+                  "flexDirection": "row",
+                }
+              }
+            >
+              <Text />
+              <Text
+                style={
+                  Object {
+                    "color": "#43484d",
+                    "fontWeight": "bold",
+                    "marginLeft": 10,
+                    "marginRight": 10,
+                  }
+                }
+                testID="checkboxTitle"
+              >
+                Family
+              </Text>
+            </View>
+          </View>
+          <View
+            accessibilityRole="checkbox"
+            accessibilityState={
+              Object {
+                "checked": false,
+              }
+            }
+            accessible={true}
+            focusable={true}
+            onClick={[Function]}
+            onResponderGrant={[Function]}
+            onResponderMove={[Function]}
+            onResponderRelease={[Function]}
+            onResponderTerminate={[Function]}
+            onResponderTerminationRequest={[Function]}
+            onStartShouldSetResponder={[Function]}
+            style={
+              Object {
+                "backgroundColor": "#fafafa",
+                "borderColor": "#ededed",
+                "borderRadius": 3,
+                "borderWidth": 1,
+                "margin": 5,
+                "marginLeft": 10,
+                "marginRight": 10,
+                "opacity": 1,
+                "padding": 10,
+              }
+            }
+            testID="checkbox"
+          >
+            <View
+              style={
+                Object {
+                  "alignItems": "center",
+                  "flexDirection": "row",
+                }
+              }
+            >
+              <Text />
+              <Text
+                style={
+                  Object {
+                    "color": "#43484d",
+                    "fontWeight": "bold",
+                    "marginLeft": 10,
+                    "marginRight": 10,
+                  }
+                }
+                testID="checkboxTitle"
+              >
+                Fantasy
+              </Text>
+            </View>
+          </View>
+          <View
+            accessibilityRole="checkbox"
+            accessibilityState={
+              Object {
+                "checked": false,
+              }
+            }
+            accessible={true}
+            focusable={true}
+            onClick={[Function]}
+            onResponderGrant={[Function]}
+            onResponderMove={[Function]}
+            onResponderRelease={[Function]}
+            onResponderTerminate={[Function]}
+            onResponderTerminationRequest={[Function]}
+            onStartShouldSetResponder={[Function]}
+            style={
+              Object {
+                "backgroundColor": "#fafafa",
+                "borderColor": "#ededed",
+                "borderRadius": 3,
+                "borderWidth": 1,
+                "margin": 5,
+                "marginLeft": 10,
+                "marginRight": 10,
+                "opacity": 1,
+                "padding": 10,
+              }
+            }
+            testID="checkbox"
+          >
+            <View
+              style={
+                Object {
+                  "alignItems": "center",
+                  "flexDirection": "row",
+                }
+              }
+            >
+              <Text />
+              <Text
+                style={
+                  Object {
+                    "color": "#43484d",
+                    "fontWeight": "bold",
+                    "marginLeft": 10,
+                    "marginRight": 10,
+                  }
+                }
+                testID="checkboxTitle"
+              >
+                History
+              </Text>
+            </View>
+          </View>
+          <View
+            accessibilityRole="checkbox"
+            accessibilityState={
+              Object {
+                "checked": false,
+              }
+            }
+            accessible={true}
+            focusable={true}
+            onClick={[Function]}
+            onResponderGrant={[Function]}
+            onResponderMove={[Function]}
+            onResponderRelease={[Function]}
+            onResponderTerminate={[Function]}
+            onResponderTerminationRequest={[Function]}
+            onStartShouldSetResponder={[Function]}
+            style={
+              Object {
+                "backgroundColor": "#fafafa",
+                "borderColor": "#ededed",
+                "borderRadius": 3,
+                "borderWidth": 1,
+                "margin": 5,
+                "marginLeft": 10,
+                "marginRight": 10,
+                "opacity": 1,
+                "padding": 10,
+              }
+            }
+            testID="checkbox"
+          >
+            <View
+              style={
+                Object {
+                  "alignItems": "center",
+                  "flexDirection": "row",
+                }
+              }
+            >
+              <Text />
+              <Text
+                style={
+                  Object {
+                    "color": "#43484d",
+                    "fontWeight": "bold",
+                    "marginLeft": 10,
+                    "marginRight": 10,
+                  }
+                }
+                testID="checkboxTitle"
+              >
+                Horror
+              </Text>
+            </View>
+          </View>
+          <View
+            accessibilityRole="checkbox"
+            accessibilityState={
+              Object {
+                "checked": false,
+              }
+            }
+            accessible={true}
+            focusable={true}
+            onClick={[Function]}
+            onResponderGrant={[Function]}
+            onResponderMove={[Function]}
+            onResponderRelease={[Function]}
+            onResponderTerminate={[Function]}
+            onResponderTerminationRequest={[Function]}
+            onStartShouldSetResponder={[Function]}
+            style={
+              Object {
+                "backgroundColor": "#fafafa",
+                "borderColor": "#ededed",
+                "borderRadius": 3,
+                "borderWidth": 1,
+                "margin": 5,
+                "marginLeft": 10,
+                "marginRight": 10,
+                "opacity": 1,
+                "padding": 10,
+              }
+            }
+            testID="checkbox"
+          >
+            <View
+              style={
+                Object {
+                  "alignItems": "center",
+                  "flexDirection": "row",
+                }
+              }
+            >
+              <Text />
+              <Text
+                style={
+                  Object {
+                    "color": "#43484d",
+                    "fontWeight": "bold",
+                    "marginLeft": 10,
+                    "marginRight": 10,
+                  }
+                }
+                testID="checkboxTitle"
+              >
+                Music
+              </Text>
+            </View>
+          </View>
+          <View
+            accessibilityRole="checkbox"
+            accessibilityState={
+              Object {
+                "checked": false,
+              }
+            }
+            accessible={true}
+            focusable={true}
+            onClick={[Function]}
+            onResponderGrant={[Function]}
+            onResponderMove={[Function]}
+            onResponderRelease={[Function]}
+            onResponderTerminate={[Function]}
+            onResponderTerminationRequest={[Function]}
+            onStartShouldSetResponder={[Function]}
+            style={
+              Object {
+                "backgroundColor": "#fafafa",
+                "borderColor": "#ededed",
+                "borderRadius": 3,
+                "borderWidth": 1,
+                "margin": 5,
+                "marginLeft": 10,
+                "marginRight": 10,
+                "opacity": 1,
+                "padding": 10,
+              }
+            }
+            testID="checkbox"
+          >
+            <View
+              style={
+                Object {
+                  "alignItems": "center",
+                  "flexDirection": "row",
+                }
+              }
+            >
+              <Text />
+              <Text
+                style={
+                  Object {
+                    "color": "#43484d",
+                    "fontWeight": "bold",
+                    "marginLeft": 10,
+                    "marginRight": 10,
+                  }
+                }
+                testID="checkboxTitle"
+              >
+                Mystery
+              </Text>
+            </View>
+          </View>
+          <View
+            accessibilityRole="checkbox"
+            accessibilityState={
+              Object {
+                "checked": false,
+              }
+            }
+            accessible={true}
+            focusable={true}
+            onClick={[Function]}
+            onResponderGrant={[Function]}
+            onResponderMove={[Function]}
+            onResponderRelease={[Function]}
+            onResponderTerminate={[Function]}
+            onResponderTerminationRequest={[Function]}
+            onStartShouldSetResponder={[Function]}
+            style={
+              Object {
+                "backgroundColor": "#fafafa",
+                "borderColor": "#ededed",
+                "borderRadius": 3,
+                "borderWidth": 1,
+                "margin": 5,
+                "marginLeft": 10,
+                "marginRight": 10,
+                "opacity": 1,
+                "padding": 10,
+              }
+            }
+            testID="checkbox"
+          >
+            <View
+              style={
+                Object {
+                  "alignItems": "center",
+                  "flexDirection": "row",
+                }
+              }
+            >
+              <Text />
+              <Text
+                style={
+                  Object {
+                    "color": "#43484d",
+                    "fontWeight": "bold",
+                    "marginLeft": 10,
+                    "marginRight": 10,
+                  }
+                }
+                testID="checkboxTitle"
+              >
+                Romance
+              </Text>
+            </View>
+          </View>
+          <View
+            accessibilityRole="checkbox"
+            accessibilityState={
+              Object {
+                "checked": false,
+              }
+            }
+            accessible={true}
+            focusable={true}
+            onClick={[Function]}
+            onResponderGrant={[Function]}
+            onResponderMove={[Function]}
+            onResponderRelease={[Function]}
+            onResponderTerminate={[Function]}
+            onResponderTerminationRequest={[Function]}
+            onStartShouldSetResponder={[Function]}
+            style={
+              Object {
+                "backgroundColor": "#fafafa",
+                "borderColor": "#ededed",
+                "borderRadius": 3,
+                "borderWidth": 1,
+                "margin": 5,
+                "marginLeft": 10,
+                "marginRight": 10,
+                "opacity": 1,
+                "padding": 10,
+              }
+            }
+            testID="checkbox"
+          >
+            <View
+              style={
+                Object {
+                  "alignItems": "center",
+                  "flexDirection": "row",
+                }
+              }
+            >
+              <Text />
+              <Text
+                style={
+                  Object {
+                    "color": "#43484d",
+                    "fontWeight": "bold",
+                    "marginLeft": 10,
+                    "marginRight": 10,
+                  }
+                }
+                testID="checkboxTitle"
+              >
+                Sci Fi
+              </Text>
+            </View>
+          </View>
+          <View
+            accessibilityRole="checkbox"
+            accessibilityState={
+              Object {
+                "checked": false,
+              }
+            }
+            accessible={true}
+            focusable={true}
+            onClick={[Function]}
+            onResponderGrant={[Function]}
+            onResponderMove={[Function]}
+            onResponderRelease={[Function]}
+            onResponderTerminate={[Function]}
+            onResponderTerminationRequest={[Function]}
+            onStartShouldSetResponder={[Function]}
+            style={
+              Object {
+                "backgroundColor": "#fafafa",
+                "borderColor": "#ededed",
+                "borderRadius": 3,
+                "borderWidth": 1,
+                "margin": 5,
+                "marginLeft": 10,
+                "marginRight": 10,
+                "opacity": 1,
+                "padding": 10,
+              }
+            }
+            testID="checkbox"
+          >
+            <View
+              style={
+                Object {
+                  "alignItems": "center",
+                  "flexDirection": "row",
+                }
+              }
+            >
+              <Text />
+              <Text
+                style={
+                  Object {
+                    "color": "#43484d",
+                    "fontWeight": "bold",
+                    "marginLeft": 10,
+                    "marginRight": 10,
+                  }
+                }
+                testID="checkboxTitle"
+              >
+                TV Movie
+              </Text>
+            </View>
+          </View>
+          <View
+            accessibilityRole="checkbox"
+            accessibilityState={
+              Object {
+                "checked": false,
+              }
+            }
+            accessible={true}
+            focusable={true}
+            onClick={[Function]}
+            onResponderGrant={[Function]}
+            onResponderMove={[Function]}
+            onResponderRelease={[Function]}
+            onResponderTerminate={[Function]}
+            onResponderTerminationRequest={[Function]}
+            onStartShouldSetResponder={[Function]}
+            style={
+              Object {
+                "backgroundColor": "#fafafa",
+                "borderColor": "#ededed",
+                "borderRadius": 3,
+                "borderWidth": 1,
+                "margin": 5,
+                "marginLeft": 10,
+                "marginRight": 10,
+                "opacity": 1,
+                "padding": 10,
+              }
+            }
+            testID="checkbox"
+          >
+            <View
+              style={
+                Object {
+                  "alignItems": "center",
+                  "flexDirection": "row",
+                }
+              }
+            >
+              <Text />
+              <Text
+                style={
+                  Object {
+                    "color": "#43484d",
+                    "fontWeight": "bold",
+                    "marginLeft": 10,
+                    "marginRight": 10,
+                  }
+                }
+                testID="checkboxTitle"
+              >
+                Thriller
+              </Text>
+            </View>
+          </View>
+          <View
+            accessibilityRole="checkbox"
+            accessibilityState={
+              Object {
+                "checked": false,
+              }
+            }
+            accessible={true}
+            focusable={true}
+            onClick={[Function]}
+            onResponderGrant={[Function]}
+            onResponderMove={[Function]}
+            onResponderRelease={[Function]}
+            onResponderTerminate={[Function]}
+            onResponderTerminationRequest={[Function]}
+            onStartShouldSetResponder={[Function]}
+            style={
+              Object {
+                "backgroundColor": "#fafafa",
+                "borderColor": "#ededed",
+                "borderRadius": 3,
+                "borderWidth": 1,
+                "margin": 5,
+                "marginLeft": 10,
+                "marginRight": 10,
+                "opacity": 1,
+                "padding": 10,
+              }
+            }
+            testID="checkbox"
+          >
+            <View
+              style={
+                Object {
+                  "alignItems": "center",
+                  "flexDirection": "row",
+                }
+              }
+            >
+              <Text />
+              <Text
+                style={
+                  Object {
+                    "color": "#43484d",
+                    "fontWeight": "bold",
+                    "marginLeft": 10,
+                    "marginRight": 10,
+                  }
+                }
+                testID="checkboxTitle"
+              >
+                War
+              </Text>
+            </View>
+          </View>
+          <View
+            accessibilityRole="checkbox"
+            accessibilityState={
+              Object {
+                "checked": false,
+              }
+            }
+            accessible={true}
+            focusable={true}
+            onClick={[Function]}
+            onResponderGrant={[Function]}
+            onResponderMove={[Function]}
+            onResponderRelease={[Function]}
+            onResponderTerminate={[Function]}
+            onResponderTerminationRequest={[Function]}
+            onStartShouldSetResponder={[Function]}
+            style={
+              Object {
+                "backgroundColor": "#fafafa",
+                "borderColor": "#ededed",
+                "borderRadius": 3,
+                "borderWidth": 1,
+                "margin": 5,
+                "marginLeft": 10,
+                "marginRight": 10,
+                "opacity": 1,
+                "padding": 10,
+              }
+            }
+            testID="checkbox"
+          >
+            <View
+              style={
+                Object {
+                  "alignItems": "center",
+                  "flexDirection": "row",
+                }
+              }
+            >
+              <Text />
+              <Text
+                style={
+                  Object {
+                    "color": "#43484d",
+                    "fontWeight": "bold",
+                    "marginLeft": 10,
+                    "marginRight": 10,
+                  }
+                }
+                testID="checkboxTitle"
+              >
+                Western
+              </Text>
+            </View>
+          </View>
+        </View>
+      </View>
+      <View>
+        <Text
+          style={
+            Object {
+              "fontSize": 20,
+              "fontWeight": "bold",
+            }
+          }
+        >
+          TV Genres
+        </Text>
+      </View>
+      <View
+        style={
+          Object {
+            "backgroundColor": "#d3d3d3",
+            "borderRadius": 10,
+            "borderWith": 1,
+            "marginLeft": 10,
+            "marginRight": 10,
+            "padding": 10,
+          }
+        }
+      >
+        <View
+          style={
+            Object {
+              "alignItems": "left",
+            }
+          }
+        >
+          <View
+            accessibilityRole="checkbox"
+            accessibilityState={
+              Object {
+                "checked": false,
+              }
+            }
+            accessible={true}
+            focusable={true}
+            onClick={[Function]}
+            onResponderGrant={[Function]}
+            onResponderMove={[Function]}
+            onResponderRelease={[Function]}
+            onResponderTerminate={[Function]}
+            onResponderTerminationRequest={[Function]}
+            onStartShouldSetResponder={[Function]}
+            style={
+              Object {
+                "backgroundColor": "#fafafa",
+                "borderColor": "#ededed",
+                "borderRadius": 3,
+                "borderWidth": 1,
+                "margin": 5,
+                "marginLeft": 10,
+                "marginRight": 10,
+                "opacity": 1,
+                "padding": 10,
+              }
+            }
+            testID="checkbox"
+          >
+            <View
+              style={
+                Object {
+                  "alignItems": "center",
+                  "flexDirection": "row",
+                }
+              }
+            >
+              <Text />
+              <Text
+                style={
+                  Object {
+                    "color": "#43484d",
+                    "fontWeight": "bold",
+                    "marginLeft": 10,
+                    "marginRight": 10,
+                  }
+                }
+                testID="checkboxTitle"
+              >
+                Action & Adventure
+              </Text>
+            </View>
+          </View>
+          <View
+            accessibilityRole="checkbox"
+            accessibilityState={
+              Object {
+                "checked": false,
+              }
+            }
+            accessible={true}
+            focusable={true}
+            onClick={[Function]}
+            onResponderGrant={[Function]}
+            onResponderMove={[Function]}
+            onResponderRelease={[Function]}
+            onResponderTerminate={[Function]}
+            onResponderTerminationRequest={[Function]}
+            onStartShouldSetResponder={[Function]}
+            style={
+              Object {
+                "backgroundColor": "#fafafa",
+                "borderColor": "#ededed",
+                "borderRadius": 3,
+                "borderWidth": 1,
+                "margin": 5,
+                "marginLeft": 10,
+                "marginRight": 10,
+                "opacity": 1,
+                "padding": 10,
+              }
+            }
+            testID="checkbox"
+          >
+            <View
+              style={
+                Object {
+                  "alignItems": "center",
+                  "flexDirection": "row",
+                }
+              }
+            >
+              <Text />
+              <Text
+                style={
+                  Object {
+                    "color": "#43484d",
+                    "fontWeight": "bold",
+                    "marginLeft": 10,
+                    "marginRight": 10,
+                  }
+                }
+                testID="checkboxTitle"
+              >
+                Animation
+              </Text>
+            </View>
+          </View>
+          <View
+            accessibilityRole="checkbox"
+            accessibilityState={
+              Object {
+                "checked": false,
+              }
+            }
+            accessible={true}
+            focusable={true}
+            onClick={[Function]}
+            onResponderGrant={[Function]}
+            onResponderMove={[Function]}
+            onResponderRelease={[Function]}
+            onResponderTerminate={[Function]}
+            onResponderTerminationRequest={[Function]}
+            onStartShouldSetResponder={[Function]}
+            style={
+              Object {
+                "backgroundColor": "#fafafa",
+                "borderColor": "#ededed",
+                "borderRadius": 3,
+                "borderWidth": 1,
+                "margin": 5,
+                "marginLeft": 10,
+                "marginRight": 10,
+                "opacity": 1,
+                "padding": 10,
+              }
+            }
+            testID="checkbox"
+          >
+            <View
+              style={
+                Object {
+                  "alignItems": "center",
+                  "flexDirection": "row",
+                }
+              }
+            >
+              <Text />
+              <Text
+                style={
+                  Object {
+                    "color": "#43484d",
+                    "fontWeight": "bold",
+                    "marginLeft": 10,
+                    "marginRight": 10,
+                  }
+                }
+                testID="checkboxTitle"
+              >
+                Comedy
+              </Text>
+            </View>
+          </View>
+          <View
+            accessibilityRole="checkbox"
+            accessibilityState={
+              Object {
+                "checked": false,
+              }
+            }
+            accessible={true}
+            focusable={true}
+            onClick={[Function]}
+            onResponderGrant={[Function]}
+            onResponderMove={[Function]}
+            onResponderRelease={[Function]}
+            onResponderTerminate={[Function]}
+            onResponderTerminationRequest={[Function]}
+            onStartShouldSetResponder={[Function]}
+            style={
+              Object {
+                "backgroundColor": "#fafafa",
+                "borderColor": "#ededed",
+                "borderRadius": 3,
+                "borderWidth": 1,
+                "margin": 5,
+                "marginLeft": 10,
+                "marginRight": 10,
+                "opacity": 1,
+                "padding": 10,
+              }
+            }
+            testID="checkbox"
+          >
+            <View
+              style={
+                Object {
+                  "alignItems": "center",
+                  "flexDirection": "row",
+                }
+              }
+            >
+              <Text />
+              <Text
+                style={
+                  Object {
+                    "color": "#43484d",
+                    "fontWeight": "bold",
+                    "marginLeft": 10,
+                    "marginRight": 10,
+                  }
+                }
+                testID="checkboxTitle"
+              >
+                Crime
+              </Text>
+            </View>
+          </View>
+          <View
+            accessibilityRole="checkbox"
+            accessibilityState={
+              Object {
+                "checked": false,
+              }
+            }
+            accessible={true}
+            focusable={true}
+            onClick={[Function]}
+            onResponderGrant={[Function]}
+            onResponderMove={[Function]}
+            onResponderRelease={[Function]}
+            onResponderTerminate={[Function]}
+            onResponderTerminationRequest={[Function]}
+            onStartShouldSetResponder={[Function]}
+            style={
+              Object {
+                "backgroundColor": "#fafafa",
+                "borderColor": "#ededed",
+                "borderRadius": 3,
+                "borderWidth": 1,
+                "margin": 5,
+                "marginLeft": 10,
+                "marginRight": 10,
+                "opacity": 1,
+                "padding": 10,
+              }
+            }
+            testID="checkbox"
+          >
+            <View
+              style={
+                Object {
+                  "alignItems": "center",
+                  "flexDirection": "row",
+                }
+              }
+            >
+              <Text />
+              <Text
+                style={
+                  Object {
+                    "color": "#43484d",
+                    "fontWeight": "bold",
+                    "marginLeft": 10,
+                    "marginRight": 10,
+                  }
+                }
+                testID="checkboxTitle"
+              >
+                Documentary
+              </Text>
+            </View>
+          </View>
+          <View
+            accessibilityRole="checkbox"
+            accessibilityState={
+              Object {
+                "checked": false,
+              }
+            }
+            accessible={true}
+            focusable={true}
+            onClick={[Function]}
+            onResponderGrant={[Function]}
+            onResponderMove={[Function]}
+            onResponderRelease={[Function]}
+            onResponderTerminate={[Function]}
+            onResponderTerminationRequest={[Function]}
+            onStartShouldSetResponder={[Function]}
+            style={
+              Object {
+                "backgroundColor": "#fafafa",
+                "borderColor": "#ededed",
+                "borderRadius": 3,
+                "borderWidth": 1,
+                "margin": 5,
+                "marginLeft": 10,
+                "marginRight": 10,
+                "opacity": 1,
+                "padding": 10,
+              }
+            }
+            testID="checkbox"
+          >
+            <View
+              style={
+                Object {
+                  "alignItems": "center",
+                  "flexDirection": "row",
+                }
+              }
+            >
+              <Text />
+              <Text
+                style={
+                  Object {
+                    "color": "#43484d",
+                    "fontWeight": "bold",
+                    "marginLeft": 10,
+                    "marginRight": 10,
+                  }
+                }
+                testID="checkboxTitle"
+              >
+                Drama
+              </Text>
+            </View>
+          </View>
+          <View
+            accessibilityRole="checkbox"
+            accessibilityState={
+              Object {
+                "checked": false,
+              }
+            }
+            accessible={true}
+            focusable={true}
+            onClick={[Function]}
+            onResponderGrant={[Function]}
+            onResponderMove={[Function]}
+            onResponderRelease={[Function]}
+            onResponderTerminate={[Function]}
+            onResponderTerminationRequest={[Function]}
+            onStartShouldSetResponder={[Function]}
+            style={
+              Object {
+                "backgroundColor": "#fafafa",
+                "borderColor": "#ededed",
+                "borderRadius": 3,
+                "borderWidth": 1,
+                "margin": 5,
+                "marginLeft": 10,
+                "marginRight": 10,
+                "opacity": 1,
+                "padding": 10,
+              }
+            }
+            testID="checkbox"
+          >
+            <View
+              style={
+                Object {
+                  "alignItems": "center",
+                  "flexDirection": "row",
+                }
+              }
+            >
+              <Text />
+              <Text
+                style={
+                  Object {
+                    "color": "#43484d",
+                    "fontWeight": "bold",
+                    "marginLeft": 10,
+                    "marginRight": 10,
+                  }
+                }
+                testID="checkboxTitle"
+              >
+                Family
+              </Text>
+            </View>
+          </View>
+          <View
+            accessibilityRole="checkbox"
+            accessibilityState={
+              Object {
+                "checked": false,
+              }
+            }
+            accessible={true}
+            focusable={true}
+            onClick={[Function]}
+            onResponderGrant={[Function]}
+            onResponderMove={[Function]}
+            onResponderRelease={[Function]}
+            onResponderTerminate={[Function]}
+            onResponderTerminationRequest={[Function]}
+            onStartShouldSetResponder={[Function]}
+            style={
+              Object {
+                "backgroundColor": "#fafafa",
+                "borderColor": "#ededed",
+                "borderRadius": 3,
+                "borderWidth": 1,
+                "margin": 5,
+                "marginLeft": 10,
+                "marginRight": 10,
+                "opacity": 1,
+                "padding": 10,
+              }
+            }
+            testID="checkbox"
+          >
+            <View
+              style={
+                Object {
+                  "alignItems": "center",
+                  "flexDirection": "row",
+                }
+              }
+            >
+              <Text />
+              <Text
+                style={
+                  Object {
+                    "color": "#43484d",
+                    "fontWeight": "bold",
+                    "marginLeft": 10,
+                    "marginRight": 10,
+                  }
+                }
+                testID="checkboxTitle"
+              >
+                Kids
+              </Text>
+            </View>
+          </View>
+          <View
+            accessibilityRole="checkbox"
+            accessibilityState={
+              Object {
+                "checked": false,
+              }
+            }
+            accessible={true}
+            focusable={true}
+            onClick={[Function]}
+            onResponderGrant={[Function]}
+            onResponderMove={[Function]}
+            onResponderRelease={[Function]}
+            onResponderTerminate={[Function]}
+            onResponderTerminationRequest={[Function]}
+            onStartShouldSetResponder={[Function]}
+            style={
+              Object {
+                "backgroundColor": "#fafafa",
+                "borderColor": "#ededed",
+                "borderRadius": 3,
+                "borderWidth": 1,
+                "margin": 5,
+                "marginLeft": 10,
+                "marginRight": 10,
+                "opacity": 1,
+                "padding": 10,
+              }
+            }
+            testID="checkbox"
+          >
+            <View
+              style={
+                Object {
+                  "alignItems": "center",
+                  "flexDirection": "row",
+                }
+              }
+            >
+              <Text />
+              <Text
+                style={
+                  Object {
+                    "color": "#43484d",
+                    "fontWeight": "bold",
+                    "marginLeft": 10,
+                    "marginRight": 10,
+                  }
+                }
+                testID="checkboxTitle"
+              >
+                Mystery
+              </Text>
+            </View>
+          </View>
+          <View
+            accessibilityRole="checkbox"
+            accessibilityState={
+              Object {
+                "checked": false,
+              }
+            }
+            accessible={true}
+            focusable={true}
+            onClick={[Function]}
+            onResponderGrant={[Function]}
+            onResponderMove={[Function]}
+            onResponderRelease={[Function]}
+            onResponderTerminate={[Function]}
+            onResponderTerminationRequest={[Function]}
+            onStartShouldSetResponder={[Function]}
+            style={
+              Object {
+                "backgroundColor": "#fafafa",
+                "borderColor": "#ededed",
+                "borderRadius": 3,
+                "borderWidth": 1,
+                "margin": 5,
+                "marginLeft": 10,
+                "marginRight": 10,
+                "opacity": 1,
+                "padding": 10,
+              }
+            }
+            testID="checkbox"
+          >
+            <View
+              style={
+                Object {
+                  "alignItems": "center",
+                  "flexDirection": "row",
+                }
+              }
+            >
+              <Text />
+              <Text
+                style={
+                  Object {
+                    "color": "#43484d",
+                    "fontWeight": "bold",
+                    "marginLeft": 10,
+                    "marginRight": 10,
+                  }
+                }
+                testID="checkboxTitle"
+              >
+                News
+              </Text>
+            </View>
+          </View>
+          <View
+            accessibilityRole="checkbox"
+            accessibilityState={
+              Object {
+                "checked": false,
+              }
+            }
+            accessible={true}
+            focusable={true}
+            onClick={[Function]}
+            onResponderGrant={[Function]}
+            onResponderMove={[Function]}
+            onResponderRelease={[Function]}
+            onResponderTerminate={[Function]}
+            onResponderTerminationRequest={[Function]}
+            onStartShouldSetResponder={[Function]}
+            style={
+              Object {
+                "backgroundColor": "#fafafa",
+                "borderColor": "#ededed",
+                "borderRadius": 3,
+                "borderWidth": 1,
+                "margin": 5,
+                "marginLeft": 10,
+                "marginRight": 10,
+                "opacity": 1,
+                "padding": 10,
+              }
+            }
+            testID="checkbox"
+          >
+            <View
+              style={
+                Object {
+                  "alignItems": "center",
+                  "flexDirection": "row",
+                }
+              }
+            >
+              <Text />
+              <Text
+                style={
+                  Object {
+                    "color": "#43484d",
+                    "fontWeight": "bold",
+                    "marginLeft": 10,
+                    "marginRight": 10,
+                  }
+                }
+                testID="checkboxTitle"
+              >
+                Reality
+              </Text>
+            </View>
+          </View>
+          <View
+            accessibilityRole="checkbox"
+            accessibilityState={
+              Object {
+                "checked": false,
+              }
+            }
+            accessible={true}
+            focusable={true}
+            onClick={[Function]}
+            onResponderGrant={[Function]}
+            onResponderMove={[Function]}
+            onResponderRelease={[Function]}
+            onResponderTerminate={[Function]}
+            onResponderTerminationRequest={[Function]}
+            onStartShouldSetResponder={[Function]}
+            style={
+              Object {
+                "backgroundColor": "#fafafa",
+                "borderColor": "#ededed",
+                "borderRadius": 3,
+                "borderWidth": 1,
+                "margin": 5,
+                "marginLeft": 10,
+                "marginRight": 10,
+                "opacity": 1,
+                "padding": 10,
+              }
+            }
+            testID="checkbox"
+          >
+            <View
+              style={
+                Object {
+                  "alignItems": "center",
+                  "flexDirection": "row",
+                }
+              }
+            >
+              <Text />
+              <Text
+                style={
+                  Object {
+                    "color": "#43484d",
+                    "fontWeight": "bold",
+                    "marginLeft": 10,
+                    "marginRight": 10,
+                  }
+                }
+                testID="checkboxTitle"
+              >
+                Sci-Fi & Fantasy
+              </Text>
+            </View>
+          </View>
+          <View
+            accessibilityRole="checkbox"
+            accessibilityState={
+              Object {
+                "checked": false,
+              }
+            }
+            accessible={true}
+            focusable={true}
+            onClick={[Function]}
+            onResponderGrant={[Function]}
+            onResponderMove={[Function]}
+            onResponderRelease={[Function]}
+            onResponderTerminate={[Function]}
+            onResponderTerminationRequest={[Function]}
+            onStartShouldSetResponder={[Function]}
+            style={
+              Object {
+                "backgroundColor": "#fafafa",
+                "borderColor": "#ededed",
+                "borderRadius": 3,
+                "borderWidth": 1,
+                "margin": 5,
+                "marginLeft": 10,
+                "marginRight": 10,
+                "opacity": 1,
+                "padding": 10,
+              }
+            }
+            testID="checkbox"
+          >
+            <View
+              style={
+                Object {
+                  "alignItems": "center",
+                  "flexDirection": "row",
+                }
+              }
+            >
+              <Text />
+              <Text
+                style={
+                  Object {
+                    "color": "#43484d",
+                    "fontWeight": "bold",
+                    "marginLeft": 10,
+                    "marginRight": 10,
+                  }
+                }
+                testID="checkboxTitle"
+              >
+                Soap
+              </Text>
+            </View>
+          </View>
+          <View
+            accessibilityRole="checkbox"
+            accessibilityState={
+              Object {
+                "checked": false,
+              }
+            }
+            accessible={true}
+            focusable={true}
+            onClick={[Function]}
+            onResponderGrant={[Function]}
+            onResponderMove={[Function]}
+            onResponderRelease={[Function]}
+            onResponderTerminate={[Function]}
+            onResponderTerminationRequest={[Function]}
+            onStartShouldSetResponder={[Function]}
+            style={
+              Object {
+                "backgroundColor": "#fafafa",
+                "borderColor": "#ededed",
+                "borderRadius": 3,
+                "borderWidth": 1,
+                "margin": 5,
+                "marginLeft": 10,
+                "marginRight": 10,
+                "opacity": 1,
+                "padding": 10,
+              }
+            }
+            testID="checkbox"
+          >
+            <View
+              style={
+                Object {
+                  "alignItems": "center",
+                  "flexDirection": "row",
+                }
+              }
+            >
+              <Text />
+              <Text
+                style={
+                  Object {
+                    "color": "#43484d",
+                    "fontWeight": "bold",
+                    "marginLeft": 10,
+                    "marginRight": 10,
+                  }
+                }
+                testID="checkboxTitle"
+              >
+                Talk
+              </Text>
+            </View>
+          </View>
+          <View
+            accessibilityRole="checkbox"
+            accessibilityState={
+              Object {
+                "checked": false,
+              }
+            }
+            accessible={true}
+            focusable={true}
+            onClick={[Function]}
+            onResponderGrant={[Function]}
+            onResponderMove={[Function]}
+            onResponderRelease={[Function]}
+            onResponderTerminate={[Function]}
+            onResponderTerminationRequest={[Function]}
+            onStartShouldSetResponder={[Function]}
+            style={
+              Object {
+                "backgroundColor": "#fafafa",
+                "borderColor": "#ededed",
+                "borderRadius": 3,
+                "borderWidth": 1,
+                "margin": 5,
+                "marginLeft": 10,
+                "marginRight": 10,
+                "opacity": 1,
+                "padding": 10,
+              }
+            }
+            testID="checkbox"
+          >
+            <View
+              style={
+                Object {
+                  "alignItems": "center",
+                  "flexDirection": "row",
+                }
+              }
+            >
+              <Text />
+              <Text
+                style={
+                  Object {
+                    "color": "#43484d",
+                    "fontWeight": "bold",
+                    "marginLeft": 10,
+                    "marginRight": 10,
+                  }
+                }
+                testID="checkboxTitle"
+              >
+                War & Politics
+              </Text>
+            </View>
+          </View>
+          <View
+            accessibilityRole="checkbox"
+            accessibilityState={
+              Object {
+                "checked": false,
+              }
+            }
+            accessible={true}
+            focusable={true}
+            onClick={[Function]}
+            onResponderGrant={[Function]}
+            onResponderMove={[Function]}
+            onResponderRelease={[Function]}
+            onResponderTerminate={[Function]}
+            onResponderTerminationRequest={[Function]}
+            onStartShouldSetResponder={[Function]}
+            style={
+              Object {
+                "backgroundColor": "#fafafa",
+                "borderColor": "#ededed",
+                "borderRadius": 3,
+                "borderWidth": 1,
+                "margin": 5,
+                "marginLeft": 10,
+                "marginRight": 10,
+                "opacity": 1,
+                "padding": 10,
+              }
+            }
+            testID="checkbox"
+          >
+            <View
+              style={
+                Object {
+                  "alignItems": "center",
+                  "flexDirection": "row",
+                }
+              }
+            >
+              <Text />
+              <Text
+                style={
+                  Object {
+                    "color": "#43484d",
+                    "fontWeight": "bold",
+                    "marginLeft": 10,
+                    "marginRight": 10,
+                  }
+                }
+                testID="checkboxTitle"
+              >
+                Western
+              </Text>
+            </View>
+          </View>
+        </View>
+      </View>
+      <View
+        accessible={true}
+        focusable={true}
+        onClick={[Function]}
+        onResponderGrant={[Function]}
+        onResponderMove={[Function]}
+        onResponderRelease={[Function]}
+        onResponderTerminate={[Function]}
+        onResponderTerminationRequest={[Function]}
+        onStartShouldSetResponder={[Function]}
+        style={
+          Object {
+            "alignItems": "center",
+            "backgroundColor": "#99ccff",
+            "borderRadius": 25,
+            "marginTop": 10,
+            "opacity": 1,
+            "padding": 10,
+            "width": "80%",
+          }
+        }
+      >
+        <Text>
+          Save Changes
+        </Text>
+      </View>
+      <View
+        accessible={true}
+        focusable={true}
+        onClick={[Function]}
+        onResponderGrant={[Function]}
+        onResponderMove={[Function]}
+        onResponderRelease={[Function]}
+        onResponderTerminate={[Function]}
+        onResponderTerminationRequest={[Function]}
+        onStartShouldSetResponder={[Function]}
+        style={
+          Object {
+            "alignItems": "center",
+            "backgroundColor": "#99ccff",
+            "borderRadius": 25,
+            "marginTop": 10,
+            "opacity": 1,
+            "padding": 10,
+            "width": "80%",
+          }
+        }
+      >
+        <Text>
+          Change Password
+        </Text>
+      </View>
+      <View
+        accessible={true}
+        focusable={true}
+        onClick={[Function]}
+        onResponderGrant={[Function]}
+        onResponderMove={[Function]}
+        onResponderRelease={[Function]}
+        onResponderTerminate={[Function]}
+        onResponderTerminationRequest={[Function]}
+        onStartShouldSetResponder={[Function]}
+        style={
+          Object {
+            "alignItems": "center",
+            "backgroundColor": "#99ccff",
+            "borderRadius": 25,
+            "marginTop": 10,
+            "opacity": 1,
+            "padding": 10,
+            "width": "80%",
+          }
+        }
+      >
+        <Text>
+          Logout
+        </Text>
+      </View>
+    </View>
+  </RCTScrollView>
+</RCTSafeAreaView>
+`;
+
+exports[`Renders snapshot as expected Settings Screen Loads 1`] = `
+<RCTSafeAreaView
+  emulateUnlessSupported={true}
+  style={
+    Object {
+      "alignContent": "center",
+      "alignItems": "center",
+      "backgroundColor": "#fff",
+      "flex": 1,
+    }
+  }
+>
+  <RCTScrollView
+    style={
+      Object {
+        "backgroundColor": "#fff",
+        "width": 730,
+      }
+    }
+  >
+    <View>
+      <View>
+        <Text
+          style={
+            Object {
+              "fontSize": 20,
+              "fontWeight": "bold",
+            }
+          }
+        >
+          User Info
+        </Text>
+      </View>
+      <View
+        style={
+          Object {
+            "backgroundColor": "#d3d3d3",
+            "borderRadius": 10,
+            "borderWith": 1,
+            "flexDirection": "row",
+            "marginLeft": 10,
+            "marginRight": 10,
+            "padding": 10,
+          }
+        }
+      >
+        <View
+          style={
+            Object {
+              "alignItems": "center",
+              "flex": 1,
+            }
+          }
+        >
+          <Text>
+            User Email :
+          </Text>
+          <Text>
+            First Name :
+          </Text>
+          <Text>
+            Last Name :
+          </Text>
+        </View>
+        <View
+          style={
+            Object {
+              "flex": 1,
+            }
+          }
+        >
+          <Text />
+          <Text />
+          <Text />
+        </View>
+      </View>
+      <View>
+        <Text
+          style={
+            Object {
+              "fontSize": 20,
+              "fontWeight": "bold",
+            }
+          }
+        >
+          Content Type
+        </Text>
+      </View>
+      <View
+        style={
+          Object {
+            "backgroundColor": "#d3d3d3",
+            "borderRadius": 10,
+            "borderWith": 1,
+            "flexDirection": "row",
+            "marginLeft": 10,
+            "marginRight": 10,
+            "padding": 10,
+          }
+        }
+      >
+        <View
+          style={
+            Object {
+              "alignItems": "center",
+              "flex": 1,
+            }
+          }
+        >
+          <Text
+            style={
+              Object {
+                "fontSize": 15,
+              }
+            }
+          >
+             Movies
+          </Text>
+        </View>
+        <RCTSwitch
+          accessibilityRole="switch"
+          onChange={[Function]}
+          onResponderTerminationRequest={[Function]}
+          onStartShouldSetResponder={[Function]}
+          style={
+            Object {
+              "height": 31,
+              "width": 51,
+            }
+          }
+          value={false}
+        />
+        <View
+          style={
+            Object {
+              "flex": 1,
+            }
+          }
+        >
+          <Text
+            style={
+              Object {
+                "fontSize": 15,
+              }
+            }
+          >
+             TV Shows
+          </Text>
+        </View>
+      </View>
+      <View>
+        <Text
+          style={
+            Object {
+              "fontSize": 20,
+              "fontWeight": "bold",
+            }
+          }
+        >
+          Streaming services
+        </Text>
+      </View>
+      <View
+        style={
+          Object {
+            "backgroundColor": "#d3d3d3",
+            "borderRadius": 10,
+            "borderWith": 1,
+            "marginLeft": 10,
+            "marginRight": 10,
+            "padding": 10,
+          }
+        }
+      >
+        <View
+          style={
+            Object {
+              "alignItems": "left",
+            }
+          }
+        >
+          <View
+            accessibilityRole="checkbox"
+            accessibilityState={
+              Object {
+                "checked": false,
+              }
+            }
+            accessible={true}
+            focusable={true}
+            onClick={[Function]}
+            onResponderGrant={[Function]}
+            onResponderMove={[Function]}
+            onResponderRelease={[Function]}
+            onResponderTerminate={[Function]}
+            onResponderTerminationRequest={[Function]}
+            onStartShouldSetResponder={[Function]}
+            style={
+              Object {
+                "backgroundColor": "#fafafa",
+                "borderColor": "#ededed",
+                "borderRadius": 3,
+                "borderWidth": 1,
+                "margin": 5,
+                "marginLeft": 10,
+                "marginRight": 10,
+                "opacity": 1,
+                "padding": 10,
+              }
+            }
+            testID="checkbox"
+          >
+            <View
+              style={
+                Object {
+                  "alignItems": "center",
+                  "flexDirection": "row",
+                }
+              }
+            >
+              <Text />
+              <Text
+                style={
+                  Object {
+                    "color": "#43484d",
+                    "fontWeight": "bold",
+                    "marginLeft": 10,
+                    "marginRight": 10,
+                  }
+                }
+                testID="checkboxTitle"
+              >
+                Netflix
+              </Text>
+            </View>
+          </View>
+          <View
+            accessibilityRole="checkbox"
+            accessibilityState={
+              Object {
+                "checked": false,
+              }
+            }
+            accessible={true}
+            focusable={true}
+            onClick={[Function]}
+            onResponderGrant={[Function]}
+            onResponderMove={[Function]}
+            onResponderRelease={[Function]}
+            onResponderTerminate={[Function]}
+            onResponderTerminationRequest={[Function]}
+            onStartShouldSetResponder={[Function]}
+            style={
+              Object {
+                "backgroundColor": "#fafafa",
+                "borderColor": "#ededed",
+                "borderRadius": 3,
+                "borderWidth": 1,
+                "margin": 5,
+                "marginLeft": 10,
+                "marginRight": 10,
+                "opacity": 1,
+                "padding": 10,
+              }
+            }
+            testID="checkbox"
+          >
+            <View
+              style={
+                Object {
+                  "alignItems": "center",
+                  "flexDirection": "row",
+                }
+              }
+            >
+              <Text />
+              <Text
+                style={
+                  Object {
+                    "color": "#43484d",
+                    "fontWeight": "bold",
+                    "marginLeft": 10,
+                    "marginRight": 10,
+                  }
+                }
+                testID="checkboxTitle"
+              >
+                Amazon Prime
+              </Text>
+            </View>
+          </View>
+          <View
+            accessibilityRole="checkbox"
+            accessibilityState={
+              Object {
+                "checked": false,
+              }
+            }
+            accessible={true}
+            focusable={true}
+            onClick={[Function]}
+            onResponderGrant={[Function]}
+            onResponderMove={[Function]}
+            onResponderRelease={[Function]}
+            onResponderTerminate={[Function]}
+            onResponderTerminationRequest={[Function]}
+            onStartShouldSetResponder={[Function]}
+            style={
+              Object {
+                "backgroundColor": "#fafafa",
+                "borderColor": "#ededed",
+                "borderRadius": 3,
+                "borderWidth": 1,
+                "margin": 5,
+                "marginLeft": 10,
+                "marginRight": 10,
+                "opacity": 1,
+                "padding": 10,
+              }
+            }
+            testID="checkbox"
+          >
+            <View
+              style={
+                Object {
+                  "alignItems": "center",
+                  "flexDirection": "row",
+                }
+              }
+            >
+              <Text />
+              <Text
+                style={
+                  Object {
+                    "color": "#43484d",
+                    "fontWeight": "bold",
+                    "marginLeft": 10,
+                    "marginRight": 10,
+                  }
+                }
+                testID="checkboxTitle"
+              >
+                Disney+
+              </Text>
+            </View>
+          </View>
+          <View
+            accessibilityRole="checkbox"
+            accessibilityState={
+              Object {
+                "checked": false,
+              }
+            }
+            accessible={true}
+            focusable={true}
+            onClick={[Function]}
+            onResponderGrant={[Function]}
+            onResponderMove={[Function]}
+            onResponderRelease={[Function]}
+            onResponderTerminate={[Function]}
+            onResponderTerminationRequest={[Function]}
+            onStartShouldSetResponder={[Function]}
+            style={
+              Object {
+                "backgroundColor": "#fafafa",
+                "borderColor": "#ededed",
+                "borderRadius": 3,
+                "borderWidth": 1,
+                "margin": 5,
+                "marginLeft": 10,
+                "marginRight": 10,
+                "opacity": 1,
+                "padding": 10,
+              }
+            }
+            testID="checkbox"
+          >
+            <View
+              style={
+                Object {
+                  "alignItems": "center",
+                  "flexDirection": "row",
+                }
+              }
+            >
+              <Text />
+              <Text
+                style={
+                  Object {
+                    "color": "#43484d",
+                    "fontWeight": "bold",
+                    "marginLeft": 10,
+                    "marginRight": 10,
+                  }
+                }
+                testID="checkboxTitle"
+              >
+                HBO Max
+              </Text>
+            </View>
+          </View>
+        </View>
+      </View>
+      <View>
+        <Text
+          style={
+            Object {
+              "fontSize": 20,
+              "fontWeight": "bold",
+            }
+          }
+        >
+          Movie Genres
+        </Text>
+      </View>
+      <View
+        style={
+          Object {
+            "backgroundColor": "#d3d3d3",
+            "borderRadius": 10,
+            "borderWith": 1,
+            "marginLeft": 10,
+            "marginRight": 10,
+            "padding": 10,
+          }
+        }
+      >
+        <View
+          style={
+            Object {
+              "alignItems": "left",
+            }
+          }
+        >
+          <View
+            accessibilityRole="checkbox"
+            accessibilityState={
+              Object {
+                "checked": false,
+              }
+            }
+            accessible={true}
+            focusable={true}
+            onClick={[Function]}
+            onResponderGrant={[Function]}
+            onResponderMove={[Function]}
+            onResponderRelease={[Function]}
+            onResponderTerminate={[Function]}
+            onResponderTerminationRequest={[Function]}
+            onStartShouldSetResponder={[Function]}
+            style={
+              Object {
+                "backgroundColor": "#fafafa",
+                "borderColor": "#ededed",
+                "borderRadius": 3,
+                "borderWidth": 1,
+                "margin": 5,
+                "marginLeft": 10,
+                "marginRight": 10,
+                "opacity": 1,
+                "padding": 10,
+              }
+            }
+            testID="checkbox"
+          >
+            <View
+              style={
+                Object {
+                  "alignItems": "center",
+                  "flexDirection": "row",
+                }
+              }
+            >
+              <Text />
+              <Text
+                style={
+                  Object {
+                    "color": "#43484d",
+                    "fontWeight": "bold",
+                    "marginLeft": 10,
+                    "marginRight": 10,
+                  }
+                }
+                testID="checkboxTitle"
+              >
+                Action
+              </Text>
+            </View>
+          </View>
+          <View
+            accessibilityRole="checkbox"
+            accessibilityState={
+              Object {
+                "checked": false,
+              }
+            }
+            accessible={true}
+            focusable={true}
+            onClick={[Function]}
+            onResponderGrant={[Function]}
+            onResponderMove={[Function]}
+            onResponderRelease={[Function]}
+            onResponderTerminate={[Function]}
+            onResponderTerminationRequest={[Function]}
+            onStartShouldSetResponder={[Function]}
+            style={
+              Object {
+                "backgroundColor": "#fafafa",
+                "borderColor": "#ededed",
+                "borderRadius": 3,
+                "borderWidth": 1,
+                "margin": 5,
+                "marginLeft": 10,
+                "marginRight": 10,
+                "opacity": 1,
+                "padding": 10,
+              }
+            }
+            testID="checkbox"
+          >
+            <View
+              style={
+                Object {
+                  "alignItems": "center",
+                  "flexDirection": "row",
+                }
+              }
+            >
+              <Text />
+              <Text
+                style={
+                  Object {
+                    "color": "#43484d",
+                    "fontWeight": "bold",
+                    "marginLeft": 10,
+                    "marginRight": 10,
+                  }
+                }
+                testID="checkboxTitle"
+              >
+                Adventure
+              </Text>
+            </View>
+          </View>
+          <View
+            accessibilityRole="checkbox"
+            accessibilityState={
+              Object {
+                "checked": false,
+              }
+            }
+            accessible={true}
+            focusable={true}
+            onClick={[Function]}
+            onResponderGrant={[Function]}
+            onResponderMove={[Function]}
+            onResponderRelease={[Function]}
+            onResponderTerminate={[Function]}
+            onResponderTerminationRequest={[Function]}
+            onStartShouldSetResponder={[Function]}
+            style={
+              Object {
+                "backgroundColor": "#fafafa",
+                "borderColor": "#ededed",
+                "borderRadius": 3,
+                "borderWidth": 1,
+                "margin": 5,
+                "marginLeft": 10,
+                "marginRight": 10,
+                "opacity": 1,
+                "padding": 10,
+              }
+            }
+            testID="checkbox"
+          >
+            <View
+              style={
+                Object {
+                  "alignItems": "center",
+                  "flexDirection": "row",
+                }
+              }
+            >
+              <Text />
+              <Text
+                style={
+                  Object {
+                    "color": "#43484d",
+                    "fontWeight": "bold",
+                    "marginLeft": 10,
+                    "marginRight": 10,
+                  }
+                }
+                testID="checkboxTitle"
+              >
+                Animation
+              </Text>
+            </View>
+          </View>
+          <View
+            accessibilityRole="checkbox"
+            accessibilityState={
+              Object {
+                "checked": false,
+              }
+            }
+            accessible={true}
+            focusable={true}
+            onClick={[Function]}
+            onResponderGrant={[Function]}
+            onResponderMove={[Function]}
+            onResponderRelease={[Function]}
+            onResponderTerminate={[Function]}
+            onResponderTerminationRequest={[Function]}
+            onStartShouldSetResponder={[Function]}
+            style={
+              Object {
+                "backgroundColor": "#fafafa",
+                "borderColor": "#ededed",
+                "borderRadius": 3,
+                "borderWidth": 1,
+                "margin": 5,
+                "marginLeft": 10,
+                "marginRight": 10,
+                "opacity": 1,
+                "padding": 10,
+              }
+            }
+            testID="checkbox"
+          >
+            <View
+              style={
+                Object {
+                  "alignItems": "center",
+                  "flexDirection": "row",
+                }
+              }
+            >
+              <Text />
+              <Text
+                style={
+                  Object {
+                    "color": "#43484d",
+                    "fontWeight": "bold",
+                    "marginLeft": 10,
+                    "marginRight": 10,
+                  }
+                }
+                testID="checkboxTitle"
+              >
+                Comedy
+              </Text>
+            </View>
+          </View>
+          <View
+            accessibilityRole="checkbox"
+            accessibilityState={
+              Object {
+                "checked": false,
+              }
+            }
+            accessible={true}
+            focusable={true}
+            onClick={[Function]}
+            onResponderGrant={[Function]}
+            onResponderMove={[Function]}
+            onResponderRelease={[Function]}
+            onResponderTerminate={[Function]}
+            onResponderTerminationRequest={[Function]}
+            onStartShouldSetResponder={[Function]}
+            style={
+              Object {
+                "backgroundColor": "#fafafa",
+                "borderColor": "#ededed",
+                "borderRadius": 3,
+                "borderWidth": 1,
+                "margin": 5,
+                "marginLeft": 10,
+                "marginRight": 10,
+                "opacity": 1,
+                "padding": 10,
+              }
+            }
+            testID="checkbox"
+          >
+            <View
+              style={
+                Object {
+                  "alignItems": "center",
+                  "flexDirection": "row",
+                }
+              }
+            >
+              <Text />
+              <Text
+                style={
+                  Object {
+                    "color": "#43484d",
+                    "fontWeight": "bold",
+                    "marginLeft": 10,
+                    "marginRight": 10,
+                  }
+                }
+                testID="checkboxTitle"
+              >
+                Crime
+              </Text>
+            </View>
+          </View>
+          <View
+            accessibilityRole="checkbox"
+            accessibilityState={
+              Object {
+                "checked": false,
+              }
+            }
+            accessible={true}
+            focusable={true}
+            onClick={[Function]}
+            onResponderGrant={[Function]}
+            onResponderMove={[Function]}
+            onResponderRelease={[Function]}
+            onResponderTerminate={[Function]}
+            onResponderTerminationRequest={[Function]}
+            onStartShouldSetResponder={[Function]}
+            style={
+              Object {
+                "backgroundColor": "#fafafa",
+                "borderColor": "#ededed",
+                "borderRadius": 3,
+                "borderWidth": 1,
+                "margin": 5,
+                "marginLeft": 10,
+                "marginRight": 10,
+                "opacity": 1,
+                "padding": 10,
+              }
+            }
+            testID="checkbox"
+          >
+            <View
+              style={
+                Object {
+                  "alignItems": "center",
+                  "flexDirection": "row",
+                }
+              }
+            >
+              <Text />
+              <Text
+                style={
+                  Object {
+                    "color": "#43484d",
+                    "fontWeight": "bold",
+                    "marginLeft": 10,
+                    "marginRight": 10,
+                  }
+                }
+                testID="checkboxTitle"
+              >
+                Documentary
+              </Text>
+            </View>
+          </View>
+          <View
+            accessibilityRole="checkbox"
+            accessibilityState={
+              Object {
+                "checked": false,
+              }
+            }
+            accessible={true}
+            focusable={true}
+            onClick={[Function]}
+            onResponderGrant={[Function]}
+            onResponderMove={[Function]}
+            onResponderRelease={[Function]}
+            onResponderTerminate={[Function]}
+            onResponderTerminationRequest={[Function]}
+            onStartShouldSetResponder={[Function]}
+            style={
+              Object {
+                "backgroundColor": "#fafafa",
+                "borderColor": "#ededed",
+                "borderRadius": 3,
+                "borderWidth": 1,
+                "margin": 5,
+                "marginLeft": 10,
+                "marginRight": 10,
+                "opacity": 1,
+                "padding": 10,
+              }
+            }
+            testID="checkbox"
+          >
+            <View
+              style={
+                Object {
+                  "alignItems": "center",
+                  "flexDirection": "row",
+                }
+              }
+            >
+              <Text />
+              <Text
+                style={
+                  Object {
+                    "color": "#43484d",
+                    "fontWeight": "bold",
+                    "marginLeft": 10,
+                    "marginRight": 10,
+                  }
+                }
+                testID="checkboxTitle"
+              >
+                Drama
+              </Text>
+            </View>
+          </View>
+          <View
+            accessibilityRole="checkbox"
+            accessibilityState={
+              Object {
+                "checked": false,
+              }
+            }
+            accessible={true}
+            focusable={true}
+            onClick={[Function]}
+            onResponderGrant={[Function]}
+            onResponderMove={[Function]}
+            onResponderRelease={[Function]}
+            onResponderTerminate={[Function]}
+            onResponderTerminationRequest={[Function]}
+            onStartShouldSetResponder={[Function]}
+            style={
+              Object {
+                "backgroundColor": "#fafafa",
+                "borderColor": "#ededed",
+                "borderRadius": 3,
+                "borderWidth": 1,
+                "margin": 5,
+                "marginLeft": 10,
+                "marginRight": 10,
+                "opacity": 1,
+                "padding": 10,
+              }
+            }
+            testID="checkbox"
+          >
+            <View
+              style={
+                Object {
+                  "alignItems": "center",
+                  "flexDirection": "row",
+                }
+              }
+            >
+              <Text />
+              <Text
+                style={
+                  Object {
+                    "color": "#43484d",
+                    "fontWeight": "bold",
+                    "marginLeft": 10,
+                    "marginRight": 10,
+                  }
+                }
+                testID="checkboxTitle"
+              >
+                Family
+              </Text>
+            </View>
+          </View>
+          <View
+            accessibilityRole="checkbox"
+            accessibilityState={
+              Object {
+                "checked": false,
+              }
+            }
+            accessible={true}
+            focusable={true}
+            onClick={[Function]}
+            onResponderGrant={[Function]}
+            onResponderMove={[Function]}
+            onResponderRelease={[Function]}
+            onResponderTerminate={[Function]}
+            onResponderTerminationRequest={[Function]}
+            onStartShouldSetResponder={[Function]}
+            style={
+              Object {
+                "backgroundColor": "#fafafa",
+                "borderColor": "#ededed",
+                "borderRadius": 3,
+                "borderWidth": 1,
+                "margin": 5,
+                "marginLeft": 10,
+                "marginRight": 10,
+                "opacity": 1,
+                "padding": 10,
+              }
+            }
+            testID="checkbox"
+          >
+            <View
+              style={
+                Object {
+                  "alignItems": "center",
+                  "flexDirection": "row",
+                }
+              }
+            >
+              <Text />
+              <Text
+                style={
+                  Object {
+                    "color": "#43484d",
+                    "fontWeight": "bold",
+                    "marginLeft": 10,
+                    "marginRight": 10,
+                  }
+                }
+                testID="checkboxTitle"
+              >
+                Fantasy
+              </Text>
+            </View>
+          </View>
+          <View
+            accessibilityRole="checkbox"
+            accessibilityState={
+              Object {
+                "checked": false,
+              }
+            }
+            accessible={true}
+            focusable={true}
+            onClick={[Function]}
+            onResponderGrant={[Function]}
+            onResponderMove={[Function]}
+            onResponderRelease={[Function]}
+            onResponderTerminate={[Function]}
+            onResponderTerminationRequest={[Function]}
+            onStartShouldSetResponder={[Function]}
+            style={
+              Object {
+                "backgroundColor": "#fafafa",
+                "borderColor": "#ededed",
+                "borderRadius": 3,
+                "borderWidth": 1,
+                "margin": 5,
+                "marginLeft": 10,
+                "marginRight": 10,
+                "opacity": 1,
+                "padding": 10,
+              }
+            }
+            testID="checkbox"
+          >
+            <View
+              style={
+                Object {
+                  "alignItems": "center",
+                  "flexDirection": "row",
+                }
+              }
+            >
+              <Text />
+              <Text
+                style={
+                  Object {
+                    "color": "#43484d",
+                    "fontWeight": "bold",
+                    "marginLeft": 10,
+                    "marginRight": 10,
+                  }
+                }
+                testID="checkboxTitle"
+              >
+                History
+              </Text>
+            </View>
+          </View>
+          <View
+            accessibilityRole="checkbox"
+            accessibilityState={
+              Object {
+                "checked": false,
+              }
+            }
+            accessible={true}
+            focusable={true}
+            onClick={[Function]}
+            onResponderGrant={[Function]}
+            onResponderMove={[Function]}
+            onResponderRelease={[Function]}
+            onResponderTerminate={[Function]}
+            onResponderTerminationRequest={[Function]}
+            onStartShouldSetResponder={[Function]}
+            style={
+              Object {
+                "backgroundColor": "#fafafa",
+                "borderColor": "#ededed",
+                "borderRadius": 3,
+                "borderWidth": 1,
+                "margin": 5,
+                "marginLeft": 10,
+                "marginRight": 10,
+                "opacity": 1,
+                "padding": 10,
+              }
+            }
+            testID="checkbox"
+          >
+            <View
+              style={
+                Object {
+                  "alignItems": "center",
+                  "flexDirection": "row",
+                }
+              }
+            >
+              <Text />
+              <Text
+                style={
+                  Object {
+                    "color": "#43484d",
+                    "fontWeight": "bold",
+                    "marginLeft": 10,
+                    "marginRight": 10,
+                  }
+                }
+                testID="checkboxTitle"
+              >
+                Horror
+              </Text>
+            </View>
+          </View>
+          <View
+            accessibilityRole="checkbox"
+            accessibilityState={
+              Object {
+                "checked": false,
+              }
+            }
+            accessible={true}
+            focusable={true}
+            onClick={[Function]}
+            onResponderGrant={[Function]}
+            onResponderMove={[Function]}
+            onResponderRelease={[Function]}
+            onResponderTerminate={[Function]}
+            onResponderTerminationRequest={[Function]}
+            onStartShouldSetResponder={[Function]}
+            style={
+              Object {
+                "backgroundColor": "#fafafa",
+                "borderColor": "#ededed",
+                "borderRadius": 3,
+                "borderWidth": 1,
+                "margin": 5,
+                "marginLeft": 10,
+                "marginRight": 10,
+                "opacity": 1,
+                "padding": 10,
+              }
+            }
+            testID="checkbox"
+          >
+            <View
+              style={
+                Object {
+                  "alignItems": "center",
+                  "flexDirection": "row",
+                }
+              }
+            >
+              <Text />
+              <Text
+                style={
+                  Object {
+                    "color": "#43484d",
+                    "fontWeight": "bold",
+                    "marginLeft": 10,
+                    "marginRight": 10,
+                  }
+                }
+                testID="checkboxTitle"
+              >
+                Music
+              </Text>
+            </View>
+          </View>
+          <View
+            accessibilityRole="checkbox"
+            accessibilityState={
+              Object {
+                "checked": false,
+              }
+            }
+            accessible={true}
+            focusable={true}
+            onClick={[Function]}
+            onResponderGrant={[Function]}
+            onResponderMove={[Function]}
+            onResponderRelease={[Function]}
+            onResponderTerminate={[Function]}
+            onResponderTerminationRequest={[Function]}
+            onStartShouldSetResponder={[Function]}
+            style={
+              Object {
+                "backgroundColor": "#fafafa",
+                "borderColor": "#ededed",
+                "borderRadius": 3,
+                "borderWidth": 1,
+                "margin": 5,
+                "marginLeft": 10,
+                "marginRight": 10,
+                "opacity": 1,
+                "padding": 10,
+              }
+            }
+            testID="checkbox"
+          >
+            <View
+              style={
+                Object {
+                  "alignItems": "center",
+                  "flexDirection": "row",
+                }
+              }
+            >
+              <Text />
+              <Text
+                style={
+                  Object {
+                    "color": "#43484d",
+                    "fontWeight": "bold",
+                    "marginLeft": 10,
+                    "marginRight": 10,
+                  }
+                }
+                testID="checkboxTitle"
+              >
+                Mystery
+              </Text>
+            </View>
+          </View>
+          <View
+            accessibilityRole="checkbox"
+            accessibilityState={
+              Object {
+                "checked": false,
+              }
+            }
+            accessible={true}
+            focusable={true}
+            onClick={[Function]}
+            onResponderGrant={[Function]}
+            onResponderMove={[Function]}
+            onResponderRelease={[Function]}
+            onResponderTerminate={[Function]}
+            onResponderTerminationRequest={[Function]}
+            onStartShouldSetResponder={[Function]}
+            style={
+              Object {
+                "backgroundColor": "#fafafa",
+                "borderColor": "#ededed",
+                "borderRadius": 3,
+                "borderWidth": 1,
+                "margin": 5,
+                "marginLeft": 10,
+                "marginRight": 10,
+                "opacity": 1,
+                "padding": 10,
+              }
+            }
+            testID="checkbox"
+          >
+            <View
+              style={
+                Object {
+                  "alignItems": "center",
+                  "flexDirection": "row",
+                }
+              }
+            >
+              <Text />
+              <Text
+                style={
+                  Object {
+                    "color": "#43484d",
+                    "fontWeight": "bold",
+                    "marginLeft": 10,
+                    "marginRight": 10,
+                  }
+                }
+                testID="checkboxTitle"
+              >
+                Romance
+              </Text>
+            </View>
+          </View>
+          <View
+            accessibilityRole="checkbox"
+            accessibilityState={
+              Object {
+                "checked": false,
+              }
+            }
+            accessible={true}
+            focusable={true}
+            onClick={[Function]}
+            onResponderGrant={[Function]}
+            onResponderMove={[Function]}
+            onResponderRelease={[Function]}
+            onResponderTerminate={[Function]}
+            onResponderTerminationRequest={[Function]}
+            onStartShouldSetResponder={[Function]}
+            style={
+              Object {
+                "backgroundColor": "#fafafa",
+                "borderColor": "#ededed",
+                "borderRadius": 3,
+                "borderWidth": 1,
+                "margin": 5,
+                "marginLeft": 10,
+                "marginRight": 10,
+                "opacity": 1,
+                "padding": 10,
+              }
+            }
+            testID="checkbox"
+          >
+            <View
+              style={
+                Object {
+                  "alignItems": "center",
+                  "flexDirection": "row",
+                }
+              }
+            >
+              <Text />
+              <Text
+                style={
+                  Object {
+                    "color": "#43484d",
+                    "fontWeight": "bold",
+                    "marginLeft": 10,
+                    "marginRight": 10,
+                  }
+                }
+                testID="checkboxTitle"
+              >
+                Sci Fi
+              </Text>
+            </View>
+          </View>
+          <View
+            accessibilityRole="checkbox"
+            accessibilityState={
+              Object {
+                "checked": false,
+              }
+            }
+            accessible={true}
+            focusable={true}
+            onClick={[Function]}
+            onResponderGrant={[Function]}
+            onResponderMove={[Function]}
+            onResponderRelease={[Function]}
+            onResponderTerminate={[Function]}
+            onResponderTerminationRequest={[Function]}
+            onStartShouldSetResponder={[Function]}
+            style={
+              Object {
+                "backgroundColor": "#fafafa",
+                "borderColor": "#ededed",
+                "borderRadius": 3,
+                "borderWidth": 1,
+                "margin": 5,
+                "marginLeft": 10,
+                "marginRight": 10,
+                "opacity": 1,
+                "padding": 10,
+              }
+            }
+            testID="checkbox"
+          >
+            <View
+              style={
+                Object {
+                  "alignItems": "center",
+                  "flexDirection": "row",
+                }
+              }
+            >
+              <Text />
+              <Text
+                style={
+                  Object {
+                    "color": "#43484d",
+                    "fontWeight": "bold",
+                    "marginLeft": 10,
+                    "marginRight": 10,
+                  }
+                }
+                testID="checkboxTitle"
+              >
+                TV Movie
+              </Text>
+            </View>
+          </View>
+          <View
+            accessibilityRole="checkbox"
+            accessibilityState={
+              Object {
+                "checked": false,
+              }
+            }
+            accessible={true}
+            focusable={true}
+            onClick={[Function]}
+            onResponderGrant={[Function]}
+            onResponderMove={[Function]}
+            onResponderRelease={[Function]}
+            onResponderTerminate={[Function]}
+            onResponderTerminationRequest={[Function]}
+            onStartShouldSetResponder={[Function]}
+            style={
+              Object {
+                "backgroundColor": "#fafafa",
+                "borderColor": "#ededed",
+                "borderRadius": 3,
+                "borderWidth": 1,
+                "margin": 5,
+                "marginLeft": 10,
+                "marginRight": 10,
+                "opacity": 1,
+                "padding": 10,
+              }
+            }
+            testID="checkbox"
+          >
+            <View
+              style={
+                Object {
+                  "alignItems": "center",
+                  "flexDirection": "row",
+                }
+              }
+            >
+              <Text />
+              <Text
+                style={
+                  Object {
+                    "color": "#43484d",
+                    "fontWeight": "bold",
+                    "marginLeft": 10,
+                    "marginRight": 10,
+                  }
+                }
+                testID="checkboxTitle"
+              >
+                Thriller
+              </Text>
+            </View>
+          </View>
+          <View
+            accessibilityRole="checkbox"
+            accessibilityState={
+              Object {
+                "checked": false,
+              }
+            }
+            accessible={true}
+            focusable={true}
+            onClick={[Function]}
+            onResponderGrant={[Function]}
+            onResponderMove={[Function]}
+            onResponderRelease={[Function]}
+            onResponderTerminate={[Function]}
+            onResponderTerminationRequest={[Function]}
+            onStartShouldSetResponder={[Function]}
+            style={
+              Object {
+                "backgroundColor": "#fafafa",
+                "borderColor": "#ededed",
+                "borderRadius": 3,
+                "borderWidth": 1,
+                "margin": 5,
+                "marginLeft": 10,
+                "marginRight": 10,
+                "opacity": 1,
+                "padding": 10,
+              }
+            }
+            testID="checkbox"
+          >
+            <View
+              style={
+                Object {
+                  "alignItems": "center",
+                  "flexDirection": "row",
+                }
+              }
+            >
+              <Text />
+              <Text
+                style={
+                  Object {
+                    "color": "#43484d",
+                    "fontWeight": "bold",
+                    "marginLeft": 10,
+                    "marginRight": 10,
+                  }
+                }
+                testID="checkboxTitle"
+              >
+                War
+              </Text>
+            </View>
+          </View>
+          <View
+            accessibilityRole="checkbox"
+            accessibilityState={
+              Object {
+                "checked": false,
+              }
+            }
+            accessible={true}
+            focusable={true}
+            onClick={[Function]}
+            onResponderGrant={[Function]}
+            onResponderMove={[Function]}
+            onResponderRelease={[Function]}
+            onResponderTerminate={[Function]}
+            onResponderTerminationRequest={[Function]}
+            onStartShouldSetResponder={[Function]}
+            style={
+              Object {
+                "backgroundColor": "#fafafa",
+                "borderColor": "#ededed",
+                "borderRadius": 3,
+                "borderWidth": 1,
+                "margin": 5,
+                "marginLeft": 10,
+                "marginRight": 10,
+                "opacity": 1,
+                "padding": 10,
+              }
+            }
+            testID="checkbox"
+          >
+            <View
+              style={
+                Object {
+                  "alignItems": "center",
+                  "flexDirection": "row",
+                }
+              }
+            >
+              <Text />
+              <Text
+                style={
+                  Object {
+                    "color": "#43484d",
+                    "fontWeight": "bold",
+                    "marginLeft": 10,
+                    "marginRight": 10,
+                  }
+                }
+                testID="checkboxTitle"
+              >
+                Western
+              </Text>
+            </View>
+          </View>
+        </View>
+      </View>
+      <View>
+        <Text
+          style={
+            Object {
+              "fontSize": 20,
+              "fontWeight": "bold",
+            }
+          }
+        >
+          TV Genres
+        </Text>
+      </View>
+      <View
+        style={
+          Object {
+            "backgroundColor": "#d3d3d3",
+            "borderRadius": 10,
+            "borderWith": 1,
+            "marginLeft": 10,
+            "marginRight": 10,
+            "padding": 10,
+          }
+        }
+      >
+        <View
+          style={
+            Object {
+              "alignItems": "left",
+            }
+          }
+        >
+          <View
+            accessibilityRole="checkbox"
+            accessibilityState={
+              Object {
+                "checked": false,
+              }
+            }
+            accessible={true}
+            focusable={true}
+            onClick={[Function]}
+            onResponderGrant={[Function]}
+            onResponderMove={[Function]}
+            onResponderRelease={[Function]}
+            onResponderTerminate={[Function]}
+            onResponderTerminationRequest={[Function]}
+            onStartShouldSetResponder={[Function]}
+            style={
+              Object {
+                "backgroundColor": "#fafafa",
+                "borderColor": "#ededed",
+                "borderRadius": 3,
+                "borderWidth": 1,
+                "margin": 5,
+                "marginLeft": 10,
+                "marginRight": 10,
+                "opacity": 1,
+                "padding": 10,
+              }
+            }
+            testID="checkbox"
+          >
+            <View
+              style={
+                Object {
+                  "alignItems": "center",
+                  "flexDirection": "row",
+                }
+              }
+            >
+              <Text />
+              <Text
+                style={
+                  Object {
+                    "color": "#43484d",
+                    "fontWeight": "bold",
+                    "marginLeft": 10,
+                    "marginRight": 10,
+                  }
+                }
+                testID="checkboxTitle"
+              >
+                Action & Adventure
+              </Text>
+            </View>
+          </View>
+          <View
+            accessibilityRole="checkbox"
+            accessibilityState={
+              Object {
+                "checked": false,
+              }
+            }
+            accessible={true}
+            focusable={true}
+            onClick={[Function]}
+            onResponderGrant={[Function]}
+            onResponderMove={[Function]}
+            onResponderRelease={[Function]}
+            onResponderTerminate={[Function]}
+            onResponderTerminationRequest={[Function]}
+            onStartShouldSetResponder={[Function]}
+            style={
+              Object {
+                "backgroundColor": "#fafafa",
+                "borderColor": "#ededed",
+                "borderRadius": 3,
+                "borderWidth": 1,
+                "margin": 5,
+                "marginLeft": 10,
+                "marginRight": 10,
+                "opacity": 1,
+                "padding": 10,
+              }
+            }
+            testID="checkbox"
+          >
+            <View
+              style={
+                Object {
+                  "alignItems": "center",
+                  "flexDirection": "row",
+                }
+              }
+            >
+              <Text />
+              <Text
+                style={
+                  Object {
+                    "color": "#43484d",
+                    "fontWeight": "bold",
+                    "marginLeft": 10,
+                    "marginRight": 10,
+                  }
+                }
+                testID="checkboxTitle"
+              >
+                Animation
+              </Text>
+            </View>
+          </View>
+          <View
+            accessibilityRole="checkbox"
+            accessibilityState={
+              Object {
+                "checked": false,
+              }
+            }
+            accessible={true}
+            focusable={true}
+            onClick={[Function]}
+            onResponderGrant={[Function]}
+            onResponderMove={[Function]}
+            onResponderRelease={[Function]}
+            onResponderTerminate={[Function]}
+            onResponderTerminationRequest={[Function]}
+            onStartShouldSetResponder={[Function]}
+            style={
+              Object {
+                "backgroundColor": "#fafafa",
+                "borderColor": "#ededed",
+                "borderRadius": 3,
+                "borderWidth": 1,
+                "margin": 5,
+                "marginLeft": 10,
+                "marginRight": 10,
+                "opacity": 1,
+                "padding": 10,
+              }
+            }
+            testID="checkbox"
+          >
+            <View
+              style={
+                Object {
+                  "alignItems": "center",
+                  "flexDirection": "row",
+                }
+              }
+            >
+              <Text />
+              <Text
+                style={
+                  Object {
+                    "color": "#43484d",
+                    "fontWeight": "bold",
+                    "marginLeft": 10,
+                    "marginRight": 10,
+                  }
+                }
+                testID="checkboxTitle"
+              >
+                Comedy
+              </Text>
+            </View>
+          </View>
+          <View
+            accessibilityRole="checkbox"
+            accessibilityState={
+              Object {
+                "checked": false,
+              }
+            }
+            accessible={true}
+            focusable={true}
+            onClick={[Function]}
+            onResponderGrant={[Function]}
+            onResponderMove={[Function]}
+            onResponderRelease={[Function]}
+            onResponderTerminate={[Function]}
+            onResponderTerminationRequest={[Function]}
+            onStartShouldSetResponder={[Function]}
+            style={
+              Object {
+                "backgroundColor": "#fafafa",
+                "borderColor": "#ededed",
+                "borderRadius": 3,
+                "borderWidth": 1,
+                "margin": 5,
+                "marginLeft": 10,
+                "marginRight": 10,
+                "opacity": 1,
+                "padding": 10,
+              }
+            }
+            testID="checkbox"
+          >
+            <View
+              style={
+                Object {
+                  "alignItems": "center",
+                  "flexDirection": "row",
+                }
+              }
+            >
+              <Text />
+              <Text
+                style={
+                  Object {
+                    "color": "#43484d",
+                    "fontWeight": "bold",
+                    "marginLeft": 10,
+                    "marginRight": 10,
+                  }
+                }
+                testID="checkboxTitle"
+              >
+                Crime
+              </Text>
+            </View>
+          </View>
+          <View
+            accessibilityRole="checkbox"
+            accessibilityState={
+              Object {
+                "checked": false,
+              }
+            }
+            accessible={true}
+            focusable={true}
+            onClick={[Function]}
+            onResponderGrant={[Function]}
+            onResponderMove={[Function]}
+            onResponderRelease={[Function]}
+            onResponderTerminate={[Function]}
+            onResponderTerminationRequest={[Function]}
+            onStartShouldSetResponder={[Function]}
+            style={
+              Object {
+                "backgroundColor": "#fafafa",
+                "borderColor": "#ededed",
+                "borderRadius": 3,
+                "borderWidth": 1,
+                "margin": 5,
+                "marginLeft": 10,
+                "marginRight": 10,
+                "opacity": 1,
+                "padding": 10,
+              }
+            }
+            testID="checkbox"
+          >
+            <View
+              style={
+                Object {
+                  "alignItems": "center",
+                  "flexDirection": "row",
+                }
+              }
+            >
+              <Text />
+              <Text
+                style={
+                  Object {
+                    "color": "#43484d",
+                    "fontWeight": "bold",
+                    "marginLeft": 10,
+                    "marginRight": 10,
+                  }
+                }
+                testID="checkboxTitle"
+              >
+                Documentary
+              </Text>
+            </View>
+          </View>
+          <View
+            accessibilityRole="checkbox"
+            accessibilityState={
+              Object {
+                "checked": false,
+              }
+            }
+            accessible={true}
+            focusable={true}
+            onClick={[Function]}
+            onResponderGrant={[Function]}
+            onResponderMove={[Function]}
+            onResponderRelease={[Function]}
+            onResponderTerminate={[Function]}
+            onResponderTerminationRequest={[Function]}
+            onStartShouldSetResponder={[Function]}
+            style={
+              Object {
+                "backgroundColor": "#fafafa",
+                "borderColor": "#ededed",
+                "borderRadius": 3,
+                "borderWidth": 1,
+                "margin": 5,
+                "marginLeft": 10,
+                "marginRight": 10,
+                "opacity": 1,
+                "padding": 10,
+              }
+            }
+            testID="checkbox"
+          >
+            <View
+              style={
+                Object {
+                  "alignItems": "center",
+                  "flexDirection": "row",
+                }
+              }
+            >
+              <Text />
+              <Text
+                style={
+                  Object {
+                    "color": "#43484d",
+                    "fontWeight": "bold",
+                    "marginLeft": 10,
+                    "marginRight": 10,
+                  }
+                }
+                testID="checkboxTitle"
+              >
+                Drama
+              </Text>
+            </View>
+          </View>
+          <View
+            accessibilityRole="checkbox"
+            accessibilityState={
+              Object {
+                "checked": false,
+              }
+            }
+            accessible={true}
+            focusable={true}
+            onClick={[Function]}
+            onResponderGrant={[Function]}
+            onResponderMove={[Function]}
+            onResponderRelease={[Function]}
+            onResponderTerminate={[Function]}
+            onResponderTerminationRequest={[Function]}
+            onStartShouldSetResponder={[Function]}
+            style={
+              Object {
+                "backgroundColor": "#fafafa",
+                "borderColor": "#ededed",
+                "borderRadius": 3,
+                "borderWidth": 1,
+                "margin": 5,
+                "marginLeft": 10,
+                "marginRight": 10,
+                "opacity": 1,
+                "padding": 10,
+              }
+            }
+            testID="checkbox"
+          >
+            <View
+              style={
+                Object {
+                  "alignItems": "center",
+                  "flexDirection": "row",
+                }
+              }
+            >
+              <Text />
+              <Text
+                style={
+                  Object {
+                    "color": "#43484d",
+                    "fontWeight": "bold",
+                    "marginLeft": 10,
+                    "marginRight": 10,
+                  }
+                }
+                testID="checkboxTitle"
+              >
+                Family
+              </Text>
+            </View>
+          </View>
+          <View
+            accessibilityRole="checkbox"
+            accessibilityState={
+              Object {
+                "checked": false,
+              }
+            }
+            accessible={true}
+            focusable={true}
+            onClick={[Function]}
+            onResponderGrant={[Function]}
+            onResponderMove={[Function]}
+            onResponderRelease={[Function]}
+            onResponderTerminate={[Function]}
+            onResponderTerminationRequest={[Function]}
+            onStartShouldSetResponder={[Function]}
+            style={
+              Object {
+                "backgroundColor": "#fafafa",
+                "borderColor": "#ededed",
+                "borderRadius": 3,
+                "borderWidth": 1,
+                "margin": 5,
+                "marginLeft": 10,
+                "marginRight": 10,
+                "opacity": 1,
+                "padding": 10,
+              }
+            }
+            testID="checkbox"
+          >
+            <View
+              style={
+                Object {
+                  "alignItems": "center",
+                  "flexDirection": "row",
+                }
+              }
+            >
+              <Text />
+              <Text
+                style={
+                  Object {
+                    "color": "#43484d",
+                    "fontWeight": "bold",
+                    "marginLeft": 10,
+                    "marginRight": 10,
+                  }
+                }
+                testID="checkboxTitle"
+              >
+                Kids
+              </Text>
+            </View>
+          </View>
+          <View
+            accessibilityRole="checkbox"
+            accessibilityState={
+              Object {
+                "checked": false,
+              }
+            }
+            accessible={true}
+            focusable={true}
+            onClick={[Function]}
+            onResponderGrant={[Function]}
+            onResponderMove={[Function]}
+            onResponderRelease={[Function]}
+            onResponderTerminate={[Function]}
+            onResponderTerminationRequest={[Function]}
+            onStartShouldSetResponder={[Function]}
+            style={
+              Object {
+                "backgroundColor": "#fafafa",
+                "borderColor": "#ededed",
+                "borderRadius": 3,
+                "borderWidth": 1,
+                "margin": 5,
+                "marginLeft": 10,
+                "marginRight": 10,
+                "opacity": 1,
+                "padding": 10,
+              }
+            }
+            testID="checkbox"
+          >
+            <View
+              style={
+                Object {
+                  "alignItems": "center",
+                  "flexDirection": "row",
+                }
+              }
+            >
+              <Text />
+              <Text
+                style={
+                  Object {
+                    "color": "#43484d",
+                    "fontWeight": "bold",
+                    "marginLeft": 10,
+                    "marginRight": 10,
+                  }
+                }
+                testID="checkboxTitle"
+              >
+                Mystery
+              </Text>
+            </View>
+          </View>
+          <View
+            accessibilityRole="checkbox"
+            accessibilityState={
+              Object {
+                "checked": false,
+              }
+            }
+            accessible={true}
+            focusable={true}
+            onClick={[Function]}
+            onResponderGrant={[Function]}
+            onResponderMove={[Function]}
+            onResponderRelease={[Function]}
+            onResponderTerminate={[Function]}
+            onResponderTerminationRequest={[Function]}
+            onStartShouldSetResponder={[Function]}
+            style={
+              Object {
+                "backgroundColor": "#fafafa",
+                "borderColor": "#ededed",
+                "borderRadius": 3,
+                "borderWidth": 1,
+                "margin": 5,
+                "marginLeft": 10,
+                "marginRight": 10,
+                "opacity": 1,
+                "padding": 10,
+              }
+            }
+            testID="checkbox"
+          >
+            <View
+              style={
+                Object {
+                  "alignItems": "center",
+                  "flexDirection": "row",
+                }
+              }
+            >
+              <Text />
+              <Text
+                style={
+                  Object {
+                    "color": "#43484d",
+                    "fontWeight": "bold",
+                    "marginLeft": 10,
+                    "marginRight": 10,
+                  }
+                }
+                testID="checkboxTitle"
+              >
+                News
+              </Text>
+            </View>
+          </View>
+          <View
+            accessibilityRole="checkbox"
+            accessibilityState={
+              Object {
+                "checked": false,
+              }
+            }
+            accessible={true}
+            focusable={true}
+            onClick={[Function]}
+            onResponderGrant={[Function]}
+            onResponderMove={[Function]}
+            onResponderRelease={[Function]}
+            onResponderTerminate={[Function]}
+            onResponderTerminationRequest={[Function]}
+            onStartShouldSetResponder={[Function]}
+            style={
+              Object {
+                "backgroundColor": "#fafafa",
+                "borderColor": "#ededed",
+                "borderRadius": 3,
+                "borderWidth": 1,
+                "margin": 5,
+                "marginLeft": 10,
+                "marginRight": 10,
+                "opacity": 1,
+                "padding": 10,
+              }
+            }
+            testID="checkbox"
+          >
+            <View
+              style={
+                Object {
+                  "alignItems": "center",
+                  "flexDirection": "row",
+                }
+              }
+            >
+              <Text />
+              <Text
+                style={
+                  Object {
+                    "color": "#43484d",
+                    "fontWeight": "bold",
+                    "marginLeft": 10,
+                    "marginRight": 10,
+                  }
+                }
+                testID="checkboxTitle"
+              >
+                Reality
+              </Text>
+            </View>
+          </View>
+          <View
+            accessibilityRole="checkbox"
+            accessibilityState={
+              Object {
+                "checked": false,
+              }
+            }
+            accessible={true}
+            focusable={true}
+            onClick={[Function]}
+            onResponderGrant={[Function]}
+            onResponderMove={[Function]}
+            onResponderRelease={[Function]}
+            onResponderTerminate={[Function]}
+            onResponderTerminationRequest={[Function]}
+            onStartShouldSetResponder={[Function]}
+            style={
+              Object {
+                "backgroundColor": "#fafafa",
+                "borderColor": "#ededed",
+                "borderRadius": 3,
+                "borderWidth": 1,
+                "margin": 5,
+                "marginLeft": 10,
+                "marginRight": 10,
+                "opacity": 1,
+                "padding": 10,
+              }
+            }
+            testID="checkbox"
+          >
+            <View
+              style={
+                Object {
+                  "alignItems": "center",
+                  "flexDirection": "row",
+                }
+              }
+            >
+              <Text />
+              <Text
+                style={
+                  Object {
+                    "color": "#43484d",
+                    "fontWeight": "bold",
+                    "marginLeft": 10,
+                    "marginRight": 10,
+                  }
+                }
+                testID="checkboxTitle"
+              >
+                Sci-Fi & Fantasy
+              </Text>
+            </View>
+          </View>
+          <View
+            accessibilityRole="checkbox"
+            accessibilityState={
+              Object {
+                "checked": false,
+              }
+            }
+            accessible={true}
+            focusable={true}
+            onClick={[Function]}
+            onResponderGrant={[Function]}
+            onResponderMove={[Function]}
+            onResponderRelease={[Function]}
+            onResponderTerminate={[Function]}
+            onResponderTerminationRequest={[Function]}
+            onStartShouldSetResponder={[Function]}
+            style={
+              Object {
+                "backgroundColor": "#fafafa",
+                "borderColor": "#ededed",
+                "borderRadius": 3,
+                "borderWidth": 1,
+                "margin": 5,
+                "marginLeft": 10,
+                "marginRight": 10,
+                "opacity": 1,
+                "padding": 10,
+              }
+            }
+            testID="checkbox"
+          >
+            <View
+              style={
+                Object {
+                  "alignItems": "center",
+                  "flexDirection": "row",
+                }
+              }
+            >
+              <Text />
+              <Text
+                style={
+                  Object {
+                    "color": "#43484d",
+                    "fontWeight": "bold",
+                    "marginLeft": 10,
+                    "marginRight": 10,
+                  }
+                }
+                testID="checkboxTitle"
+              >
+                Soap
+              </Text>
+            </View>
+          </View>
+          <View
+            accessibilityRole="checkbox"
+            accessibilityState={
+              Object {
+                "checked": false,
+              }
+            }
+            accessible={true}
+            focusable={true}
+            onClick={[Function]}
+            onResponderGrant={[Function]}
+            onResponderMove={[Function]}
+            onResponderRelease={[Function]}
+            onResponderTerminate={[Function]}
+            onResponderTerminationRequest={[Function]}
+            onStartShouldSetResponder={[Function]}
+            style={
+              Object {
+                "backgroundColor": "#fafafa",
+                "borderColor": "#ededed",
+                "borderRadius": 3,
+                "borderWidth": 1,
+                "margin": 5,
+                "marginLeft": 10,
+                "marginRight": 10,
+                "opacity": 1,
+                "padding": 10,
+              }
+            }
+            testID="checkbox"
+          >
+            <View
+              style={
+                Object {
+                  "alignItems": "center",
+                  "flexDirection": "row",
+                }
+              }
+            >
+              <Text />
+              <Text
+                style={
+                  Object {
+                    "color": "#43484d",
+                    "fontWeight": "bold",
+                    "marginLeft": 10,
+                    "marginRight": 10,
+                  }
+                }
+                testID="checkboxTitle"
+              >
+                Talk
+              </Text>
+            </View>
+          </View>
+          <View
+            accessibilityRole="checkbox"
+            accessibilityState={
+              Object {
+                "checked": false,
+              }
+            }
+            accessible={true}
+            focusable={true}
+            onClick={[Function]}
+            onResponderGrant={[Function]}
+            onResponderMove={[Function]}
+            onResponderRelease={[Function]}
+            onResponderTerminate={[Function]}
+            onResponderTerminationRequest={[Function]}
+            onStartShouldSetResponder={[Function]}
+            style={
+              Object {
+                "backgroundColor": "#fafafa",
+                "borderColor": "#ededed",
+                "borderRadius": 3,
+                "borderWidth": 1,
+                "margin": 5,
+                "marginLeft": 10,
+                "marginRight": 10,
+                "opacity": 1,
+                "padding": 10,
+              }
+            }
+            testID="checkbox"
+          >
+            <View
+              style={
+                Object {
+                  "alignItems": "center",
+                  "flexDirection": "row",
+                }
+              }
+            >
+              <Text />
+              <Text
+                style={
+                  Object {
+                    "color": "#43484d",
+                    "fontWeight": "bold",
+                    "marginLeft": 10,
+                    "marginRight": 10,
+                  }
+                }
+                testID="checkboxTitle"
+              >
+                War & Politics
+              </Text>
+            </View>
+          </View>
+          <View
+            accessibilityRole="checkbox"
+            accessibilityState={
+              Object {
+                "checked": false,
+              }
+            }
+            accessible={true}
+            focusable={true}
+            onClick={[Function]}
+            onResponderGrant={[Function]}
+            onResponderMove={[Function]}
+            onResponderRelease={[Function]}
+            onResponderTerminate={[Function]}
+            onResponderTerminationRequest={[Function]}
+            onStartShouldSetResponder={[Function]}
+            style={
+              Object {
+                "backgroundColor": "#fafafa",
+                "borderColor": "#ededed",
+                "borderRadius": 3,
+                "borderWidth": 1,
+                "margin": 5,
+                "marginLeft": 10,
+                "marginRight": 10,
+                "opacity": 1,
+                "padding": 10,
+              }
+            }
+            testID="checkbox"
+          >
+            <View
+              style={
+                Object {
+                  "alignItems": "center",
+                  "flexDirection": "row",
+                }
+              }
+            >
+              <Text />
+              <Text
+                style={
+                  Object {
+                    "color": "#43484d",
+                    "fontWeight": "bold",
+                    "marginLeft": 10,
+                    "marginRight": 10,
+                  }
+                }
+                testID="checkboxTitle"
+              >
+                Western
+              </Text>
+            </View>
+          </View>
+        </View>
+      </View>
+      <View
+        accessible={true}
+        focusable={true}
+        onClick={[Function]}
+        onResponderGrant={[Function]}
+        onResponderMove={[Function]}
+        onResponderRelease={[Function]}
+        onResponderTerminate={[Function]}
+        onResponderTerminationRequest={[Function]}
+        onStartShouldSetResponder={[Function]}
+        style={
+          Object {
+            "alignItems": "center",
+            "backgroundColor": "#99ccff",
+            "borderRadius": 25,
+            "marginTop": 10,
+            "opacity": 1,
+            "padding": 10,
+            "width": "80%",
+          }
+        }
+      >
+        <Text>
+          Save Changes
+        </Text>
+      </View>
+      <View
+        accessible={true}
+        focusable={true}
+        onClick={[Function]}
+        onResponderGrant={[Function]}
+        onResponderMove={[Function]}
+        onResponderRelease={[Function]}
+        onResponderTerminate={[Function]}
+        onResponderTerminationRequest={[Function]}
+        onStartShouldSetResponder={[Function]}
+        style={
+          Object {
+            "alignItems": "center",
+            "backgroundColor": "#99ccff",
+            "borderRadius": 25,
+            "marginTop": 10,
+            "opacity": 1,
+            "padding": 10,
+            "width": "80%",
+          }
+        }
+      >
+        <Text>
+          Change Password
+        </Text>
+      </View>
+      <View
+        accessible={true}
+        focusable={true}
+        onClick={[Function]}
+        onResponderGrant={[Function]}
+        onResponderMove={[Function]}
+        onResponderRelease={[Function]}
+        onResponderTerminate={[Function]}
+        onResponderTerminationRequest={[Function]}
+        onStartShouldSetResponder={[Function]}
+        style={
+          Object {
+            "alignItems": "center",
+            "backgroundColor": "#99ccff",
+            "borderRadius": 25,
+            "marginTop": 10,
+            "opacity": 1,
+            "padding": 10,
+            "width": "80%",
+          }
+        }
+      >
+        <Text>
+          Logout
+        </Text>
+      </View>
+    </View>
+  </RCTScrollView>
+</RCTSafeAreaView>
+`;
