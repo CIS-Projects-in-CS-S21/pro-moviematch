@@ -4,7 +4,7 @@ import { Text, View, Image, TextInput, Button, TouchableOpacity, StyleSheet} fro
 import { NavigationContainer } from '@react-navigation/native';
 import { createStackNavigator } from '@react-navigation/stack';
 
-const tunnelURL = 'https://pretty-husky-64.loca.lt';
+const tunnelURL = 'https://heavy-cougar-95.loca.lt';
 
 export default function ChangePasswordScreen({ navigation }) {
     const [currentPassword, setCurrentPassword] = useState("");
@@ -45,28 +45,38 @@ export default function ChangePasswordScreen({ navigation }) {
       .then((response) => response.json())
 
       .then((responseData) => {
-        alert(JSON.stringify(responseData));
+        //alert(JSON.stringify(responseData));
         return responseData;
       })
       .catch(error => alert('Error'));
     }
 
+    const navigateChangedPasswordUser = (response) => {
+      if(response.hasOwnProperty('success')){
+        alert('Password successfully changed!');
+        navigation.reset({
+          index: 0,
+          routes: [
+            {
+                name: 'Queue',
+                params: { someParam: 'Param1'},
+            },
+          ],
+        })
+      }
+      else{
+        alert('Error changing password');
+      } 
+    }
+
     const buttonClickListener = (navigation) => {
       if (checkCurrentPasswordInput() == true && checkNewPasswordInput()){
-        changePassword();
-          navigation.reset({
-            index: 0,
-            routes: [
-              {
-                  name: 'Queue',
-                  params: { someParam: 'Param1'},
-              },
-            ],
-          })
-          alert('Password Changed');
+        if (currentPassword == newPassword){
+          alert('Error. New password must be different than current password.');
+        } else {
+        changePassword().then(response => navigateChangedPasswordUser(response));
+        }
       }
-      
-      //Not the most convenient but it works for now
       else if (checkNewPasswordInput()==false && checkCurrentPasswordInput()==true){
         alert('Invalid Response: Please enter a new password');
       }

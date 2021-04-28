@@ -18,7 +18,7 @@ export default function LoginScreen({ navigation }) {
     const [lastName, setLastName] = useState("");
 
 
-    const tunnelURL = "https://pretty-husky-64.loca.lt"
+    const tunnelURL = "https://heavy-cougar-95.loca.lt"
 
 
     const checkEmailInput= () => {
@@ -27,6 +27,7 @@ export default function LoginScreen({ navigation }) {
       return false
     };
 
+  
     const checkPasswordInput= () => {
       if (password != '')
         return true
@@ -55,8 +56,6 @@ export default function LoginScreen({ navigation }) {
     }
 
     const navigateLoggedInUser = (response) => {
-      //alert(response);
-     // response.hasOwnProperty('success')
       if(response.hasOwnProperty('success')){
         navigation.reset({
           index: 0,
@@ -73,7 +72,7 @@ export default function LoginScreen({ navigation }) {
       } 
     }
 
-    const getFirstName = async () =>{
+    const getName = async () =>{
       try{
         let response = await fetch(tunnelURL + "/api/users/" + global.globEmail + "/Name");
         let jsonResponse = await response.json();
@@ -86,7 +85,7 @@ export default function LoginScreen({ navigation }) {
         alert(error);
       }
     };
-    getFirstName();
+    getName();
 
     const buttonClickListener = (navigation) => {
       
