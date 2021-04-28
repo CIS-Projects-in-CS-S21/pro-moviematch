@@ -18,16 +18,6 @@ router.get('/:email/Name', async (req, res) => {
     }
 })
 
-//Finds user by email and sends user last name stored in DB
-router.get('/:email/lastName', async (req, res) => {
-    try {
-        const user = await User.findOne({"email": req.params.email});
-        res.send({lastName: user.last_name})
-    } catch (err) {
-        res.json({message: "Could not find user"})
-    }
-})
-
 router.get('/:userId', async (req, res) => {
     try {
         const user = await User.findById(req.params.UserId);
