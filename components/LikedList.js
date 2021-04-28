@@ -6,7 +6,7 @@ import axios from 'axios';
 //import {hasLoggedIn} from login;
 import login from '../server/validation/login';
 
-const tunnelURL = "https://red-cobra-19.loca.lt";
+const tunnelURL = "https://light-elephant-54.loca.lt";
 
 var movieidarray = [];
 
@@ -34,17 +34,25 @@ function parseMovies(movieArray) {
   return parsedMovies
 }
 
+
 export default function LikedList({ navigation }) {
   const [isLoading, setLoading] = useState(true);
   const [datas, setData] = useState([]);
+  //const forceUpdate = useForceUpdate();
   var newArr = [];
   //fetch("https://api.themoviedb.org/3/movie/" + movieidarray[0] + "?api_key=156f6cfa04dae615351cd9878f39b732")
+
+  const onRefresh = () =>{
+    setLoading(true);
+    getData();
+  }
 
   console.log(global.userID);
   useEffect(() => getData(), []);
 
   const getData = () => {
-
+    movieidarray = [];
+    setData("");
     try {
       axios.get(tunnelURL + '/api/users/'+ global.userID +'/like') //use data destructuring to get data from the promise object
       .then(function (response) {
@@ -101,7 +109,8 @@ export default function LikedList({ navigation }) {
         <FlatList
           data={datas}
           renderItem={renderItem}
-          //keyExtractor={item}
+          onRefresh={onRefresh}
+          refreshing={isLoading}
         />
       )}
     </SafeAreaView >

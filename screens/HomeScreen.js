@@ -5,7 +5,7 @@ import { Card } from '../components/Cards.js';
 import { contentMovieOrTV, genreToArr } from '../components/Filters'
 import { genreToString } from "../components/ContentGenreToString"
 
-const tunnelURL = "https://plastic-wolverine-6.loca.lt";
+const tunnelURL = "https://light-elephant-54.loca.lt";
 
 /**
  * HomeScreen visual component that contains the content queue. This is where the user will swipe through content
