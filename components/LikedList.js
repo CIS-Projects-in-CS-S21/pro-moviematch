@@ -10,30 +10,6 @@ const tunnelURL = "https://light-elephant-54.loca.lt";
 
 var movieidarray = [];
 
-const Item = ({ title, caption}) => (
-  <View style={StyleSheet.item}>
-    <Text style={StyleSheet.title}>{title}</Text>
-    <Text style={StyleSheet.caption}>{caption}</Text>
-  </View>
-)
-
-
-function parseMovies(movieArray) {
-  var parsedMovies = [];
-  var i;
-  var imgurl = "https://image.tmdb.org/t/p/original";
-  for (i = 0; i < movieArray.length; i++) {
-    parsedMovies[i] =
-    {
-        id: movieArray[i].id,
-        pic: {uri: imgurl.concat(movieArray[i].poster_path)},
-        title: movieArray[i].title,
-        caption: "Rating: " + movieArray[i].vote_average,
-    }
-  }
-  return parsedMovies
-}
-
 
 export default function LikedList({ navigation }) {
   const [isLoading, setLoading] = useState(true);
