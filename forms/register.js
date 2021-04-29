@@ -7,7 +7,7 @@ export default function RegisterScreen({ navigation }) {
     const [password, setPassword] = useState("");
     const [firstName, setFirstName] = useState("");
     const [lastName, setLastName] = useState("");
-    const tunnelURL = "https://light-elephant-54.loca.lt"
+    const tunnelURL = "https://hot-elephant-54.loca.lt"
 
     const checkEmailInput= () => {
       if (email != '')

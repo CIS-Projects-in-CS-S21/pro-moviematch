@@ -1,12 +1,13 @@
 import React, { useState, useEffect } from 'react';
 import { SafeAreaView, View, FlatList, StyleSheet, Text, Image, ActivityIndicator } from 'react-native'
 import { ListItem, Avatar } from 'react-native-elements'
+import {useFocusEffect} from '@react-navigation/native'
 import Layout from '../constants/Layout'
 import axios from 'axios';
 //import {hasLoggedIn} from login;
 import login from '../server/validation/login';
 
-const tunnelURL = "https://light-elephant-54.loca.lt";
+const tunnelURL = "https://hot-elephant-54.loca.lt";
 
 var movieidarray = [];
 
@@ -24,7 +25,8 @@ export default function LikedList({ navigation }) {
   }
 
   console.log(global.userID);
-  useEffect(() => getData(), []);
+  useFocusEffect(
+    React.useCallback(() => getData(), []));
 
   const getData = () => {
     movieidarray = [];
