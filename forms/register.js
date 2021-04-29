@@ -9,7 +9,6 @@ export default function RegisterScreen({ navigation }) {
     const [password, setPassword] = useState("");
     const [firstName, setFirstName] = useState("");
     const [lastName, setLastName] = useState("");
-    c
 
     const checkEmailInput= () => {
       if (email != '')

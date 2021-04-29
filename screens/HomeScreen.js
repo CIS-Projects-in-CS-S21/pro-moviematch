@@ -124,30 +124,20 @@ import {tunnelURL} from './../common/global'
         //console.log(genreToString(movieArray[i].genre_ids));
       }
     }
-  else {
-    for (i = 0; i < movieArray.length; i++) {
-      parsedMovies[i] =
-      {
-        id: movieArray[i].id,
-        pic: {uri: imgurl.concat(movieArray[i].poster_path)},
-        title: movieArray[i].title,
-        caption: "Rating: " + movieArray[i].vote_average,
+    else {
+      for (i = 0; i < movieArray.length; i++) {
+        parsedMovies[i] =
+        {
+          id: movieArray[i].id,
+          pic: {uri: imgurl.concat(movieArray[i].poster_path)},
+          title: movieArray[i].title,
+          caption: "Rating: " + movieArray[i].vote_average,
+        }
+        //console.log(genreToString(movieArray[i].genre_ids));
       }
-      //console.log(genreToString(movieArray[i].genre_ids));
     }
+  return parsedMovies
   }
-else {
-  for (i = 0; i < movieArray.length; i++) {
-    parsedMovies[i] =
-    {
-      pic: {uri: imgurl.concat(movieArray[i].poster_path)},
-      title: movieArray[i].name,
-      caption: "Rating: " + movieArray[i].vote_average,
-    }
-  }
-}
-return parsedMovies
-}
 
 function getvalues(id){
 return fetch(tunnelURL + "/api/users/" + global.userID + "/like", {
