@@ -1,7 +1,7 @@
 import { StatusBar } from 'expo-status-bar';
 import React, { useState } from 'react';
-import { Text, View, Image, TextInput, Button, TouchableOpacity, StyleSheet} from 'react-native';
-import {tunnelURL} from './../common/global'
+import { Text, View, Image, TextInput, KeyboardAvoidingView, TouchableOpacity, StyleSheet, TouchableWithoutFeedback, Keyboard} from 'react-native';
+import {tunnelURL} from './../common/global';
 
 
 export default function LoginScreen({ navigation }) {
@@ -114,43 +114,50 @@ export default function LoginScreen({ navigation }) {
       
   
     return (
-      <View style={styles.container}>
-        <Image style={styles.image} source={require('../resources/MovieMatchLogo.png')} />
-   
-        <StatusBar style="auto" />
-        <View style={styles.inputView}>
-          <TextInput
-            style={styles.TextInput}
-            placeholder="Email"
-            placeholderTextColor="#003f5c"
-            onChangeText={(email) => setEmail(email)}
-          />
-        </View>
-   
-        <View style={styles.inputView}>
-          <TextInput
-            style={styles.TextInput}
-            placeholder="Password"
-            placeholderTextColor="#003f5c"
-            secureTextEntry={true}
-            onChangeText={(password) => setPassword(password)}
-          />
-        </View>
-   
-        <TouchableOpacity>
-          <Text style={styles.forgot_button}>Forgot Password?</Text>
-        </TouchableOpacity>
-        <TouchableOpacity style={styles.loginBtn} onPress={() =>
-            buttonClickListener(navigation)
-          }>
-          <Text style={styles.loginText}>LOGIN</Text>
-        </TouchableOpacity>
+      <KeyboardAvoidingView
+      behavior={Platform.OS == 'ios' ? 'padding' : 'height'}
+      keyboardVerticalOffset={70}
+      style={styles.container1}>
+        <TouchableWithoutFeedback onPress={Keyboard.dismiss}>
+          <View style={styles.container}>
+            <Image style={styles.image} source={require('../resources/MovieMatchLogo.png')} />
+      
+            <StatusBar style="auto" />
+            <View style={styles.inputView}>
+              <TextInput
+                style={styles.TextInput}
+                placeholder="Email"
+                placeholderTextColor="#003f5c"
+                onChangeText={(email) => setEmail(email)}
+              />
+            </View>
+      
+            <View style={styles.inputView}>
+              <TextInput
+                style={styles.TextInput}
+                placeholder="Password"
+                placeholderTextColor="#003f5c"
+                secureTextEntry={true}
+                onChangeText={(password) => setPassword(password)}
+              />
+            </View>
+      
+            <TouchableOpacity>
+              <Text style={styles.forgot_button}>Forgot Password?</Text>
+            </TouchableOpacity>
+            <TouchableOpacity style={styles.loginBtn} onPress={() =>
+                buttonClickListener(navigation)
+              }>
+              <Text style={styles.loginText}>LOGIN</Text>
+            </TouchableOpacity>
 
-        <TouchableOpacity style={styles.register_button} onPress={() =>
-          navigation.navigate('Register')}>
-          <Text style={styles.loginText}>REGISTER </Text>
-        </TouchableOpacity>
-      </View>
+            <TouchableOpacity style={styles.register_button} onPress={() =>
+              navigation.navigate('Register')}>
+              <Text style={styles.loginText}>REGISTER </Text>
+            </TouchableOpacity>
+          </View>
+        </TouchableWithoutFeedback>
+      </KeyboardAvoidingView>
     );
 }
 
@@ -160,6 +167,9 @@ const styles = StyleSheet.create({
       backgroundColor: "#fff",
       alignItems: "center",
       justifyContent: "center",
+    },
+    container1: {
+      flex: 1,
     },
    
     image: {
