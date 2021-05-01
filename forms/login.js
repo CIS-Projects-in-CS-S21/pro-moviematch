@@ -1,24 +1,18 @@
 import { StatusBar } from 'expo-status-bar';
 import React, { useState } from 'react';
 import { Text, View, Image, TextInput, Button, TouchableOpacity, StyleSheet} from 'react-native';
-import { NavigationContainer } from '@react-navigation/native';
-import { createStackNavigator } from '@react-navigation/stack';
-import { Value } from 'react-native-reanimated';
-import { Alert } from 'react-native';
-import { AsyncStorage } from 'react-native';
-import axios from 'axios'
+import {tunnelURL} from './../common/global'
 
 
 export default function LoginScreen({ navigation }) {
     const [email, setEmail] = useState("");
     const [password, setPassword] = useState("");
     global.globEmail = email;
-
     const [firstName, setFirstName] = useState("");
     const [lastName, setLastName] = useState("");
 
 
-    const tunnelURL = "https://heavy-cougar-95.loca.lt"
+
 
 
     const checkEmailInput= () => {
@@ -55,8 +49,24 @@ export default function LoginScreen({ navigation }) {
       .catch(error => alert('Error'));
     }
 
+    const getUserID = async () =>{
+      try{
+        let response = await fetch(tunnelURL + "/api/users/" + global.globEmail + "/userId");
+        let jsonResponse = await response.json();
+        let userID = jsonResponse.userId;
+        global.userID = userID;
+      }
+      catch(error){
+        alert(error);
+      }
+    };
+
+    getUserID();
+
     const navigateLoggedInUser = (response) => {
       if(response.hasOwnProperty('success')){
+        let hasLoggedIn = 1;
+        global.hasLoggedIn = hasLoggedIn;
         navigation.reset({
           index: 0,
           routes: [

@@ -39,11 +39,11 @@
     Western             37
 */
 
-/* Switches the queue to load in TV shows or movies. Carried out by a toggle in settings page.
-*  @param contentType boolean used to determine if content is tv on true or movies on false
-*  @param offset used to track page from which movie or tv queue is pulled from
-*  @param genres tracks the genres from which the user has selected in the settings page
-*  @return returns string to fetch() in order to pull appropriate content base on parameters
+/** Switches the queue to load in TV shows or movies. Carried out by a toggle in settings page.
+*   @param  {boolean)        contentType boolean used to determine if content is tv on true or movies on false
+*   @param  {number}         offset used to track page from which movie or tv queue is pulled from
+*   @param  {Array[boolean]} genres tracks the genres from which the user has selected in the settings page
+*   @return {string}         returns string to fetch() in order to pull appropriate content base on parameters
 */
 export function contentMovieOrTV(contentType, offset, genres) {
 
@@ -58,11 +58,11 @@ export function contentMovieOrTV(contentType, offset, genres) {
     return fetchThis = "https://api.themoviedb.org/3/discover/movie?api_key=156f6cfa04dae615351cd9878f39b732&language=en-US&sort_by=popularity.desc&include_adult=false&include_video=false" + "&page=" + offset + "&with_genres=" + genres;
   }
 
-/* Filters the queue base on movie genres. This is taken from settings and selection of genres
-*  under the Movie Genres.
-*  @param contentGenre passes an array of booleans that indicate if genre was selected
-*         by user
-*  @return returns an array of the genres selected
+/** Filters the queue base on movie genres. This is taken from settings and selection of genres
+*   under the Movie Genres.
+*   @param  {Array[boolean]} contentGenre passes an array of booleans that indicate if genre was selected
+*                            by user
+*   @return {Array[number]}  returns an array of the genres selected
 */
 function movieGenresFilter(contentGenre) {
     
@@ -166,11 +166,11 @@ function movieGenresFilter(contentGenre) {
     return arr;
 }
 
-/* Filters the queue base on TV genres. This is taken from settings and selection of genres
-*  under the TV Genres.
-*  @param contentGenre passes an array of booleans that indicate if genre was selected
-*         by user
-*  @return returns an array of the genres selected
+/** Filters the queue base on TV genres. This is taken from settings and selection of genres
+*   under the TV Genres.
+*   @param {Array[boolean]} contentGenre passes an array of booleans that indicate if genre was selected
+*                           by user
+*   @return {Array[number}  returns an array of the genres selected
 */
 function tvGenresFilter(contentGenre) {
     
@@ -293,7 +293,12 @@ function tvGenresFilter(contentGenre) {
     return arr;
 }
 
-// Turns content genre array into an array of TMDB genre ids for queries
+
+/** Turns content genre array into an array of TMDB genre ids for queries
+*   @param  {Array[boolean]} contentGenre passes a list of content user whats to queue through
+*   @param  {boolean}        contentType  tells if user wish to go thorugh movie or tv shows
+*   @return {Array[number]}  returns the appropiate url for fetch()
+*/
 export function genreToArr(contentGenre, contentType) {
     
     if (contentType == true) {

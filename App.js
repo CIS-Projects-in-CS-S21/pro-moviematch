@@ -1,19 +1,22 @@
-import React, { useState , useEffect } from 'react';
-import { Text, View, SafeAreaView, Image, TextInput, Button, TouchableOpacity, StyleSheet, ActivityIndicator} from 'react-native';
+import React from 'react';
+import { Text, View, Image, StyleSheet} from 'react-native';
 import { NavigationContainer } from '@react-navigation/native';
 import { createStackNavigator } from '@react-navigation/stack';
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 import LoginScreen from './forms/login.js';
 import RegisterScreen from './forms/register.js';
-
 import HomeScreen from './screens/HomeScreen.js';
 import SettingsScreen from './screens/SettingsScreen.js';
 import Ionicons from 'react-native-vector-icons/Ionicons';
 import ChangePasswordScreen from './forms/passwordChange.js';
 import {ButtonGroup} from 'react-native-elements';
 import {CheckBox} from 'react-native-elements';
-import {LikedList} from './components/LikedList.js'
+import LikedList from './components/LikedList.js'
 
+/**
+ * Function containing the navbar and it's attributes
+ * @returns Styled navbar
+ */
 function HomeTabs() {
   return (
     <Tab.Navigator
@@ -53,7 +56,11 @@ function HomeTabs() {
   );
 }
 
-function ViewContentScreen({navigation}) {
+/**
+ * Contains the user's liked list 
+ * @returns Visual liked list component
+ */
+function ViewContentScreen() {
   return (
 
     <View style={{ }}>
@@ -64,7 +71,11 @@ function ViewContentScreen({navigation}) {
   );
 }
 
-function GroupScreen({navigation}) {
+/**
+ * Contains placeholder groupscreen information
+ * @returns Visual groupscreen placeholding component
+ */
+function GroupScreen() {
   return (
 
     <View style={{ flex: 1, justifyContent: 'center', alignItems: 'center' }}>
@@ -74,7 +85,10 @@ function GroupScreen({navigation}) {
     </View>
   );
 }
-
+/**
+ * Contains our company's logo
+ * @returns Image of our logo
+ */
 function LogoTitle() {
   return (
     <Image
@@ -104,6 +118,10 @@ const styles = StyleSheet.create({
   },
 })
 
+/**
+ * Main application function, contains all components used inside of our application
+ * @returns Functional application with all components
+ */
 function App() {
   return (
     <NavigationContainer>

@@ -1,18 +1,14 @@
 import { StatusBar } from 'expo-status-bar';
 import React, { useState } from 'react';
-import { Text, View, Image, TextInput, Button, TouchableOpacity, StyleSheet} from 'react-native';
-import { NavigationContainer } from '@react-navigation/native';
-import { createStackNavigator } from '@react-navigation/stack';
+import { Text, View, Image, TextInput, TouchableOpacity, StyleSheet} from 'react-native';
+import {tunnelURL} from './../common/global'
+
 
 export default function RegisterScreen({ navigation }) {
     const [email, setEmail] = useState("");
     const [password, setPassword] = useState("");
     const [firstName, setFirstName] = useState("");
     const [lastName, setLastName] = useState("");
-
-
-    const tunnelURL = "https://evil-eagle-72.loca.lt"
-
 
     const checkEmailInput= () => {
       if (email != '')
