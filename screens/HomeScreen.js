@@ -1,5 +1,5 @@
 import { StatusBar } from 'expo-status-bar';
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, Component } from 'react';
 import { Text, View, SafeAreaView, Image, TextInput, Button, TouchableOpacity, StyleSheet, ActivityIndicator} from 'react-native';
 import { NavigationContainer } from '@react-navigation/native';
 import { createStackNavigator } from '@react-navigation/stack';
@@ -114,7 +114,7 @@ export default function HomeScreen({ route, navigation }, page) {
     var imgurl= "https://image.tmdb.org/t/p/original";
     if(contentType == false) {
       for (i = 0; i < movieArray.length; i++) {
-        if (streamCheck(movieArray.id, streamingServices)) {
+        if (streamCheck(movieArray[i].id, streamingServices)) {
           parsedMovies.push(
           {
             pic: {uri: imgurl.concat(movieArray[i].poster_path)},
@@ -144,6 +144,9 @@ function streamingServiceFilter(id, streamingServices) {
   const [disney, onDisney] = useState(false);
   const [HBO, onHBO] = useState(false);
 
+  useEffect(() => getServices(), []);
+
+  const getServices = () => {
   fetch("https://utelly-tv-shows-and-movies-availability-v1.p.rapidapi.com/idlookup?source_id=movie/" + id + "&source=tmdb&country=us", {
   "method": "GET",
   "headers": {
@@ -151,22 +154,23 @@ function streamingServiceFilter(id, streamingServices) {
     "x-rapidapi-host": "utelly-tv-shows-and-movies-availability-v1.p.rapidapi.com"
   }
 })
-.then(response => {
+.then((response) => response.json())
+.then(responseJson => {
   for (var i = 0; i < response.collection.locations.length; i++) {
     
-    if((streamingServices[0] == true) && (response.collection.locations[i].display_name == "Netflix")) {
+    if((streamingServices[0] == true) && (responseJson.collection.locations[i].display_name == "Netflix")) {
       onNetflix(true);
     }
 
-    if((streamingServices[1] == true) && (response.collection.locations[i].display_name == "Amazon Prime Video")) {
+    if((streamingServices[1] == true) && (responseJson.collection.locations[i].display_name == "Amazon Prime Video")) {
       onAmazon(true);
     }
 
-    if((streamingServices[2] == true) && (response.collection.locations[i].display_name == "Disney+")) {
+    if((streamingServices[2] == true) && (responseJson.collection.locations[i].display_name == "Disney+")) {
       onDisney(true);
     }
 
-    if((streamingServices[3] == true) && (response.collection.locations[i].display_name == "HBO Max")) {
+    if((streamingServices[3] == true) && (responseJson.collection.locations[i].display_name == "HBO Max")) {
       onHBO(true);
     }
   }
@@ -174,6 +178,7 @@ function streamingServiceFilter(id, streamingServices) {
 .catch(err => {
   console.error(err);
 });
+}
 
 var streamArr = [netflix, amazon, disney, HBO];
 return streamArr;

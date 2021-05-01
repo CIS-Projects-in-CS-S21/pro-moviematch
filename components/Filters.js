@@ -306,7 +306,7 @@ export function genreToArr(contentGenre, contentType) {
   }
 
   // Returns what streaming services (if any) that a movie is streaming on that a user has
-  function streamingServiceFilter(id, streamingServices) {
+  /*function streamingServiceFilter(id, streamingServices) {
     const [netflix, onNetflix] = useState(false);
     const [amazon, onAmazon] = useState(false);
     const [disney, onDisney] = useState(false);
@@ -358,4 +358,4 @@ export function streamCheck(id, streamingServices) {
   }
 
   return false;
-}
+}*/
