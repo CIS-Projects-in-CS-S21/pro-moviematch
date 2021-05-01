@@ -2,10 +2,11 @@ import React, { useState, useEffect } from 'react';
 import { SafeAreaView, StyleSheet, ActivityIndicator} from 'react-native';
 import Swiper from 'react-native-deck-swiper';
 import { Card } from '../components/Cards.js';
+import {useFocusEffect} from '@react-navigation/native'
 import { contentMovieOrTV, genreToArr } from '../components/Filters'
 import { genreToString } from "../components/ContentGenreToString"
 
-const tunnelURL = "https://hot-elephant-54.loca.lt";
+const tunnelURL = "https://mighty-frog-7.loca.lt";
 
 /**
  * HomeScreen visual component that contains the content queue. This is where the user will swipe through content
@@ -19,12 +20,16 @@ export default function HomeScreen({ route }) {
     const [offset, setOffset] = useState(1);
     var i = 0;
 
-    useEffect(() => getData(), []);
+    useFocusEffect(
+      React.useCallback(() => getData(), []));
+    //useEffect(() => getData(), []);
 
     const getData = () => {
       i = 0;
       setLoading(true);
-      
+      //filter on console to check
+      console.log("contentType: " + contentType);
+      console.log("contentGenre: " + contentGenre);
       fetch(contentMovieOrTV(contentType, offset, encodeURIComponent(genreToArr(contentGenre, contentType).join('|'))))
         
         .then((response) => response.json())

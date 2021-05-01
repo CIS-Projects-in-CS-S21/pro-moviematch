@@ -7,7 +7,7 @@ import axios from 'axios';
 //import {hasLoggedIn} from login;
 import login from '../server/validation/login';
 
-const tunnelURL = "https://hot-elephant-54.loca.lt";
+const tunnelURL = "https://mighty-frog-7.loca.lt";
 
 var movieidarray = [];
 

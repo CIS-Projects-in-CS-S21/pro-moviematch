@@ -8,7 +8,7 @@ export default function LoginScreen({ navigation }) {
     global.globEmail = email;
     const [firstName, setFirstName] = useState("");
     const [lastName, setLastName] = useState("");
-    const tunnelURL = "https://hot-elephant-54.loca.lt"
+    const tunnelURL = "https://mighty-frog-7.loca.lt"
 
 
     const checkEmailInput= () => {
