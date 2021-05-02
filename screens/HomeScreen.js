@@ -5,6 +5,7 @@ import { Card } from '../components/Cards.js';
 import { contentMovieOrTV, genreToArr } from '../components/Filters'
 import { genreToString } from "../components/ContentGenreToString"
 import {tunnelURL} from './../common/global'
+import { InfoScreen } from './InfoPage.js';
 
 
 /**
@@ -12,7 +13,7 @@ import {tunnelURL} from './../common/global'
  * @param {boolean, Array[boolean]} route Contains filter information that will be used to modify the queue
  * @returns Visual home screen component
  */
- export default function HomeScreen({ route }) {
+ export default function HomeScreen({ route, navigation }) {
   const {contentType, contentGenre} = route.params;
   const [isLoading, setLoading] = useState(true);
   const [data, setData] = useState([]);
@@ -49,6 +50,7 @@ import {tunnelURL} from './../common/global'
             onSwiped={() => i++}
             onSwipedAll={getData}
             onSwipedRight={() => getvalues(data[i - 1].id)}  // (data[i - 1] is the movie card)
+            onTapCard={() => navigation.navigate('Info')}
             verticalSwipe={false}
             backgroundColor="#white"
             cardVerticalMargin={20}
@@ -136,17 +138,7 @@ import {tunnelURL} from './../common/global'
       //console.log(genreToString(movieArray[i].genre_ids));
     }
   }
-else {
-  for (i = 0; i < movieArray.length; i++) {
-    parsedMovies[i] =
-    {
-      pic: {uri: imgurl.concat(movieArray[i].poster_path)},
-      title: movieArray[i].name,
-      caption: "Rating: " + movieArray[i].vote_average,
-    }
-  }
-}
-return parsedMovies
+  return parsedMovies
 }
 
 function getvalues(id){
