@@ -32,7 +32,7 @@ import {tunnelURL} from './../common/global'
         
         setOffset(offset + 1);
         setData([...parseMovies(responseJson.results, contentType)]);
-
+        console.log(contentType);
         setLoading(false);
       })
       .catch((error) => {
@@ -120,7 +120,9 @@ import {tunnelURL} from './../common/global'
           pic: {uri: imgurl.concat(movieArray[i].poster_path)},
           title: movieArray[i].title,
           caption: "Rating: " + movieArray[i].vote_average,
+          content: contentType,
         }
+        console.log(contentType);
         //console.log(genreToString(movieArray[i].genre_ids));
       }
     }
@@ -130,33 +132,35 @@ import {tunnelURL} from './../common/global'
         {
           id: movieArray[i].id,
           pic: {uri: imgurl.concat(movieArray[i].poster_path)},
-          title: movieArray[i].title,
+          title: movieArray[i].name,
           caption: "Rating: " + movieArray[i].vote_average,
+          genre: movieArray[i]
         }
         //console.log(genreToString(movieArray[i].genre_ids));
+        console.log(parsedMovies[i]);
       }
     }
   return parsedMovies
   }
 
 function getvalues(id){
-return fetch(tunnelURL + "/api/users/" + global.userID + "/like", {
-  method: 'POST',
-  headers: {
-    'Accept': 'application/json',
-    'Content-Type': 'application/json'
-  }, 
-  body: JSON.stringify({
-    movie_id: id,
+  return fetch(tunnelURL + "/api/users/" + global.userID + "/like", {
+    method: 'POST',
+    headers: {
+      'Accept': 'application/json',
+      'Content-Type': 'application/json'
+    }, 
+    body: JSON.stringify({
+      movie_id: id,
+    })
   })
-})
-.then((response) => response.json())
+  .then((response) => response.json())
 
-.then((responseData) => {
-  alert(JSON.stringify(responseData));
-  return responseData;
-})
-.catch(error => alert('Error'));
+  .then((responseData) => {
+    alert(JSON.stringify(responseData));
+    return responseData;
+  })
+  .catch(error => alert('Error'));
 }
 
 const getUserID = async () =>{
