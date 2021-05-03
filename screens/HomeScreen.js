@@ -51,7 +51,7 @@ import {tunnelURL} from './../common/global'
             renderCard={Card}
             onSwiped={() => i++}
             onSwipedAll={getData}
-            onSwipedRight={() => getvalues(data[i - 1].id)}  // (data[i - 1] is the movie card)
+            onSwipedRight={() => getvalues(data[i - 1].id, contentType)}  // (data[i - 1] is the movie card)
             verticalSwipe={false}
             backgroundColor="#white"
             cardVerticalMargin={20}
@@ -129,33 +129,42 @@ import {tunnelURL} from './../common/global'
         //console.log(genreToString(movieArray[i].genre_ids));
       }
     }
-    else {
-      for (i = 0; i < movieArray.length; i++) {
-        parsedMovies[i] =
-        {
-          id: movieArray[i].id,
-          pic: {uri: imgurl.concat(movieArray[i].poster_path)},
-          title: movieArray[i].name,
-          caption: "Rating: " + movieArray[i].vote_average,
-          genre: movieArray[i]
-        }
-        //console.log(genreToString(movieArray[i].genre_ids));
-        console.log(parsedMovies[i]);
+  else {
+    for (i = 0; i < movieArray.length; i++) {
+      parsedMovies[i] =
+      {
+        id: movieArray[i].id,
+        pic: {uri: imgurl.concat(movieArray[i].poster_path)},
+        title: movieArray[i].name,
+        caption: "Rating: " + movieArray[i].vote_average,
       }
+      //console.log(genreToString(movieArray[i].genre_ids));
     }
-  return parsedMovies
   }
+return parsedMovies
+}
 
-function getvalues(id){
-  return fetch(tunnelURL + "/api/users/" + global.userID + "/like", {
-    method: 'POST',
-    headers: {
-      'Accept': 'application/json',
-      'Content-Type': 'application/json'
-    }, 
-    body: JSON.stringify({
-      movie_id: id,
-    })
+function getvalues(id, contentType){
+  var ident;
+
+  if(contentType == true)
+  {
+    ident = "t";
+    console.log(ident);
+  }
+  else
+  {
+    ident = "m";
+    console.log(ident);
+  }
+return fetch(tunnelURL + "/api/users/" + global.userID + "/like", {
+  method: 'POST',
+  headers: {
+    'Accept': 'application/json',
+    'Content-Type': 'application/json'
+  }, 
+  body: JSON.stringify({
+    movie_id: ident + id,
   })
   .then((response) => response.json())
 

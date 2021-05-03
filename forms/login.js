@@ -113,13 +113,14 @@ export default function LoginScreen({ navigation }) {
       
   
     return (
+
       <KeyboardAvoidingView
       behavior={Platform.OS == 'ios' ? 'padding' : 'height'}
       keyboardVerticalOffset={70}
       style={styles.container1}>
         <TouchableWithoutFeedback onPress={Keyboard.dismiss}>
           <View style={styles.container}>
-            <Image style={styles.image} source={require('../resources/MovieMatchLogo.png')} />
+            <Image style={styles.image} source={require('../resources/MovieMatchLogo1.png')} />
       
             <StatusBar style="auto" />
             <View style={styles.inputView}>
@@ -157,6 +158,7 @@ export default function LoginScreen({ navigation }) {
           </View>
         </TouchableWithoutFeedback>
       </KeyboardAvoidingView>
+
     );
 }
 

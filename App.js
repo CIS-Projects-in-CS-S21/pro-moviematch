@@ -94,7 +94,7 @@ function LogoTitle() {
   return (
     <Image
       style={{ width: 100, height: 100 }}
-      source={require('./resources/MovieMatchLogo.png')}
+      source={require('./resources/MovieMatchLogo1.png')}
     />
   );
 }

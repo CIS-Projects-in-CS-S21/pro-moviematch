@@ -128,7 +128,7 @@ export default function RegisterScreen({ navigation }) {
       style={styles.container1}>
         <TouchableWithoutFeedback onPress={Keyboard.dismiss}>
           <View style={styles.container}>
-            <Image style={styles.image} source={require('../resources/MovieMatchLogo.png')} />
+            <Image style={styles.image} source={require('../resources/MovieMatchLogo1.png')} />
       
             <StatusBar style="auto" />
             <View style={styles.inputView}>
@@ -173,6 +173,7 @@ export default function RegisterScreen({ navigation }) {
               <Text style={styles.loginText}>REGISTER</Text>
             
             </TouchableOpacity>
+
           </View>
         </TouchableWithoutFeedback>
        </KeyboardAvoidingView>
