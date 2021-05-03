@@ -1,6 +1,6 @@
 import { StatusBar } from 'expo-status-bar';
 import React, { useState } from 'react';
-import { Text, View, Image, TextInput, TouchableOpacity, StyleSheet} from 'react-native';
+import { Text, View, Image, TextInput, TouchableOpacity, StyleSheet, Keyboard, KeyboardAvoidingView, TouchableWithoutFeedback} from 'react-native';
 import {tunnelURL} from './../common/global'
 
 
@@ -122,53 +122,61 @@ export default function RegisterScreen({ navigation }) {
     };
   
     return (
-        <View style={styles.container}>
-          <Image style={styles.image} source={require('../resources/MovieMatchLogo1.png')} />
-     
-          <StatusBar style="auto" />
-          <View style={styles.inputView}>
-            <TextInput
-              style={styles.TextInput}
-              placeholder="Email"
-              placeholderTextColor="#003f5c"
-              onChangeText={(email) => setEmail(email)}
-            />
-          </View>
-     
-          <View style={styles.inputView}>
-            <TextInput
-              style={styles.TextInput}
-              placeholder="Password"
-              placeholderTextColor="#003f5c"
-              secureTextEntry={true}
-              onChangeText={(password) => setPassword(password)}
-            />
-          </View>
+      <KeyboardAvoidingView
+      behavior={Platform.OS == 'ios' ? 'padding' : 'height'}
+      keyboardVerticalOffset={70}
+      style={styles.container1}>
+        <TouchableWithoutFeedback onPress={Keyboard.dismiss}>
+          <View style={styles.container}>
+            <Image style={styles.image} source={require('../resources/MovieMatchLogo1.png')} />
+      
+            <StatusBar style="auto" />
+            <View style={styles.inputView}>
+              <TextInput
+                style={styles.TextInput}
+                placeholder="Email"
+                placeholderTextColor="#003f5c"
+                onChangeText={(email) => setEmail(email)}
+              />
+            </View>
+      
+            <View style={styles.inputView}>
+              <TextInput
+                style={styles.TextInput}
+                placeholder="Password"
+                placeholderTextColor="#003f5c"
+                secureTextEntry={true}
+                onChangeText={(password) => setPassword(password)}
+              />
+            </View>
 
-          <View style={styles.inputView}>
-            <TextInput
-              style={styles.TextInput}
-              placeholder="First Name"
-              placeholderTextColor="#003f5c"
-              onChangeText={(firstName) => setFirstName(firstName)}
-            />
-          </View>
-     
-          <View style={styles.inputView}>
-            <TextInput
-              style={styles.TextInput}
-              placeholder="Last Name"
-              placeholderTextColor="#003f5c"
-              onChangeText={(lastName) => setLastName(lastName)}
-            />
-          </View>
+            <View style={styles.inputView}>
+              <TextInput
+                style={styles.TextInput}
+                placeholder="First Name"
+                placeholderTextColor="#003f5c"
+                onChangeText={(firstName) => setFirstName(firstName)}
+              />
+            </View>
+      
+            <View style={styles.inputView}>
+              <TextInput
+                style={styles.TextInput}
+                placeholder="Last Name"
+                placeholderTextColor="#003f5c"
+                onChangeText={(lastName) => setLastName(lastName)}
+              />
+            </View>
 
-          <TouchableOpacity style={styles.register_button} onPress={() =>
-                buttonClickListener(navigation)}>
-            <Text style={styles.loginText}>REGISTER</Text>
-          
-          </TouchableOpacity>
-       </View>
+            <TouchableOpacity style={styles.register_button} onPress={() =>
+                  buttonClickListener(navigation)}>
+              <Text style={styles.loginText}>REGISTER</Text>
+            
+            </TouchableOpacity>
+
+          </View>
+        </TouchableWithoutFeedback>
+       </KeyboardAvoidingView>
     );
 }
 
@@ -178,6 +186,10 @@ const styles = StyleSheet.create({
       backgroundColor: "#fff",
       alignItems: "center",
       justifyContent: "center",
+    },
+
+    container1: {
+      flex: 1,
     },
    
     image: {

@@ -35,7 +35,7 @@ import {tunnelURL} from './../common/global'
         
         setOffset(offset + 1);
         setData([...parseMovies(responseJson.results, contentType)]);
-
+        console.log(contentType);
         setLoading(false);
       })
       .catch((error) => {
@@ -123,7 +123,9 @@ import {tunnelURL} from './../common/global'
           pic: {uri: imgurl.concat(movieArray[i].poster_path)},
           title: movieArray[i].title,
           caption: "Rating: " + movieArray[i].vote_average,
+          content: contentType,
         }
+        console.log(contentType);
         //console.log(genreToString(movieArray[i].genre_ids));
       }
     }
@@ -164,16 +166,13 @@ return fetch(tunnelURL + "/api/users/" + global.userID + "/like", {
   body: JSON.stringify({
     movie_id: ident + id,
   })
-})
-.then((response) => response.json())
+  .then((response) => response.json())
 
-.then((responseData) => {
-  alert(JSON.stringify(responseData));
-  console.log(responseData);
-  console.log("AHHHHHHHHHHHHHHH");
-  return responseData;
-})
-.catch(error => alert('Error'));
+  .then((responseData) => {
+    alert(JSON.stringify(responseData));
+    return responseData;
+  })
+  .catch(error => alert('Error'));
 }
 
 const getUserID = async () =>{
