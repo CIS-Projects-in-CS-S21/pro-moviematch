@@ -43,7 +43,9 @@ export default function LikedList({ navigation }) {
         console.log("movieidarray: " + movieidarray[0]);
         for (i = 0; i < movieidarray.length; i++) {
           setLoading(true);
-          fetch("https://api.themoviedb.org/3/movie/" + movieidarray[i] + "?api_key=156f6cfa04dae615351cd9878f39b732")
+          if(movieidarray[i].charAt(0) == "m")
+          {
+            fetch("https://api.themoviedb.org/3/movie/" + movieidarray[i].substring(1) + "?api_key=156f6cfa04dae615351cd9878f39b732")
           .then((response2) => response2.json())
           .then((responseJson) => {
             //Successful response
@@ -54,6 +56,21 @@ export default function LikedList({ navigation }) {
           .catch((error) => {
             console.error(error);
           });
+          }
+          else
+            {
+            fetch("https://api.themoviedb.org/3/tv/" + movieidarray[i].substring(1) + "?api_key=156f6cfa04dae615351cd9878f39b732")
+            .then((response2) => response2.json())
+            .then((responseJson) => {
+              //Successful response
+              //Increasing the offset for the next API call
+              setData(datas => [...datas, responseJson]);
+              setLoading(false);
+            })
+            .catch((error) => {
+              console.error(error);
+            });
+          }
         };
       });
     }
@@ -74,7 +91,7 @@ export default function LikedList({ navigation }) {
         imageProps={{resizeMode: 'contain'}}
       />
       <ListItem.Content>
-        <ListItem.Title>{item.title}</ListItem.Title>
+        <ListItem.Title>{item.title == null ? item.name : item.title}</ListItem.Title>
         <ListItem.Subtitle>{item.overview}</ListItem.Subtitle>
         <ListItem.Subtitle>{"Rating: "+item.vote_average}</ListItem.Subtitle>
       </ListItem.Content>
