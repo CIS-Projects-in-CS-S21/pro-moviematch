@@ -20,9 +20,9 @@ export default function HomeScreen({ route }) {
     const [offset, setOffset] = useState(1);
     var i = 0;
 
-    useFocusEffect(
-      React.useCallback(() => getData(), []));
-    //useEffect(() => getData(), []);
+    //useFocusEffect(
+    //  React.useCallback(() => getData(), []));
+    useEffect(() => getData(), []);
 
     const getData = () => {
       i = 0;
