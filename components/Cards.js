@@ -2,6 +2,8 @@ import React from 'react'
 import { Platform, StyleSheet } from 'react-native'
 import { Tile } from 'react-native-elements'
 import Layout from '../constants/Layout'
+import { useNavigation } from '@react-navigation/native';
+import InfoScreen from '../screens/InfoPage';
 
 const BOTTOM_BAR_HEIGHT = !Platform.isPad ? 29 : 49 // found from https://stackoverflow.com/a/50318831/6141587
 
@@ -17,6 +19,7 @@ export const Card = ({ id, pic, title, caption }) => (
     caption={caption}
     captionStyle={styles.caption}
     containerStyle={styles.container}
+    onPress={() => console.log("Press from card with ID of " + id)}
     featured
   />
 )
