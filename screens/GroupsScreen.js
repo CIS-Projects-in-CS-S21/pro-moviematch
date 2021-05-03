@@ -22,8 +22,16 @@ const DATA = [
     },
     {
         title: "Significant Other", 
-        members: ""
+        members: "Lady Friend"
     },
+    {
+        title: "Significant Other", 
+        members: "Lady Friend"
+    },
+    {
+        title: "Soccer Team",
+        members: "Dave Stevenson, Mike Bunzson, "
+    }
 ];
 
 
