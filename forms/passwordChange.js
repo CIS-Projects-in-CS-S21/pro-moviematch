@@ -4,6 +4,8 @@ import { Text, View, Image, TextInput, Button, TouchableOpacity, StyleSheet} fro
 import { NavigationContainer } from '@react-navigation/native';
 import { createStackNavigator } from '@react-navigation/stack';
 
+const tunnelURL = 'https://heavy-cougar-95.loca.lt';
+
 export default function ChangePasswordScreen({ navigation }) {
     const [currentPassword, setCurrentPassword] = useState("");
     const [newPassword, setNewPassword] = useState("");
@@ -28,8 +30,30 @@ export default function ChangePasswordScreen({ navigation }) {
 
     }
 
-    const buttonClickListener = (navigation) => {
-      if (checkCurrentPasswordInput() == true && checkNewPasswordInput()){
+    function changePassword(){
+      return fetch(tunnelURL + "/api/users/" + global.globEmail+ "/changePassword", {
+        method: 'POST',
+        headers: {
+          'Accept': 'application/json',
+          'Content-Type': 'application/json'
+        }, 
+        body: JSON.stringify({
+          password: currentPassword,
+          newPassword: newPassword,
+        })
+      })
+      .then((response) => response.json())
+
+      .then((responseData) => {
+        //alert(JSON.stringify(responseData));
+        return responseData;
+      })
+      .catch(error => alert('Error'));
+    }
+
+    const navigateChangedPasswordUser = (response) => {
+      if(response.hasOwnProperty('success')){
+        alert('Password successfully changed!');
         navigation.reset({
           index: 0,
           routes: [
@@ -39,10 +63,20 @@ export default function ChangePasswordScreen({ navigation }) {
             },
           ],
         })
-        alert('Password Changed');
       }
-      
-      //Not the most convenient but it works for now
+      else{
+        alert('Error changing password');
+      } 
+    }
+
+    const buttonClickListener = (navigation) => {
+      if (checkCurrentPasswordInput() == true && checkNewPasswordInput()){
+        if (currentPassword == newPassword){
+          alert('Error. New password must be different than current password.');
+        } else {
+        changePassword().then(response => navigateChangedPasswordUser(response));
+        }
+      }
       else if (checkNewPasswordInput()==false && checkCurrentPasswordInput()==true){
         alert('Invalid Response: Please enter a new password');
       }
