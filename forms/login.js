@@ -10,7 +10,7 @@ export default function LoginScreen({ navigation }) {
     global.globEmail = email;
     const [firstName, setFirstName] = useState("");
     const [lastName, setLastName] = useState("");
-    
+
 
 
     const checkEmailInput= () => {
@@ -19,6 +19,7 @@ export default function LoginScreen({ navigation }) {
       return false
     };
 
+  
     const checkPasswordInput= () => {
       if (password != '')
         return true
@@ -61,8 +62,6 @@ export default function LoginScreen({ navigation }) {
     getUserID();
 
     const navigateLoggedInUser = (response) => {
-      //alert(response);
-     // response.hasOwnProperty('success')
       if(response.hasOwnProperty('success')){
         let hasLoggedIn = 1;
         global.hasLoggedIn = hasLoggedIn;
@@ -81,7 +80,7 @@ export default function LoginScreen({ navigation }) {
       } 
     }
 
-    const getFirstName = async () =>{
+    const getName = async () =>{
       try{
         let response = await fetch(tunnelURL + "/api/users/" + global.globEmail + "/Name");
         let jsonResponse = await response.json();
@@ -94,7 +93,7 @@ export default function LoginScreen({ navigation }) {
         alert(error);
       }
     };
-    getFirstName();
+    getName();
 
     const buttonClickListener = (navigation) => {
       

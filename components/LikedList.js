@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { SafeAreaView, View, FlatList, StyleSheet, Text, Image, ActivityIndicator } from 'react-native'
 import { ListItem, Avatar } from 'react-native-elements'
+import {useFocusEffect} from '@react-navigation/native'
 import Layout from '../constants/Layout'
 import axios from 'axios';
 //import {hasLoggedIn} from login;
@@ -8,44 +9,28 @@ import login from '../server/validation/login';
 import {tunnelURL} from './../common/global'
 
 
-
 var movieidarray = [];
 
-const Item = ({ title, caption}) => (
-  <View style={StyleSheet.item}>
-    <Text style={StyleSheet.title}>{title}</Text>
-    <Text style={StyleSheet.caption}>{caption}</Text>
-  </View>
-)
-
-
-function parseMovies(movieArray) {
-  var parsedMovies = [];
-  var i;
-  var imgurl = "https://image.tmdb.org/t/p/original";
-  for (i = 0; i < movieArray.length; i++) {
-    parsedMovies[i] =
-    {
-        id: movieArray[i].id,
-        pic: {uri: imgurl.concat(movieArray[i].poster_path)},
-        title: movieArray[i].title,
-        caption: "Rating: " + movieArray[i].vote_average,
-    }
-  }
-  return parsedMovies
-}
 
 export default function LikedList({ navigation }) {
   const [isLoading, setLoading] = useState(true);
   const [datas, setData] = useState([]);
+  //const forceUpdate = useForceUpdate();
   var newArr = [];
   //fetch("https://api.themoviedb.org/3/movie/" + movieidarray[0] + "?api_key=156f6cfa04dae615351cd9878f39b732")
 
+  const onRefresh = () =>{
+    setLoading(true);
+    getData();
+  }
+
   console.log(global.userID);
-  useEffect(() => getData(), []);
+  useFocusEffect(
+    React.useCallback(() => getData(), []));
 
   const getData = () => {
-
+    movieidarray = [];
+    setData("");
     try {
       axios.get(tunnelURL + '/api/users/'+ global.userID +'/like') //use data destructuring to get data from the promise object
       .then(function (response) {
@@ -102,7 +87,8 @@ export default function LikedList({ navigation }) {
         <FlatList
           data={datas}
           renderItem={renderItem}
-          //keyExtractor={item}
+          onRefresh={onRefresh}
+          refreshing={isLoading}
         />
       )}
     </SafeAreaView >
