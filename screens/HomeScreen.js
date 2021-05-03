@@ -121,7 +121,7 @@ import { InfoScreen } from './InfoPage.js';
           id: movieArray[i].id,
           pic: {uri: imgurl.concat(movieArray[i].poster_path)},
           title: movieArray[i].title,
-          caption: "Rating: " + movieArray[i].vote_average,
+          caption: "Rating: " + movieArray[i].vote_average + "\n" + genreToString(movieArray[i].genre_ids),
         }
         //console.log(genreToString(movieArray[i].genre_ids));
       }
@@ -132,8 +132,8 @@ import { InfoScreen } from './InfoPage.js';
       {
         id: movieArray[i].id,
         pic: {uri: imgurl.concat(movieArray[i].poster_path)},
-        title: movieArray[i].title,
-        caption: "Rating: " + movieArray[i].vote_average,
+        title: movieArray[i].name,
+        caption: "Rating: " + movieArray[i].vote_average + "\n" + genreToString(movieArray[i].genre_ids),
       }
       //console.log(genreToString(movieArray[i].genre_ids));
     }

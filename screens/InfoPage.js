@@ -1,4 +1,3 @@
-import { response } from 'express';
 import React, { useState, useEffect } from 'react';
 import { render } from 'react-dom';
 import { SafeAreaView, StyleSheet, ActivityIndicator} from 'react-native';
