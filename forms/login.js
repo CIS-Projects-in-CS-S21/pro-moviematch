@@ -13,8 +13,6 @@ export default function LoginScreen({ navigation }) {
 
 
 
-
-
     const checkEmailInput= () => {
       if (email != '')
         return true

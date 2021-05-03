@@ -2,9 +2,11 @@ import React, { useState, useEffect } from 'react';
 import { SafeAreaView, StyleSheet, ActivityIndicator} from 'react-native';
 import Swiper from 'react-native-deck-swiper';
 import { Card } from '../components/Cards.js';
+import {useFocusEffect} from '@react-navigation/native'
 import { contentMovieOrTV, genreToArr } from '../components/Filters'
 import { genreToString } from "../components/ContentGenreToString"
 import {tunnelURL} from './../common/global'
+
 
 
 /**
@@ -18,6 +20,7 @@ import {tunnelURL} from './../common/global'
   const [data, setData] = useState([]);
   const [offset, setOffset] = useState(1);
   var i = 0;
+
 
   useEffect(() => getData(), []);
 
