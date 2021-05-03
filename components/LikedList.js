@@ -91,7 +91,7 @@ export default function LikedList({ navigation }) {
         imageProps={{resizeMode: 'contain'}}
       />
       <ListItem.Content>
-        <ListItem.Title>{item.title}</ListItem.Title>
+        <ListItem.Title>{item.title == null ? item.name : item.title}</ListItem.Title>
         <ListItem.Subtitle>{item.overview}</ListItem.Subtitle>
         <ListItem.Subtitle>{"Rating: "+item.vote_average}</ListItem.Subtitle>
       </ListItem.Content>
