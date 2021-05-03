@@ -51,7 +51,7 @@ import {tunnelURL} from './../common/global'
             renderCard={Card}
             onSwiped={() => i++}
             onSwipedAll={getData}
-            onSwipedRight={() => getvalues(data[i - 1].id)}  // (data[i - 1] is the movie card)
+            onSwipedRight={() => getvalues(data[i - 1].id, contentType)}  // (data[i - 1] is the movie card)
             verticalSwipe={false}
             backgroundColor="#white"
             cardVerticalMargin={20}
@@ -133,26 +133,28 @@ import {tunnelURL} from './../common/global'
       {
         id: movieArray[i].id,
         pic: {uri: imgurl.concat(movieArray[i].poster_path)},
-        title: movieArray[i].title,
+        title: movieArray[i].name,
         caption: "Rating: " + movieArray[i].vote_average,
       }
       //console.log(genreToString(movieArray[i].genre_ids));
     }
   }
-else {
-  for (i = 0; i < movieArray.length; i++) {
-    parsedMovies[i] =
-    {
-      pic: {uri: imgurl.concat(movieArray[i].poster_path)},
-      title: movieArray[i].name,
-      caption: "Rating: " + movieArray[i].vote_average,
-    }
-  }
-}
 return parsedMovies
 }
 
-function getvalues(id){
+function getvalues(id, contentType){
+  var ident;
+
+  if(contentType == true)
+  {
+    ident = "t";
+    console.log(ident);
+  }
+  else
+  {
+    ident = "m";
+    console.log(ident);
+  }
 return fetch(tunnelURL + "/api/users/" + global.userID + "/like", {
   method: 'POST',
   headers: {
@@ -160,13 +162,15 @@ return fetch(tunnelURL + "/api/users/" + global.userID + "/like", {
     'Content-Type': 'application/json'
   }, 
   body: JSON.stringify({
-    movie_id: id,
+    movie_id: ident + id,
   })
 })
 .then((response) => response.json())
 
 .then((responseData) => {
   alert(JSON.stringify(responseData));
+  console.log(responseData);
+  console.log("AHHHHHHHHHHHHHHH");
   return responseData;
 })
 .catch(error => alert('Error'));
