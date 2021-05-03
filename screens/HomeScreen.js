@@ -157,19 +157,18 @@ function getvalues(id, contentType){
     ident = "m";
     console.log(ident);
   }
-return fetch(tunnelURL + "/api/users/" + global.userID + "/like", {
-  method: 'POST',
-  headers: {
-    'Accept': 'application/json',
-    'Content-Type': 'application/json'
-  }, 
-  body: JSON.stringify({
-    movie_id: ident + id,
+  return fetch(tunnelURL + "/api/users/" + global.userID + "/like", {
+    method: 'POST',
+    headers: {
+      'Accept': 'application/json',
+      'Content-Type': 'application/json'
+    }, 
+    body: JSON.stringify({
+      movie_id: ident + id,
+    })
   })
   .then((response) => response.json())
-
   .then((responseData) => {
-    alert(JSON.stringify(responseData));
     return responseData;
   })
   .catch(error => alert('Error'));
