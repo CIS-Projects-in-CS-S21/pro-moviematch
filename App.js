@@ -6,6 +6,7 @@ import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 import LoginScreen from './forms/login.js';
 import RegisterScreen from './forms/register.js';
 import HomeScreen from './screens/HomeScreen.js';
+import {GroupList} from './screens/GroupsScreen.js';
 import SettingsScreen from './screens/SettingsScreen.js';
 import Ionicons from 'react-native-vector-icons/Ionicons';
 import ChangePasswordScreen from './forms/passwordChange.js';
@@ -79,9 +80,9 @@ function ViewContentScreen() {
 function GroupScreen() {
   return (
 
-    <View style={{ flex: 1, justifyContent: 'center', alignItems: 'center' }}>
+    <View style={{}}>
       <View>
-        <Text>Group Content will go here</Text>
+        <GroupList/>
       </View>
     </View>
   );
@@ -94,7 +95,7 @@ function LogoTitle() {
   return (
     <Image
       style={{ width: 100, height: 100 }}
-      source={require('./resources/MovieMatchLogo.png')}
+      source={require('./resources/MovieMatchLogo1.png')}
     />
   );
 }

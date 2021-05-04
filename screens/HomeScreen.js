@@ -2,10 +2,12 @@ import React, { useState, useEffect } from 'react';
 import { SafeAreaView, StyleSheet, ActivityIndicator} from 'react-native';
 import Swiper from 'react-native-deck-swiper';
 import { Card } from '../components/Cards.js';
+import {useFocusEffect} from '@react-navigation/native'
 import { contentMovieOrTV, genreToArr } from '../components/Filters'
 import { genreToString } from "../components/ContentGenreToString"
 import {tunnelURL} from './../common/global'
 import { InfoScreen } from './InfoPage.js';
+
 
 
 /**
@@ -20,6 +22,7 @@ import { InfoScreen } from './InfoPage.js';
   const [offset, setOffset] = useState(1);
   var i = 0;
 
+
   useEffect(() => getData(), []);
 
   const getData = () => {
@@ -33,7 +36,7 @@ import { InfoScreen } from './InfoPage.js';
         
         setOffset(offset + 1);
         setData([...parseMovies(responseJson.results, contentType)]);
-
+        console.log(contentType);
         setLoading(false);
       })
       .catch((error) => {
@@ -49,8 +52,7 @@ import { InfoScreen } from './InfoPage.js';
             renderCard={Card}
             onSwiped={() => i++}
             onSwipedAll={getData}
-            onSwipedRight={() => getvalues(data[i - 1].id)}  // (data[i - 1] is the movie card)
-            onTapCard={() => navigation.navigate('Info')}
+            onSwipedRight={() => getvalues(data[i - 1].id, contentType)}  // (data[i - 1] is the movie card)
             verticalSwipe={false}
             backgroundColor="#white"
             cardVerticalMargin={20}
@@ -121,8 +123,11 @@ import { InfoScreen } from './InfoPage.js';
           id: movieArray[i].id,
           pic: {uri: imgurl.concat(movieArray[i].poster_path)},
           title: movieArray[i].title,
+
           caption: "Rating: " + movieArray[i].vote_average + "\n" + genreToString(movieArray[i].genre_ids),
+
         }
+        console.log(contentType);
         //console.log(genreToString(movieArray[i].genre_ids));
       }
     }
@@ -134,6 +139,7 @@ import { InfoScreen } from './InfoPage.js';
         pic: {uri: imgurl.concat(movieArray[i].poster_path)},
         title: movieArray[i].name,
         caption: "Rating: " + movieArray[i].vote_average + "\n" + genreToString(movieArray[i].genre_ids),
+
       }
       //console.log(genreToString(movieArray[i].genre_ids));
     }
@@ -141,24 +147,34 @@ import { InfoScreen } from './InfoPage.js';
   return parsedMovies
 }
 
-function getvalues(id){
-return fetch(tunnelURL + "/api/users/" + global.userID + "/like", {
-  method: 'POST',
-  headers: {
-    'Accept': 'application/json',
-    'Content-Type': 'application/json'
-  }, 
-  body: JSON.stringify({
-    movie_id: id,
-  })
-})
-.then((response) => response.json())
+function getvalues(id, contentType){
+  var ident;
 
-.then((responseData) => {
-  alert(JSON.stringify(responseData));
-  return responseData;
-})
-.catch(error => alert('Error'));
+  if(contentType == true)
+  {
+    ident = "t";
+    console.log(ident);
+  }
+  else
+  {
+    ident = "m";
+    console.log(ident);
+  }
+  return fetch(tunnelURL + "/api/users/" + global.userID + "/like", {
+    method: 'POST',
+    headers: {
+      'Accept': 'application/json',
+      'Content-Type': 'application/json'
+    }, 
+    body: JSON.stringify({
+      movie_id: ident + id,
+    })
+  })
+  .then((response) => response.json())
+  .then((responseData) => {
+    return responseData;
+  })
+  .catch(error => alert('Error'));
 }
 
 const getUserID = async () =>{

@@ -8,7 +8,7 @@ const userSchema = new mongoose.Schema({
     movie_id: Number,
     group_id: [Number],
     streaming_service: [Number],
-    likes: [Number]
+    likes: [String]
 
 });
 
