@@ -5,6 +5,11 @@ import { ListItem } from 'react-native-elements'
 
 const DATA = [
     {
+        title: "Best Buddies", 
+        members: "Brandon Lokey, Kyle Skelly",
+        contentLike: "Godzilla vs. Kong"
+    },
+    {
         title: "Family", 
         members: "David Doe, Brandon Doe, Kyle Doe, Amanda Doe, Jacob Doe, X'Zavier Doe",
         contentLike: "The Office"
