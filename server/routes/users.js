@@ -136,7 +136,29 @@ router.get('/:email/userId', async (req, res) => {
     }
 })
 
+// DELETE a liked piece of content
+router.delete('/:userId/like', async (req, res) => {
+    const {userId} = req.params;
+    
+    // get user
+    var user;
+    try {
+        user = await User.findById(req.params.userId);
+    } catch (err) {
+        res.json({message: "Could not find user!"})
+    }
 
+    const index_to_delete = user.likes.indexOf(req.body.movie_id)
+
+    if(index_to_delete > -1) {
+        user.likes.splice(index_to_delete, 1)
+        await user.save()
+        res.status(201).json({message: "Movie deleted"})
+    } else {
+        res.status(404).json({message: "You currently have not liked this content"})
+    }
+
+})
 
 
 module.exports = router
