@@ -13,6 +13,7 @@ import ChangePasswordScreen from './forms/passwordChange.js';
 import {ButtonGroup} from 'react-native-elements';
 import {CheckBox} from 'react-native-elements';
 import LikedList from './components/LikedList.js'
+import InfoScreen from './screens/InfoPage.js'
 
 /**
  * Function containing the navbar and it's attributes
@@ -143,6 +144,10 @@ function App() {
         <Stack.Screen
           name="Change Password"
           component={ChangePasswordScreen}
+        ></Stack.Screen>
+        <Stack.Screen
+          name="Info"
+          component={InfoScreen}
         ></Stack.Screen>
       </Stack.Navigator>
   </NavigationContainer>

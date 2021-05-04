@@ -6,6 +6,7 @@ import {useFocusEffect} from '@react-navigation/native'
 import { contentMovieOrTV, genreToArr } from '../components/Filters'
 import { genreToString } from "../components/ContentGenreToString"
 import {tunnelURL} from './../common/global'
+import { InfoScreen } from './InfoPage.js';
 
 
 
@@ -14,7 +15,7 @@ import {tunnelURL} from './../common/global'
  * @param {boolean, Array[boolean]} route Contains filter information that will be used to modify the queue
  * @returns Visual home screen component
  */
- export default function HomeScreen({ route }) {
+ export default function HomeScreen({ route, navigation }) {
   const {contentType, contentGenre} = route.params;
   const [isLoading, setLoading] = useState(true);
   const [data, setData] = useState([]);
@@ -122,8 +123,9 @@ import {tunnelURL} from './../common/global'
           id: movieArray[i].id,
           pic: {uri: imgurl.concat(movieArray[i].poster_path)},
           title: movieArray[i].title,
-          caption: "Rating: " + movieArray[i].vote_average,
-          content: contentType,
+
+          caption: "Rating: " + movieArray[i].vote_average + "\n" + genreToString(movieArray[i].genre_ids),
+
         }
         console.log(contentType);
         //console.log(genreToString(movieArray[i].genre_ids));
@@ -136,12 +138,13 @@ import {tunnelURL} from './../common/global'
         id: movieArray[i].id,
         pic: {uri: imgurl.concat(movieArray[i].poster_path)},
         title: movieArray[i].name,
-        caption: "Rating: " + movieArray[i].vote_average,
+        caption: "Rating: " + movieArray[i].vote_average + "\n" + genreToString(movieArray[i].genre_ids),
+
       }
       //console.log(genreToString(movieArray[i].genre_ids));
     }
   }
-return parsedMovies
+  return parsedMovies
 }
 
 function getvalues(id, contentType){
