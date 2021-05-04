@@ -1,4 +1,4 @@
-import sampleGroups from '../constants/Groups';
+
 import { SafeAreaView, View, FlatList, StyleSheet, Text} from 'react-native';
 import React from 'react';
 import { ListItem } from 'react-native-elements'
