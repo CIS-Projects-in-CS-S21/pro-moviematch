@@ -1,10 +1,9 @@
 import { StatusBar } from 'expo-status-bar';
 import React, { useState } from 'react';
-import { Text, View, Image, TextInput, Button, TouchableOpacity, StyleSheet} from 'react-native';
+import { Text, View, Image, TextInput, Button, TouchableOpacity, StyleSheet, Keyboard, KeyboardAvoidingView, TouchableWithoutFeedback} from 'react-native';
 import { NavigationContainer } from '@react-navigation/native';
 import { createStackNavigator } from '@react-navigation/stack';
-
-const tunnelURL = 'https://heavy-cougar-95.loca.lt';
+import {tunnelURL} from './../common/global';
 
 export default function ChangePasswordScreen({ navigation }) {
     const [currentPassword, setCurrentPassword] = useState("");
@@ -89,35 +88,43 @@ export default function ChangePasswordScreen({ navigation }) {
     };
   
     return (
-        <View style={styles.container}>
-          <Image style={styles.image} source={require('../resources/MovieMatchLogo.png')} />
-     
-          <StatusBar style="auto" />
-          <View style={styles.inputView}>
-            <TextInput
-              style={styles.TextInput}
-              placeholder="Current Password"
-              placeholderTextColor="#003f5c"
-              onChangeText={(currentPassword) => setCurrentPassword(currentPassword)}
-            />
-          </View>
-     
-          <View style={styles.inputView}>
-            <TextInput
-              style={styles.TextInput}
-              placeholder="New Password"
-              placeholderTextColor="#003f5c"
-              secureTextEntry={true}
-              onChangeText={(newPassword) => setNewPassword(newPassword)}
-            />
-          </View>
+      <KeyboardAvoidingView
+      behavior={Platform.OS == 'ios' ? 'padding' : 'height'}
+      keyboardVerticalOffset={70}
+      style={styles.container1}>
+        <TouchableWithoutFeedback onPress={Keyboard.dismiss}>
+          <View style={styles.container}>
+            <Image style={styles.image} source={require('../resources/MovieMatchLogo1.png')} />
+      
+            <StatusBar style="auto" />
+            <View style={styles.inputView}>
+              <TextInput
+                secureTextEntry={true}
+                style={styles.TextInput}
+                placeholder="Current Password"
+                placeholderTextColor="#003f5c"
+                onChangeText={(currentPassword) => setCurrentPassword(currentPassword)}
+              />
+            </View>
+      
+            <View style={styles.inputView}>
+              <TextInput
+                style={styles.TextInput}
+                placeholder="New Password"
+                placeholderTextColor="#003f5c"
+                secureTextEntry={true}
+                onChangeText={(newPassword) => setNewPassword(newPassword)}
+              />
+            </View>
 
-          <TouchableOpacity style={styles.register_button} onPress={() =>
-                buttonClickListener(navigation)}>
-            <Text style={styles.loginText}>Change Password</Text>
-          
-          </TouchableOpacity>
-       </View>
+            <TouchableOpacity style={styles.register_button} onPress={() =>
+                  buttonClickListener(navigation)}>
+              <Text style={styles.loginText}>Change Password</Text>
+            
+            </TouchableOpacity>
+        </View>
+        </TouchableWithoutFeedback>
+    </KeyboardAvoidingView>
     );
 }
 
@@ -127,6 +134,9 @@ const styles = StyleSheet.create({
       backgroundColor: "#fff",
       alignItems: "center",
       justifyContent: "center",
+    },
+    container1: {
+      flex: 1,
     },
    
     image: {

@@ -95,63 +95,6 @@ export default function SettingsScreen({ navigation }, page) {
           <Text style={{fontSize: 15}}> TV Shows</Text>
         </View>
       </View>
-
-      {/* Streaming services checkbox*/}
-      <View>
-        <Text style={{fontWeight: 'bold', fontSize: 20}}>Streaming services</Text>
-      </View>
-      <View style={{backgroundColor: '#d3d3d3', borderRadius:10, borderWith:1, padding:10, marginLeft:10, marginRight:10}}>
-        <View style={{alignItems: 'left'}}>
-          <CheckBox
-            checkedColor="#0F0"
-            containerStyle={{}}
-            checked={checkedNetflix}
-            onPress={() => toggleCheckedNetflix(!checkedNetflix)}
-            size={30}
-            textStyle={{}}
-            title="Netflix"
-            titleProps={{}}
-            uncheckedColor="#F00"
-           
-          />
-          <CheckBox
-            checkedColor="#0F0"
-            containerStyle={{}}
-            checked={checkedAmazon}
-            onPress={() => toggleCheckedAmazon(!checkedAmazon)}
-            size={30}
-            textStyle={{}}
-            title="Amazon Prime"
-            titleProps={{}}
-            uncheckedColor="#F00"
-           
-          />
-          <CheckBox
-            checkedColor="#0F0"
-            containerStyle={{}}
-            checked={checkedDisney}
-            onPress={() => toggleCheckedDisney(!checkedDisney)}
-            size={30}
-            textStyle={{}}
-            title="Disney+"
-            titleProps={{}}
-            uncheckedColor="#F00"
-           
-          />
-          <CheckBox
-            checkedColor="#0F0"
-            containerStyle={{}}
-            checked={checkedHBO}
-            onPress={() => toggleCheckedHBO(!checkedHBO)}
-            size={30}
-            textStyle={{}}
-            title="HBO Max"
-            titleProps={{}}
-            uncheckedColor="#F00"
-           
-          />
-        </View>
-      </View>
       
       {/* Movie Content Genre checkbox*/}
       <View>
