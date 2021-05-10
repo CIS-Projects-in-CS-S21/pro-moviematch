@@ -1,1 +1,1 @@
-export const tunnelURL = "https://fuzzy-dolphin-65.loca.lt"
+export const tunnelURL = "https://hot-cougar-94.loca.lt"
